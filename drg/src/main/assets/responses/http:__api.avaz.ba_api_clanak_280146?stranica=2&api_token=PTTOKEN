@@ -1,0 +1,135 @@
+{
+    "id": 280146,
+    "category_id": 8,
+    "category": "ZANIMLJIVOSTI",
+    "category_slug": "zanimljivosti",
+    "category_url": "https://avaz.ba/zabava/zanimljivosti",
+    "category_color": "#df4e71",
+    "slug": "ovo-su-najbrutalnije-bande-na-svijetu-siju-smrt-na-svakom-koraku",
+    "url": "https://avaz.ba/zabava/zanimljivosti/280146/ovo-su-najbrutalnije-bande-na-svijetu-siju-smrt-na-svakom-koraku",
+    "urlm": "https://avaz.ba/zabava/zanimljivosti/280146/ovo-su-najbrutalnije-bande-na-svijetu-siju-smrt-na-svakom-koraku",
+    "uppertitle": "",
+    "uppertitle_raw": "",
+    "title": "Ovo su najbrutalnije bande na svijetu, siju smrt na svakom koraku",
+    "title_raw": "Ovo su najbrutalnije bande na svijetu, siju smrt na svakom koraku",
+    "subtitle": "",
+    "intro": "Samo u EU aktivno je 3600 kriminalnih skupina, a većina ih se bavi trgovinom drogom. Podatak je to iz izvještaja Europola, u kojem je među ostalim navedeno i da se vremena mijenjaju",
+    "intro_shorter": "",
+    "intro_short": "",
+    "status": 1,
+    "hits": 1151,
+    "shares": 0,
+    "has_video": false,
+    "has_gallery": false,
+    "index_block": 0,
+    "index_block_position": 0,
+    "upcomming": 0,
+    "no_featured_image": false,
+    "published_at": {
+        "date": "2017-04-11 23:47:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/Sarajevo"
+    },
+    "published_at_humans": "11.04.2017 23:47",
+    "updated_at": "29.05.2018 10:20",
+    "template": "article",
+    "featured_image": {
+        "original": "/media/2017/04/11/288197/57b088fc-a364-4a1c-881d-7b9b0a0a0a6c-1349875272-690x480.jpg",
+        "slider": "/media/2017/04/11/288197/thumbs/1005x635.jpg",
+        "3xl": "/media/2017/04/11/288197/thumbs/873x400.jpg",
+        "xxl": "/media/2017/04/11/288197/thumbs/495x375.jpg",
+        "xl": "/media/2017/04/11/288197/thumbs/253x225.jpg",
+        "l": "/media/2017/04/11/288197/thumbs/240x225.jpg",
+        "m": "/media/2017/04/11/288197/thumbs/240x204.jpg",
+        "s": "/media/2017/04/11/288197/thumbs/94x94.jpg",
+        "xs": "/media/2017/04/11/288197/thumbs/95x90.jpg",
+        "xxs": "/media/2017/04/11/288197/thumbs/60x52.jpg"
+    },
+    "featured_image_source": "",
+    "featured_image_caption": "",
+    "tags": [
+        {
+            "tag": "bande",
+            "id": 628
+        },
+        {
+            "tag": "organizirani kriminal",
+            "id": 629
+        }
+    ],
+    "article_edition": "agencijski",
+    "breaking_news": 0,
+    "author": "Autor: M. M.",
+    "breadcrumbs": {
+        "category": "Zanimljivosti",
+        "category_url": "https://avaz.ba/zabava/zanimljivosti",
+        "parent_category": "Zabava",
+        "parent_category_slug": "zabava",
+        "parent_category_url": "https://avaz.ba/zabava"
+    },
+    "is_external": false,
+    "published_at_atom": "2017-04-11T23:47:00+02:00",
+    "category_analytics": {
+        "dotmetrics": "3431"
+    },
+    "created_at": {
+        "date": "2017-04-11 23:47:08.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/Sarajevo"
+    },
+    "intro_video": "",
+    "has_mp3": false,
+    "mp3_url": "",
+    "published_at_rss": "Tue, 11 Apr 2017 23:47:00 +0200",
+    "updated_at_atom": "2018-05-29T10:20:38+02:00",
+    "pages_no": 3,
+    "content": [
+        {
+            "article_id": 280146,
+            "type": "text",
+            "page": 2,
+            "order": 0,
+            "data": "<p><strong>10. Cosa nostra\r\n</strong></p>\r\n<p>Cosa nostra ili u prevodu Naša stvar korijene vuče iz istočnog Njujorka gde su živjeli migranti iz Italije. Cosa Nostra je jedna od najčuvenijih sicilijanskih mafija na svijetu. Pretpostavlja se da ima oko 25.000 članova i preko 250.000 ispostava širom planete. Poznati su po tome što sarađuju sa drugim kriminalnim grupama posebno kada je u pitanju trgovina drogom.</p><p><br></p>",
+            "data_raw": "<p><strong>10. Cosa nostra\r\n</strong></p>\r\n<p>Cosa nostra ili u prevodu Naša stvar korijene vuče iz istočnog Njujorka gde su živjeli migranti iz Italije. Cosa Nostra je jedna od najčuvenijih sicilijanskih mafija na svijetu. Pretpostavlja se da ima oko 25.000 članova i preko 250.000 ispostava širom planete. Poznati su po tome što sarađuju sa drugim kriminalnim grupama posebno kada je u pitanju trgovina drogom.</p><p><br></p>",
+            "embed_src": "",
+            "width": "col-sm-12",
+            "id": 280634
+        },
+        {
+            "article_id": 280146,
+            "type": "image",
+            "page": 2,
+            "order": 2,
+            "data": "/media/noimage.png",
+            "data_raw": "/media/noimage.png",
+            "embed_src": "",
+            "width": "col-sm-12",
+            "id": 280635,
+            "image": {
+                "original": "/media/2017/04/11/288200/album-cosa-nostra-vitale-625-2-624x300.jpg",
+                "xxl": "/media/2017/04/11/288200/thumbs/873x400.jpg",
+                "xl": "/media/2017/04/11/288200/thumbs/873x400.jpg",
+                "m": "/media/2017/04/11/288200/thumbs/429x286.jpg"
+            },
+            "image_with_size": {
+                "original": {
+                    "image": "/media/2017/04/11/288200/album-cosa-nostra-vitale-625-2-624x300.jpg",
+                    "width": 0,
+                    "height": 0
+                },
+                "xl": {
+                    "image": "/media/2017/04/11/288200/thumbs/873x400.jpg",
+                    "width": 0,
+                    "height": 0
+                },
+                "m": {
+                    "image": "/media/2017/04/11/288200/thumbs/429x286.jpg",
+                    "width": 0,
+                    "height": 0
+                }
+            },
+            "image_caption": null,
+            "image_source": null
+        }
+    ]
+}
