@@ -83,7 +83,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     class ArticlesViewHolderText extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.textview_article)
+        @BindView(R.id.textView)
         TextView text;
 
         ArticlesViewHolderText(View itemView) {
