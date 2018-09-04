@@ -56,7 +56,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         if(holder.getItemViewType() == Constants.IMAGE_VIEW_TYPE){
             ArticlesViewHolderImage holderImage = (ArticlesViewHolderImage) holder;
             Glide.with(holder.itemView.getContext())
-                .load(content.getImage())
+                .load(Constants.NEWS_API_BASE_URL + content.getImage().getOriginal())
                 .into(holderImage.image);
         }else{
             ArticlesViewHolderText holderText = (ArticlesViewHolderText) holder;

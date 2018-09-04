@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +15,15 @@ import android.view.ViewGroup;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
+import news.factory.com.adapters.RecyclerViewAdapter;
 import news.factory.com.utils.Constants;
 
 public class ArticleFragment extends Fragment implements ArticleFragmentView{
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
+
+    RecyclerViewAdapter adapter;
     ArticleFragmentPresenter presenter;
 
 
@@ -35,6 +41,7 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView{
         View view = inflater.inflate(R.layout.activity_main,container,false);
         ButterKnife.bind(this,view);
         presenter = new ArticleFragmentPresenterImpl(this);
+
         return view;
     }
 
@@ -43,6 +50,8 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView{
         super.onViewCreated(view, savedInstanceState);
 
     }
+
+
 
     @Override
     public void onStart() {
