@@ -20,6 +20,7 @@ import news.factory.com.model.Content;
 import news.factory.com.utils.Constants;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+
     private final List<Content> mContents = new ArrayList<>();
 
     public void fillData(List<Content> contents){

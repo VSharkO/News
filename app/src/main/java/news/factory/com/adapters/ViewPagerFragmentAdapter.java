@@ -20,7 +20,7 @@ public class ViewPagerFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return ArticleFragment.newInstance(position);
+        return new ArticleFragment();
     }
 
     @Override

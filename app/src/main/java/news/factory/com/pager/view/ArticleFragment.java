@@ -9,11 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.App;
 import news.factory.com.R;
 import news.factory.com.adapters.RecyclerViewAdapter;
+import news.factory.com.model.Content;
 import news.factory.com.pager.presenter.ArticleFragmentPresenter;
 import news.factory.com.pager.presenter.ArticleFragmentPresenterImpl;
 import news.factory.com.utils.Constants;
@@ -25,14 +29,6 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
 
     RecyclerViewAdapter adapter;
     ArticleFragmentPresenter presenter;
-
-    public static Fragment newInstance(int index) {
-        Bundle data = new Bundle();
-        data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index);
-        ArticleFragment f = new ArticleFragment();
-        f.setArguments(data);
-        return f;
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -59,10 +55,9 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
-        presenter.setData(index);
+    public void fillAdapterData(List<Content> content){
+        adapter.fillData(content);
+        adapter.notifyDataSetChanged();
     }
 
 }
