@@ -1,6 +1,6 @@
 package news.factory.com.model;
 
-public class Created_at
+public class PublishedAt
 {
     private String timezone;
 

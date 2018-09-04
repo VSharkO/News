@@ -50,7 +50,7 @@ public class News {
 
     private String updated_at_atom;
 
-    private Category_analytics category_analytics;
+    private CategoryAnalytics mCategory_analytics;
 
     private String featured_image_source;
 
@@ -70,7 +70,7 @@ public class News {
 
     private String published_at_atom;
 
-    private Created_at created_at;
+    private CreatedAt mCreated_at;
 
     private String urlm;
 
@@ -80,13 +80,13 @@ public class News {
 
     private String featured_image_caption;
 
-    private Featured_image featured_image;
+    private FeaturedImage mFeatured_image;
 
     private String index_block;
 
     private String intro;
 
-    private Published_at published_at;
+    private PublishedAt mPublished_at;
 
     private String uppertitle_raw;
 
@@ -340,14 +340,14 @@ public class News {
         this.updated_at_atom = updated_at_atom;
     }
 
-    public Category_analytics getCategory_analytics ()
+    public CategoryAnalytics getCategory_analytics ()
     {
-        return category_analytics;
+        return mCategory_analytics;
     }
 
-    public void setCategory_analytics (Category_analytics category_analytics)
+    public void setCategory_analytics (CategoryAnalytics category_analytics)
     {
-        this.category_analytics = category_analytics;
+        this.mCategory_analytics = category_analytics;
     }
 
     public String getFeatured_image_source ()
@@ -440,14 +440,14 @@ public class News {
         this.published_at_atom = published_at_atom;
     }
 
-    public Created_at getCreated_at ()
+    public CreatedAt getCreated_at ()
     {
-        return created_at;
+        return mCreated_at;
     }
 
-    public void setCreated_at (Created_at created_at)
+    public void setCreated_at (CreatedAt created_at)
     {
-        this.created_at = created_at;
+        this.mCreated_at = created_at;
     }
 
     public String getUrlm ()
@@ -490,14 +490,14 @@ public class News {
         this.featured_image_caption = featured_image_caption;
     }
 
-    public Featured_image getFeatured_image ()
+    public FeaturedImage getFeatured_image ()
     {
-        return featured_image;
+        return mFeatured_image;
     }
 
-    public void setFeatured_image (Featured_image featured_image)
+    public void setFeatured_image (FeaturedImage featured_image)
     {
-        this.featured_image = featured_image;
+        this.mFeatured_image = featured_image;
     }
 
     public String getIndex_block ()
@@ -520,14 +520,14 @@ public class News {
         this.intro = intro;
     }
 
-    public Published_at getPublished_at ()
+    public PublishedAt getPublished_at ()
     {
-        return published_at;
+        return mPublished_at;
     }
 
-    public void setPublished_at (Published_at published_at)
+    public void setPublished_at (PublishedAt published_at)
     {
-        this.published_at = published_at;
+        this.mPublished_at = published_at;
     }
 
     public String getUppertitle_raw ()
@@ -593,6 +593,6 @@ public class News {
     @Override
     public String toString()
     {
-        return "ClassPojo [pages_no = "+pages_no+", is_external = "+is_external+", has_mp3 = "+has_mp3+", title_raw = "+title_raw+", category_url = "+category_url+", template = "+template+", mp3_url = "+mp3_url+", status = "+status+", category_id = "+category_id+", no_featured_image = "+no_featured_image+", published_at_humans = "+published_at_humans+", url = "+url+", category_color = "+category_color+", content = "+content+", shares = "+shares+", has_video = "+has_video+", hits = "+hits+", category = "+category+", updated_at = "+updated_at+", index_block_position = "+index_block_position+", has_gallery = "+has_gallery+", slug = "+slug+", breaking_news = "+breaking_news+", updated_at_atom = "+updated_at_atom+", category_analytics = "+category_analytics+", featured_image_source = "+featured_image_source+", breadcrumbs = "+breadcrumbs+", published_at_rss = "+published_at_rss+", id = "+id+", uppertitle = "+uppertitle+", author = "+author+", title = "+title+", intro_video = "+intro_video+", published_at_atom = "+published_at_atom+", created_at = "+created_at+", urlm = "+urlm+", tags = "+tags+", article_edition = "+article_edition+", featured_image_caption = "+featured_image_caption+", featured_image = "+featured_image+", index_block = "+index_block+", intro = "+intro+", published_at = "+published_at+", uppertitle_raw = "+uppertitle_raw+", upcomming = "+upcomming+", category_slug = "+category_slug+", intro_short = "+intro_short+", intro_shorter = "+intro_shorter+", subtitle = "+subtitle+"]";
+        return "ClassPojo [pages_no = "+pages_no+", is_external = "+is_external+", has_mp3 = "+has_mp3+", title_raw = "+title_raw+", category_url = "+category_url+", template = "+template+", mp3_url = "+mp3_url+", status = "+status+", category_id = "+category_id+", no_featured_image = "+no_featured_image+", published_at_humans = "+published_at_humans+", url = "+url+", category_color = "+category_color+", content = "+content+", shares = "+shares+", has_video = "+has_video+", hits = "+hits+", category = "+category+", updated_at = "+updated_at+", index_block_position = "+index_block_position+", has_gallery = "+has_gallery+", slug = "+slug+", breaking_news = "+breaking_news+", updated_at_atom = "+updated_at_atom+", mCategory_analytics = "+ mCategory_analytics +", featured_image_source = "+featured_image_source+", breadcrumbs = "+breadcrumbs+", published_at_rss = "+published_at_rss+", id = "+id+", uppertitle = "+uppertitle+", author = "+author+", title = "+title+", intro_video = "+intro_video+", published_at_atom = "+published_at_atom+", mCreated_at = "+ mCreated_at +", urlm = "+urlm+", tags = "+tags+", article_edition = "+article_edition+", featured_image_caption = "+featured_image_caption+", mFeatured_image = "+ mFeatured_image +", index_block = "+index_block+", intro = "+intro+", mPublished_at = "+ mPublished_at +", uppertitle_raw = "+uppertitle_raw+", upcomming = "+upcomming+", category_slug = "+category_slug+", intro_short = "+intro_short+", intro_shorter = "+intro_shorter+", subtitle = "+subtitle+"]";
     }
 }

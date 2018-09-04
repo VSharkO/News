@@ -1,6 +1,6 @@
 package news.factory.com.model;
 
-public class Category_analytics{
+public class CategoryAnalytics {
         private String dotmetrics;
 
         public String getDotmetrics ()

@@ -1,7 +1,7 @@
 package news.factory.com.model;
 import com.google.gson.annotations.SerializedName;
 
-public class Featured_image
+public class FeaturedImage
 {
     private String slider;
 
