@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import news.factory.com.model.News;
-import news.factory.com.pager.ArticleFragment;
+import news.factory.com.pager.view.ArticleFragment;
 
 public class ViewPagerFragmentAdapter extends FragmentPagerAdapter {
 

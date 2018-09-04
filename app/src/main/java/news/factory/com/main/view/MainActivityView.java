@@ -1,4 +1,4 @@
-package news.factory.com.main;
+package news.factory.com.main.view;
 
 import java.util.List;
 

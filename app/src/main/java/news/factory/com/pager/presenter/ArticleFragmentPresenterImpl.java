@@ -1,9 +1,7 @@
-package news.factory.com.pager;
+package news.factory.com.pager.presenter;
 
-
-import java.util.List;
-
-import news.factory.com.model.News;
+import news.factory.com.pager.view.ArticleFragment;
+import news.factory.com.pager.view.ArticleFragmentView;
 
 public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter {
 
@@ -22,10 +20,6 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter {
     @Override
     public void setData(int index) {
         mIndex = index;
-    }
-
-    public void setView(News news){
-
     }
 
 }
