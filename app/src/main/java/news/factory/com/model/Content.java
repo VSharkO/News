@@ -1,5 +1,7 @@
 package news.factory.com.model;
 
+import android.media.Image;
+
 public class Content
 {
     private String id;
@@ -19,6 +21,16 @@ public class Content
     private String data;
 
     private String type;
+
+    private Image image;
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
 
     public String getId ()
     {
