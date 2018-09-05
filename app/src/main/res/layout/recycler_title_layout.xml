@@ -10,12 +10,8 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textStyle="bold"
-        android:gravity="center" />
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/dp6"/>
 
-    <ImageView
-        android:id="@+id/featuredImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/titleText"
-        />
 </RelativeLayout>

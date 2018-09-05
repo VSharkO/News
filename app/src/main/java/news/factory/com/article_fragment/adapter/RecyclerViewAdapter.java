@@ -15,19 +15,24 @@ import java.util.ArrayList;
 import java.util.List;
 import news.factory.com.R;
 import news.factory.com.model.Content;
+import news.factory.com.model.FeaturedImage;
 import news.factory.com.model.News;
 import news.factory.com.utils.Constants;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-    private News news;
-    private List<Object> elements = new ArrayList<>();
+    private List<Object> items = new ArrayList<>();
 
-    public void fillData(News news){
-        this.news = news;
-        elements.clear();
-        elements.add(news);
-        elements.addAll(news.getContent());
+    public void fillData(News oneNews){
+        News news = oneNews;
+
+        items.clear();
+
+        if(news.getNo_featured_image().equals(Constants.FALSE)) {
+            items.add(oneNews.getFeatured_image());
+        }
+        items.add(oneNews.getTitle());
+        items.addAll(news.getContent());
     }
 
     @NonNull
@@ -41,19 +46,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             View itemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.text_layout,parent,false);
             return new ArticlesViewHolderText(itemView);
+        }else if(viewType == Constants.TITLE_VIEW_TYPE){
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.recycler_title_layout,parent,false);
+            return new ArticlesViewHolderTitle(itemView);
         }else{
             View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.recycler_item_header_layout,parent,false);
-            return new ArticlesViewHolderHeader(itemView);
+                    .inflate(R.layout.recycler_featured_image, parent, false);
+            return new ArticlesViewHolderFeaturedImages(itemView);
         }
     }
 
     @Override
     public int getItemViewType(int position) {
-        if(elements.get(position).getClass() == News.class){
-            return Constants.NEWS_VIEW_TYPE;
-        }else {
-            Content content = (Content)elements.get(position);
+        if(items.get(position).getClass() == FeaturedImage.class){
+            return Constants.FEATURED_IMAGE_VIEW_TYPE;
+        }
+        else if(items.get(position).getClass() == String.class){
+            return Constants.TITLE_VIEW_TYPE;
+        }else{
+            Content content = (Content)items.get(position);
             if (content.getType().equals(Constants.IMAGE)) {
                 return Constants.IMAGE_VIEW_TYPE;
             } else {
@@ -66,30 +78,33 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         if(holder.getItemViewType() == Constants.IMAGE_VIEW_TYPE){
-            Content content = (Content)elements.get(position);
+            Content content = (Content) items.get(position);
             ArticlesViewHolderImage holderImage = (ArticlesViewHolderImage) holder;
             Glide.with(holderImage.itemView.getContext())
                 .load(Constants.NEWS_PICTURE_BASE_URL + content.getImage().getOriginal())
                 .into(holderImage.image);
-        }else if(holder.getItemViewType() == Constants.TEXT_VIEW_TYPE){
-            Content content = (Content)elements.get(position);
+        }
+        else if(holder.getItemViewType() == Constants.TEXT_VIEW_TYPE){
+            Content content = (Content) items.get(position);
             ArticlesViewHolderText holderText = (ArticlesViewHolderText) holder;
             holderText.text.setText(Html.fromHtml(content.getData()));
         }
+        else if(holder.getItemViewType() == Constants.TITLE_VIEW_TYPE){
+            ArticlesViewHolderTitle holderTitle = (ArticlesViewHolderTitle) holder;
+            holderTitle.text.setText(items.get(position).toString());
+        }
         else{
-            ArticlesViewHolderHeader holderHeader = (ArticlesViewHolderHeader) holder;
-            if(news.getNo_featured_image().equals(Constants.FALSE)){
-                Glide.with(holderHeader.itemView.getContext())
-                        .load(Constants.NEWS_PICTURE_BASE_URL + news.getFeatured_image().getOriginal())
-                        .into(holderHeader.image);
-            }
-            holderHeader.text.setText(news.getTitle());
+            FeaturedImage image = (FeaturedImage) items.get(position);
+            ArticlesViewHolderFeaturedImages holderFeaturedImages = (ArticlesViewHolderFeaturedImages) holder;
+            Glide.with(holderFeaturedImages.itemView.getContext())
+                    .load(Constants.NEWS_PICTURE_BASE_URL + image.getOriginal())
+                    .into(holderFeaturedImages.image);
         }
     }
 
     @Override
     public int getItemCount() {
-        return elements.size();
+        return items.size();
     }
 
     class ArticlesViewHolderImage extends RecyclerView.ViewHolder {
@@ -112,14 +127,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-    class ArticlesViewHolderHeader extends RecyclerView.ViewHolder {
+    class ArticlesViewHolderTitle extends RecyclerView.ViewHolder {
 
         TextView text;
-        ImageView image;
 
-        ArticlesViewHolderHeader(View itemView) {
+        ArticlesViewHolderTitle(View itemView) {
             super(itemView);
             text = itemView.findViewById(R.id.titleText);
+        }
+    }
+
+    class ArticlesViewHolderFeaturedImages extends RecyclerView.ViewHolder {
+
+        ImageView image;
+
+        ArticlesViewHolderFeaturedImages(View itemView) {
+            super(itemView);
             image = itemView.findViewById(R.id.featuredImage);
         }
     }
