@@ -2,6 +2,7 @@ package news.factory.com.article_fragment.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,8 +61,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 .into(holderImage.image);
         }else{
             ArticlesViewHolderText holderText = (ArticlesViewHolderText) holder;
-            //parsasti html
-            holderText.text.setText(content.getData());
+            holderText.text.setText(Html.fromHtml(content.getData()));
         }
     }
 
