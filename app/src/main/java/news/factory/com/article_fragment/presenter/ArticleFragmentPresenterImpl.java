@@ -24,8 +24,8 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter {
     public void setData(int index) {
         mNetworkingHelper.getProductsFromAPI(new NetworkResponseListener<News>() {
             @Override
-            public void onSuccess(News callback) {
-                view.fillAdapterDataNews(callback);
+            public void onSuccess(News news) {
+                view.fillAdapterDataNews(news);
             }
 
             @Override
