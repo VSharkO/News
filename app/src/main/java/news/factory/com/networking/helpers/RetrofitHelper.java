@@ -19,5 +19,4 @@ public class RetrofitHelper {
     public Service provideNewsAPIService(Retrofit retrofit) {
         return retrofit.create(Service.class);
     }
-
 }

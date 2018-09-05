@@ -13,7 +13,6 @@ import news.factory.com.main.presenter.MainActivityPresenterImpl;
 public class MainActivity extends AppCompatActivity implements MainActivityView {
 
     ViewPager mViewPager;
-
     ViewPagerFragmentAdapter mAdapter;
     MainActivityPresenter mPresenter;
 
