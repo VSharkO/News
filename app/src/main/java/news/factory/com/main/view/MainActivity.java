@@ -4,7 +4,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import news.factory.com.App;
 import news.factory.com.R;
 import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
 import news.factory.com.main.presenter.MainActivityPresenter;
