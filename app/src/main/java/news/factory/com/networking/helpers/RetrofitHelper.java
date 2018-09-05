@@ -8,11 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitHelper {
 
-    public NetworkingHelper provideNetworkingHelper(OkHttpClient client){
-        return new NetworkingHelperImpl(provideNewsAPIService(provideRestClient(client)));
-    }
-
-    private Retrofit provideRestClient(OkHttpClient okHttpClient) {
+    public Retrofit provideRestClient(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .baseUrl(Constants.NEWS_API_BASE_URL)
                 .client(okHttpClient)
@@ -20,7 +16,7 @@ public class RetrofitHelper {
                 .build();
     }
 
-    private Service provideNewsAPIService(Retrofit retrofit) {
+    public Service provideNewsAPIService(Retrofit retrofit) {
         return retrofit.create(Service.class);
     }
 }
