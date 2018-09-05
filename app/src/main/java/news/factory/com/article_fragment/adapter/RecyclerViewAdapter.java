@@ -25,7 +25,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public void fillData(News oneNews){
         News news = oneNews;
-
         items.clear();
 
         if(news.getNo_featured_image().equals(Constants.FALSE)) {
