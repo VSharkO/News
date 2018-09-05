@@ -1,5 +1,4 @@
 package news.factory.com.main.presenter;
-
 import news.factory.com.App;
 import news.factory.com.main.view.MainActivityView;
 import news.factory.com.model.News;

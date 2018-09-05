@@ -23,7 +23,6 @@ import news.factory.com.utils.Constants;
 public class ArticleFragment extends Fragment implements ArticleFragmentView {
 
     RecyclerView mRecyclerView;
-
     RecyclerViewAdapter adapter;
     ArticleFragmentPresenter presenter;
 
@@ -38,6 +37,7 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        presenter = new ArticleFragmentPresenterImpl(this);
         View view = inflater.inflate(R.layout.fragment_article,container,false);
         return view;
     }
@@ -45,7 +45,6 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        presenter = new ArticleFragmentPresenterImpl(this);
         mRecyclerView = view.findViewById(R.id.recyclerView);
         provideRecyclerViewAdapter();
     }

@@ -1,5 +1,7 @@
 package news.factory.com.model;
 
+import java.util.List;
+
 public class News {
 
     private String pages_no;
@@ -28,7 +30,7 @@ public class News {
 
     private String category_color;
 
-    private Content[] content;
+    private List<Content> content;
 
     private String shares;
 
@@ -230,14 +232,9 @@ public class News {
         this.category_color = category_color;
     }
 
-    public Content[] getContent ()
+    public List<Content> getContent ()
     {
         return content;
-    }
-
-    public void setContent (Content[] content)
-    {
-        this.content = content;
     }
 
     public String getShares ()

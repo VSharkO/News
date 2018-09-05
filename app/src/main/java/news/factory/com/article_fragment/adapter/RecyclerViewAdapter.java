@@ -43,11 +43,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public int getItemViewType(int position) {
         if(mContents.get(position).getType().equals(Constants.IMAGE)){
-            Timber.e("TU SAM");
             return Constants.IMAGE_VIEW_TYPE;
         }
         else{
-            Timber.e("TU SAM");
             return Constants.TEXT_VIEW_TYPE;
         }
     }
@@ -55,7 +53,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Content content = mContents.get(position);
-
         if(holder.getItemViewType() == Constants.IMAGE_VIEW_TYPE){
             ArticlesViewHolderImage holderImage = (ArticlesViewHolderImage) holder;
             Glide.with(holderImage.itemView.getContext())

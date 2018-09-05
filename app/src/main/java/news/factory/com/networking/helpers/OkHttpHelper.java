@@ -30,7 +30,6 @@ public class OkHttpHelper {
             @Override
             public Response intercept(Interceptor.Chain chain) throws IOException {
                 Request request = chain.request();
-                //HttpUrl httpUrl = original.url();
 
                 HttpUrl newHttpUrl = request.url()
                         .newBuilder()

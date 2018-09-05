@@ -1,8 +1,6 @@
 package news.factory.com.article_fragment.presenter;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import news.factory.com.App;
 import news.factory.com.model.Content;
 import news.factory.com.model.News;
@@ -29,7 +27,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter {
         mNetworkingHelper.getProductsFromAPI(new NetworkResponseListener<News>() {
             @Override
             public void onSuccess(News callback) {
-                List<Content> content = new ArrayList<>();
+                List<Content> content = callback.getContent();
                 view.fillAdapterData(content);
             }
 
