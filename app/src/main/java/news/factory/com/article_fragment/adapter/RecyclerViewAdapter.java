@@ -22,14 +22,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private List<Object> items = new ArrayList<>();
 
     public void fillData(News oneNews){
-        News news = oneNews;
         items.clear();
 
-        if(news.getNo_featured_image().equals(Constants.FALSE)) {
+        if(oneNews.getNo_featured_image().equals(Constants.FALSE)) {
             items.add(oneNews.getFeatured_image());
         }
         items.add(oneNews.getTitle());
-        items.addAll(news.getContent());
+        items.addAll(oneNews.getContent());
     }
 
     @NonNull
