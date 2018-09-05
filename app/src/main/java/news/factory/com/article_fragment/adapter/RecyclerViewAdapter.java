@@ -15,16 +15,19 @@ import java.util.ArrayList;
 import java.util.List;
 import news.factory.com.R;
 import news.factory.com.model.Content;
+import news.factory.com.model.News;
 import news.factory.com.utils.Constants;
-import timber.log.Timber;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-    private final List<Content> mContents = new ArrayList<>();
+    private News news;
+    private List<Object> elements = new ArrayList<>();
 
-    public void fillData(List<Content> contents){
-        mContents.clear();
-        mContents.addAll(contents);
+    public void fillData(News news){
+        this.news = news;
+        elements.clear();
+        elements.add(news);
+        elements.addAll(news.getContent());
     }
 
     @NonNull
@@ -34,40 +37,59 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             View itemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.image_layout,parent,false);
             return new ArticlesViewHolderImage(itemView);
-        }else{
+        }else if(viewType == Constants.TEXT_VIEW_TYPE){
             View itemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.text_layout,parent,false);
             return new ArticlesViewHolderText(itemView);
+        }else{
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.recycler_item_header_layout,parent,false);
+            return new ArticlesViewHolderHeader(itemView);
         }
     }
 
     @Override
     public int getItemViewType(int position) {
-        if(mContents.get(position).getType().equals(Constants.IMAGE)){
-            return Constants.IMAGE_VIEW_TYPE;
-        }
-        else{
-            return Constants.TEXT_VIEW_TYPE;
+        if(elements.get(position).getClass() == News.class){
+            return Constants.NEWS_VIEW_TYPE;
+        }else {
+            Content content = (Content)elements.get(position);
+            if (content.getType().equals(Constants.IMAGE)) {
+                return Constants.IMAGE_VIEW_TYPE;
+            } else {
+                return Constants.TEXT_VIEW_TYPE;
+            }
         }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        Content content = mContents.get(position);
+
         if(holder.getItemViewType() == Constants.IMAGE_VIEW_TYPE){
+            Content content = (Content)elements.get(position);
             ArticlesViewHolderImage holderImage = (ArticlesViewHolderImage) holder;
             Glide.with(holderImage.itemView.getContext())
                 .load(Constants.NEWS_PICTURE_BASE_URL + content.getImage().getOriginal())
                 .into(holderImage.image);
-        }else{
+        }else if(holder.getItemViewType() == Constants.TEXT_VIEW_TYPE){
+            Content content = (Content)elements.get(position);
             ArticlesViewHolderText holderText = (ArticlesViewHolderText) holder;
             holderText.text.setText(Html.fromHtml(content.getData()));
+        }
+        else{
+            ArticlesViewHolderHeader holderHeader = (ArticlesViewHolderHeader) holder;
+            if(news.getNo_featured_image().equals(Constants.FALSE)){
+                Glide.with(holderHeader.itemView.getContext())
+                        .load(Constants.NEWS_PICTURE_BASE_URL + news.getFeatured_image().getOriginal())
+                        .into(holderHeader.image);
+            }
+            holderHeader.text.setText(news.getTitle());
         }
     }
 
     @Override
     public int getItemCount() {
-        return mContents.size();
+        return elements.size();
     }
 
     class ArticlesViewHolderImage extends RecyclerView.ViewHolder {
@@ -87,6 +109,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         ArticlesViewHolderText(View itemView) {
             super(itemView);
             text = itemView.findViewById(R.id.textView);
+        }
+    }
+
+    class ArticlesViewHolderHeader extends RecyclerView.ViewHolder {
+
+        TextView text;
+        ImageView image;
+
+        ArticlesViewHolderHeader(View itemView) {
+            super(itemView);
+            text = itemView.findViewById(R.id.titleText);
+            image = itemView.findViewById(R.id.featuredImage);
         }
     }
 }

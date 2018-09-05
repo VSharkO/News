@@ -18,6 +18,7 @@ import news.factory.com.article_fragment.adapter.RecyclerViewAdapter;
 import news.factory.com.model.Content;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenterImpl;
+import news.factory.com.model.News;
 import news.factory.com.utils.Constants;
 
 public class ArticleFragment extends Fragment implements ArticleFragmentView {
@@ -58,8 +59,8 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     }
 
     @Override
-    public void fillAdapterData(List<Content> content) {
-        adapter.fillData(content);
+    public void fillAdapterDataNews(News news) {
+        adapter.fillData(news);
         adapter.notifyDataSetChanged();
     }
 

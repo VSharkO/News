@@ -1,5 +1,7 @@
 package news.factory.com.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class News {
@@ -82,6 +84,7 @@ public class News {
 
     private String featured_image_caption;
 
+    @SerializedName("featured_image")
     private FeaturedImage mFeatured_image;
 
     private String index_block;

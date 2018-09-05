@@ -1,11 +1,11 @@
 package news.factory.com.model;
 import com.google.gson.annotations.SerializedName;
 
+
 public class FeaturedImage
 {
     private String slider;
 
-    @SerializedName("3xl")
     private String xxxl;
 
     private String s;
@@ -29,19 +29,9 @@ public class FeaturedImage
         return slider;
     }
 
-    public void setSlider (String slider)
-    {
-        this.slider = slider;
-    }
-
     public String get3xl ()
     {
         return xxxl;
-    }
-
-    public void set3xl (String xxxl)
-    {
-        this.xxxl = xxxl;
     }
 
     public String getS ()
@@ -49,19 +39,9 @@ public class FeaturedImage
         return s;
     }
 
-    public void setS (String s)
-    {
-        this.s = s;
-    }
-
     public String getXxl ()
     {
         return xxl;
-    }
-
-    public void setXxl (String xxl)
-    {
-        this.xxl = xxl;
     }
 
     public String getXl ()
@@ -69,19 +49,9 @@ public class FeaturedImage
         return xl;
     }
 
-    public void setXl (String xl)
-    {
-        this.xl = xl;
-    }
-
     public String getOriginal ()
     {
         return original;
-    }
-
-    public void setOriginal (String original)
-    {
-        this.original = original;
     }
 
     public String getXs ()
@@ -89,19 +59,9 @@ public class FeaturedImage
         return xs;
     }
 
-    public void setXs (String xs)
-    {
-        this.xs = xs;
-    }
-
     public String getXxs ()
     {
         return xxs;
-    }
-
-    public void setXxs (String xxs)
-    {
-        this.xxs = xxs;
     }
 
     public String getL ()
@@ -109,20 +69,11 @@ public class FeaturedImage
         return l;
     }
 
-    public void setL (String l)
-    {
-        this.l = l;
-    }
-
     public String getM ()
     {
         return m;
     }
 
-    public void setM (String m)
-    {
-        this.m = m;
-    }
 
     @Override
     public String toString()
