@@ -40,4 +40,5 @@ public class App extends Application {
     public Service getService() {
         return mService;
     }
+
 }
