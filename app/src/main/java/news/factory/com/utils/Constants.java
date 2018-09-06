@@ -14,7 +14,7 @@ public class Constants {
     public static final int IMAGE_VIEW_TYPE = 0;
     public static final int TEXT_VIEW_TYPE = 1;
     public static final int TITLE_VIEW_TYPE = 2;
-    public static final int FEATURED_IMAGE_VIEW_TYPE = 3;
+    public static final int HEADER_VIEW_TYPE = 3;
     public static final String IMAGE = "image";
     public static final String TEXT = "text";
     public static final String FALSE = "false";

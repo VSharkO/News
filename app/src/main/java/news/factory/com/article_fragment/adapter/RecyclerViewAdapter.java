@@ -11,9 +11,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import news.factory.com.App;
 import news.factory.com.R;
 import news.factory.com.model.Content;
-import news.factory.com.model.FeaturedImage;
+import news.factory.com.model.HeaderForSingle;
 import news.factory.com.model.News;
 import news.factory.com.utils.Constants;
 
@@ -23,13 +26,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public void fillData(News oneNews){
         items.clear();
-
-        if(oneNews.getNo_featured_image().equals(Constants.FALSE)) {
-            items.add(oneNews.getFeatured_image());
-        }
-        items.add(oneNews.getTitle());
+        addHeader(oneNews);
         items.addAll(oneNews.getContent());
         notifyDataSetChanged();
+    }
+
+    private void addHeader(News news) {
+        HeaderForSingle header;
+        if(news.getNo_featured_image().equals(Constants.FALSE))
+            header = new HeaderForSingle(news.getFeatured_image().getOriginal()
+                ,news.getFeaturedImageSource(),news.getCategory(),news.getFeatured_image_caption());
+        else{
+            header = new HeaderForSingle(news.getFeaturedImageSource(),news.getCategory(),news.getFeatured_image_caption());
+        }
+        items.add(header);
     }
 
     @NonNull
@@ -53,10 +63,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                     .inflate(R.layout.recycler_title_layout,parent,false);
                 return new ArticlesViewHolderTitle(itemView);
 
-            case Constants.FEATURED_IMAGE_VIEW_TYPE:
+            case Constants.HEADER_VIEW_TYPE:
                 itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.recycler_featured_image, parent, false);
-                return new ArticlesViewHolderFeaturedImages(itemView);
+                    .inflate(R.layout.recycler_header, parent, false);
+                return new ArticlesViewHolderHeader(itemView);
 
             default: return null;
         }
@@ -65,8 +75,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public int getItemViewType(int position) {
-        if(items.get(position).getClass() == FeaturedImage.class){
-            return Constants.FEATURED_IMAGE_VIEW_TYPE;
+        if(items.get(position).getClass() == HeaderForSingle.class){
+            return Constants.HEADER_VIEW_TYPE;
         }
         else if(items.get(position).getClass() == String.class){
             return Constants.TITLE_VIEW_TYPE;
@@ -106,12 +116,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 holderTitle.text.setText(items.get(position).toString());
                 break;
 
-            case  Constants.FEATURED_IMAGE_VIEW_TYPE:
-                FeaturedImage image = (FeaturedImage) items.get(position);
-                ArticlesViewHolderFeaturedImages holderFeaturedImages = (ArticlesViewHolderFeaturedImages) holder;
-                Glide.with(holderFeaturedImages.itemView.getContext())
-                        .load(Constants.NEWS_PICTURE_BASE_URL + image.getOriginal())
-                        .into(holderFeaturedImages.image);
+            case  Constants.HEADER_VIEW_TYPE:
+                HeaderForSingle header = (HeaderForSingle) items.get(position);
+                ArticlesViewHolderHeader holderHeader = (ArticlesViewHolderHeader) holder;
+                Glide.with(holderHeader.itemView.getContext())
+                        .load(Constants.NEWS_PICTURE_BASE_URL)
+                        .into(holderHeader.image);
+                holderHeader.headerCategory.setText(header.getCategory());
+                holderHeader.headerFeaturedSource.setText(App.getInstance().getString(R.string.source_string,header.getFeaturedImageSourceText()));
+                holderHeader.getHeaderFeaturedCaption.setText(header.getFeaturedImageCaption());
                 break;
 
         }
@@ -124,42 +137,48 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     class ArticlesViewHolderImage extends RecyclerView.ViewHolder {
-
+        @BindView(R.id.imageView)
         ImageView image;
 
         ArticlesViewHolderImage(View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.imageView);
+            ButterKnife.bind(this,itemView);
         }
     }
 
     class ArticlesViewHolderText extends RecyclerView.ViewHolder {
-
+        @BindView(R.id.textView)
         TextView text;
 
         ArticlesViewHolderText(View itemView) {
             super(itemView);
-            text = itemView.findViewById(R.id.textView);
+            ButterKnife.bind(this,itemView);
         }
     }
 
     class ArticlesViewHolderTitle extends RecyclerView.ViewHolder {
-
+        @BindView(R.id.titleText)
         TextView text;
 
         ArticlesViewHolderTitle(View itemView) {
             super(itemView);
-            text = itemView.findViewById(R.id.titleText);
+            ButterKnife.bind(this,itemView);
         }
     }
 
-    class ArticlesViewHolderFeaturedImages extends RecyclerView.ViewHolder {
-
+    class ArticlesViewHolderHeader extends RecyclerView.ViewHolder {
+        @BindView(R.id.featuredImage)
         ImageView image;
+        @BindView(R.id.headerCategoryText)
+        TextView headerCategory;
+        @BindView(R.id.headerFeaturedImageSource)
+        TextView headerFeaturedSource;
+        @BindView(R.id.headerFeaturedImageCaption)
+        TextView getHeaderFeaturedCaption;
 
-        ArticlesViewHolderFeaturedImages(View itemView) {
+        ArticlesViewHolderHeader(View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.featuredImage);
+            ButterKnife.bind(this,itemView);
         }
     }
 }

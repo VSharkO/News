@@ -350,7 +350,7 @@ public class News {
         this.mCategory_analytics = category_analytics;
     }
 
-    public String getFeatured_image_source ()
+    public String getFeaturedImageSource ()
     {
         return featured_image_source;
     }
