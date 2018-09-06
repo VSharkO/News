@@ -10,6 +10,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
+import news.factory.com.base.view_holders.article_content.ArticleContentData;
 
 public class ArticleTitleHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.titleText)

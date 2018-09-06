@@ -6,15 +6,19 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Optional;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.utils.Constants;
 
 public class ArticleImageHolder extends RecyclerView.ViewHolder {
+
     @BindView(R.id.imageView)
     ImageView image;
 

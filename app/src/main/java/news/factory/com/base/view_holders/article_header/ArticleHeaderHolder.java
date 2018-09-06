@@ -22,7 +22,7 @@ public class ArticleHeaderHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.caption)
     TextView caption;
 
-    List<RecyclerWrapper> dataList;
+    private List<RecyclerWrapper> dataList;
     public ArticleHeaderHolder(View itemView, List<RecyclerWrapper> data) {
         super(itemView);
         dataList = data;

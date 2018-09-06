@@ -32,16 +32,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         View itemView = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
 
         switch (viewType){
-            case RecyclerWrapper.TYPE_ARTICLE_HEADER:
+            case RecyclerWrapper.TYPE_ARTICLE_IMAGE:
                 return new ArticleImageHolder(itemView,dataList);
 
-            case RecyclerWrapper.TYPE_ARTICLE_IMAGE:
+            case RecyclerWrapper.TYPE_ARTICLE_TEXT:
                 return new ArticleContentHolder(itemView,dataList);
 
-            case RecyclerWrapper.TYPE_ARTICLE_TEXT:
+            case RecyclerWrapper.TYPE_ARTICLE_TITLE:
                 return new ArticleTitleHolder(itemView,dataList);
 
-            case RecyclerWrapper.TYPE_ARTICLE_TITLE:
+            case RecyclerWrapper.TYPE_ARTICLE_HEADER:
                 return new ArticleHeaderHolder(itemView,dataList);
 
             default: return new DummyHolder(new View(parent.getContext()));
