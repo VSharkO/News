@@ -10,7 +10,7 @@ import news.factory.com.utils.Constants;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
 
-public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter {
+public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener<News>{
 
     private ArticleFragmentView view;
     private NetworkingHelper mNetworkingHelper;
@@ -22,16 +22,16 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter {
 
     @Override
     public void setData(int index) {
-        mNetworkingHelper.getProductsFromAPI(new NetworkResponseListener<News>() {
-            @Override
-            public void onSuccess(News news) {
-                view.fillAdapterDataNews(news);
-            }
+        mNetworkingHelper.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
+    }
 
-            @Override
-            public void onFailure(Throwable throwable) {
-                Timber.e(throwable);
-            }
-        }, Constants.TYPE,Constants.ID,String.valueOf(index));
+    @Override
+    public void onSuccess(News news) {
+        view.fillAdapterDataNews(news);
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+        Timber.e(throwable);
     }
 }
