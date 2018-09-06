@@ -16,13 +16,13 @@ import news.factory.com.utils.Constants;
 
 public class ArticleImageHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.imageView)
-    private ImageView image;
+    ImageView image;
 
     private List<RecyclerWrapper> dataList;
 
     public ArticleImageHolder(View itemView, List<RecyclerWrapper> data) {
         super(itemView);
-        dataList.addAll(data);
+        dataList = data;
         ButterKnife.bind(this,itemView);
     }
 

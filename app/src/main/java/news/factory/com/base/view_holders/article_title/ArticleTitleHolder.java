@@ -13,7 +13,8 @@ import news.factory.com.base.RecyclerWrapper;
 
 public class ArticleTitleHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.titleText)
-    private TextView text;
+    public TextView text;
+
     private List<RecyclerWrapper> dataList;
 
     public ArticleTitleHolder(View itemView, List<RecyclerWrapper> data) {

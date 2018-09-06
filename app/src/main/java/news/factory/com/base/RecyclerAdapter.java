@@ -13,30 +13,18 @@ import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderHolder;
 import news.factory.com.base.view_holders.article_image.ArticleImageHolder;
 import news.factory.com.base.view_holders.article_title.ArticleTitleHolder;
-import news.factory.com.model.HeaderForSingle;
-import news.factory.com.model.News;
 import news.factory.com.utils.Constants;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private List<RecyclerWrapper> dataList = new ArrayList<>();
 
-    public void fillData(List<RecyclerWrapper<Object>> data){
+    public void fillData(List<RecyclerWrapper> data){
         dataList.clear();
         dataList.addAll(data);
         notifyDataSetChanged();
     }
 
-//    private void addHeader(News news) {
-//        HeaderForSingle header;
-//        if(news.getNo_featured_image().equals(Constants.FALSE))
-//            header = new HeaderForSingle(news.getFeatured_image().getOriginal()
-//                ,news.getFeaturedImageSource(),news.getCategory(),news.getFeatured_image_caption());
-//        else{
-//            header = new HeaderForSingle(news.getFeaturedImageSource(),news.getCategory(),news.getFeatured_image_caption());
-//        }
-//        items.add(header);
-//    }
 
     @NonNull
     @Override

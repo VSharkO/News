@@ -2,7 +2,7 @@ package news.factory.com.base;
 
 import news.factory.com.R;
 
-public class RecyclerWrapper<Object> {
+public class RecyclerWrapper {
 
     public static final int TYPE_ARTICLE_TITLE = R.layout.cell_article_title;
     public static final int TYPE_ARTICLE_HEADER = R.layout.cell_article_header;

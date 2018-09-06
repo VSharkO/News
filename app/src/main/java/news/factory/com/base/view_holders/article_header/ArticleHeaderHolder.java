@@ -4,11 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
-
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
@@ -17,13 +14,13 @@ import news.factory.com.utils.Constants;
 
 public class ArticleHeaderHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.featuredImage)
-    private ImageView image;
+    ImageView image;
     @BindView(R.id.headerCategoryText)
-    private TextView category;
+    TextView category;
     @BindView(R.id.source)
-    private TextView source;
+    TextView source;
     @BindView(R.id.caption)
-    private TextView caption;
+    TextView caption;
 
     List<RecyclerWrapper> dataList;
     public ArticleHeaderHolder(View itemView, List<RecyclerWrapper> data) {
