@@ -10,6 +10,4 @@ public class ArticleContentData {
     public String getText() {
         return text;
     }
-
-
 }

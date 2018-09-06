@@ -7,7 +7,7 @@ public class RecyclerWrapper {
     public static final int TYPE_ARTICLE_TITLE = R.layout.cell_article_title;
     public static final int TYPE_ARTICLE_HEADER = R.layout.cell_article_header;
     public static final int TYPE_ARTICLE_IMAGE = R.layout.cell_article_image;
-    public static final int TYPE_ARTICLE_TEXT = R.layout.cell_article_content_text;
+    public static final int TYPE_ARTICLE_TEXT = R.layout.cell_article_content;
 
     private Object data;
     private int type;

@@ -9,6 +9,7 @@ import news.factory.com.base.view_holders.article_content.ArticleContentData;
 import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderData;
 import news.factory.com.base.view_holders.article_image.ArticleImageData;
+import news.factory.com.base.view_holders.article_title.ArticleTitleData;
 import news.factory.com.model.Content;
 import news.factory.com.model.News;
 import news.factory.com.networking.helpers.NetworkingHelper;
@@ -47,7 +48,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
                     news.getFeaturedImageSource(),news.getFeatured_image_caption()),RecyclerWrapper.TYPE_ARTICLE_HEADER));
         }
         //add Title
-        recyclerWrappers.add(new RecyclerWrapper(new ArticleContentData(news.getTitle()),RecyclerWrapper.TYPE_ARTICLE_TITLE));
+        recyclerWrappers.add(new RecyclerWrapper(new ArticleTitleData(news.getTitle()),RecyclerWrapper.TYPE_ARTICLE_TITLE));
         //add contents
         for (Content content : news.getContent()) {
             if(content.getType().equals(Constants.IMAGE))
