@@ -9,14 +9,14 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
-import news.factory.com.base.RecyclerWreper;
+import news.factory.com.base.RecyclerWrapper;
 
 public class ArticleTitleHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.titleText)
     private TextView text;
-    private List<RecyclerWreper> dataList;
+    private List<RecyclerWrapper> dataList;
 
-    public ArticleTitleHolder(View itemView, List<RecyclerWreper> data) {
+    public ArticleTitleHolder(View itemView, List<RecyclerWrapper> data) {
         super(itemView);
         dataList = data;
         ButterKnife.bind(this,itemView);

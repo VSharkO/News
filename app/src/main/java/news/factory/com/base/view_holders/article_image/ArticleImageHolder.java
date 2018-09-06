@@ -11,16 +11,16 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
-import news.factory.com.base.RecyclerWreper;
+import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.utils.Constants;
 
 public class ArticleImageHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.imageView)
     private ImageView image;
 
-    private List<RecyclerWreper> dataList;
+    private List<RecyclerWrapper> dataList;
 
-    public ArticleImageHolder(View itemView, List<RecyclerWreper> data) {
+    public ArticleImageHolder(View itemView, List<RecyclerWrapper> data) {
         super(itemView);
         dataList.addAll(data);
         ButterKnife.bind(this,itemView);

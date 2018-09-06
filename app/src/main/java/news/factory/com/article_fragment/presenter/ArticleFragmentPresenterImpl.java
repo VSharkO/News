@@ -1,6 +1,10 @@
 package news.factory.com.article_fragment.presenter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import news.factory.com.App;
+import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.model.News;
 import news.factory.com.networking.helpers.NetworkingHelper;
 import news.factory.com.article_fragment.view.ArticleFragment;
@@ -27,7 +31,9 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     @Override
     public void onSuccess(News news) {
-        view.fillAdapterDataNews(news);
+        List<RecyclerWrapper> items = new ArrayList<>();
+
+        view.fillAdapterDataNews(items);
     }
 
     @Override

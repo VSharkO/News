@@ -12,7 +12,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
-import news.factory.com.base.RecyclerWreper;
+import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.utils.Constants;
 
 public class ArticleHeaderHolder extends RecyclerView.ViewHolder {
@@ -25,8 +25,8 @@ public class ArticleHeaderHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.caption)
     private TextView caption;
 
-    List<RecyclerWreper> dataList;
-    public ArticleHeaderHolder(View itemView, List<RecyclerWreper> data) {
+    List<RecyclerWrapper> dataList;
+    public ArticleHeaderHolder(View itemView, List<RecyclerWrapper> data) {
         super(itemView);
         dataList = data;
         ButterKnife.bind(this,itemView);

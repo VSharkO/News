@@ -2,7 +2,7 @@ package news.factory.com.base;
 
 import news.factory.com.R;
 
-public class RecyclerWreper<Object> {
+public class RecyclerWrapper<Object> {
 
     public static final int TYPE_ARTICLE_TITLE = R.layout.cell_article_title;
     public static final int TYPE_ARTICLE_HEADER = R.layout.cell_article_header;
@@ -12,11 +12,11 @@ public class RecyclerWreper<Object> {
     private Object data;
     private int type;
 
-    public RecyclerWreper(int type) {
+    public RecyclerWrapper(int type) {
         this.type = type;
     }
 
-    public RecyclerWreper(Object data, int type) {
+    public RecyclerWrapper(Object data, int type) {
         this.data = data;
         this.type = type;
     }
