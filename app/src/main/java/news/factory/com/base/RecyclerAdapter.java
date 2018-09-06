@@ -32,16 +32,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         View itemView = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
 
         switch (viewType){
-            case Constants.IMAGE_VIEW_TYPE:
+            case RecyclerWrapper.TYPE_ARTICLE_HEADER:
                 return new ArticleImageHolder(itemView,dataList);
 
-            case Constants.TEXT_VIEW_TYPE:
+            case RecyclerWrapper.TYPE_ARTICLE_IMAGE:
                 return new ArticleContentHolder(itemView,dataList);
 
-            case Constants.TITLE_VIEW_TYPE:
+            case RecyclerWrapper.TYPE_ARTICLE_TEXT:
                 return new ArticleTitleHolder(itemView,dataList);
 
-            case Constants.HEADER_VIEW_TYPE:
+            case RecyclerWrapper.TYPE_ARTICLE_TITLE:
                 return new ArticleHeaderHolder(itemView,dataList);
 
             default: return new DummyHolder(new View(parent.getContext()));
@@ -57,22 +57,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         switch (holder.getItemViewType()){
-            case Constants.IMAGE_VIEW_TYPE:
+            case RecyclerWrapper.TYPE_ARTICLE_IMAGE:
                 ArticleImageHolder holderImage = (ArticleImageHolder) holder;
                 holderImage.onBind(position);
                 break;
 
-            case Constants.TEXT_VIEW_TYPE:
+            case RecyclerWrapper.TYPE_ARTICLE_TEXT:
                 ArticleContentHolder holderText = (ArticleContentHolder) holder;
                 holderText.onBind(position);
                 break;
 
-            case Constants.TITLE_VIEW_TYPE:
+            case RecyclerWrapper.TYPE_ARTICLE_TITLE:
                 ArticleTitleHolder holderTitle = (ArticleTitleHolder) holder;
                 holderTitle.onBind(position);
                 break;
 
-            case  Constants.HEADER_VIEW_TYPE:
+            case  RecyclerWrapper.TYPE_ARTICLE_HEADER:
                 ArticleHeaderHolder holderHeader = (ArticleHeaderHolder) holder;
                 holderHeader.onBind(position);
                 break;
