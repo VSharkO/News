@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import news.factory.com.App;
 import news.factory.com.R;
 import news.factory.com.model.Content;
 import news.factory.com.model.HeaderForSingle;
@@ -119,9 +120,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 HeaderForSingle header = (HeaderForSingle) items.get(position);
                 ArticlesViewHolderHeader holderHeader = (ArticlesViewHolderHeader) holder;
                 Glide.with(holderHeader.itemView.getContext())
-                        .load(Constants.NEWS_PICTURE_BASE_URL + header.getFeaturedImage())
+                        .load(Constants.NEWS_PICTURE_BASE_URL)
                         .into(holderHeader.image);
                 holderHeader.headerCategory.setText(header.getCategory());
+                holderHeader.headerFeaturedSource.setText(App.getInstance().getString(R.string.source_string,header.getFeaturedImageSourceText()));
+                holderHeader.getHeaderFeaturedCaption.setText(header.getFeaturedImageCaption());
                 break;
         }
 
