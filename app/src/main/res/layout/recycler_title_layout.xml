@@ -5,13 +5,10 @@
     android:layout_height="wrap_content">
 
     <TextView
+        style="@style/SingleArticleTitle"
         android:id="@+id/titleText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:layout_marginBottom="@dimen/dp6"/>
+        />
 
 </RelativeLayout>

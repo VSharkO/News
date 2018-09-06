@@ -29,6 +29,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
         items.add(oneNews.getTitle());
         items.addAll(oneNews.getContent());
+        notifyDataSetChanged();
     }
 
     @NonNull

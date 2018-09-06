@@ -9,13 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import java.util.List;
-
-import news.factory.com.App;
 import news.factory.com.R;
 import news.factory.com.article_fragment.adapter.RecyclerViewAdapter;
-import news.factory.com.model.Content;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenterImpl;
 import news.factory.com.model.News;
@@ -48,11 +43,13 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
         super.onViewCreated(view, savedInstanceState);
         mRecyclerView = view.findViewById(R.id.recyclerView);
         provideRecyclerViewAdapter();
+        int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
+        presenter.setData(index);
     }
 
     public void provideRecyclerViewAdapter() {
         adapter = new RecyclerViewAdapter();
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(App.getInstance());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(adapter);
@@ -61,14 +58,8 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     @Override
     public void fillAdapterDataNews(News news) {
         adapter.fillData(news);
-        adapter.notifyDataSetChanged();
+
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
-        presenter.setData(index);
-    }
 }
 
