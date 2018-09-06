@@ -34,4 +34,5 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     public void onFailure(Throwable throwable) {
         Timber.e(throwable);
     }
+
 }
