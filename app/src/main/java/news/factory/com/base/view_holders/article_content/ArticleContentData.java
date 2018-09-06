@@ -1,5 +1,7 @@
 package news.factory.com.base.view_holders.article_content;
 
+import android.text.Html;
+
 public class ArticleContentData {
     private String text;
 
@@ -8,6 +10,6 @@ public class ArticleContentData {
     }
 
     public String getText() {
-        return text;
+        return Html.fromHtml(text).toString();
     }
 }

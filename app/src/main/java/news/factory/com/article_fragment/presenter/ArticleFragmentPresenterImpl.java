@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import news.factory.com.App;
+import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.view_holders.article_content.ArticleContentData;
 import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
@@ -37,28 +38,9 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     @Override
     public void onSuccess(News news) {
-        List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
-        //add header
-        if(news.getNo_featured_image().equals(Constants.FALSE))
-            recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(news.getFeatured_image().getOriginal(),
-                    news.getCategory(),news.getFeaturedImageSource(),news.getFeatured_image_caption()),RecyclerWrapper.TYPE_ARTICLE_HEADER));
-        else{
-            recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(news.getCategory(),
-                    news.getFeaturedImageSource(),news.getFeatured_image_caption()),RecyclerWrapper.TYPE_ARTICLE_HEADER));
-        }
-        //add Title
-        recyclerWrappers.add(new RecyclerWrapper(new ArticleTitleData(news.getTitle()),RecyclerWrapper.TYPE_ARTICLE_TITLE));
-        //add contents
-        for (Content content : news.getContent()) {
-            if(content.getType().equals(Constants.IMAGE))
-                recyclerWrappers.add(new RecyclerWrapper(new ArticleImageData(content.getImage().getOriginal()),RecyclerWrapper.TYPE_ARTICLE_IMAGE));
-            else{
-                recyclerWrappers.add(new RecyclerWrapper(new ArticleContentData(content.getData()),RecyclerWrapper.TYPE_ARTICLE_TEXT));
-            }
-        }
 
-        view.fillAdapterDataNews(recyclerWrappers);
+        view.fillAdapterDataNews(getSortedItems(news));
     }
 
     @Override
@@ -69,16 +51,24 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private List<RecyclerWrapper> getSortedItems(News news) {
 
+        String category = news.getCategory();
+        String featuredImageSource = App.getInstance().getString(R.string.source_string,news.getFeaturedImageSource());
+        String featuredImageCaption = news.getFeatured_image_caption();
+        String title = news.getTitle();
+
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
+        //add header
         if(news.getNo_featured_image().equals(Constants.FALSE))
             recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(news.getFeatured_image().getOriginal(),
-                    news.getCategory(),news.getFeaturedImageSource(),news.getFeatured_image_caption()),RecyclerWrapper.TYPE_ARTICLE_HEADER));
+                    category,featuredImageSource,featuredImageCaption),RecyclerWrapper.TYPE_ARTICLE_HEADER));
         else{
-            recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(news.getCategory(),
-                    news.getFeaturedImageSource(),news.getFeatured_image_caption()),RecyclerWrapper.TYPE_ARTICLE_HEADER));
+            recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(category,featuredImageSource
+                    ,featuredImageCaption,news.getFeatured_image_caption()),RecyclerWrapper.TYPE_ARTICLE_HEADER));
         }
-        recyclerWrappers.add(new RecyclerWrapper(new ArticleContentData(news.getTitle()),RecyclerWrapper.TYPE_ARTICLE_TITLE));
+        //add Title
+        recyclerWrappers.add(new RecyclerWrapper(new ArticleTitleData(title),RecyclerWrapper.TYPE_ARTICLE_TITLE));
+        //add contents
         for (Content content : news.getContent()) {
             if(content.getType().equals(Constants.IMAGE))
                 recyclerWrappers.add(new RecyclerWrapper(new ArticleImageData(content.getImage().getOriginal()),RecyclerWrapper.TYPE_ARTICLE_IMAGE));
