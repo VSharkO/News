@@ -10,12 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
-import news.factory.com.article_fragment.adapter.RecyclerViewAdapter;
+import news.factory.com.base.RecyclerAdapter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenterImpl;
+import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.model.News;
 import news.factory.com.utils.Constants;
 
@@ -23,7 +26,7 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    RecyclerViewAdapter adapter;
+    RecyclerAdapter adapter;
     ArticleFragmentPresenter presenter;
 
     public static Fragment newInstance(int index) {
@@ -52,7 +55,7 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     }
 
     public void provideRecyclerViewAdapter() {
-        adapter = new RecyclerViewAdapter();
+        adapter = new RecyclerAdapter();
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -60,8 +63,8 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     }
 
     @Override
-    public void fillAdapterDataNews(News news) {
-        adapter.fillData(news);
+    public void fillAdapterDataNews(List<RecyclerWrapper> data) {
+        adapter.fillData(data);
 
     }
 

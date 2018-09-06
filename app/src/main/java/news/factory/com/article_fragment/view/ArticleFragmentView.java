@@ -1,8 +1,9 @@
 package news.factory.com.article_fragment.view;
 
-import news.factory.com.model.News;
+import java.util.List;
+
+import news.factory.com.base.RecyclerWrapper;
 
 public interface ArticleFragmentView {
-
-    void fillAdapterDataNews(News news);
+    void fillAdapterDataNews(List<RecyclerWrapper> list);
 }
