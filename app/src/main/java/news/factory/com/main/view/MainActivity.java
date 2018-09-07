@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     ViewPager mViewPager;
     ViewPagerFragmentAdapter mAdapter;
     MainActivityPresenter mPresenter;
+    int numOfPages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +34,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     public void setNumberOfPages(int numberOfPages){
         mAdapter.setDataCount(numberOfPages);
         mAdapter.notifyDataSetChanged();
+        numOfPages = numberOfPages;
     }
 }
