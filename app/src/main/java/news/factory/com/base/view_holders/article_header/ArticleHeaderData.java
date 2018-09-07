@@ -5,12 +5,14 @@ public class ArticleHeaderData {
     private String category;
     private String source;
     private String caption;
+    private boolean isThereImage = false;
 
     public ArticleHeaderData(String image, String category, String source, String caption) {
         this.image = image;
         this.category = category;
         this.source = source;
         this.caption = caption;
+        isThereImage = true;
     }
 
     public ArticleHeaderData(String category, String source, String caption) {
@@ -33,5 +35,9 @@ public class ArticleHeaderData {
 
     public String getCaption() {
         return caption;
+    }
+
+    public boolean isThereImage() {
+        return isThereImage;
     }
 }

@@ -66,7 +66,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
                     RecyclerWrapper.TYPE_ARTICLE_HEADER));
         else{
             recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(category,featuredImageSource
-                    ,featuredImageCaption,news.getFeatured_image_caption()),
+                    ,featuredImageCaption),
                     RecyclerWrapper.TYPE_ARTICLE_HEADER));
         }
 
