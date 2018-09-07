@@ -1,4 +1,4 @@
-package news.factory.com.base.view_holders.article_user_shares;
+package news.factory.com.base.view_holders.article_author_shares;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -27,9 +27,9 @@ public class ArticleAuthorShareHolder extends RecyclerView.ViewHolder{
         this.dataList = dataList;
     }
 
-    public void onBind(int positin){
-        ArticleAuthorSharesData data = (ArticleAuthorSharesData) dataList.get(positin).getData();
-        author.setText(App.getInstance().getString(R.string.single_author,data.getAuthor()));
+    public void onBind(int position){
+        ArticleAuthorSharesData data = (ArticleAuthorSharesData) dataList.get(position).getData();
+        author.setText(data.getAuthor());
         shares.setText(data.getShares());
     }
 }

@@ -12,9 +12,10 @@ import java.util.List;
 import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderHolder;
 import news.factory.com.base.view_holders.article_image.ArticleImageHolder;
+import news.factory.com.base.view_holders.article_published.ArticlePublishedHolder;
 import news.factory.com.base.view_holders.article_title.ArticleTitleHolder;
 import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitleHolder;
-import news.factory.com.base.view_holders.article_user_shares.ArticleAuthorShareHolder;
+import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorShareHolder;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
@@ -50,6 +51,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             case RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES:
                 return new ArticleAuthorShareHolder(itemView,dataList);
+
+            case RecyclerWrapper.TYPE_ARTICLE_PUBLISHED:
+                return new ArticlePublishedHolder(itemView,dataList);
 
             default: return new DummyHolder(new View(parent.getContext()));
         }
@@ -90,8 +94,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 break;
 
             case RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES:
-                ArticleAuthorShareHolder authorSharesData = (ArticleAuthorShareHolder) holder;
-                authorSharesData.onBind(position);
+                ArticleAuthorShareHolder authorSharesHolder = (ArticleAuthorShareHolder) holder;
+                authorSharesHolder.onBind(position);
+                break;
+
+            case RecyclerWrapper.TYPE_ARTICLE_PUBLISHED:
+                ArticlePublishedHolder articlePublishedHolder = (ArticlePublishedHolder) holder;
+                articlePublishedHolder.onBind(position);
                 break;
         }
 

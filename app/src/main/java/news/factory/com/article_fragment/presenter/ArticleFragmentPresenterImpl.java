@@ -7,12 +7,12 @@ import news.factory.com.App;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.view_holders.article_content.ArticleContentData;
-import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderData;
 import news.factory.com.base.view_holders.article_image.ArticleImageData;
+import news.factory.com.base.view_holders.article_published.ArticlePublishedData;
 import news.factory.com.base.view_holders.article_title.ArticleTitleData;
 import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitleData;
-import news.factory.com.base.view_holders.article_user_shares.ArticleAuthorSharesData;
+import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorSharesData;
 import news.factory.com.model.Content;
 import news.factory.com.model.News;
 import news.factory.com.networking.helpers.NetworkingHelper;
@@ -56,6 +56,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         String featuredImageCaption = news.getFeatured_image_caption();
         String title = news.getTitle();
         String upperTitle = news.getUppertitle();
+        String published = news.getPublished_at_humans();
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
@@ -91,6 +92,9 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
                         RecyclerWrapper.TYPE_ARTICLE_TEXT));
             }
         }
+
+        //add published
+        recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(published),RecyclerWrapper.TYPE_ARTICLE_PUBLISHED));
 
         return recyclerWrappers;
     }

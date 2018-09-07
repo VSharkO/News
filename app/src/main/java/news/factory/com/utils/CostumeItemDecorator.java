@@ -12,7 +12,7 @@ public class CostumeItemDecorator extends RecyclerView.ItemDecoration {
         if(parent.getChildAdapterPosition(view)!=state.getItemCount()-1){
             outRect.set(0,0,0,42);
         }else{
-            outRect.setEmpty();
+            outRect.set(0,0,0,22);
         }
     }
 }
