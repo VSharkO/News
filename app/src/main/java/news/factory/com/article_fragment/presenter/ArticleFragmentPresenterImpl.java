@@ -44,7 +44,6 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     @Override
     public void onSuccess(News news) {
         view.fillAdapterDataNews(getSortedItems(news,index));
-        view.setSwipeButtons(index,Integer.parseInt(news.getPages_no()));
     }
 
     @Override

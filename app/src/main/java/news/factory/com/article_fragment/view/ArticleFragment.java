@@ -10,9 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
@@ -28,10 +26,6 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    @BindView(R.id.floatingForwardButton)
-    ImageButton forwardButton;
-    @BindView(R.id.floatingBackwardButton)
-    ImageButton backwardButton;
     RecyclerAdapter adapter;
     ArticleFragmentPresenter presenter;
 
@@ -74,23 +68,5 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     public void fillAdapterDataNews(List<RecyclerWrapper> data) {
         adapter.fillData(data);
     }
-
-    @Override
-    public void setSwipeButtons(int index,int numOfItems){
-        Timber.e(String.valueOf(index));
-        if (index == 1){
-            backwardButton.setVisibility(View.GONE);
-            forwardButton.setVisibility(View.VISIBLE);
-        }
-        else if (index==numOfItems){
-            backwardButton.setVisibility(View.VISIBLE);
-            forwardButton.setVisibility(View.GONE);
-        }
-        else{
-            backwardButton.setVisibility(View.VISIBLE);
-            forwardButton.setVisibility(View.VISIBLE);
-        }
-    }
-
 }
 
