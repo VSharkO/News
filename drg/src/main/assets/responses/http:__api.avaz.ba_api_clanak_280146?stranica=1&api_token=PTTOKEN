@@ -24,7 +24,7 @@
     "index_block": 0,
     "index_block_position": 0,
     "upcomming": 0,
-    "no_featured_image": true,
+    "no_featured_image": false,
     "published_at": {
         "date": "2017-04-11 23:47:00.000000",
         "timezone_type": 3,
