@@ -12,6 +12,7 @@ import java.util.List;
 import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderHolder;
 import news.factory.com.base.view_holders.article_image.ArticleImageHolder;
+import news.factory.com.base.view_holders.article_indicator.ArticleIndicatorHolder;
 import news.factory.com.base.view_holders.article_published.ArticlePublishedHolder;
 import news.factory.com.base.view_holders.article_title.ArticleTitleHolder;
 import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitleHolder;
@@ -54,6 +55,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             case RecyclerWrapper.TYPE_ARTICLE_PUBLISHED:
                 return new ArticlePublishedHolder(itemView,dataList);
+
+            case RecyclerWrapper.TYPE_ARTICLE_INDICATOR:
+                return new ArticleIndicatorHolder(itemView,dataList);
 
             default: return new DummyHolder(new View(parent.getContext()));
         }
@@ -101,6 +105,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             case RecyclerWrapper.TYPE_ARTICLE_PUBLISHED:
                 ArticlePublishedHolder articlePublishedHolder = (ArticlePublishedHolder) holder;
                 articlePublishedHolder.onBind(position);
+                break;
+
+            case RecyclerWrapper.TYPE_ARTICLE_INDICATOR:
+                ArticleIndicatorHolder articleIndicatorHolder = (ArticleIndicatorHolder) holder;
+                articleIndicatorHolder.onBind(position);
                 break;
         }
 

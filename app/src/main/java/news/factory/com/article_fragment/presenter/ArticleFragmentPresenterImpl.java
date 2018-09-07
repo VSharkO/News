@@ -9,6 +9,7 @@ import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.view_holders.article_content.ArticleContentData;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderData;
 import news.factory.com.base.view_holders.article_image.ArticleImageData;
+import news.factory.com.base.view_holders.article_indicator.ArticleIndicatorData;
 import news.factory.com.base.view_holders.article_published.ArticlePublishedData;
 import news.factory.com.base.view_holders.article_title.ArticleTitleData;
 import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitleData;
@@ -27,6 +28,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private ArticleFragmentView view;
     private NetworkingHelper mNetworkingHelper;
+    private int index=0;
 
     public ArticleFragmentPresenterImpl(ArticleFragment view) {
         this.view = view;
@@ -36,11 +38,12 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     @Override
     public void setData(int index) {
         mNetworkingHelper.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
+        this.index = index;
     }
 
     @Override
     public void onSuccess(News news) {
-        view.fillAdapterDataNews(getSortedItems(news));
+        view.fillAdapterDataNews(getSortedItems(news,index));
     }
 
     @Override
@@ -49,7 +52,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     }
 
 
-    private List<RecyclerWrapper> getSortedItems(News news) {
+    private List<RecyclerWrapper> getSortedItems(News news,int index) {
 
         String category = news.getCategory();
         String featuredImageSource = App.getInstance().getString(R.string.source_string,news.getFeaturedImageSource());
@@ -57,6 +60,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         String title = news.getTitle();
         String upperTitle = news.getUppertitle();
         String published = news.getPublished_at_humans();
+        String numOfPages = news.getPages_no();
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
@@ -94,7 +98,12 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         }
 
         //add published
-        recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(published),RecyclerWrapper.TYPE_ARTICLE_PUBLISHED));
+        recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(published),
+                RecyclerWrapper.TYPE_ARTICLE_PUBLISHED));
+
+        //add indicator
+        recyclerWrappers.add(new RecyclerWrapper(new ArticleIndicatorData(numOfPages,String.valueOf(index)),
+                RecyclerWrapper.TYPE_ARTICLE_INDICATOR));
 
         return recyclerWrappers;
     }
