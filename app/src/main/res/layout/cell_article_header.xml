@@ -22,14 +22,12 @@
             style="@style/headerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_corner_red"
             />
 
         <TextView
             android:id="@+id/source"
             style="@style/headerText"
-            android:layout_marginBottom="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -39,7 +37,6 @@
             android:id="@+id/caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             />
 
     </LinearLayout>

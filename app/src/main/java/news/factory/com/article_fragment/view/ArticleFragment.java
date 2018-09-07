@@ -19,8 +19,8 @@ import news.factory.com.base.RecyclerAdapter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenterImpl;
 import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.model.News;
 import news.factory.com.utils.Constants;
+import news.factory.com.utils.CostumeItemDecorator;
 
 public class ArticleFragment extends Fragment implements ArticleFragmentView {
 
@@ -56,10 +56,12 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
 
     public void provideRecyclerViewAdapter() {
         adapter = new RecyclerAdapter();
+        CostumeItemDecorator itemDecorator = new CostumeItemDecorator();
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(adapter);
+        mRecyclerView.addItemDecoration(itemDecorator);
     }
 
     @Override
