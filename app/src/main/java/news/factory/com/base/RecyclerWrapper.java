@@ -8,6 +8,8 @@ public class RecyclerWrapper {
     public static final int TYPE_ARTICLE_HEADER = R.layout.cell_article_header;
     public static final int TYPE_ARTICLE_IMAGE = R.layout.cell_article_image;
     public static final int TYPE_ARTICLE_TEXT = R.layout.cell_article_content;
+    public static final int TYPE_ARTICLE_UPPER_TITLE = R.layout.cell_article_upper_title;
+    public static final int TYPE_ARTICLE_AUTHOR_SHARES= R.layout.cell_article_author_shares;
 
     private Object data;
     private int type;

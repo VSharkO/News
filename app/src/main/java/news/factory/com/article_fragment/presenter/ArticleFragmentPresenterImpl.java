@@ -11,6 +11,8 @@ import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderData;
 import news.factory.com.base.view_holders.article_image.ArticleImageData;
 import news.factory.com.base.view_holders.article_title.ArticleTitleData;
+import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitleData;
+import news.factory.com.base.view_holders.article_user_shares.ArticleAuthorSharesData;
 import news.factory.com.model.Content;
 import news.factory.com.model.News;
 import news.factory.com.networking.helpers.NetworkingHelper;
@@ -38,8 +40,6 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     @Override
     public void onSuccess(News news) {
-
-
         view.fillAdapterDataNews(getSortedItems(news));
     }
 
@@ -55,27 +55,45 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         String featuredImageSource = App.getInstance().getString(R.string.source_string,news.getFeaturedImageSource());
         String featuredImageCaption = news.getFeatured_image_caption();
         String title = news.getTitle();
+        String upperTitle = news.getUppertitle();
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
         //add header
         if(news.getNo_featured_image().equals(Constants.FALSE))
             recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(news.getFeatured_image().getOriginal(),
-                    category,featuredImageSource,featuredImageCaption),RecyclerWrapper.TYPE_ARTICLE_HEADER));
+                    category,featuredImageSource,featuredImageCaption),
+                    RecyclerWrapper.TYPE_ARTICLE_HEADER));
         else{
             recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(category,featuredImageSource
-                    ,featuredImageCaption,news.getFeatured_image_caption()),RecyclerWrapper.TYPE_ARTICLE_HEADER));
+                    ,featuredImageCaption,news.getFeatured_image_caption()),
+                    RecyclerWrapper.TYPE_ARTICLE_HEADER));
         }
+
+        //add upperTitle
+        recyclerWrappers.add(new RecyclerWrapper(new ArticleUpperTitleData(upperTitle),
+                RecyclerWrapper.TYPE_ARTICLE_UPPER_TITLE));
+
+        //add Author and shares
+        recyclerWrappers.add(new RecyclerWrapper(new ArticleAuthorSharesData(news.getAuthor(),news.getShares()),
+                        RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES));
+
         //add Title
         recyclerWrappers.add(new RecyclerWrapper(new ArticleTitleData(title),RecyclerWrapper.TYPE_ARTICLE_TITLE));
+
         //add contents
         for (Content content : news.getContent()) {
             if(content.getType().equals(Constants.IMAGE))
-                recyclerWrappers.add(new RecyclerWrapper(new ArticleImageData(content.getImage().getOriginal()),RecyclerWrapper.TYPE_ARTICLE_IMAGE));
+                recyclerWrappers.add(new RecyclerWrapper(new ArticleImageData(content.getImage().getOriginal()),
+                        RecyclerWrapper.TYPE_ARTICLE_IMAGE));
             else{
-                recyclerWrappers.add(new RecyclerWrapper(new ArticleContentData(content.getData()),RecyclerWrapper.TYPE_ARTICLE_TEXT));
+                recyclerWrappers.add(new RecyclerWrapper(new ArticleContentData(content.getData()),
+                        RecyclerWrapper.TYPE_ARTICLE_TEXT));
             }
         }
+
         return recyclerWrappers;
     }
+
+
 }

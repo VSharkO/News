@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">News</string>
     <string name="source_string">Source: %1$s</string>
+    <string name="user_icon">user icon</string>
+    <string name="shareIcon">shareIcon</string>
+    <string name="single_author">Author: %s</string>
 </resources>

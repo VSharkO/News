@@ -13,7 +13,8 @@ import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderHolder;
 import news.factory.com.base.view_holders.article_image.ArticleImageHolder;
 import news.factory.com.base.view_holders.article_title.ArticleTitleHolder;
-import news.factory.com.utils.Constants;
+import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitleHolder;
+import news.factory.com.base.view_holders.article_user_shares.ArticleAuthorShareHolder;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
@@ -43,6 +44,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             case RecyclerWrapper.TYPE_ARTICLE_HEADER:
                 return new ArticleHeaderHolder(itemView,dataList);
+
+            case RecyclerWrapper.TYPE_ARTICLE_UPPER_TITLE:
+                return new ArticleUpperTitleHolder(itemView,dataList);
+
+            case RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES:
+                return new ArticleAuthorShareHolder(itemView,dataList);
 
             default: return new DummyHolder(new View(parent.getContext()));
         }
@@ -76,6 +83,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 ArticleHeaderHolder holderHeader = (ArticleHeaderHolder) holder;
                 holderHeader.onBind(position);
                 break;
+
+            case RecyclerWrapper.TYPE_ARTICLE_UPPER_TITLE:
+                ArticleUpperTitleHolder upperTitleHolder = (ArticleUpperTitleHolder) holder;
+                upperTitleHolder.onBind(position);
+                break;
+
+            case RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES:
+                ArticleAuthorShareHolder authorSharesData = (ArticleAuthorShareHolder) holder;
+                authorSharesData.onBind(position);
+                break;
         }
 
     }
@@ -86,7 +103,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class DummyHolder extends RecyclerView.ViewHolder {
-        public DummyHolder(View itemView) {
+        DummyHolder(View itemView) {
             super(itemView);
         }
     }

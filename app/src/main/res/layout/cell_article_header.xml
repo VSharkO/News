@@ -14,19 +14,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:padding="@dimen/dp6"
+        android:layout_marginStart="16dp"
         >
+
         <TextView
             android:id="@+id/headerCategoryText"
             style="@style/headerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_corner_red"
             />
 
         <TextView
             android:id="@+id/source"
             style="@style/headerText"
+            android:layout_marginBottom="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -36,6 +39,7 @@
             android:id="@+id/caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             />
 
     </LinearLayout>
