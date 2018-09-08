@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     }
 
     @OnPageChange(R.id.pager)
-    public void hendleClicks(){
+    public void handleClicks(){
         setSwipeButtons(mViewPager.getCurrentItem(),mAdapter.getCount());
     }
 
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     }
 
     @OnClick(R.id.floatingBackwardButton)
-    public void onBackwordClick(){
+    public void onBackwardClick(){
         mViewPager.setCurrentItem(mViewPager.getCurrentItem()-1);
     }
 
