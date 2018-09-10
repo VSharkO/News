@@ -25,7 +25,7 @@ public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkR
 
     @Override
     public void onSuccess(News callback) {
-        view.setNumberOfPages(Integer.parseInt(callback.getPages_no()));
+        view.setNumberOfPages(Integer.parseInt(callback.getPagesNo()));
     }
 
     @Override
