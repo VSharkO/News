@@ -68,9 +68,17 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     private void addHeader(News news, List<RecyclerWrapper> recyclerWrappers){
 
         String category = news.getCategory();
-        String featuredImageSource = App.getInstance().getString(R.string.source_string,news.getFeaturedImageSource());
-        String featuredImageCaption = news.getFeatured_image_caption();
+        String featuredImageSource;
+        String featuredImageCaption;
 
+        if(news.getFeaturedImageSource().isEmpty())
+            featuredImageSource = "";
+        else
+            featuredImageSource = App.getInstance().getString(R.string.source_string,news.getFeaturedImageSource());
+        if(news.getFeaturedImageCaption().isEmpty())
+            featuredImageCaption = "";
+        else
+            featuredImageCaption = news.getFeaturedImageCaption();
         if(news.getNoFeaturedImage().equals(Constants.FALSE))
             recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(news.getFeatured_image().getOriginal(),
                     category,featuredImageSource,featuredImageCaption),

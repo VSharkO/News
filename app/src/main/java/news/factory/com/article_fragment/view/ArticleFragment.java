@@ -56,7 +56,7 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
 
     public void provideRecyclerViewAdapter() {
         adapter = new RecyclerAdapter();
-        CostumeItemDecorator itemDecorator = new CostumeItemDecorator();
+        CostumeItemDecorator itemDecorator = new CostumeItemDecorator(this.getContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());

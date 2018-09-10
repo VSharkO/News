@@ -14,7 +14,7 @@
     </style>
     <style name="headerText">
         <item name="android:textColor">@color/white</item>
-        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
     </style>
     <style name="SingleArticleText">
         <item name="android:gravity">start</item>

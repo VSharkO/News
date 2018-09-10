@@ -90,7 +90,7 @@ public class News {
         return title;
     }
 
-    public String getFeatured_image_caption ()
+    public String getFeaturedImageCaption()
     {
         return featured_image_caption;
     }
