@@ -11,36 +11,33 @@
         android:contentDescription="@string/app_name"
         />
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
         android:id="@+id/linearHeaderLayout"
         >
-
         <TextView
             android:id="@+id/headerCategoryText"
             style="@style/headerText"
+            android:layout_marginTop="@dimen/dp6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_red"
             />
-
         <TextView
             android:id="@+id/source"
             style="@style/headerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
-
         <TextView
             style="@style/headerText"
             android:id="@+id/caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
-
     </LinearLayout>
 
 </RelativeLayout>

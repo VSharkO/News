@@ -1,18 +1,23 @@
 package news.factory.com.utils;
 
+import android.content.Context;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import news.factory.com.R;
+
 public class CostumeItemDecorator extends RecyclerView.ItemDecoration {
+
+    private Context mContext;
+
+    public CostumeItemDecorator(Context context){
+        this.mContext = context;
+    }
 
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
-        if(parent.getChildAdapterPosition(view)!=state.getItemCount()-1){
-            outRect.set(0,0,0,42);
-        }else{
-            outRect.set(0,0,0,22);
-        }
+        outRect.bottom = (int)mContext.getResources().getDimension(R.dimen.dp10);
     }
 }

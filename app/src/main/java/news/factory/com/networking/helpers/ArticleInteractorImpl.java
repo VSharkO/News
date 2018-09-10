@@ -7,11 +7,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NetworkingHelperImpl implements NetworkingHelper{
+public class ArticleInteractorImpl implements ArticleInteractor {
 
     private Service mService;
 
-    public NetworkingHelperImpl(Service service) {
+    public ArticleInteractorImpl(Service service) {
         mService = service;
     }
 

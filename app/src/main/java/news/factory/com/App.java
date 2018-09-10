@@ -8,7 +8,6 @@ import com.maradroid.dummyresponsegenerator.utils.SharedPerfRepo;
 import news.factory.com.networking.Service;
 import news.factory.com.networking.helpers.OkHttpHelper;
 import news.factory.com.networking.helpers.RetrofitHelper;
-import news.factory.com.networking.helpers.NetworkingHelper;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import timber.log.Timber;
