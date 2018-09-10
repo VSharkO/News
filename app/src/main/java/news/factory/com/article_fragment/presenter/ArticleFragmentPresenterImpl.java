@@ -56,6 +56,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
         addHeader(news,recyclerWrappers);
+        if(!news.getUpperTitle().isEmpty())
         addUpperTitle(news,recyclerWrappers);
         addAuthorShares(news,recyclerWrappers);
         addTitle(news,recyclerWrappers);

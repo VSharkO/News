@@ -28,10 +28,6 @@ public class ArticleUpperTitleHolder extends RecyclerView.ViewHolder{
 
     public void onBind(int position){
         ArticleUpperTitleData data =(ArticleUpperTitleData) dataList.get(position).getData();
-        if(!data.getUpperTitle().isEmpty())
-            upperTitle.setText(data.getUpperTitle());
-        else
-            upperTitle.setVisibility(View.GONE);
-
+        upperTitle.setText(data.getUpperTitle());
     }
 }

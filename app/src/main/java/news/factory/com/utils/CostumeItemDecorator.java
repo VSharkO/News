@@ -18,6 +18,10 @@ public class CostumeItemDecorator extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
-        outRect.bottom = (int)mContext.getResources().getDimension(R.dimen.dp10);
+        if(parent.getChildAdapterPosition(view)<parent.getAdapter().getItemCount()-2)
+        outRect.bottom = (int)mContext.getResources().getDimension(R.dimen.dp16);
+        else{
+            outRect.bottom = (int)mContext.getResources().getDimension(R.dimen.dp5);
+        }
     }
 }

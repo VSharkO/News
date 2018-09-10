@@ -1,9 +1,5 @@
 package news.factory.com.networking.helpers;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import io.reactivex.Observer;
+import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -14,6 +10,7 @@ import news.factory.com.utils.NetworkResponseListener;
 public class ArticleInteractorImpl implements ArticleInteractor{
 
     private Service mService;
+
     public ArticleInteractorImpl(Service service) {
         mService = service;
     }
@@ -21,30 +18,25 @@ public class ArticleInteractorImpl implements ArticleInteractor{
     @Override
     public void getProductsFromAPI(NetworkResponseListener<News> listener, String type, String id, String pageNum) {
 
-            mService.getNews(type,id,pageNum).
-                    subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Observer<News>() {
-                        @Override
-                        public void onSubscribe(Disposable d) {
+        mService.getNews(type,id,pageNum).
+                subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<News>() {
 
-                        }
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
-                        @Override
-                        public void onNext(News news) {
-                            listener.onSuccess(news);
-                        }
+                    }
 
-                        @Override
-                        public void onError(Throwable e) {
-                            listener.onFailure(e);
-                        }
+                    @Override
+                    public void onSuccess(News news) {
+                        listener.onSuccess(news);
+                    }
 
-                        @Override
-                        public void onComplete() {
-
-                        }
-                    });
-
-    }
+                    @Override
+                    public void onError(Throwable e) {
+                        listener.onFailure(e);
+                    }
+                });
+        }
 }
