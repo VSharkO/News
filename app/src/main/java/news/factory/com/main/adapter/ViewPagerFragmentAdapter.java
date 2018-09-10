@@ -26,6 +26,7 @@ public class ViewPagerFragmentAdapter extends FragmentPagerAdapter {
 
     public void setDataCount(int numOfPages) {
         countNumber = numOfPages;
+        notifyDataSetChanged();
     }
 }
 

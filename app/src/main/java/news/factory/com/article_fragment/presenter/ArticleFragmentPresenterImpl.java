@@ -41,8 +41,8 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     }
 
     @Override
-    public void onSuccess(News news) {
-        view.fillAdapterDataNews(getSortedItems(news));
+    public void onSuccess(News callback) {
+        view.fillAdapterDataNews(getSortedItemsForRecycler(callback));
     }
 
     @Override
@@ -51,7 +51,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     }
 
 
-    private List<RecyclerWrapper> getSortedItems(News news) {
+    private List<RecyclerWrapper> getSortedItemsForRecycler(News news) {
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
@@ -99,6 +99,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     }
 
     private void addAuthorShares(News news, List<RecyclerWrapper> recyclerWrappers){
+        //add author and shares
         recyclerWrappers.add(new RecyclerWrapper(new ArticleAuthorSharesData(news.getAuthor(),news.getShares()),
                 RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES));
 
