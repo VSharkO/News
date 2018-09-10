@@ -19,7 +19,6 @@
             android:layout_gravity="center"
             android:background="?android:colorBackground"
             android:padding="18dp"
-            android:textSize="22dp"
             android:text="text"
             android:textStyle="bold"
             android:textColor="@color/red"

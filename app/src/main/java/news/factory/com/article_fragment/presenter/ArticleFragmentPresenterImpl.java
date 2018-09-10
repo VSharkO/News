@@ -2,7 +2,6 @@ package news.factory.com.article_fragment.presenter;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import news.factory.com.App;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
@@ -16,10 +15,10 @@ import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitle
 import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorSharesData;
 import news.factory.com.model.Content;
 import news.factory.com.model.News;
-import news.factory.com.networking.helpers.NetworkingHelper;
+import news.factory.com.networking.helpers.ArticleInteractor;
 import news.factory.com.article_fragment.view.ArticleFragment;
 import news.factory.com.article_fragment.view.ArticleFragmentView;
-import news.factory.com.networking.helpers.NetworkingHelperImpl;
+import news.factory.com.networking.helpers.ArticleInteractorImpl;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
@@ -27,23 +26,23 @@ import timber.log.Timber;
 public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener<News>{
 
     private ArticleFragmentView view;
-    private NetworkingHelper mNetworkingHelper;
+    private ArticleInteractor mArticleInteractor;
     private int index=0;
 
     public ArticleFragmentPresenterImpl(ArticleFragment view) {
         this.view = view;
-        mNetworkingHelper = new NetworkingHelperImpl(App.getInstance().getService());
+        mArticleInteractor = new ArticleInteractorImpl(App.getInstance().getService());
     }
 
     @Override
     public void setData(int index) {
-        mNetworkingHelper.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
+        mArticleInteractor.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
         this.index = index;
     }
 
     @Override
     public void onSuccess(News news) {
-        view.fillAdapterDataNews(getSortedItems(news,index));
+        view.fillAdapterDataNews(getSortedItems(news));
     }
 
     @Override
@@ -52,20 +51,35 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     }
 
 
-    private List<RecyclerWrapper> getSortedItems(News news,int index) {
-
-        String category = news.getCategory();
-        String featuredImageSource = App.getInstance().getString(R.string.source_string,news.getFeaturedImageSource());
-        String featuredImageCaption = news.getFeatured_image_caption();
-        String title = news.getTitle();
-        String upperTitle = news.getUppertitle();
-        String published = news.getPublished_at_humans();
-        String numOfPages = news.getPages_no();
+    private List<RecyclerWrapper> getSortedItems(News news) {
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
-        //add header
-        if(news.getNo_featured_image().equals(Constants.FALSE))
+        addHeader(news,recyclerWrappers);
+        addUpperTitle(news,recyclerWrappers);
+        addAuthorShares(news,recyclerWrappers);
+        addTitle(news,recyclerWrappers);
+        addContents(news,recyclerWrappers);
+        addPublished(news,recyclerWrappers);
+        addIndicator(news,recyclerWrappers);
+        return recyclerWrappers;
+    }
+
+    private void addHeader(News news, List<RecyclerWrapper> recyclerWrappers){
+
+        String category = news.getCategory();
+        String featuredImageSource;
+        String featuredImageCaption;
+
+        if(news.getFeaturedImageSource().isEmpty())
+            featuredImageSource = "";
+        else
+            featuredImageSource = App.getInstance().getString(R.string.source_string,news.getFeaturedImageSource());
+        if(news.getFeaturedImageCaption().isEmpty())
+            featuredImageCaption = "";
+        else
+            featuredImageCaption = news.getFeaturedImageCaption();
+        if(news.getNoFeaturedImage().equals(Constants.FALSE))
             recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(news.getFeatured_image().getOriginal(),
                     category,featuredImageSource,featuredImageCaption),
                     RecyclerWrapper.TYPE_ARTICLE_HEADER));
@@ -74,19 +88,29 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
                     ,featuredImageCaption),
                     RecyclerWrapper.TYPE_ARTICLE_HEADER));
         }
+    }
 
-        //add upperTitle
+    private void addUpperTitle(News news, List<RecyclerWrapper> recyclerWrappers){
+
+        String upperTitle = news.getUpperTitle();
         recyclerWrappers.add(new RecyclerWrapper(new ArticleUpperTitleData(upperTitle),
                 RecyclerWrapper.TYPE_ARTICLE_UPPER_TITLE));
 
-        //add Author and shares
+    }
+
+    private void addAuthorShares(News news, List<RecyclerWrapper> recyclerWrappers){
         recyclerWrappers.add(new RecyclerWrapper(new ArticleAuthorSharesData(news.getAuthor(),news.getShares()),
-                        RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES));
+                RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES));
 
-        //add Title
+    }
+
+    private void addTitle(News news, List<RecyclerWrapper> recyclerWrappers){
+        String title = news.getTitle();
         recyclerWrappers.add(new RecyclerWrapper(new ArticleTitleData(title),RecyclerWrapper.TYPE_ARTICLE_TITLE));
+    }
 
-        //add contents
+    private void addContents(News news, List<RecyclerWrapper> recyclerWrappers){
+
         for (Content content : news.getContent()) {
             if(content.getType().equals(Constants.IMAGE))
                 recyclerWrappers.add(new RecyclerWrapper(new ArticleImageData(content.getImage().getOriginal()),
@@ -96,16 +120,19 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
                         RecyclerWrapper.TYPE_ARTICLE_TEXT));
             }
         }
+    }
 
-        //add published
+    private void addPublished(News news, List<RecyclerWrapper> recyclerWrappers){
+        String published = news.getPublishedAtHumans();
         recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(published),
                 RecyclerWrapper.TYPE_ARTICLE_PUBLISHED));
 
-        //add indicator
-        recyclerWrappers.add(new RecyclerWrapper(new ArticleIndicatorData(numOfPages,String.valueOf(index)),
-                RecyclerWrapper.TYPE_ARTICLE_INDICATOR));
-
-        return recyclerWrappers;
     }
 
+    private void addIndicator(News news, List<RecyclerWrapper> recyclerWrappers){
+
+        String numOfPages = news.getPagesNo();
+        recyclerWrappers.add(new RecyclerWrapper(new ArticleIndicatorData(numOfPages,String.valueOf(index)),
+                RecyclerWrapper.TYPE_ARTICLE_INDICATOR));
+    }
 }
