@@ -2,8 +2,8 @@ package news.factory.com.main.presenter;
 import news.factory.com.App;
 import news.factory.com.main.view.MainActivityView;
 import news.factory.com.model.News;
-import news.factory.com.networking.helpers.NetworkingHelper;
-import news.factory.com.networking.helpers.NetworkingHelperImpl;
+import news.factory.com.networking.helpers.ArticleInteractor;
+import news.factory.com.networking.helpers.ArticleInteractorImpl;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
@@ -11,16 +11,16 @@ import timber.log.Timber;
 public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkResponseListener<News> {
 
     private MainActivityView view;
-    private NetworkingHelper mNetworkingHelper;
+    private ArticleInteractor mArticleInteractor;
 
     public MainActivityPresenterImpl(MainActivityView view) {
-        mNetworkingHelper = new NetworkingHelperImpl(App.getInstance().getService());
+        mArticleInteractor = new ArticleInteractorImpl(App.getInstance().getService());
         this.view = view;
     }
 
     @Override
     public void getArticlesFromAPI() {
-            mNetworkingHelper.getProductsFromAPI(this,Constants.TYPE, Constants.ID, Constants.PAGE_NUMBER);
+            mArticleInteractor.getProductsFromAPI(this,Constants.TYPE, Constants.ID, Constants.PAGE_NUMBER);
     }
 
     @Override

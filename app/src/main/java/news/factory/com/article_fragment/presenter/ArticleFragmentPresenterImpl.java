@@ -15,10 +15,10 @@ import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitle
 import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorSharesData;
 import news.factory.com.model.Content;
 import news.factory.com.model.News;
-import news.factory.com.networking.helpers.NetworkingHelper;
+import news.factory.com.networking.helpers.ArticleInteractor;
 import news.factory.com.article_fragment.view.ArticleFragment;
 import news.factory.com.article_fragment.view.ArticleFragmentView;
-import news.factory.com.networking.helpers.NetworkingHelperImpl;
+import news.factory.com.networking.helpers.ArticleInteractorImpl;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
@@ -26,16 +26,18 @@ import timber.log.Timber;
 public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener<News>{
 
     private ArticleFragmentView view;
-    private NetworkingHelper mNetworkingHelper;
+    private ArticleInteractor mArticleInteractor;
+    private int index=0;
 
     public ArticleFragmentPresenterImpl(ArticleFragment view) {
         this.view = view;
-        mNetworkingHelper = new NetworkingHelperImpl(App.getInstance().getService());
+        mArticleInteractor = new ArticleInteractorImpl(App.getInstance().getService());
     }
 
     @Override
     public void setData(int index) {
-        mNetworkingHelper.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
+        mArticleInteractor.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
+        this.index = index;
     }
 
     @Override
@@ -125,7 +127,6 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         String numOfPages = news.getPagesNo();
         recyclerWrappers.add(new RecyclerWrapper(new ArticleIndicatorData(numOfPages,String.valueOf(index)),
                 RecyclerWrapper.TYPE_ARTICLE_INDICATOR));
-
     }
 
 
