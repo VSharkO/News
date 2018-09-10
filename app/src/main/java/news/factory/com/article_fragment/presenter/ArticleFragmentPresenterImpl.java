@@ -99,7 +99,6 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     }
 
     private void addAuthorShares(News news, List<RecyclerWrapper> recyclerWrappers){
-        //add author and shares
         recyclerWrappers.add(new RecyclerWrapper(new ArticleAuthorSharesData(news.getAuthor(),news.getShares()),
                 RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES));
 
@@ -136,6 +135,4 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         recyclerWrappers.add(new RecyclerWrapper(new ArticleIndicatorData(numOfPages,String.valueOf(index)),
                 RecyclerWrapper.TYPE_ARTICLE_INDICATOR));
     }
-
-
 }

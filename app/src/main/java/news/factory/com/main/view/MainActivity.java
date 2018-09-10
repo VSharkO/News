@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     }
 
     public void setSwipeButtons(int index,int numOfItems){
-        Timber.e(String.valueOf(index));
         if (index == 0){
             backwardButton.setVisibility(View.GONE);
             forwardButton.setVisibility(View.VISIBLE);
