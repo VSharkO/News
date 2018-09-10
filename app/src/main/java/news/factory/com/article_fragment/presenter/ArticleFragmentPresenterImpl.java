@@ -58,14 +58,14 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         String featuredImageSource = App.getInstance().getString(R.string.source_string,news.getFeaturedImageSource());
         String featuredImageCaption = news.getFeatured_image_caption();
         String title = news.getTitle();
-        String upperTitle = news.getUppertitle();
-        String published = news.getPublished_at_humans();
-        String numOfPages = news.getPages_no();
+        String upperTitle = news.getUpperTitle();
+        String published = news.getPublishedAtHumans();
+        String numOfPages = news.getPagesNo();
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
         //add header
-        if(news.getNo_featured_image().equals(Constants.FALSE))
+        if(news.getNoFeaturedImage().equals(Constants.FALSE))
             recyclerWrappers.add(new RecyclerWrapper(new ArticleHeaderData(news.getFeatured_image().getOriginal(),
                     category,featuredImageSource,featuredImageCaption),
                     RecyclerWrapper.TYPE_ARTICLE_HEADER));
@@ -79,11 +79,11 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         recyclerWrappers.add(new RecyclerWrapper(new ArticleUpperTitleData(upperTitle),
                 RecyclerWrapper.TYPE_ARTICLE_UPPER_TITLE));
 
-        //add Author and shares
+        //add author and shares
         recyclerWrappers.add(new RecyclerWrapper(new ArticleAuthorSharesData(news.getAuthor(),news.getShares()),
                         RecyclerWrapper.TYPE_ARTICLE_AUTHOR_SHARES));
 
-        //add Title
+        //add title
         recyclerWrappers.add(new RecyclerWrapper(new ArticleTitleData(title),RecyclerWrapper.TYPE_ARTICLE_TITLE));
 
         //add contents
