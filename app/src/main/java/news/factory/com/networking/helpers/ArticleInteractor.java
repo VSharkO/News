@@ -4,5 +4,7 @@ import news.factory.com.model.News;
 import news.factory.com.utils.NetworkResponseListener;
 
 public interface ArticleInteractor {
-    void getProductsFromAPI(NetworkResponseListener<News> listener,String type,String id,String pageNumber);
+
+    void getProductsFromAPI(NetworkResponseListener<News> listener, String type, String id, String pageNum);
+
 }

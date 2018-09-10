@@ -20,7 +20,7 @@ public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkR
 
     @Override
     public void getArticlesFromAPI() {
-            mArticleInteractor.getProductsFromAPI(this,Constants.TYPE, Constants.ID, Constants.PAGE_NUMBER);
+        mArticleInteractor.getProductsFromAPI(this,Constants.TYPE, Constants.ID, Constants.PAGE_NUMBER);
     }
 
     @Override

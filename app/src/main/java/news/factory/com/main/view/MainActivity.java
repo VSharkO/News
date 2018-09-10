@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     @Override
     public void setNumberOfPages(int numberOfPages){
         mAdapter.setDataCount(numberOfPages);
-        mAdapter.notifyDataSetChanged();
     }
 
     @OnPageChange(R.id.pager)
