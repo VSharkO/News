@@ -1,8 +1,5 @@
 package news.factory.com.base.view_holders.article_indicator;
 
-import news.factory.com.App;
-import news.factory.com.R;
-
 public class ArticleIndicatorData {
     private String numberOfPages;
     private String currentPage;
@@ -13,7 +10,10 @@ public class ArticleIndicatorData {
     }
 
     public String getIndicatorString() {
-//        return App.getInstance().getString(R.string.indicator,currentPage,numberOfPages);
-        return null;
+        StringBuilder sb = new StringBuilder();
+        sb.append(numberOfPages);
+        sb.append("/");
+        sb.append(currentPage);
+        return sb.toString();
     }
 }

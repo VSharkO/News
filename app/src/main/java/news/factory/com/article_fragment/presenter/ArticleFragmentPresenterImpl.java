@@ -2,8 +2,8 @@ package news.factory.com.article_fragment.presenter;
 
 import java.util.ArrayList;
 import java.util.List;
-import news.factory.com.App;
-import news.factory.com.AppComponent;
+
+import news.factory.com.utils.AppStatics;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.view_holders.article_content.ArticleContentData;
@@ -16,11 +16,8 @@ import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitle
 import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorSharesData;
 import news.factory.com.model.Content;
 import news.factory.com.model.News;
-import news.factory.com.networking.Service;
 import news.factory.com.networking.helpers.ArticleInteractor;
-import news.factory.com.article_fragment.view.ArticleFragment;
 import news.factory.com.article_fragment.view.ArticleFragmentView;
-import news.factory.com.networking.helpers.ArticleInteractorImpl;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
@@ -29,11 +26,13 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private ArticleFragmentView view;
     private ArticleInteractor mArticleInteractor;
+    private AppStatics mStatics;
     private int index=0;
 
-    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor) {
+    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor,AppStatics statics) {
         this.view = view;
         mArticleInteractor = interactor;
+        mStatics = statics;
     }
 
     @Override
@@ -77,7 +76,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         if(news.getFeaturedImageSource().isEmpty())
             featuredImageSource = "";
         else
-            featuredImageSource = App.getInstance().getString(R.string.source_string,news.getFeaturedImageSource());
+            featuredImageSource = mStatics.provideAppContext().getString(R.string.source_string,news.getFeaturedImageSource());
         if(news.getFeaturedImageCaption().isEmpty())
             featuredImageCaption = "";
         else
@@ -128,14 +127,15 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private void addPublished(News news, List<RecyclerWrapper> recyclerWrappers){
         String published = news.getPublishedAtHumans();
+        Timber.e(news.getPublishedAtHumans());
         recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(published),
                 RecyclerWrapper.TYPE_ARTICLE_PUBLISHED));
 
     }
 
     private void addIndicator(News news, List<RecyclerWrapper> recyclerWrappers){
-
         String numOfPages = news.getPagesNo();
+        Timber.e(numOfPages);
         recyclerWrappers.add(new RecyclerWrapper(new ArticleIndicatorData(numOfPages,String.valueOf(index)),
                 RecyclerWrapper.TYPE_ARTICLE_INDICATOR));
     }

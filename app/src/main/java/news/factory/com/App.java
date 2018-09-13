@@ -18,13 +18,10 @@ public class App extends Application implements HasActivityInjector {
     @Inject
     DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;
 
-    public static App instance;
-
     @Override
     public void onCreate() {
         super.onCreate();
 
-        instance = this;
         DaggerAppComponent.builder()
                 .application(this)
                 .build()
@@ -39,7 +36,4 @@ public class App extends Application implements HasActivityInjector {
         return activityDispatchingAndroidInjector;
     }
 
-    public static App getInstance() {
-        return instance;
-    }
 }

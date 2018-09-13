@@ -5,9 +5,10 @@ import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 @Component(modules = {
-        AndroidSupportInjectionModule.class,
-        AppModule.class,
-        ActivityBuilder.class})
+        AndroidSupportInjectionModule.class
+        ,AppModule.class
+        ,ActivityBuilder.class
+        ,AppModuleStatics.class})
 public interface AppComponent {
     @Component.Builder
     interface Builder{
