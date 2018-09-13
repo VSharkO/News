@@ -1,21 +1,33 @@
 package news.factory.com.main.view;
 
+import android.app.Activity;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnPageChange;
+import dagger.android.AndroidInjection;
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
+import dagger.android.support.HasSupportFragmentInjector;
 import news.factory.com.R;
 import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
 import news.factory.com.main.presenter.MainActivityPresenter;
-import news.factory.com.main.presenter.MainActivityPresenterImpl;
-import timber.log.Timber;
 
-public class MainActivity extends AppCompatActivity implements MainActivityView {
+public class MainActivity extends AppCompatActivity implements MainActivityView,HasActivityInjector,HasSupportFragmentInjector {
+    @Inject
+    DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;
+    @Inject
+    DispatchingAndroidInjector<Fragment> mFragmentInjector;
+    @Inject
+    MainActivityPresenter mPresenter;
 
     @BindView(R.id.pager)
     ViewPager mViewPager;
@@ -24,14 +36,14 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     @BindView(R.id.floatingBackwardButton)
     ImageButton backwardButton;
     ViewPagerFragmentAdapter mAdapter;
-    MainActivityPresenter mPresenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         ButterKnife.bind(this);
-        mPresenter = new MainActivityPresenterImpl(this);
         mAdapter = new ViewPagerFragmentAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
         mPresenter.getArticlesFromAPI();
@@ -72,4 +84,15 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     public void onForwardClick(){
         mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1);
     }
+
+    @Override
+    public DispatchingAndroidInjector<Activity> activityInjector() {
+        return activityDispatchingAndroidInjector;
+    }
+
+    @Override
+    public AndroidInjector<Fragment> supportFragmentInjector() {
+        return mFragmentInjector;
+    }
+
 }

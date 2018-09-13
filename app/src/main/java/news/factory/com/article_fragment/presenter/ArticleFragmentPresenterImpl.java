@@ -3,6 +3,7 @@ package news.factory.com.article_fragment.presenter;
 import java.util.ArrayList;
 import java.util.List;
 import news.factory.com.App;
+import news.factory.com.AppComponent;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.view_holders.article_content.ArticleContentData;
@@ -15,6 +16,7 @@ import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitle
 import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorSharesData;
 import news.factory.com.model.Content;
 import news.factory.com.model.News;
+import news.factory.com.networking.Service;
 import news.factory.com.networking.helpers.ArticleInteractor;
 import news.factory.com.article_fragment.view.ArticleFragment;
 import news.factory.com.article_fragment.view.ArticleFragmentView;
@@ -29,9 +31,9 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     private ArticleInteractor mArticleInteractor;
     private int index=0;
 
-    public ArticleFragmentPresenterImpl(ArticleFragment view) {
+    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor) {
         this.view = view;
-        mArticleInteractor = new ArticleInteractorImpl(App.getInstance().getService());
+        mArticleInteractor = interactor;
     }
 
     @Override

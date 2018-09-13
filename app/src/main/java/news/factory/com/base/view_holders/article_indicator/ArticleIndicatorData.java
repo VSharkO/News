@@ -13,6 +13,7 @@ public class ArticleIndicatorData {
     }
 
     public String getIndicatorString() {
-        return App.getInstance().getString(R.string.indicator,currentPage,numberOfPages);
+//        return App.getInstance().getString(R.string.indicator,currentPage,numberOfPages);
+        return null;
     }
 }

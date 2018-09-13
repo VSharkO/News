@@ -1,20 +1,18 @@
 package news.factory.com.main.presenter;
-import news.factory.com.App;
 import news.factory.com.main.view.MainActivityView;
 import news.factory.com.model.News;
 import news.factory.com.networking.helpers.ArticleInteractor;
-import news.factory.com.networking.helpers.ArticleInteractorImpl;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
 
 public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkResponseListener<News> {
 
-    private MainActivityView view;
-    private ArticleInteractor mArticleInteractor;
+    MainActivityView view;
+    ArticleInteractor mArticleInteractor;
 
-    public MainActivityPresenterImpl(MainActivityView view) {
-        mArticleInteractor = new ArticleInteractorImpl(App.getInstance().getService());
+    public MainActivityPresenterImpl(MainActivityView view, ArticleInteractor interactor) {
+        mArticleInteractor = interactor;
         this.view = view;
     }
 

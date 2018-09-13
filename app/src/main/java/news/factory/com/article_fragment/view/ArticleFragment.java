@@ -1,4 +1,5 @@
 package news.factory.com.article_fragment.view;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,25 +10,32 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import java.util.List;
+
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dagger.android.AndroidInjector;
+import dagger.android.support.AndroidSupportInjection;
+import dagger.android.support.HasSupportFragmentInjector;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerAdapter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
-import news.factory.com.article_fragment.presenter.ArticleFragmentPresenterImpl;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
-import timber.log.Timber;
 
-public class ArticleFragment extends Fragment implements ArticleFragmentView {
+public class ArticleFragment extends Fragment implements ArticleFragmentView{
+
+
+    @Inject
+    ArticleFragmentPresenter presenter;
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
     RecyclerAdapter adapter;
-    ArticleFragmentPresenter presenter;
+
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
@@ -40,13 +48,14 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        presenter = new ArticleFragmentPresenterImpl(this);
+
         View view = inflater.inflate(R.layout.fragment_article,container,false);
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this,view);
         provideRecyclerViewAdapter();
@@ -67,6 +76,12 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView {
     @Override
     public void fillAdapterDataNews(List<RecyclerWrapper> data) {
         adapter.fillData(data);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        AndroidSupportInjection.inject(this);
+        super.onAttach(context);
     }
 }
 

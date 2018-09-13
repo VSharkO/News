@@ -46,8 +46,8 @@ public class ArticleHeaderHolder extends RecyclerView.ViewHolder {
 
             if(!data.isThereImage()){
                 //if there is no featured picture
-                source.setTextColor(App.getInstance().getResources().getColor(R.color.defaultTextColor));
-                caption.setTextColor(App.getInstance().getResources().getColor(R.color.defaultTextColor));
+//                source.setTextColor(App.getInstance().getResources().getColor(R.color.defaultTextColor));
+//                caption.setTextColor(App.getInstance().getResources().getColor(R.color.defaultTextColor));
             }else{
                 Glide.with(image.getContext())
                         .load(Constants.NEWS_PICTURE_BASE_URL + data.getImage())
