@@ -3,12 +3,13 @@ package news.factory.com;
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
+import news.factory.com.componentBuilders.ActivityBuilder;
 
 @Component(modules = {
         AndroidSupportInjectionModule.class
         ,AppModule.class
         ,ActivityBuilder.class
-        ,AppModuleStatics.class})
+        ,AppModuleRepository.class})
 public interface AppComponent {
     @Component.Builder
     interface Builder{

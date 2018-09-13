@@ -1,4 +1,4 @@
-package news.factory.com;
+package news.factory.com.componentBuilders;
 
 import android.app.Activity;
 

@@ -9,7 +9,7 @@ import dagger.Provides;
 import news.factory.com.utils.AppStaticsImpl;
 
 @Module
-public class AppModuleStatics {
+public class AppModuleRepository {
     @Singleton
     @Provides
     AppStaticsImpl provideContext(Context app){
