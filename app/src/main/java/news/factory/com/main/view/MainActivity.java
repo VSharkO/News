@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         ButterKnife.bind(this);
-        mAdapter = new ViewPagerFragmentAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
         mPresenter.getArticlesFromAPI();
         setSwipeButtons(mViewPager.getCurrentItem(),mAdapter.getCount());
