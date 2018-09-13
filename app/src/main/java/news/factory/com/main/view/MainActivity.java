@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView,
     ImageButton forwardButton;
     @BindView(R.id.floatingBackwardButton)
     ImageButton backwardButton;
+    @Inject
     ViewPagerFragmentAdapter mAdapter;
 
 
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         ButterKnife.bind(this);
-        mAdapter = new ViewPagerFragmentAdapter(getSupportFragmentManager());
+//        mAdapter = new ViewPagerFragmentAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
         mPresenter.getArticlesFromAPI();
         setSwipeButtons(mViewPager.getCurrentItem(),mAdapter.getCount());
