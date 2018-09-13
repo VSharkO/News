@@ -126,7 +126,6 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private void addPublished(News news, List<RecyclerWrapper> recyclerWrappers){
         String published = news.getPublishedAtHumans().split(" ")[0];
-        Timber.e(news.getPublishedAtHumans());
         recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(mStatics.provideAppContext()
                 .getString(R.string.published,published)),
                 RecyclerWrapper.TYPE_ARTICLE_PUBLISHED));
@@ -135,7 +134,6 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private void addIndicator(News news, List<RecyclerWrapper> recyclerWrappers){
         String numOfPages = news.getPagesNo();
-        Timber.e(numOfPages);
         recyclerWrappers.add(new RecyclerWrapper(new ArticleIndicatorData(numOfPages,String.valueOf(index)),
                 RecyclerWrapper.TYPE_ARTICLE_INDICATOR));
     }

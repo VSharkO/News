@@ -34,6 +34,8 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView{
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
+
+    @Inject
     RecyclerAdapter adapter;
 
 
@@ -64,7 +66,6 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView{
     }
 
     public void provideRecyclerViewAdapter() {
-        adapter = new RecyclerAdapter();
         CostumeItemDecorator itemDecorator = new CostumeItemDecorator(this.getContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);

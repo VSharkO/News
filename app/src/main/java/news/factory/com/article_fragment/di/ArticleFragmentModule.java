@@ -4,6 +4,7 @@ import android.content.Context;
 
 import dagger.Module;
 import dagger.Provides;
+import news.factory.com.base.RecyclerAdapter;
 import news.factory.com.utils.AppStatics;
 import news.factory.com.utils.AppStaticsImpl;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
@@ -28,5 +29,10 @@ public class ArticleFragmentModule {
     @Provides
     AppStatics provideContext(Context app){
         return new AppStaticsImpl(app);
+    }
+
+    @Provides
+    RecyclerAdapter provideAdapter(){
+        return new RecyclerAdapter();
     }
 }
