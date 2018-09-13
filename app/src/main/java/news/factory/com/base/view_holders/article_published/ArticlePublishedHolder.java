@@ -27,7 +27,6 @@ public class ArticlePublishedHolder extends RecyclerView.ViewHolder{
 
     public void onBind(int position){
         ArticlePublishedData data = (ArticlePublishedData)dataList.get(position).getData();
-        String[] date = data.getPublished().split(" ");
-        published.setText("Published:" + date[0]);
+        published.setText(data.getPublished());
     }
 }

@@ -2,7 +2,6 @@ package news.factory.com.article_fragment.presenter;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import news.factory.com.utils.AppStatics;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
@@ -126,9 +125,10 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     }
 
     private void addPublished(News news, List<RecyclerWrapper> recyclerWrappers){
-        String published = news.getPublishedAtHumans();
+        String published = news.getPublishedAtHumans().split(" ")[0];
         Timber.e(news.getPublishedAtHumans());
-        recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(published),
+        recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(mStatics.provideAppContext()
+                .getString(R.string.published,published)),
                 RecyclerWrapper.TYPE_ARTICLE_PUBLISHED));
 
     }
