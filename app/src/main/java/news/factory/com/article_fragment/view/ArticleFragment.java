@@ -11,14 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.List;
-
 import javax.inject.Inject;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjection;
-import dagger.android.support.HasSupportFragmentInjector;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerAdapter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
@@ -27,17 +23,14 @@ import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 
 public class ArticleFragment extends Fragment implements ArticleFragmentView{
-
-
     @Inject
     ArticleFragmentPresenter presenter;
-
-    @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
 
     @Inject
     RecyclerAdapter adapter;
 
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerView;
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();

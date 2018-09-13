@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityView,
     DispatchingAndroidInjector<Fragment> mFragmentInjector;
     @Inject
     MainActivityPresenter mPresenter;
+    @Inject
+    ViewPagerFragmentAdapter mAdapter;
 
     @BindView(R.id.pager)
     ViewPager mViewPager;
@@ -35,9 +37,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView,
     ImageButton forwardButton;
     @BindView(R.id.floatingBackwardButton)
     ImageButton backwardButton;
-    @Inject
-    ViewPagerFragmentAdapter mAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
