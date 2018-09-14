@@ -1,7 +1,6 @@
 package news.factory.com.networking.di;
 
 import android.content.Context;
-
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.maradroid.dummyresponsegenerator.base.DRGInterceptor;
 import com.maradroid.dummyresponsegenerator.utils.ConstKt;

@@ -2,7 +2,6 @@ package news.factory.com;
 
 import android.app.Activity;
 import android.app.Application;
-
 import com.maradroid.dummyresponsegenerator.base.interactor.InteractorImpl;
 import com.maradroid.dummyresponsegenerator.utils.SharedPerfRepo;
 import javax.inject.Inject;
