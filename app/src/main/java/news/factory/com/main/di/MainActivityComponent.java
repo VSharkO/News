@@ -2,7 +2,7 @@ package news.factory.com.main.di;
 
 import dagger.Subcomponent;
 import dagger.android.AndroidInjector;
-import news.factory.com.componentBuilders.ArticleFragmentBuilder;
+import news.factory.com.component_builders.ArticleFragmentBuilder;
 import news.factory.com.main.view.MainActivity;
 import news.factory.com.scopes.PerActivity;
 

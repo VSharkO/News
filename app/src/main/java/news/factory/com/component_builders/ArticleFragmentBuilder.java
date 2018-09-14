@@ -1,4 +1,4 @@
-package news.factory.com.componentBuilders;
+package news.factory.com.component_builders;
 import android.support.v4.app.Fragment;
 
 import dagger.Binds;
