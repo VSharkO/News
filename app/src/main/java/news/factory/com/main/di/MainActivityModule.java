@@ -11,26 +11,31 @@ import news.factory.com.main.view.MainActivityView;
 import news.factory.com.networking.Service;
 import news.factory.com.networking.helpers.ArticleInteractor;
 import news.factory.com.networking.helpers.ArticleInteractorImpl;
+import news.factory.com.scopes.PerActivity;
 
 @Module(subcomponents = ArticleFragmentComponent.class)
 public class MainActivityModule {
 
+    @PerActivity
     @Provides
     MainActivityView provideMainView(){
         return new MainActivity();
     }
 
+    @PerActivity
     @Provides
     MainActivityPresenter provideMainPresenter(MainActivity mainView, ArticleInteractor interactor){
         return new MainActivityPresenterImpl(mainView,interactor){
         };
     }
 
+    @PerActivity
     @Provides
     ArticleInteractor provideInteractor(Service service){
         return new ArticleInteractorImpl(service);
     }
 
+    @PerActivity
     @Provides
     ViewPagerFragmentAdapter providePagerAdapter(MainActivity mainActivity){
         return new ViewPagerFragmentAdapter(mainActivity.getSupportFragmentManager());
