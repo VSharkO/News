@@ -13,6 +13,7 @@ import dagger.android.HasActivityInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 import news.factory.com.di.AppComponent;
 import news.factory.com.di.AppModule;
+import news.factory.com.di.DaggerAppComponent;
 import timber.log.Timber;
 
 public class App extends Application implements HasActivityInjector, HasSupportFragmentInjector{
@@ -28,9 +29,8 @@ public class App extends Application implements HasActivityInjector, HasSupportF
     public void onCreate() {
         super.onCreate();
 
-//        appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
-//        appComponent.inject(this);
-
+        appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
+        appComponent.inject(this);
         Timber.plant(new Timber.DebugTree());
         new InteractorImpl(this).generateResponses(true);
         new SharedPerfRepo(this).setDummyResponse(true);

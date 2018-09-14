@@ -1,7 +1,5 @@
 package news.factory.com.di;
-
 import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.App;

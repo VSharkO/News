@@ -27,7 +27,7 @@ public class MainActivity extends BaseActivity implements MainActivityView {
     ImageButton forwardButton;
     @BindView(R.id.floatingBackwardButton)
     ImageButton backwardButton;
-    @Inject
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

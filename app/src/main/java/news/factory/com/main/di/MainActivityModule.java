@@ -23,8 +23,7 @@ public class MainActivityModule {
     @PerActivity
     @Provides
     MainActivityPresenter provideMainPresenter(MainActivity mainView, ArticleInteractor interactor){
-        return new MainActivityPresenterImpl(mainView,interactor){
-        };
+        return new MainActivityPresenterImpl(mainView,interactor);
     }
 
     @PerActivity
