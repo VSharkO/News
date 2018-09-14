@@ -18,10 +18,11 @@ import news.factory.com.model.News;
 import news.factory.com.networking.helpers.ArticleInteractor;
 import news.factory.com.article_fragment.view.ArticleFragmentView;
 import news.factory.com.utils.Constants;
+import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
 
-public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener<News>{
+public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener{
 
     private ArticleFragmentView view;
     private ArticleInteractor mArticleInteractor;
@@ -41,8 +42,9 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     }
 
     @Override
-    public void onSuccess(News callback) {
-        view.fillAdapterDataNews(getSortedItemsForRecycler(callback));
+    public void onSuccess(InteractorData callback) {
+        News data = (News)callback.getData();
+        view.fillAdapterDataNews(getSortedItemsForRecycler(data));
     }
 
     @Override

@@ -3,10 +3,11 @@ import news.factory.com.main.view.MainActivityView;
 import news.factory.com.model.News;
 import news.factory.com.networking.helpers.ArticleInteractor;
 import news.factory.com.utils.Constants;
+import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
 
-public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkResponseListener<News> {
+public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkResponseListener {
 
     MainActivityView view;
     ArticleInteractor mArticleInteractor;
@@ -22,8 +23,9 @@ public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkR
     }
 
     @Override
-    public void onSuccess(News callback) {
-        view.setNumberOfPages(Integer.parseInt(callback.getPagesNo()));
+    public void onSuccess(InteractorData callback) {
+        News data = (News)callback.getData();
+        view.setNumberOfPages(Integer.parseInt(data.getPagesNo()));
     }
 
     @Override
