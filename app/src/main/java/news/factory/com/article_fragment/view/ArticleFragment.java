@@ -77,5 +77,11 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView{
         AndroidSupportInjection.inject(this);
         super.onAttach(context);
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        presenter.killDesposables();
+    }
 }
 

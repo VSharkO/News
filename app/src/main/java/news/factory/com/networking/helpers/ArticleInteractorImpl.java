@@ -23,4 +23,10 @@ public class ArticleInteractorImpl extends BaseInteractor implements ArticleInte
                 .map(news -> new InteractorData(news))
                 .subscribe(getObserver(listener));
         }
+
+    @Override
+    public void killDisposable() {
+        disspose();
+    }
+
 }

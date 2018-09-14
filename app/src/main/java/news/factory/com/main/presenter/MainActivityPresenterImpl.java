@@ -23,6 +23,11 @@ public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkR
     }
 
     @Override
+    public void killDisposable() {
+        mArticleInteractor.killDisposable();
+    }
+
+    @Override
     public void onSuccess(InteractorData callback) {
         News data = (News)callback.getData();
         view.setNumberOfPages(Integer.parseInt(data.getPagesNo()));
@@ -32,4 +37,5 @@ public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkR
     public void onFailure(Throwable throwable) {
         Timber.e(throwable);
     }
+
 }

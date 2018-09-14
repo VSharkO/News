@@ -42,6 +42,11 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     }
 
     @Override
+    public void killDesposables() {
+        mArticleInteractor.killDisposable();
+    }
+
+    @Override
     public void onSuccess(InteractorData callback) {
         News data = (News)callback.getData();
         view.fillAdapterDataNews(getSortedItemsForRecycler(data));

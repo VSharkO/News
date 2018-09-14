@@ -6,8 +6,10 @@ import news.factory.com.utils.NetworkResponseListener;
 
 public abstract class BaseInteractor {
 
+    DisposableObserver<InteractorData> observer;
+
     public DisposableObserver<InteractorData> getObserver(NetworkResponseListener listener){
-        DisposableObserver<InteractorData> observer = new DisposableObserver<InteractorData>() {
+        observer = new DisposableObserver<InteractorData>() {
             @Override
             public void onNext(InteractorData interactorData) {
                 listener.onSuccess(interactorData);
@@ -25,5 +27,9 @@ public abstract class BaseInteractor {
         };
 
         return observer;
+    }
+
+    public void disspose(){
+        observer.dispose();
     }
 }

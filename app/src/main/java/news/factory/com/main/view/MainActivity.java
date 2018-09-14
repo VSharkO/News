@@ -94,4 +94,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityView,
         return mFragmentInjector;
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mPresenter.killDisposable();
+    }
 }
