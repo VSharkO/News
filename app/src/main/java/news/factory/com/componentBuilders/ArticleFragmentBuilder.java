@@ -11,7 +11,7 @@ import news.factory.com.article_fragment.di.ArticleFragmentModule;
 import news.factory.com.article_fragment.view.ArticleFragment;
 
 @Module(includes = {ArticleFragmentModule.class})
-public abstract class FragmentBuilder {
+public abstract class ArticleFragmentBuilder {
 
     @Binds
     @IntoMap

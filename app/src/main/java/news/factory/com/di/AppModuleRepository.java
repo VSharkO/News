@@ -1,4 +1,4 @@
-package news.factory.com;
+package news.factory.com.di;
 
 import android.content.Context;
 

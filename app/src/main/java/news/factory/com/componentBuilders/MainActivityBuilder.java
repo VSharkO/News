@@ -12,7 +12,7 @@ import news.factory.com.main.di.MainActivityModule;
 import news.factory.com.main.view.MainActivity;
 
 @Module(includes = {MainActivityModule.class})
-public abstract class ActivityBuilder {
+public abstract class MainActivityBuilder {
 
     @Binds
     @IntoMap
