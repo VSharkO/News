@@ -11,11 +11,12 @@ import news.factory.com.networking.di.NetworkingModule;
 
 @Singleton
 @Component(modules = {
-        AndroidSupportInjectionModule.class
-        ,AppModule.class
-        ,MainActivityBuilder.class
-        ,AppModuleRepository.class
-        ,NetworkingModule.class})
+        AndroidSupportInjectionModule.class,
+        AppModule.class,
+        MainActivityBuilder.class,
+        AppModuleRepository.class,
+        NetworkingModule.class})
+
 public interface AppComponent {
     @Component.Builder
     interface Builder{

@@ -8,7 +8,7 @@ import news.factory.com.networking.di.NetworkingModule;
 import news.factory.com.scopes.PerFragment;
 
 @PerFragment
-@Subcomponent(modules = {ArticleFragmentModule.class, AppModuleRepository.class})
+@Subcomponent(modules = {ArticleFragmentModule.class})
 public interface ArticleFragmentComponent extends AndroidInjector<ArticleFragment>{
     @Subcomponent.Builder
     abstract class Builder extends AndroidInjector.Builder<ArticleFragment>{}

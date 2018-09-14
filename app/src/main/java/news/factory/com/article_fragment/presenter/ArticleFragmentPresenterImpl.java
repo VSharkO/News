@@ -29,7 +29,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     private AppStatics mStatics;
     private int index=0;
 
-    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor,AppStatics statics) {
+    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor, AppStatics statics) {
         this.view = view;
         mArticleInteractor = interactor;
         mStatics = statics;
