@@ -6,7 +6,7 @@ import news.factory.com.utils.NetworkResponseListener;
 
 public abstract class BaseInteractor {
 
-    DisposableObserver<InteractorData> observer;
+    private DisposableObserver<InteractorData> observer;
 
     public DisposableObserver<InteractorData> getObserver(NetworkResponseListener listener){
         observer = new DisposableObserver<InteractorData>() {
@@ -29,7 +29,7 @@ public abstract class BaseInteractor {
         return observer;
     }
 
-    public void disspose(){
+    public void dispose(){
         observer.dispose();
     }
 }

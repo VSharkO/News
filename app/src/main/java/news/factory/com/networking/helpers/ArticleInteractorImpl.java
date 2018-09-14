@@ -26,7 +26,7 @@ public class ArticleInteractorImpl extends BaseInteractor implements ArticleInte
 
     @Override
     public void killDisposable() {
-        disspose();
+        dispose();
     }
 
 }
