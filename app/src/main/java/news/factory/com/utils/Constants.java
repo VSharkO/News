@@ -12,7 +12,6 @@ public class Constants {
     public static final String ID = "280146";
     public static final String FRAGMENT_PUT_DATA_CONSTANT = "fragment";
     public static final String IMAGE = "image";
-    public static final String TEXT = "text";
     public static final String FALSE = "false";
 
 }

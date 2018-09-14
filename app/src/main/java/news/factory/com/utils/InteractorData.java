@@ -1,7 +1,7 @@
 package news.factory.com.utils;
 
 public class InteractorData {
-    Object data;
+    private Object data;
 
     public InteractorData(Object data) {
         this.data = data;

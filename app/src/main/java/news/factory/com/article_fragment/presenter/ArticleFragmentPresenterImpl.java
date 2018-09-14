@@ -2,7 +2,10 @@ package news.factory.com.article_fragment.presenter;
 
 import java.util.ArrayList;
 import java.util.List;
-import news.factory.com.utils.AppStatics;
+
+import javax.inject.Inject;
+
+import news.factory.com.utils.ResourceRepo;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.view_holders.article_content.ArticleContentData;
@@ -26,10 +29,11 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private ArticleFragmentView view;
     private ArticleInteractor mArticleInteractor;
-    private AppStatics mStatics;
+    private ResourceRepo mStatics;
     private int index=0;
 
-    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor, AppStatics statics) {
+    @Inject
+    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor, ResourceRepo statics) {
         this.view = view;
         mArticleInteractor = interactor;
         mStatics = statics;
@@ -82,7 +86,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         if(news.getFeaturedImageSource().isEmpty())
             featuredImageSource = "";
         else
-            featuredImageSource = mStatics.provideAppContext().getString(R.string.source_string,news.getFeaturedImageSource());
+            featuredImageSource = mStatics.provideString(R.string.source_string,news.getFeaturedImageSource());
         if(news.getFeaturedImageCaption().isEmpty())
             featuredImageCaption = "";
         else
@@ -133,8 +137,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private void addPublished(News news, List<RecyclerWrapper> recyclerWrappers){
         String published = news.getPublishedAtHumans().split(" ")[0];
-        recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(mStatics.provideAppContext()
-                .getString(R.string.published,published)),
+        recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(mStatics.provideString(R.string.published,published)),
                 RecyclerWrapper.TYPE_ARTICLE_PUBLISHED));
 
     }

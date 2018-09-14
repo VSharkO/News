@@ -2,28 +2,35 @@ package news.factory.com;
 
 import android.app.Activity;
 import android.app.Application;
+import android.support.v4.app.Fragment;
+
 import com.maradroid.dummyresponsegenerator.base.interactor.InteractorImpl;
 import com.maradroid.dummyresponsegenerator.utils.SharedPerfRepo;
 import javax.inject.Inject;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
-import news.factory.com.di.DaggerAppComponent;
+import dagger.android.support.HasSupportFragmentInjector;
+import news.factory.com.di.AppComponent;
+import news.factory.com.di.AppModule;
 import timber.log.Timber;
 
-public class App extends Application implements HasActivityInjector {
+public class App extends Application implements HasActivityInjector, HasSupportFragmentInjector{
 
     @Inject
     DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;
+    @Inject
+    DispatchingAndroidInjector<Fragment> mFragmentInjector;
+
+    private AppComponent appComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        DaggerAppComponent.builder()
-                .application(this)
-                .build()
-                .inject(this);
+//        appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
+//        appComponent.inject(this);
+
         Timber.plant(new Timber.DebugTree());
         new InteractorImpl(this).generateResponses(true);
         new SharedPerfRepo(this).setDummyResponse(true);
@@ -34,4 +41,8 @@ public class App extends Application implements HasActivityInjector {
         return activityDispatchingAndroidInjector;
     }
 
+    @Override
+    public AndroidInjector<Fragment> supportFragmentInjector() {
+        return mFragmentInjector;
+    }
 }

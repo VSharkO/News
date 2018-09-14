@@ -1,11 +1,14 @@
 package news.factory.com.networking.di;
 
-import android.content.Context;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.maradroid.dummyresponsegenerator.base.DRGInterceptor;
 import com.maradroid.dummyresponsegenerator.utils.ConstKt;
+
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
+import news.factory.com.App;
 import news.factory.com.BuildConfig;
 import news.factory.com.networking.Service;
 import news.factory.com.utils.Constants;
@@ -21,6 +24,7 @@ import timber.log.Timber;
 @Module
 public class NetworkingModule {
 
+    @Singleton
     @Provides
     public Retrofit provideRestClient(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
@@ -31,21 +35,24 @@ public class NetworkingModule {
                 .build();
     }
 
+    @Singleton
     @Provides
     public Service provideNewsAPIService(Retrofit retrofit) {
         return retrofit.create(Service.class);
     }
 
+    @Singleton
     @Provides
-    public OkHttpClient provideOkHttpClient(Context appContext, Interceptor interceptor, HttpLoggingInterceptor loggingInterceptor){
+    public OkHttpClient provideOkHttpClient(App app, Interceptor interceptor, HttpLoggingInterceptor loggingInterceptor){
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder().addInterceptor(interceptor);
         if(BuildConfig.DEBUG) {
             okHttpClientBuilder.addInterceptor(loggingInterceptor);
         }
-        okHttpClientBuilder.addInterceptor(new DRGInterceptor(appContext, ConstKt.MEDIATYPE_JSON));
+        okHttpClientBuilder.addInterceptor(new DRGInterceptor(app, ConstKt.MEDIATYPE_JSON));
         return okHttpClientBuilder.build();
     }
 
+    @Singleton
     @Provides
     public Interceptor provideInterceptor() {
         Interceptor interceptor = chain -> {
@@ -61,6 +68,7 @@ public class NetworkingModule {
         return interceptor;
     }
 
+    @Singleton
     @Provides
     public HttpLoggingInterceptor provideLogging() {
         HttpLoggingInterceptor.Logger logger = message -> Timber.d(message);

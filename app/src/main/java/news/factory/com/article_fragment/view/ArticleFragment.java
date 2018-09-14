@@ -1,5 +1,4 @@
 package news.factory.com.article_fragment.view;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,23 +13,23 @@ import java.util.List;
 import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import dagger.android.support.AndroidSupportInjection;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerAdapter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.base.RecyclerWrapper;
+import news.factory.com.base.view_holders.BaseFragment;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 
-public class ArticleFragment extends Fragment implements ArticleFragmentView{
+public class ArticleFragment extends BaseFragment implements ArticleFragmentView{
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerView;
+
     @Inject
     ArticleFragmentPresenter presenter;
 
     @Inject
     RecyclerAdapter adapter;
-
-    @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
@@ -70,12 +69,6 @@ public class ArticleFragment extends Fragment implements ArticleFragmentView{
     @Override
     public void fillAdapterDataNews(List<RecyclerWrapper> data) {
         adapter.fillData(data);
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        AndroidSupportInjection.inject(this);
-        super.onAttach(context);
     }
 
     @Override

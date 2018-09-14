@@ -1,4 +1,6 @@
 package news.factory.com.networking.helpers;
+import javax.inject.Inject;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import news.factory.com.base.BaseInteractor;
@@ -10,6 +12,7 @@ public class ArticleInteractorImpl extends BaseInteractor implements ArticleInte
 
     private Service mService;
 
+    @Inject
     public ArticleInteractorImpl(Service service) {
         mService = service;
     }

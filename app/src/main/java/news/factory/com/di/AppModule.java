@@ -1,20 +1,31 @@
 package news.factory.com.di;
 
-import android.content.Context;
-
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.App;
-import news.factory.com.main.di.MainActivityComponent;
+import news.factory.com.utils.ResourceRepo;
+import news.factory.com.utils.ResourseRepoImpl;
 
-@Module(subcomponents = MainActivityComponent.class)
+@Module
 public class AppModule {
+
+    private App app;
+
+    public AppModule(App app) {
+        this.app = app;
+    }
 
     @Singleton
     @Provides
-    Context provideContext(App application){
-        return application;
+    App provideContext(){
+        return app;
+    }
+
+    @Singleton
+    @Provides
+    ResourceRepo provideResourceRepo(App app){
+        return new ResourseRepoImpl(app);
     }
 }

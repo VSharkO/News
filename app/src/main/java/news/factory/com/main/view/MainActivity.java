@@ -1,9 +1,6 @@
 package news.factory.com.main.view;
 
-import android.app.Activity;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -12,20 +9,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnPageChange;
-import dagger.android.AndroidInjection;
-import dagger.android.AndroidInjector;
-import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasActivityInjector;
-import dagger.android.support.HasSupportFragmentInjector;
 import news.factory.com.R;
+import news.factory.com.base.BaseActivity;
 import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
 import news.factory.com.main.presenter.MainActivityPresenter;
 
-public class MainActivity extends AppCompatActivity implements MainActivityView,HasActivityInjector,HasSupportFragmentInjector {
-    @Inject
-    DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;
-    @Inject
-    DispatchingAndroidInjector<Fragment> mFragmentInjector;
+public class MainActivity extends BaseActivity implements MainActivityView {
+
     @Inject
     MainActivityPresenter mPresenter;
     @Inject
@@ -37,10 +27,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityView,
     ImageButton forwardButton;
     @BindView(R.id.floatingBackwardButton)
     ImageButton backwardButton;
-
+    @Inject
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         ButterKnife.bind(this);
@@ -82,16 +71,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView,
     @OnClick(R.id.floatingForwardButton)
     public void onForwardClick(){
         mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1);
-    }
-
-    @Override
-    public DispatchingAndroidInjector<Activity> activityInjector() {
-        return activityDispatchingAndroidInjector;
-    }
-
-    @Override
-    public AndroidInjector<Fragment> supportFragmentInjector() {
-        return mFragmentInjector;
     }
 
     @Override
