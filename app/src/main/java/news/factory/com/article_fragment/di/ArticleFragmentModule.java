@@ -35,12 +35,6 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    Lifecycle provideLifecycle(ArticleFragment fragment){
-        return fragment.getLifecycle();
-    }
-
-    @PerFragment
-    @Provides
     RecyclerAdapter provideAdapter(){
         return new RecyclerAdapter();
     }
