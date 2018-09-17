@@ -24,7 +24,6 @@ public class ArticleInteractorImpl extends BaseInteractor implements ArticleInte
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(news -> new InteractorData(news))
                 .subscribe(getObserver(listener));
-
     }
 
 }

@@ -28,7 +28,8 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    ArticleInteractor provideInteractor(ArticleInteractorImpl interactor) {
+    ArticleInteractor provideInteractor(ArticleInteractorImpl interactor, ArticleFragment fragment){
+        fragment.getLifecycle().addObserver(interactor);
         return interactor;
     }
 
@@ -37,6 +38,7 @@ public class ArticleFragmentModule {
     Lifecycle provideLifecycle(ArticleFragment fragment){
         return fragment.getLifecycle();
     }
+
     @PerFragment
     @Provides
     RecyclerAdapter provideAdapter(){

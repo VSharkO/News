@@ -44,5 +44,4 @@ public class App extends Application implements HasActivityInjector, HasSupportF
         return androidInjector;
     }
 
-
 }
