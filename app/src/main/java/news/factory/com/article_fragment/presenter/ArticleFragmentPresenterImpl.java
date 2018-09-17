@@ -2,10 +2,8 @@ package news.factory.com.article_fragment.presenter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
-
 import dagger.Lazy;
 import news.factory.com.base.RecyclerAdapter;
-import news.factory.com.utils.OnImageClickListener;
 import news.factory.com.utils.ResourceRepo;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
@@ -19,14 +17,14 @@ import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitle
 import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorSharesData;
 import news.factory.com.model.Content;
 import news.factory.com.model.News;
-import news.factory.com.networking.helpers.ArticleInteractor;
+import news.factory.com.networking.interactor.ArticleInteractor;
 import news.factory.com.article_fragment.view.ArticleFragmentView;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
 
-public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener, OnImageClickListener{
+public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener{
     private ArticleFragmentView view;
     private ArticleInteractor articleInteractor;
     private ResourceRepo resourceRepo;
@@ -150,8 +148,4 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         return index;
     }
 
-    @Override
-    public void onImageClick() {
-        setData(index);
-    }
 }

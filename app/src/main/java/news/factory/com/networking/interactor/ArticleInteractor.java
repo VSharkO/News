@@ -1,4 +1,4 @@
-package news.factory.com.networking.helpers;
+package news.factory.com.networking.interactor;
 
 import news.factory.com.utils.NetworkResponseListener;
 

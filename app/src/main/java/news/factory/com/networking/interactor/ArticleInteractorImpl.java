@@ -1,4 +1,4 @@
-package news.factory.com.networking.helpers;
+package news.factory.com.networking.interactor;
 import android.arch.lifecycle.LifecycleObserver;
 import javax.inject.Inject;
 import io.reactivex.android.schedulers.AndroidSchedulers;
