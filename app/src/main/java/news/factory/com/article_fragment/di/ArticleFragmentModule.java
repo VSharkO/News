@@ -42,4 +42,5 @@ public class ArticleFragmentModule {
     RecyclerAdapter provideAdapter(){
         return new RecyclerAdapter();
     }
+
 }

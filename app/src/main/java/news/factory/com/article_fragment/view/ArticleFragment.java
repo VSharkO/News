@@ -22,7 +22,7 @@ import news.factory.com.utils.CostumeItemDecorator;
 
 public class ArticleFragment extends BaseFragment implements ArticleFragmentView{
     @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    RecyclerView recyclerView;
 
     @Inject
     ArticleFragmentPresenter presenter;
@@ -59,10 +59,10 @@ public class ArticleFragment extends BaseFragment implements ArticleFragmentView
     public void provideRecyclerViewAdapter() {
         CostumeItemDecorator itemDecorator = new CostumeItemDecorator(this.getContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(adapter);
-        mRecyclerView.addItemDecoration(itemDecorator);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(itemDecorator);
     }
 
     @Override
