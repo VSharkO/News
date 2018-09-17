@@ -13,7 +13,6 @@ import news.factory.com.R;
 import news.factory.com.base.BaseActivity;
 import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
 import news.factory.com.main.presenter.MainActivityPresenter;
-
 public class MainActivity extends BaseActivity implements MainActivityView {
 
     @Inject
@@ -73,9 +72,4 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1);
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        mPresenter.killDisposable();
-    }
 }

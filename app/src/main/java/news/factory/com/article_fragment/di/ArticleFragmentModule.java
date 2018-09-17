@@ -1,4 +1,5 @@
 package news.factory.com.article_fragment.di;
+import android.arch.lifecycle.Lifecycle;
 
 import dagger.Module;
 import dagger.Provides;
@@ -32,6 +33,11 @@ public class ArticleFragmentModule {
         return interactor;
     }
 
+    @PerFragment
+    @Provides
+    Lifecycle provideLifecycle(ArticleFragment fragment){
+        return fragment.getLifecycle();
+    }
     @PerFragment
     @Provides
     RecyclerAdapter provideAdapter(){

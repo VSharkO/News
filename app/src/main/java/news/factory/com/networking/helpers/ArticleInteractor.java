@@ -6,6 +6,4 @@ public interface ArticleInteractor {
 
     void getProductsFromAPI(NetworkResponseListener listener, String type, String id, String pageNum);
 
-    void killDisposable();
-
 }

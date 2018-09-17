@@ -44,12 +44,6 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         mArticleInteractor.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
         this.index = index;
     }
-
-    @Override
-    public void killDesposables() {
-        mArticleInteractor.killDisposable();
-    }
-
     @Override
     public void onSuccess(InteractorData callback) {
         News data = (News)callback.getData();

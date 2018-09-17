@@ -3,7 +3,6 @@ package news.factory.com;
 import android.app.Activity;
 import android.app.Application;
 import android.support.v4.app.Fragment;
-
 import com.maradroid.dummyresponsegenerator.base.interactor.InteractorImpl;
 import com.maradroid.dummyresponsegenerator.utils.SharedPerfRepo;
 import javax.inject.Inject;
@@ -45,4 +44,6 @@ public class App extends Application implements HasActivityInjector, HasSupportF
     public AndroidInjector<Fragment> supportFragmentInjector() {
         return mFragmentInjector;
     }
+
+
 }
