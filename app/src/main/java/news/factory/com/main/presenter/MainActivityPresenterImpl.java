@@ -1,4 +1,6 @@
 package news.factory.com.main.presenter;
+import javax.inject.Inject;
+
 import news.factory.com.main.view.MainActivityView;
 import news.factory.com.model.News;
 import news.factory.com.networking.helpers.ArticleInteractor;
@@ -12,6 +14,7 @@ public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkR
     private MainActivityView view;
     private ArticleInteractor mArticleInteractor;
 
+    @Inject
     public MainActivityPresenterImpl(MainActivityView view, ArticleInteractor interactor) {
         mArticleInteractor = interactor;
         this.view = view;

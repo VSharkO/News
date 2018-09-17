@@ -18,14 +18,14 @@ public class MainActivityModule {
 
     @PerActivity
     @Provides
-    MainActivityView provideMainView(){
-        return new MainActivity();
+    MainActivityView provideMainView(MainActivity mainView){
+        return mainView;
     }
 
     @PerActivity
     @Provides
-    MainActivityPresenter provideMainPresenter(MainActivity mainView, ArticleInteractor interactor){
-        return new MainActivityPresenterImpl(mainView,interactor);
+    MainActivityPresenter provideMainPresenter(MainActivityPresenterImpl presenter){
+        return presenter;
     }
 
     @PerActivity
