@@ -11,14 +11,14 @@ import butterknife.OnClick;
 import butterknife.OnPageChange;
 import news.factory.com.R;
 import news.factory.com.base.BaseActivity;
-import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
+import news.factory.com.main.adapter.ViewPagerFragmentAdapterImpl;
 import news.factory.com.main.presenter.MainActivityPresenter;
 public class MainActivity extends BaseActivity implements MainActivityView {
 
     @Inject
     MainActivityPresenter presenter;
     @Inject
-    ViewPagerFragmentAdapter adapter;
+    ViewPagerFragmentAdapterImpl adapter;
 
     @BindView(R.id.pager)
     ViewPager viewPager;
@@ -35,11 +35,6 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         viewPager.setAdapter(adapter);
         presenter.getArticlesFromAPI();
         setSwipeButtons(viewPager.getCurrentItem(), adapter.getCount());
-    }
-
-    @Override
-    public void setNumberOfPages(int numberOfPages){
-        adapter.setDataCount(numberOfPages);
     }
 
     @OnPageChange(R.id.pager)

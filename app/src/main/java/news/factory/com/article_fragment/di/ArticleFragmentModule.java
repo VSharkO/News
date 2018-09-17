@@ -1,8 +1,8 @@
 package news.factory.com.article_fragment.di;
-import android.arch.lifecycle.Lifecycle;
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.RecyclerAdapter;
+import news.factory.com.base.RecyclerAdapterImpl;
 import news.factory.com.networking.helpers.ArticleInteractor;
 import news.factory.com.networking.helpers.ArticleInteractorImpl;
 import news.factory.com.scopes.PerFragment;
@@ -35,7 +35,13 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapter provideAdapter(){
-        return new RecyclerAdapter();
+    RecyclerAdapterImpl provideAdapterImpl(ArticleFragmentPresenter presenter){
+        return new RecyclerAdapterImpl(presenter);
+    }
+
+    @PerFragment
+    @Provides
+    RecyclerAdapter provideAdapter(RecyclerAdapterImpl adapter){
+        return adapter;
     }
 }

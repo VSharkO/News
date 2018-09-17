@@ -1,8 +1,11 @@
 package news.factory.com.article_fragment.presenter;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
+
+import dagger.Lazy;
+import news.factory.com.base.RecyclerAdapter;
+import news.factory.com.utils.OnImageClickListener;
 import news.factory.com.utils.ResourceRepo;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
@@ -23,16 +26,19 @@ import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
 
-public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener{
+public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener, OnImageClickListener{
     private ArticleFragmentView view;
     private ArticleInteractor articleInteractor;
     private ResourceRepo resourceRepo;
+
+    Lazy<RecyclerAdapter> adapter;
     private int index=0;
 
     @Inject
-    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor, ResourceRepo resourceRepo) {
+    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
         this.view = view;
         articleInteractor = interactor;
+        this.adapter = adapter;
         this.resourceRepo = resourceRepo;
     }
 
@@ -44,7 +50,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     @Override
     public void onSuccess(InteractorData callback) {
         News data = (News)callback.getData();
-        view.fillAdapterDataNews(getSortedItemsForRecycler(data));
+        adapter.get().fillData(getSortedItemsForRecycler(data));
     }
 
     @Override
@@ -137,5 +143,15 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         String numOfPages = news.getPagesNo();
         recyclerWrappers.add(new RecyclerWrapper(new ArticleIndicatorData(numOfPages,String.valueOf(index)),
                 RecyclerWrapper.TYPE_ARTICLE_INDICATOR));
+    }
+
+    @Override
+    public int getIndex(){
+        return index;
+    }
+
+    @Override
+    public void onImageClick() {
+        setData(index);
     }
 }

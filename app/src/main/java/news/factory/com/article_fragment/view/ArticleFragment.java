@@ -13,7 +13,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
-import news.factory.com.base.RecyclerAdapter;
+import news.factory.com.base.RecyclerAdapterImpl;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.BaseFragment;
@@ -21,14 +21,13 @@ import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 
 public class ArticleFragment extends BaseFragment implements ArticleFragmentView{
+
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-
     @Inject
     ArticleFragmentPresenter presenter;
-
     @Inject
-    RecyclerAdapter adapter;
+    RecyclerAdapterImpl adapter;
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();

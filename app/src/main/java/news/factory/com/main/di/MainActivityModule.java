@@ -2,6 +2,7 @@ package news.factory.com.main.di;
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
+import news.factory.com.main.adapter.ViewPagerFragmentAdapterImpl;
 import news.factory.com.main.presenter.MainActivityPresenter;
 import news.factory.com.main.presenter.MainActivityPresenterImpl;
 import news.factory.com.main.view.MainActivity;
@@ -34,7 +35,13 @@ public class MainActivityModule {
 
     @PerActivity
     @Provides
-    ViewPagerFragmentAdapter providePagerAdapter(MainActivity mainActivity){
-        return new ViewPagerFragmentAdapter(mainActivity.getSupportFragmentManager());
+    ViewPagerFragmentAdapterImpl providePagerAdapterImpl(MainActivity mainActivity){
+        return new ViewPagerFragmentAdapterImpl(mainActivity.getSupportFragmentManager());
+    }
+
+    @PerActivity
+    @Provides
+    ViewPagerFragmentAdapter providePagerAdapter(ViewPagerFragmentAdapterImpl adapter){
+        return adapter;
     }
 }
