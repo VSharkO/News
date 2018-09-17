@@ -2,9 +2,7 @@ package news.factory.com.article_fragment.presenter;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.inject.Inject;
-
 import news.factory.com.utils.ResourceRepo;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
@@ -26,17 +24,16 @@ import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
 
 public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener{
-
     private ArticleFragmentView view;
     private ArticleInteractor mArticleInteractor;
     private ResourceRepo mStatics;
     private int index=0;
 
     @Inject
-    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor, ResourceRepo statics) {
+    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor, ResourceRepo resourceRepo) {
         this.view = view;
         mArticleInteractor = interactor;
-        mStatics = statics;
+        mStatics = resourceRepo;
     }
 
     @Override

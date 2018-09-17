@@ -1,6 +1,5 @@
 package news.factory.com.article_fragment.di;
 import android.arch.lifecycle.Lifecycle;
-
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.RecyclerAdapter;
