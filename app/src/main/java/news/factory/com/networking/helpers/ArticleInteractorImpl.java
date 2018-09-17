@@ -10,17 +10,17 @@ import news.factory.com.utils.NetworkResponseListener;
 
 public class ArticleInteractorImpl extends BaseInteractor implements ArticleInteractor{
 
-    private Service mService;
+    private Service service;
 
     @Inject
     public ArticleInteractorImpl(Service service) {
-        mService = service;
+        this.service = service;
     }
 
     @Override
     public void getProductsFromAPI(NetworkResponseListener listener, String type, String id, String pageNum) {
 
-        mService.getNews(type,id,pageNum).
+        service.getNews(type,id,pageNum).
                 subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(news -> new InteractorData(news))

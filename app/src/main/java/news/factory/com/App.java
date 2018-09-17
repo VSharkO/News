@@ -21,14 +21,13 @@ public class App extends Application implements HasActivityInjector, HasSupportF
     @Inject
     DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;
     @Inject
-    DispatchingAndroidInjector<Fragment> mFragmentInjector;
+    DispatchingAndroidInjector<Fragment> androidInjector;
 
     private AppComponent appComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
-
         appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
         appComponent.inject(this);
         Timber.plant(new Timber.DebugTree());
@@ -43,6 +42,6 @@ public class App extends Application implements HasActivityInjector, HasSupportF
 
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {
-        return mFragmentInjector;
+        return androidInjector;
     }
 }

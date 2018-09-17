@@ -3,6 +3,7 @@ package news.factory.com.base;
 import io.reactivex.observers.DisposableObserver;
 import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;
+import timber.log.Timber;
 
 public abstract class BaseInteractor {
 
@@ -30,6 +31,7 @@ public abstract class BaseInteractor {
     }
 
     public void dispose(){
+        Timber.e("Okinuo");
         observer.dispose();
     }
 }
