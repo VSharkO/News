@@ -16,12 +16,12 @@ import news.factory.com.main.presenter.MainActivityPresenter;
 public class MainActivity extends BaseActivity implements MainActivityView {
 
     @Inject
-    MainActivityPresenter mPresenter;
+    MainActivityPresenter presenter;
     @Inject
-    ViewPagerFragmentAdapter mAdapter;
+    ViewPagerFragmentAdapter adapter;
 
     @BindView(R.id.pager)
-    ViewPager mViewPager;
+    ViewPager viewPager;
     @BindView(R.id.floatingForwardButton)
     ImageButton forwardButton;
     @BindView(R.id.floatingBackwardButton)
@@ -32,19 +32,19 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         ButterKnife.bind(this);
-        mViewPager.setAdapter(mAdapter);
-        mPresenter.getArticlesFromAPI();
-        setSwipeButtons(mViewPager.getCurrentItem(),mAdapter.getCount());
+        viewPager.setAdapter(adapter);
+        presenter.getArticlesFromAPI();
+        setSwipeButtons(viewPager.getCurrentItem(), adapter.getCount());
     }
 
     @Override
     public void setNumberOfPages(int numberOfPages){
-        mAdapter.setDataCount(numberOfPages);
+        adapter.setDataCount(numberOfPages);
     }
 
     @OnPageChange(R.id.pager)
     public void handleClicks(){
-        setSwipeButtons(mViewPager.getCurrentItem(),mAdapter.getCount());
+        setSwipeButtons(viewPager.getCurrentItem(), adapter.getCount());
     }
 
     public void setSwipeButtons(int index,int numOfItems){
@@ -64,12 +64,12 @@ public class MainActivity extends BaseActivity implements MainActivityView {
 
     @OnClick(R.id.floatingBackwardButton)
     public void onBackwardClick(){
-        mViewPager.setCurrentItem(mViewPager.getCurrentItem()-1);
+        viewPager.setCurrentItem(viewPager.getCurrentItem()-1);
     }
 
     @OnClick(R.id.floatingForwardButton)
     public void onForwardClick(){
-        mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1);
+        viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
     }
 
 }
