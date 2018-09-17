@@ -12,17 +12,17 @@ import timber.log.Timber;
 public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkResponseListener {
 
     private MainActivityView view;
-    private ArticleInteractor mArticleInteractor;
+    private ArticleInteractor articleInteractor;
 
     @Inject
     public MainActivityPresenterImpl(MainActivityView view, ArticleInteractor interactor) {
-        mArticleInteractor = interactor;
+        articleInteractor = interactor;
         this.view = view;
     }
 
     @Override
     public void getArticlesFromAPI() {
-        mArticleInteractor.getProductsFromAPI(this,Constants.TYPE, Constants.ID, Constants.PAGE_NUMBER);
+        articleInteractor.getProductsFromAPI(this,Constants.TYPE, Constants.ID, Constants.PAGE_NUMBER);
     }
 
     @Override

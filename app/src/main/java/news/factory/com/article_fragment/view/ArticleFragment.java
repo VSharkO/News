@@ -16,7 +16,7 @@ import news.factory.com.R;
 import news.factory.com.base.RecyclerAdapter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.base.view_holders.BaseFragment;
+import news.factory.com.base.BaseFragment;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 

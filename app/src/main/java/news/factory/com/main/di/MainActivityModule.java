@@ -1,7 +1,4 @@
 package news.factory.com.main.di;
-
-import android.arch.lifecycle.Lifecycle;
-
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
@@ -30,14 +27,9 @@ public class MainActivityModule {
 
     @PerActivity
     @Provides
-    ArticleInteractor provideInteractor(ArticleInteractorImpl interactor){
+    ArticleInteractor provideInteractor(ArticleInteractorImpl interactor, MainActivity mainActivity){
+        mainActivity.getLifecycle().addObserver(interactor);
         return interactor;
-    }
-
-    @PerActivity
-    @Provides
-    Lifecycle provideLifecycle(MainActivity activity){
-        return activity.getLifecycle();
     }
 
     @PerActivity

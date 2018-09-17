@@ -1,4 +1,4 @@
-package news.factory.com.base.view_holders;
+package news.factory.com.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

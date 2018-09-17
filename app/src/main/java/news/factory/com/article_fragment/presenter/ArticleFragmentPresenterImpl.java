@@ -25,20 +25,20 @@ import timber.log.Timber;
 
 public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener{
     private ArticleFragmentView view;
-    private ArticleInteractor mArticleInteractor;
-    private ResourceRepo mStatics;
+    private ArticleInteractor articleInteractor;
+    private ResourceRepo resourceRepo;
     private int index=0;
 
     @Inject
     public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor, ResourceRepo resourceRepo) {
         this.view = view;
-        mArticleInteractor = interactor;
-        mStatics = resourceRepo;
+        articleInteractor = interactor;
+        this.resourceRepo = resourceRepo;
     }
 
     @Override
     public void setData(int index) {
-        mArticleInteractor.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
+        articleInteractor.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
         this.index = index;
     }
     @Override
@@ -77,7 +77,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         if(news.getFeaturedImageSource().isEmpty())
             featuredImageSource = "";
         else
-            featuredImageSource = mStatics.provideString(R.string.source_string,news.getFeaturedImageSource());
+            featuredImageSource = resourceRepo.provideString(R.string.source_string,news.getFeaturedImageSource());
         if(news.getFeaturedImageCaption().isEmpty())
             featuredImageCaption = "";
         else
@@ -128,7 +128,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private void addPublished(News news, List<RecyclerWrapper> recyclerWrappers){
         String published = news.getPublishedAtHumans().split(" ")[0];
-        recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(mStatics.provideString(R.string.published,published)),
+        recyclerWrappers.add(new RecyclerWrapper(new ArticlePublishedData(resourceRepo.provideString(R.string.published,published)),
                 RecyclerWrapper.TYPE_ARTICLE_PUBLISHED));
 
     }

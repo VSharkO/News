@@ -1,5 +1,4 @@
 package news.factory.com.networking.helpers;
-import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleObserver;
 import javax.inject.Inject;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -10,18 +9,17 @@ import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;
 public class ArticleInteractorImpl extends BaseInteractor implements ArticleInteractor, LifecycleObserver{
 
-    private Service mService;
+    private Service service;
 
     @Inject
-    public ArticleInteractorImpl(Service service, Lifecycle lifecycle) {
-        super(lifecycle);
-        mService = service;
+    public ArticleInteractorImpl(Service service) {
+        this.service = service;
     }
 
     @Override
     public void getProductsFromAPI(NetworkResponseListener listener, String type, String id, String pageNum) {
 
-        mService.getNews(type,id,pageNum).
+        service.getNews(type,id,pageNum).
                 subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(news -> new InteractorData(news))

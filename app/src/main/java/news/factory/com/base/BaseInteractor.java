@@ -12,10 +12,6 @@ public abstract class BaseInteractor implements LifecycleObserver{
 
     private DisposableObserver<InteractorData> observer;
 
-    public BaseInteractor(Lifecycle lifecycle) {
-        lifecycle.addObserver(this);
-    }
-
     public DisposableObserver<InteractorData> getObserver(NetworkResponseListener listener){
         observer = new DisposableObserver<InteractorData>() {
             @Override
