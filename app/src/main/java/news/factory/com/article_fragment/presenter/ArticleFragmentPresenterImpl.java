@@ -4,6 +4,7 @@ import java.util.List;
 import javax.inject.Inject;
 import dagger.Lazy;
 import news.factory.com.base.RecyclerAdapter;
+import news.factory.com.networking.interactor.InnerArticlesInteractor;
 import news.factory.com.utils.ResourceRepo;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
@@ -28,7 +29,6 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     private ArticleFragmentView view;
     private ArticleInteractor articleInteractor;
     private ResourceRepo resourceRepo;
-
     private Lazy<RecyclerAdapter> adapter;
     private int index=0;
 
@@ -42,7 +42,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     @Override
     public void setData(int index) {
-        articleInteractor.getProductsFromAPI(this,Constants.TYPE,Constants.ID,String.valueOf(index));
+        articleInteractor.getProductsFromAPI(this,Constants.ARTICLE_TYPE,Constants.ID_ARTICLE,String.valueOf(index));
         this.index = index;
     }
     @Override

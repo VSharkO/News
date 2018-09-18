@@ -1,9 +1,5 @@
 package news.factory.com.networking.interactor;
-
-import android.arch.lifecycle.LifecycleObserver;
-
 import javax.inject.Inject;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import news.factory.com.base.BaseInteractor;
@@ -20,9 +16,8 @@ public class InnerArticlesInteractorImpl extends BaseInteractor implements Inner
     }
 
     @Override
-    public void getProductsFromAPI(NetworkResponseListener listener, String type, String id, String pageNum) {
-
-        service.getNews(type,id,pageNum).
+    public void getTopArticles(NetworkResponseListener listener, String type, String id, String pageNum) {
+        service.getInnerArticles(type,id,pageNum).
                 subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(news -> new InteractorData(news))

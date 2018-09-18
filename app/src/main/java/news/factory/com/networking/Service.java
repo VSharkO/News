@@ -3,6 +3,7 @@ package news.factory.com.networking;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import news.factory.com.model.News;
+import news.factory.com.model.TopNews;
 import news.factory.com.utils.Constants;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -14,6 +15,6 @@ public interface Service {
                              @Query(Constants.PAGE) String pageNumber);
 
     @GET("{type}/{id}")
-    Observable<News> getInnerArticles(@Path("type") String type,@Path("id") String id,
-                             @Query(Constants.PAGE) String pageNumber);
+    Observable<TopNews> getInnerArticles(@Path("type") String type, @Path("id") String id,
+                                         @Query(Constants.PAGE) String pageNumber);
 }
