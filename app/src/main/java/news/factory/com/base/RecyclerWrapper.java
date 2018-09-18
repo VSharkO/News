@@ -12,6 +12,8 @@ public class RecyclerWrapper{
     public static final int TYPE_ARTICLE_AUTHOR_SHARES= R.layout.cell_article_author_shares;
     public static final int TYPE_ARTICLE_PUBLISHED = R.layout.cell_article_published;
     public static final int TYPE_ARTICLE_INDICATOR = R.layout.cell_article_indicator;
+    public static final int TYPE_INNER_ARTICLE_PAGER = R.layout.cell_inner_pager;
+    public static final int TYPE_INNER_ARTICLE_CELL = R.layout.inner_cell_layout;
 
     private Object data;
     private int type;

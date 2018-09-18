@@ -42,7 +42,7 @@ public class InnerPagerFragment extends BaseFragment implements InnerPagerFragme
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_inner_article,container,false);
+        View view = inflater.inflate(R.layout.inner_cell_layout,container,false);
         return view;
     }
 

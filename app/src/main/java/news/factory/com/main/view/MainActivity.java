@@ -20,7 +20,6 @@ public class MainActivity extends BaseActivity implements MainActivityView {
     MainActivityPresenter presenter;
     @Inject
     ViewPagerFragmentAdapterImpl adapter;
-
     @BindView(R.id.pager)
     ViewPager viewPager;
     @BindView(R.id.floatingForwardButton)

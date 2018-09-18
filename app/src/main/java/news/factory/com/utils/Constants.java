@@ -5,8 +5,9 @@ public class Constants {
     public static final String NEWS_API_BASE_URL = "http://api.avaz.ba/api/";
     public static final String ARTICLE_TYPE = "clanak";
     public static final String MOST_READ_TYPE = "najcitanije";
-    public static final String MOST_POPULAR_TYPE = "najcitanije";
-    public static final String MOST_NEW_TYPE = "najcitanije";
+    public static final String TOP_ARTICLES_TYPE = "TOP";
+    public static final String MOST_POPULAR_TYPE = "najpopularnije";
+    public static final String MOST_NEW_TYPE = "najnovije";
     public static final String NEWS_PICTURE_BASE_URL = "http://api.avaz.ba/";
     public static final String API_TOKEN = "api_token";
     public static final String TOKEN = "PTTOKEN";

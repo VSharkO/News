@@ -9,6 +9,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
+import news.factory.com.base.adapters.ViewPagerFragmentAdapter;
 import news.factory.com.base.adapters.ViewPagerFragmentAdapterImpl;
 
 public class InnerHolder extends RecyclerView.ViewHolder{
@@ -29,7 +30,7 @@ public class InnerHolder extends RecyclerView.ViewHolder{
     }
 
     public void onBind(int position){
-        InnerHolderData data =(InnerHolderData) dataList.get(position).getData();
+//        InnerHolderData data =(InnerHolderData) dataList.get(position).getData();
     }
 
 }

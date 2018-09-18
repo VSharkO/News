@@ -22,7 +22,7 @@ public class ViewPagerFragmentAdapterImpl extends FragmentPagerAdapter implement
     public Fragment getItem(int position) {
         if(type.equals(Constants.ARTICLE_TYPE))
             return ArticleFragment.newInstance(position);
-        if(type.equals(Constants.MOST_READ_TYPE))
+        if(type.equals(Constants.TOP_ARTICLES_TYPE))
             return InnerPagerFragment.newInstance(position);
         else return null;  //fixat
     }

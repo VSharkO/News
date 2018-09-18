@@ -4,6 +4,8 @@ import java.util.List;
 import javax.inject.Inject;
 import dagger.Lazy;
 import news.factory.com.base.adapters.RecyclerAdapter;
+import news.factory.com.base.view_holders.inner_cell_holder.InnerCellData;
+import news.factory.com.model.TopNews;
 import news.factory.com.utils.ResourceRepo;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
@@ -68,6 +70,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         addContents(news,recyclerWrappers);
         addPublished(news,recyclerWrappers);
         addIndicator(news,recyclerWrappers);
+        addInnerHolder(recyclerWrappers);
         return recyclerWrappers;
     }
 
@@ -140,6 +143,10 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         String numOfPages = news.getPagesNo();
         recyclerWrappers.add(new RecyclerWrapper(new ArticleIndicatorData(numOfPages,String.valueOf(index)),
                 RecyclerWrapper.TYPE_ARTICLE_INDICATOR));
+    }
+
+    private void addInnerHolder(List<RecyclerWrapper> recyclerWrappers){
+        recyclerWrappers.add(new RecyclerWrapper(RecyclerWrapper.TYPE_INNER_ARTICLE_PAGER));
     }
 
     @Override

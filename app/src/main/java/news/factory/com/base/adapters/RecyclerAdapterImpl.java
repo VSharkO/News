@@ -18,6 +18,9 @@ import news.factory.com.base.view_holders.article_published.ArticlePublishedHold
 import news.factory.com.base.view_holders.article_title.ArticleTitleHolder;
 import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitleHolder;
 import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorShareHolder;
+import news.factory.com.base.view_holders.inner_cell_holder.InnerCellHolder;
+import news.factory.com.base.view_holders.inner_view_holder.InnerHolder;
+import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 
 
 public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RecyclerAdapter{
@@ -66,6 +69,14 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
 
             case RecyclerWrapper.TYPE_ARTICLE_INDICATOR:
                 return new ArticleIndicatorHolder(itemView,dataList);
+
+            case RecyclerWrapper.TYPE_INNER_ARTICLE_PAGER:
+                return new InnerHolder(itemView,dataList);
+
+            case RecyclerWrapper.TYPE_INNER_ARTICLE_CELL:
+                return new InnerCellHolder(itemView,dataList);
+
+
 
             default: return new DummyHolder(new View(parent.getContext()));
         }
@@ -118,6 +129,16 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
             case RecyclerWrapper.TYPE_ARTICLE_INDICATOR:
                 ArticleIndicatorHolder articleIndicatorHolder = (ArticleIndicatorHolder) holder;
                 articleIndicatorHolder.onBind(position);
+                break;
+
+            case RecyclerWrapper.TYPE_INNER_ARTICLE_PAGER:
+                InnerHolder innerHolder = (InnerHolder) holder;
+                innerHolder.onBind(position);
+                break;
+
+            case RecyclerWrapper.TYPE_INNER_ARTICLE_CELL:
+                InnerCellHolder innerCellHolder = (InnerCellHolder) holder;
+                innerCellHolder.onBind(position);
                 break;
         }
 

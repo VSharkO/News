@@ -68,7 +68,7 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
-//        addHeader(news,recyclerWrappers);
+        addTitle(news,recyclerWrappers);
 //        if(!news.getUpperTitle().isEmpty())
 //            addUpperTitle(news,recyclerWrappers);
 //        addAuthorShares(news,recyclerWrappers);
@@ -77,5 +77,10 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
 //        addPublished(news,recyclerWrappers);
 //        addIndicator(news,recyclerWrappers);
         return recyclerWrappers;
+    }
+
+    private void addTitle(TopNews news,List<RecyclerWrapper> recyclerWrappers){
+        recyclerWrappers.add(new RecyclerWrapper(news.getName(),
+                RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
     }
 }
