@@ -18,7 +18,6 @@ public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkR
     private MainActivityView view;
     private ArticleInteractor articleInteractor;
     private ViewPagerFragmentAdapter adapter;
-    InnerArticlesInteractor innerArticlesInteractor;
 
     @Inject
     public MainActivityPresenterImpl(MainActivityView view, ArticleInteractor interactor, ViewPagerFragmentAdapter adapter) {
