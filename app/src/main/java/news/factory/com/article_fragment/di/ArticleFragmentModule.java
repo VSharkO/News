@@ -1,11 +1,8 @@
 package news.factory.com.article_fragment.di;
 import dagger.Module;
 import dagger.Provides;
-import news.factory.com.base.RecyclerAdapter;
-import news.factory.com.base.RecyclerAdapterImpl;
-import news.factory.com.model.TopNews;
-import news.factory.com.networking.interactor.InnerArticlesInteractor;
-import news.factory.com.networking.interactor.InnerArticlesInteractorImpl;
+import news.factory.com.base.adapters.RecyclerAdapter;
+import news.factory.com.base.adapters.RecyclerAdapterImpl;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerFragment;

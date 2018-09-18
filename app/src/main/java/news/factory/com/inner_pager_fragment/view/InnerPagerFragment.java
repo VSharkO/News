@@ -1,4 +1,4 @@
-package news.factory.com.article_fragment.view;
+package news.factory.com.inner_pager_fragment.view;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,26 +14,26 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
-import news.factory.com.base.adapters.RecyclerAdapterImpl;
-import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
-import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.BaseFragment;
+import news.factory.com.base.adapters.RecyclerAdapterImpl;
+import news.factory.com.base.RecyclerWrapper;
+import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 
-public class ArticleFragment extends BaseFragment implements ArticleFragmentView{
+public class InnerPagerFragment extends BaseFragment implements InnerPagerFragmentView {
 
-    @BindView(R.id.recyclerView)
+    @BindView(R.id.innerRecyclerView)
     RecyclerView recyclerView;
     @Inject
-    ArticleFragmentPresenter presenter;
+    InnerPagerFragmentPresenter presenter;
     @Inject
     RecyclerAdapterImpl adapter;
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
         data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index+1);
-        ArticleFragment f = new ArticleFragment();
+        InnerPagerFragment f = new InnerPagerFragment();
         f.setArguments(data);
         return f;
     }
@@ -42,7 +42,7 @@ public class ArticleFragment extends BaseFragment implements ArticleFragmentView
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_article,container,false);
+        View view = inflater.inflate(R.layout.fragment_inner_article,container,false);
         return view;
     }
 
@@ -71,4 +71,3 @@ public class ArticleFragment extends BaseFragment implements ArticleFragmentView
     }
 
 }
-

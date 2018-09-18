@@ -1,19 +1,16 @@
 package news.factory.com.main.di;
 import dagger.Module;
 import dagger.Provides;
-import news.factory.com.article_fragment.view.ArticleFragment;
-import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
-import news.factory.com.main.adapter.ViewPagerFragmentAdapterImpl;
+import news.factory.com.base.adapters.ViewPagerFragmentAdapter;
+import news.factory.com.base.adapters.ViewPagerFragmentAdapterImpl;
 import news.factory.com.main.presenter.MainActivityPresenter;
 import news.factory.com.main.presenter.MainActivityPresenterImpl;
 import news.factory.com.main.view.MainActivity;
 import news.factory.com.main.view.MainActivityView;
-import news.factory.com.networking.interactor.InnerArticlesInteractor;
-import news.factory.com.networking.interactor.InnerArticlesInteractorImpl;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerActivity;
-import news.factory.com.scopes.PerFragment;
+import news.factory.com.utils.Constants;
 
 @Module
 public class MainActivityModule {
@@ -40,7 +37,7 @@ public class MainActivityModule {
     @PerActivity
     @Provides
     ViewPagerFragmentAdapterImpl providePagerAdapterImpl(MainActivity mainActivity){
-        return new ViewPagerFragmentAdapterImpl(mainActivity.getSupportFragmentManager());
+        return new ViewPagerFragmentAdapterImpl(mainActivity.getSupportFragmentManager(), Constants.ARTICLE_TYPE);
     }
 
     @PerActivity

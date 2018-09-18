@@ -10,11 +10,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import news.factory.com.R;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
-import news.factory.com.article_fragment.presenter.ArticleFragmentPresenterImpl;
-import news.factory.com.base.RecyclerAdapterImpl;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.utils.Constants;
-import timber.log.Timber;
 
 public class ArticleImageHolder extends RecyclerView.ViewHolder{
 

@@ -1,4 +1,4 @@
-package news.factory.com.networking.interactor;
+package news.factory.com.networking.interactor.inner_pager_interactor;
 import javax.inject.Inject;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;

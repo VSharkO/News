@@ -1,12 +1,9 @@
 package news.factory.com.main.presenter;
 
 import javax.inject.Inject;
-import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
+import news.factory.com.base.adapters.ViewPagerFragmentAdapter;
 import news.factory.com.main.view.MainActivityView;
-import news.factory.com.model.Articles;
 import news.factory.com.model.News;
-import news.factory.com.model.TopNews;
-import news.factory.com.networking.interactor.InnerArticlesInteractor;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.InteractorData;

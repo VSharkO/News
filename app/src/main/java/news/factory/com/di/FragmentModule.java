@@ -5,11 +5,13 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import news.factory.com.article_fragment.di.ArticleFragmentModule;
 import news.factory.com.article_fragment.view.ArticleFragment;
+import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.scopes.PerFragment;
 
 @Module
 public abstract class FragmentModule {
     @PerFragment
-    @ContributesAndroidInjector(modules = ArticleFragmentModule.class)
+    @ContributesAndroidInjector(modules = {ArticleFragmentModule.class, InnerPagerFragment.class})
     public abstract ArticleFragment provideArticleFragment();
+    public abstract InnerPagerFragment provideInnerPagerFragment();
 }
