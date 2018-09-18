@@ -13,4 +13,7 @@ public interface Service {
     Observable<News> getNews(@Path("type") String type, @Path("id") String id,
                              @Query(Constants.PAGE) String pageNumber);
 
+    @GET("{type}/{id}")
+    Observable<News> getInnerArticles(@Path("type") String type,@Path("id") String id,
+                             @Query(Constants.PAGE) String pageNumber);
 }

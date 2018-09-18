@@ -1,5 +1,4 @@
-package news.factory.com.networking.interactor;
-import android.arch.lifecycle.LifecycleObserver;
+package news.factory.com.networking.interactor.article_interactor;
 import javax.inject.Inject;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -7,7 +6,7 @@ import news.factory.com.base.BaseInteractor;
 import news.factory.com.networking.Service;
 import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;
-public class ArticleInteractorImpl extends BaseInteractor implements ArticleInteractor, LifecycleObserver{
+public class ArticleInteractorImpl extends BaseInteractor implements ArticleInteractor{
 
     private Service service;
 
