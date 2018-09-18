@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
-import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderHolder;
 import news.factory.com.base.view_holders.article_image.ArticleImageHolder;
@@ -22,10 +21,10 @@ import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorSha
 public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RecyclerAdapter{
 
     private List<RecyclerWrapper> dataList = new ArrayList<>();
-    private ArticleFragmentPresenter presenter;
+    private Object presenter;
 
     @Inject
-    public RecyclerAdapterImpl(ArticleFragmentPresenter presenter) {
+    public RecyclerAdapterImpl(Object presenter) {
         this.presenter = presenter;
     }
 

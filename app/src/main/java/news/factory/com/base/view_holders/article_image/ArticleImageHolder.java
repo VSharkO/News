@@ -10,6 +10,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import news.factory.com.R;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
+import news.factory.com.article_fragment.presenter.ArticleFragmentPresenterImpl;
+import news.factory.com.base.RecyclerAdapterImpl;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.utils.Constants;
 import timber.log.Timber;
@@ -19,13 +21,12 @@ public class ArticleImageHolder extends RecyclerView.ViewHolder{
     @BindView(R.id.imageView)
     ImageView image;
     private List<RecyclerWrapper> dataList;
-    private ArticleFragmentPresenter presenter;
+    private Object presenter;
 
-
-    public ArticleImageHolder(View itemView, List<RecyclerWrapper> data,ArticleFragmentPresenter presenter) {
+    public ArticleImageHolder(View itemView, List<RecyclerWrapper> data,Object presenterObject) {
         super(itemView);
         dataList = data;
-        this.presenter = presenter;
+        this.presenter = presenterObject;
         ButterKnife.bind(this,itemView);
     }
 
@@ -40,7 +41,9 @@ public class ArticleImageHolder extends RecyclerView.ViewHolder{
 
     @OnClick
     public void onClick(View v) {
-        Timber.e("RADI!");
-        presenter.setData(presenter.getIndex());
+        if (presenter instanceof ArticleFragmentPresenter) {
+            ArticleFragmentPresenter presenterTemp = (ArticleFragmentPresenter) presenter;
+            presenterTemp.setData(presenterTemp.getIndex());
+        }
     }
 }
