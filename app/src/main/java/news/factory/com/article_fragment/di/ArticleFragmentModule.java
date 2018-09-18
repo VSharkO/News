@@ -3,6 +3,8 @@ import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.RecyclerAdapter;
 import news.factory.com.base.adapters.RecyclerAdapterImpl;
+import news.factory.com.base.adapters.ViewPagerInnerAdapter;
+import news.factory.com.base.adapters.ViewPagerInnerAdapterImpl;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerFragment;
@@ -35,8 +37,14 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideAdapterImpl(ArticleFragmentPresenter presenter){
-        return new RecyclerAdapterImpl(presenter);
+    RecyclerAdapterImpl provideAdapterImpl(ArticleFragmentPresenter presenter, ViewPagerInnerAdapterImpl adapter){
+        return new RecyclerAdapterImpl(presenter,adapter);
+    }
+
+    @PerFragment
+    @Provides
+    ViewPagerInnerAdapterImpl provideInnerAdapterImpl(ViewPagerInnerAdapter adapter){
+        return new ViewPagerInnerAdapterImpl(adapter.getFragmentManager());
     }
 
     @PerFragment
@@ -44,4 +52,7 @@ public class ArticleFragmentModule {
     RecyclerAdapter provideAdapter(RecyclerAdapterImpl adapter){
         return adapter;
     }
+
 }
+
+

@@ -1,5 +1,6 @@
 package news.factory.com.base.adapters;
 
+import android.app.FragmentManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,17 +21,18 @@ import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitle
 import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorShareHolder;
 import news.factory.com.base.view_holders.inner_cell_holder.InnerCellHolder;
 import news.factory.com.base.view_holders.inner_view_holder.InnerHolder;
-import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 
 
 public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RecyclerAdapter{
 
     private List<RecyclerWrapper> dataList = new ArrayList<>();
     private Object presenter;
+     ViewPagerInnerAdapterImpl innerAdapter;
 
     @Inject
-    public RecyclerAdapterImpl(Object presenter) {
+    public RecyclerAdapterImpl(Object presenter,ViewPagerInnerAdapterImpl adapter) {
         this.presenter = presenter;
+        innerAdapter = adapter;
     }
 
     @Override
@@ -71,12 +73,10 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 return new ArticleIndicatorHolder(itemView,dataList);
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_PAGER:
-                return new InnerHolder(itemView,dataList);
+                return new InnerHolder(itemView,dataList,innerAdapter);
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_CELL:
                 return new InnerCellHolder(itemView,dataList);
-
-
 
             default: return new DummyHolder(new View(parent.getContext()));
         }

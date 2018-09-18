@@ -3,6 +3,8 @@ import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.ViewPagerFragmentAdapter;
 import news.factory.com.base.adapters.ViewPagerFragmentAdapterImpl;
+import news.factory.com.base.adapters.ViewPagerInnerAdapterImpl;
+import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.main.presenter.MainActivityPresenter;
 import news.factory.com.main.presenter.MainActivityPresenterImpl;
 import news.factory.com.main.view.MainActivity;
@@ -10,7 +12,7 @@ import news.factory.com.main.view.MainActivityView;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerActivity;
-import news.factory.com.utils.Constants;
+import news.factory.com.scopes.PerFragment;
 
 @Module
 public class MainActivityModule {
@@ -37,7 +39,7 @@ public class MainActivityModule {
     @PerActivity
     @Provides
     ViewPagerFragmentAdapterImpl providePagerAdapterImpl(MainActivity mainActivity){
-        return new ViewPagerFragmentAdapterImpl(mainActivity.getSupportFragmentManager(), Constants.ARTICLE_TYPE);
+        return new ViewPagerFragmentAdapterImpl(mainActivity.getSupportFragmentManager());
     }
 
     @PerActivity
@@ -45,4 +47,5 @@ public class MainActivityModule {
     ViewPagerFragmentAdapter providePagerAdapter(ViewPagerFragmentAdapterImpl adapter){
         return adapter;
     }
+
 }

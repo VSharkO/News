@@ -8,7 +8,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import news.factory.com.App;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
 

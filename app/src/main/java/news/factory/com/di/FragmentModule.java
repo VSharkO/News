@@ -18,4 +18,5 @@ public abstract class FragmentModule {
     @PerFragment
     @ContributesAndroidInjector(modules = InnerPagerFragmentModule.class)
     public abstract InnerPagerFragment provideInnerPagerFragment();
+
 }

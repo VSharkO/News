@@ -5,5 +5,5 @@ import java.util.List;
 import news.factory.com.base.RecyclerWrapper;
 
 public interface InnerPagerFragmentView {
-    void fillAdapterDataNews(List<RecyclerWrapper> list);
+//    void fillAdapterDataNews(List<RecyclerWrapper> list);
 }
