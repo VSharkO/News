@@ -29,7 +29,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
     private ArticleInteractor articleInteractor;
     private ResourceRepo resourceRepo;
 
-    Lazy<RecyclerAdapter> adapter;
+    private Lazy<RecyclerAdapter> adapter;
     private int index=0;
 
     @Inject

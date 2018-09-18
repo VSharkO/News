@@ -12,7 +12,7 @@ public abstract class BaseInteractor implements LifecycleObserver{
 
     private DisposableObserver<InteractorData> observer;
 
-    public DisposableObserver<InteractorData> getObserver(NetworkResponseListener listener){
+    protected DisposableObserver<InteractorData> getObserver(NetworkResponseListener listener){
         observer = new DisposableObserver<InteractorData>() {
             @Override
             public void onNext(InteractorData interactorData) {
@@ -35,7 +35,6 @@ public abstract class BaseInteractor implements LifecycleObserver{
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     public void dispose(){
-        Timber.e("Okin'o!");
         observer.dispose();
     }
 }

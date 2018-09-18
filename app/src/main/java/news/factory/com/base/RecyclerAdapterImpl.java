@@ -17,7 +17,7 @@ import news.factory.com.base.view_holders.article_published.ArticlePublishedHold
 import news.factory.com.base.view_holders.article_title.ArticleTitleHolder;
 import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitleHolder;
 import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorShareHolder;
-import timber.log.Timber;
+
 
 public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RecyclerAdapter{
 

@@ -1,4 +1,6 @@
 package news.factory.com.main.presenter;
+import android.view.View;
+
 import javax.inject.Inject;
 import news.factory.com.main.adapter.ViewPagerFragmentAdapter;
 import news.factory.com.main.view.MainActivityView;
@@ -13,7 +15,7 @@ public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkR
 
     private MainActivityView view;
     private ArticleInteractor articleInteractor;
-    ViewPagerFragmentAdapter adapter;
+    private ViewPagerFragmentAdapter adapter;
 
     @Inject
     public MainActivityPresenterImpl(MainActivityView view, ArticleInteractor interactor, ViewPagerFragmentAdapter adapter) {
@@ -25,6 +27,19 @@ public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkR
     @Override
     public void getArticlesFromAPI() {
         articleInteractor.getProductsFromAPI(this,Constants.TYPE, Constants.ID, Constants.PAGE_NUMBER);
+    }
+
+    @Override
+    public void setSwipeButtons(int index,int numOfItems){
+        if (index == 0){
+            view.setForwardButtonVisible();
+        }
+        else if (index==numOfItems-1){
+            view.setBackwardButtonVisible();
+        }
+        else{
+           view.setBothButtonsVisible();
+        }
     }
 
     @Override

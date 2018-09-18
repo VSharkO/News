@@ -35,27 +35,30 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         ButterKnife.bind(this);
         viewPager.setAdapter(adapter);
         presenter.getArticlesFromAPI();
-        setSwipeButtons(viewPager.getCurrentItem(), adapter.getCount());
+        presenter.setSwipeButtons(viewPager.getCurrentItem(), adapter.getCount());
     }
 
     @OnPageChange(R.id.pager)
     public void handleClicks(){
-        setSwipeButtons(viewPager.getCurrentItem(), adapter.getCount());
+        presenter.setSwipeButtons(viewPager.getCurrentItem(), adapter.getCount());
     }
 
-    public void setSwipeButtons(int index,int numOfItems){
-        if (index == 0){
-            backwardButton.setVisibility(View.GONE);
-            forwardButton.setVisibility(View.VISIBLE);
-        }
-        else if (index==numOfItems-1){
-            backwardButton.setVisibility(View.VISIBLE);
-            forwardButton.setVisibility(View.GONE);
-        }
-        else{
-            backwardButton.setVisibility(View.VISIBLE);
-            forwardButton.setVisibility(View.VISIBLE);
-        }
+    @Override
+    public void setForwardButtonVisible(){
+        backwardButton.setVisibility(View.GONE);
+        forwardButton.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void setBackwardButtonVisible(){
+        backwardButton.setVisibility(View.VISIBLE);
+        forwardButton.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void setBothButtonsVisible(){
+        backwardButton.setVisibility(View.VISIBLE);
+        forwardButton.setVisibility(View.VISIBLE);
     }
 
     @OnClick(R.id.floatingBackwardButton)

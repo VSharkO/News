@@ -19,7 +19,7 @@ public class ArticleImageHolder extends RecyclerView.ViewHolder{
     @BindView(R.id.imageView)
     ImageView image;
     private List<RecyclerWrapper> dataList;
-    ArticleFragmentPresenter presenter;
+    private ArticleFragmentPresenter presenter;
 
 
     public ArticleImageHolder(View itemView, List<RecyclerWrapper> data,ArticleFragmentPresenter presenter) {
