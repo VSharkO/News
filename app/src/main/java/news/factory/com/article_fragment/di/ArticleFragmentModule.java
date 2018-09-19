@@ -1,13 +1,10 @@
 package news.factory.com.article_fragment.di;
-import android.support.v4.app.FragmentManager;
-
 import dagger.Lazy;
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.RecyclerAdapter;
 import news.factory.com.base.adapters.RecyclerAdapterImpl;
 import news.factory.com.base.adapters.ViewPagerInnerAdapterImpl;
-import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerFragment;
