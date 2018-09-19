@@ -1,5 +1,6 @@
 package news.factory.com.base.view_holders.inner_view_holder;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import java.util.List;
@@ -13,17 +14,16 @@ public class InnerHolder extends RecyclerView.ViewHolder{
     @BindView(R.id.innerPager)
     ViewPager pager;
 
-    private List<RecyclerWrapper> dataList;
+//    private List<RecyclerWrapper> dataList;
     private ViewPagerInnerAdapterImpl adapter;
 
-    public InnerHolder(View itemView, List<RecyclerWrapper> dataList, ViewPagerInnerAdapterImpl innerAdapter) {
+    public InnerHolder(View itemView, AppCompatActivity context) {
         super(itemView);
         ButterKnife.bind(this,itemView);
-        this.dataList = dataList;
-        this.adapter = innerAdapter;
+//        this.dataList = dataList;
+        adapter = new ViewPagerInnerAdapterImpl(context.getSupportFragmentManager());
         pager.setAdapter(adapter);
         adapter.setDataCount(3);
-
     }
 
     public void onBind(int position){

@@ -45,7 +45,7 @@ public class ArticleHeaderHolder extends RecyclerView.ViewHolder {
             }
 
             if(!data.isThereImage()){
-                //if there is no featured picture
+//                if there is no featured picture
 //                source.setTextColor(App.getInstance().getResources().getColor(R.color.defaultTextColor));
 //                caption.setTextColor(App.getInstance().getResources().getColor(R.color.defaultTextColor));
             }else{

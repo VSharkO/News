@@ -11,6 +11,7 @@ import news.factory.com.scopes.PerFragment;
 
 @Module
 public abstract class FragmentModule {
+
     @PerFragment
     @ContributesAndroidInjector(modules = ArticleFragmentModule.class)
     public abstract ArticleFragment provideArticleFragment();

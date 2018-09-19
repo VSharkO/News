@@ -3,7 +3,6 @@ import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.RecyclerAdapter;
 import news.factory.com.base.adapters.RecyclerAdapterImpl;
-import news.factory.com.base.adapters.ViewPagerInnerAdapterImpl;
 import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenterImpl;
 import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
@@ -35,8 +34,8 @@ public class InnerPagerFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideAdapterImpl(InnerPagerFragmentPresenter presenter,ViewPagerInnerAdapterImpl adapter){
-        return new RecyclerAdapterImpl(presenter, adapter);
+    RecyclerAdapterImpl provideAdapterImpl(InnerPagerFragmentPresenter presenter){
+        return new RecyclerAdapterImpl(presenter);
     }
 
     @PerFragment

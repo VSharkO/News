@@ -25,7 +25,7 @@ public class InnerCellHolder extends RecyclerView.ViewHolder{
     }
 
     public void onBind(int position){
-        TopNews data = (TopNews) dataList.get(position).getData();
+        InnerCellData data = (InnerCellData) dataList.get(position).getData();
         title.setText(data.getName());
     }
 }
