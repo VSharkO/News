@@ -41,7 +41,6 @@ public class ArticleFragment extends BaseFragment implements ArticleFragmentView
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.recycler_view,container,false);
         return view;
     }
