@@ -4,15 +4,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.view.ViewGroup;
 
 import javax.inject.Inject;
 
 import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 
-public class ViewPagerInnerAdapterImpl extends FragmentPagerAdapter implements ViewPagerInnerAdapter{
+public class ViewPagerInnerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerInnerAdapter{
     private int countNumber;
 
-//    @Inject
     public ViewPagerInnerAdapterImpl(FragmentManager fm) {
         super(fm);
     }
@@ -25,6 +25,12 @@ public class ViewPagerInnerAdapterImpl extends FragmentPagerAdapter implements V
     @Override
     public int getCount() {
         return countNumber;
+    }
+
+    @Override
+    public void setPrimaryItem(ViewGroup container, int position, Object object) {
+        super.setPrimaryItem(container, position, object);
+
     }
 
     @Override

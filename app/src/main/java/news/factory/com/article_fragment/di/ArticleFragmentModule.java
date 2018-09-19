@@ -46,7 +46,7 @@ public class ArticleFragmentModule {
     @PerFragment
     @Provides
     ViewPagerInnerAdapterImpl providePagerInnerAdapterImpl(ArticleFragment fragment){
-        return new ViewPagerInnerAdapterImpl(fragment.getFragmentManager());
+        return new ViewPagerInnerAdapterImpl(fragment.getChildFragmentManager());
     }
 
 

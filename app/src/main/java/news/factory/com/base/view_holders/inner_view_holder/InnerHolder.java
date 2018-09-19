@@ -20,10 +20,8 @@ public class InnerHolder extends RecyclerView.ViewHolder{
         this.adapter = adapterImpl;
 
 //        this.dataList = dataList;
-//        ViewPagerInnerAdapterImpl adapter = new ViewPagerInnerAdapterImpl(context.getSupportFragmentManager());
         pager.setAdapter(adapter);
         adapter.setDataCount(3);
-
     }
 
     public void onBind(int position){
