@@ -14,15 +14,17 @@ public class InnerHolder extends RecyclerView.ViewHolder{
     ViewPager pager;
 
 //    private List<RecyclerWrapper> dataList;
-ViewPagerInnerAdapterImpl adapter;
+    ViewPagerInnerAdapterImpl adapter;
     public InnerHolder(View itemView, ViewPagerInnerAdapterImpl adapterImpl) {
         super(itemView);
         ButterKnife.bind(this,itemView);
         this.adapter = adapterImpl;
+        adapter.setDataCount(3);
+
 //        this.dataList = dataList;
 //        ViewPagerInnerAdapterImpl adapter = new ViewPagerInnerAdapterImpl(context.getSupportFragmentManager());
         pager.setAdapter(adapter);
-        adapter.setDataCount(3);
+
     }
 
     public void onBind(int position){

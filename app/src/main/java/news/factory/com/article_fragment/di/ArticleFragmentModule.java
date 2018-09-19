@@ -5,6 +5,8 @@ import dagger.Provides;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapterImpl;
+import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
+import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenterImpl;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerFragment;
@@ -37,25 +39,20 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideAdapterImpl(ArticleFragmentPresenter presenter, Lazy<ViewPagerInnerAdapterImpl>adapter){
+    RecyclerAdapterImpl provideRecyclerAdapterImpl(ArticleFragmentPresenter presenter, Lazy<ViewPagerInnerAdapterImpl>adapter){
         return new RecyclerAdapterImpl(presenter,adapter);
     }
 
     @PerFragment
     @Provides
-    ViewPagerInnerAdapterImpl provideInnerAdapterImpl(ArticleFragment fragment){
+    ViewPagerInnerAdapterImpl providePagerInnerAdapterImpl(ArticleFragment fragment){
         return new ViewPagerInnerAdapterImpl(fragment.getFragmentManager());
     }
 
-//    @PerFragment
-//    @Provides
-//    FragmentManager provideFragmentManager(InnerPagerFragment fragment){
-//        return fragment.getFragmentManager();
-//    }
 
     @PerFragment
     @Provides
-    RecyclerAdapter provideAdapter(RecyclerAdapterImpl adapter){
+    RecyclerAdapter provideRecyclerAdapter(RecyclerAdapterImpl adapter){
         return adapter;
     }
 

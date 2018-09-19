@@ -17,6 +17,7 @@ import news.factory.com.scopes.PerFragment;
 
 @Module
 public class InnerPagerFragmentModule {
+
     @PerFragment
     @Provides
     InnerPagerFragmentView provideFragmentView(InnerPagerFragment fragment){
@@ -38,7 +39,7 @@ public class InnerPagerFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideAdapterImpl(InnerPagerFragmentPresenter presenter, Lazy<ViewPagerInnerAdapterImpl> adapter){
+    RecyclerAdapterImpl provideInnerRecyclerAdapterImpl(InnerPagerFragmentPresenter presenter, Lazy<ViewPagerInnerAdapterImpl> adapter){
         return new RecyclerAdapterImpl(presenter,adapter);
     }
 
