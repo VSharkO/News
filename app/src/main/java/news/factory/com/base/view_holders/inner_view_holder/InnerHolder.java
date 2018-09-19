@@ -7,7 +7,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapterImpl;
-import timber.log.Timber;
 
 public class InnerHolder extends RecyclerView.ViewHolder{
     @BindView(R.id.innerPager)
@@ -19,11 +18,11 @@ public class InnerHolder extends RecyclerView.ViewHolder{
         super(itemView);
         ButterKnife.bind(this,itemView);
         this.adapter = adapterImpl;
-        adapter.setDataCount(3);
 
 //        this.dataList = dataList;
 //        ViewPagerInnerAdapterImpl adapter = new ViewPagerInnerAdapterImpl(context.getSupportFragmentManager());
         pager.setAdapter(adapter);
+        adapter.setDataCount(3);
 
     }
 

@@ -30,11 +30,11 @@ public class InnerPagerFragmentModule {
         return presenter;
     }
 
-//    @PerFragment
-//    @Provides
-//    ViewPagerInnerAdapterImpl provideInnerAdapterImplementation(FragmentManager fragmentManager){
-//        return new ViewPagerInnerAdapterImpl(fragmentManager);
-//    }
+    @PerFragment
+    @Provides
+    ViewPagerInnerAdapterImpl provideInnerAdapterImplementation(FragmentManager fragmentManager){
+        return new ViewPagerInnerAdapterImpl(fragmentManager);
+    }
 
     @PerFragment
     @Provides
