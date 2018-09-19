@@ -39,7 +39,7 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideRecyclerAdapterImpl(ArticleFragmentPresenter presenter, Lazy<ViewPagerInnerAdapterImpl>adapter){
+    RecyclerAdapterImpl provideRecyclerAdapterImpl(ArticleFragmentPresenter presenter, ViewPagerInnerAdapterImpl adapter){
         return new RecyclerAdapterImpl(presenter,adapter);
     }
 

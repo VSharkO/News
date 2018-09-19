@@ -45,7 +45,7 @@ public class InnerPagerFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideInnerRecyclerAdapterImpl(InnerPagerFragmentPresenter presenter, Lazy<ViewPagerInnerAdapterImpl> adapter){
+    RecyclerAdapterImpl provideInnerRecyclerAdapterImpl(InnerPagerFragmentPresenter presenter, ViewPagerInnerAdapterImpl adapter){
         return new RecyclerAdapterImpl(presenter,adapter);
     }
 

@@ -28,10 +28,10 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private List<RecyclerWrapper> dataList = new ArrayList<>();
     private Object presenter;
-    private Lazy<ViewPagerInnerAdapterImpl> adapter;
+    private ViewPagerInnerAdapterImpl adapter;
 
     @Inject
-    public RecyclerAdapterImpl(Object presenter, Lazy<ViewPagerInnerAdapterImpl> adapter) {
+    public RecyclerAdapterImpl(Object presenter, ViewPagerInnerAdapterImpl adapter) {
         this.presenter = presenter;
         this.adapter = adapter;
     }
@@ -74,7 +74,7 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 return new ArticleIndicatorHolder(itemView,dataList);
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_PAGER:
-                return new InnerHolder(itemView,adapter.get());
+                return new InnerHolder(itemView,adapter);
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_CELL:
                 return new InnerCellHolder(itemView,dataList);
