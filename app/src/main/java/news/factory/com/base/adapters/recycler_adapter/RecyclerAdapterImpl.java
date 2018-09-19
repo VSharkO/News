@@ -1,6 +1,5 @@
-package news.factory.com.base.adapters;
+package news.factory.com.base.adapters.recycler_adapter;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +10,7 @@ import javax.inject.Inject;
 
 import dagger.Lazy;
 import news.factory.com.base.RecyclerWrapper;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapterImpl;
 import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderHolder;
 import news.factory.com.base.view_holders.article_image.ArticleImageHolder;

@@ -1,15 +1,12 @@
 package news.factory.com.base.view_holders.inner_view_holder;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
-import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.base.adapters.ViewPagerInnerAdapter;
-import news.factory.com.base.adapters.ViewPagerInnerAdapterImpl;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapterImpl;
 
 public class InnerHolder extends RecyclerView.ViewHolder{
     @BindView(R.id.innerPager)

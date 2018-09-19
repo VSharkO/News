@@ -1,4 +1,4 @@
-package news.factory.com.base.adapters;
+package news.factory.com.base.adapters.recycler_adapter;
 
 import java.util.List;
 

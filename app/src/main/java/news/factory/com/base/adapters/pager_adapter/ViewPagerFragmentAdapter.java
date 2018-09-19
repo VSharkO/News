@@ -1,4 +1,4 @@
-package news.factory.com.base.adapters;
+package news.factory.com.base.adapters.pager_adapter;
 
 import android.support.v4.app.Fragment;
 

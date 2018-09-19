@@ -14,7 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.BaseFragment;
-import news.factory.com.base.adapters.RecyclerAdapterImpl;
+import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
 import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;

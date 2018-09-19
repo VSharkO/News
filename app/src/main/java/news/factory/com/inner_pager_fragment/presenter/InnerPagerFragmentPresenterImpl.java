@@ -5,7 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 import dagger.Lazy;
 import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.base.adapters.RecyclerAdapter;
+import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
 import news.factory.com.base.view_holders.inner_cell_holder.InnerCellData;
 import news.factory.com.inner_pager_fragment.view.InnerPagerFragmentView;
 import news.factory.com.model.TopNews;

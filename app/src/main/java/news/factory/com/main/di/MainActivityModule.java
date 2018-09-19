@@ -1,8 +1,8 @@
 package news.factory.com.main.di;
 import dagger.Module;
 import dagger.Provides;
-import news.factory.com.base.adapters.ViewPagerFragmentAdapter;
-import news.factory.com.base.adapters.ViewPagerFragmentAdapterImpl;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapter;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapterImpl;
 import news.factory.com.main.presenter.MainActivityPresenter;
 import news.factory.com.main.presenter.MainActivityPresenterImpl;
 import news.factory.com.main.view.MainActivity;

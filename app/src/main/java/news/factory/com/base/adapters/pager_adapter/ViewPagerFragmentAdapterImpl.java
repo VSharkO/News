@@ -1,24 +1,20 @@
-package news.factory.com.base.adapters;
+package news.factory.com.base.adapters.pager_adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import news.factory.com.article_fragment.view.ArticleFragment;
 
-import javax.inject.Inject;
-
-import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
-
-public class ViewPagerInnerAdapterImpl extends FragmentPagerAdapter implements ViewPagerInnerAdapter{
+public class ViewPagerFragmentAdapterImpl extends FragmentPagerAdapter implements ViewPagerFragmentAdapter {
     private int countNumber;
 
-    @Inject
-    public ViewPagerInnerAdapterImpl(FragmentManager fm) {
+    public ViewPagerFragmentAdapterImpl(FragmentManager fm) {
         super(fm);
     }
 
     @Override
     public Fragment getItem(int position) {
-            return InnerPagerFragment.newInstance(position);
+            return ArticleFragment.newInstance(position);
     }
 
     @Override
@@ -31,5 +27,7 @@ public class ViewPagerInnerAdapterImpl extends FragmentPagerAdapter implements V
         countNumber = numOfPages;
         notifyDataSetChanged();
     }
-
 }
+
+
+

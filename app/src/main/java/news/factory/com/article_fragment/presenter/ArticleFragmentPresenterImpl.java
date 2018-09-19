@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import dagger.Lazy;
-import news.factory.com.base.adapters.RecyclerAdapter;
+import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
 import news.factory.com.utils.ResourceRepo;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;

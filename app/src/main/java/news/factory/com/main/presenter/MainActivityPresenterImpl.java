@@ -1,7 +1,7 @@
 package news.factory.com.main.presenter;
 
 import javax.inject.Inject;
-import news.factory.com.base.adapters.ViewPagerFragmentAdapter;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapter;
 import news.factory.com.main.view.MainActivityView;
 import news.factory.com.model.News;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
