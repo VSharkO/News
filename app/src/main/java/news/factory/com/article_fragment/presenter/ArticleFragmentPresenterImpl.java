@@ -4,8 +4,6 @@ import java.util.List;
 import javax.inject.Inject;
 import dagger.Lazy;
 import news.factory.com.base.adapters.RecyclerAdapter;
-import news.factory.com.base.view_holders.inner_cell_holder.InnerCellData;
-import news.factory.com.model.TopNews;
 import news.factory.com.utils.ResourceRepo;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;

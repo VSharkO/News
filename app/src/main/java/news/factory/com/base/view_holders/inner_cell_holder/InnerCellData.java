@@ -1,13 +1,16 @@
 package news.factory.com.base.view_holders.inner_cell_holder;
 
-public class InnerCellData {
-    String name;
+import news.factory.com.model.Articles;
+import news.factory.com.model.TopNews;
 
-    public InnerCellData(String name) {
-        this.name = name;
+public class InnerCellData {
+    Articles articles;
+
+    public InnerCellData(Articles articles) {
+        this.articles = articles;
     }
 
-    public String getName() {
-        return name;
+    public Articles getArticles() {
+        return articles;
     }
 }

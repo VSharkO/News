@@ -3,9 +3,6 @@ package news.factory.com.base.adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
-import javax.inject.Inject;
-
 import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 
 public class ViewPagerInnerAdapterImpl extends FragmentPagerAdapter implements ViewPagerInnerAdapter{
@@ -29,11 +26,6 @@ public class ViewPagerInnerAdapterImpl extends FragmentPagerAdapter implements V
     public void setDataCount(int numOfPages) {
         countNumber = numOfPages;
         notifyDataSetChanged();
-    }
-
-    @Override
-    public FragmentManager getFragmentManager() {
-        return getFragmentManager();
     }
 
 }

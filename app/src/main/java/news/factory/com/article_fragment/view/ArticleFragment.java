@@ -48,7 +48,6 @@ public class ArticleFragment extends BaseFragment implements ArticleFragmentView
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this,view);
         provideRecyclerViewAdapter();
@@ -63,11 +62,6 @@ public class ArticleFragment extends BaseFragment implements ArticleFragmentView
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(itemDecorator);
-    }
-
-    @Override
-    public void fillAdapterDataNews(List<RecyclerWrapper> data) {
-        adapter.fillData(data);
     }
 
 }

@@ -2,9 +2,7 @@ package news.factory.com.inner_pager_fragment.presenter;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.inject.Inject;
-
 import dagger.Lazy;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.adapters.RecyclerAdapter;
@@ -23,7 +21,6 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
     private InnerArticlesInteractor articleInteractor;
     private ResourceRepo resourceRepo;
     private Lazy<RecyclerAdapter> adapter;
-    private int index=0;
 
     @Inject
     public InnerPagerFragmentPresenterImpl(InnerPagerFragmentView view, InnerArticlesInteractor interactor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
@@ -49,9 +46,7 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
 
                 default: type = Constants.MOST_POPULAR_TYPE;
         }
-        articleInteractor.getTopArticles(this, type,Constants.ID_TOP_ARTICLES,String.valueOf(index));
-
-        this.index = index;
+        articleInteractor.getTopArticles(this,type,Constants.ID_TOP_ARTICLES,Constants.PAGE_NUMBER_TOP_ARTICLES);
     }
     @Override
     public void onSuccess(InteractorData callback) {
@@ -69,24 +64,15 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
-        addTitle(news,recyclerWrappers);
-        addTitle(news,recyclerWrappers);
-        addTitle(news,recyclerWrappers);
-        addTitle(news,recyclerWrappers);
-        addTitle(news,recyclerWrappers);
-
-//        if(!news.getUpperTitle().isEmpty())
-//            addUpperTitle(news,recyclerWrappers);
-//        addAuthorShares(news,recyclerWrappers);
-//        addTitle(news,recyclerWrappers);
-//        addContents(news,recyclerWrappers);
-//        addPublished(news,recyclerWrappers);
-//        addIndicator(news,recyclerWrappers);
+        addArticles(news,recyclerWrappers);
         return recyclerWrappers;
     }
 
-    private void addTitle(TopNews news,List<RecyclerWrapper> recyclerWrappers){
-        recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getName()),
-                RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
+    private void addArticles(TopNews news,List<RecyclerWrapper> recyclerWrappers){
+        for (int i=0; i<news.getArticles().length; i++){
+            recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
+                    RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
+        }
+
     }
 }

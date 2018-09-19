@@ -9,14 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.List;
 import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.BaseFragment;
 import news.factory.com.base.adapters.RecyclerAdapterImpl;
-import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
@@ -32,7 +30,7 @@ public class InnerPagerFragment extends BaseFragment implements InnerPagerFragme
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
-        data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index+1);
+        data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index);
         InnerPagerFragment f = new InnerPagerFragment();
         f.setArguments(data);
         return f;
@@ -62,10 +60,4 @@ public class InnerPagerFragment extends BaseFragment implements InnerPagerFragme
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(itemDecorator);
     }
-
-//    @Override
-//    public void fillAdapterDataNews(List<RecyclerWrapper> data) {
-//        adapter.fillData(data);
-//    }
-
 }

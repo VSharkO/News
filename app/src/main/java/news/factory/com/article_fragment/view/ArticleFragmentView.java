@@ -4,5 +4,4 @@ import java.util.List;
 import news.factory.com.base.RecyclerWrapper;
 
 public interface ArticleFragmentView {
-    void fillAdapterDataNews(List<RecyclerWrapper> list);
 }
