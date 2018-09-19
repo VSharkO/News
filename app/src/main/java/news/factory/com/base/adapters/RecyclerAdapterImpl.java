@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
+
+import dagger.Lazy;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderHolder;
@@ -25,10 +27,12 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private List<RecyclerWrapper> dataList = new ArrayList<>();
     private Object presenter;
+    private Lazy<ViewPagerInnerAdapterImpl> adapter;
 
     @Inject
-    public RecyclerAdapterImpl(Object presenter) {
+    public RecyclerAdapterImpl(Object presenter, Lazy<ViewPagerInnerAdapterImpl> adapter) {
         this.presenter = presenter;
+        this.adapter = adapter;
     }
 
     @Override
@@ -69,7 +73,7 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 return new ArticleIndicatorHolder(itemView,dataList);
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_PAGER:
-                return new InnerHolder(itemView,(AppCompatActivity)itemView.getContext());
+                return new InnerHolder(itemView,adapter.get());
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_CELL:
                 return new InnerCellHolder(itemView,dataList);

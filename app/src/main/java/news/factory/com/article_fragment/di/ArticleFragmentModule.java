@@ -1,4 +1,7 @@
 package news.factory.com.article_fragment.di;
+import android.support.v4.app.FragmentManager;
+
+import dagger.Lazy;
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.RecyclerAdapter;
@@ -37,15 +40,21 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideAdapterImpl(ArticleFragmentPresenter presenter){
-        return new RecyclerAdapterImpl(presenter);
+    RecyclerAdapterImpl provideAdapterImpl(ArticleFragmentPresenter presenter, Lazy<ViewPagerInnerAdapterImpl>adapter){
+        return new RecyclerAdapterImpl(presenter,adapter);
     }
 
     @PerFragment
     @Provides
-    ViewPagerInnerAdapterImpl provideInnerAdapterImpl(InnerPagerFragment fragment){
+    ViewPagerInnerAdapterImpl provideInnerAdapterImpl(ArticleFragment fragment){
         return new ViewPagerInnerAdapterImpl(fragment.getFragmentManager());
     }
+
+//    @PerFragment
+//    @Provides
+//    FragmentManager provideFragmentManager(InnerPagerFragment fragment){
+//        return fragment.getFragmentManager();
+//    }
 
     @PerFragment
     @Provides

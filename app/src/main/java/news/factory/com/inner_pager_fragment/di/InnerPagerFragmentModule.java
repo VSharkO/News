@@ -1,8 +1,12 @@
 package news.factory.com.inner_pager_fragment.di;
+import android.support.v4.app.FragmentManager;
+
+import dagger.Lazy;
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.RecyclerAdapter;
 import news.factory.com.base.adapters.RecyclerAdapterImpl;
+import news.factory.com.base.adapters.ViewPagerInnerAdapterImpl;
 import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenterImpl;
 import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
@@ -34,8 +38,14 @@ public class InnerPagerFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideAdapterImpl(InnerPagerFragmentPresenter presenter){
-        return new RecyclerAdapterImpl(presenter);
+    RecyclerAdapterImpl provideAdapterImpl(InnerPagerFragmentPresenter presenter, Lazy<ViewPagerInnerAdapterImpl> adapter){
+        return new RecyclerAdapterImpl(presenter,adapter);
+    }
+
+    @PerFragment
+    @Provides
+    FragmentManager provideFragmentManager(InnerPagerFragment fragment){
+        return fragment.getFragmentManager();
     }
 
     @PerFragment

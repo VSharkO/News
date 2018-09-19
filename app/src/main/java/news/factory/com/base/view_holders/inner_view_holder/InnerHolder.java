@@ -8,6 +8,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
+import news.factory.com.base.adapters.ViewPagerInnerAdapter;
 import news.factory.com.base.adapters.ViewPagerInnerAdapterImpl;
 
 public class InnerHolder extends RecyclerView.ViewHolder{
@@ -16,11 +17,11 @@ public class InnerHolder extends RecyclerView.ViewHolder{
 
 //    private List<RecyclerWrapper> dataList;
 
-    public InnerHolder(View itemView, AppCompatActivity context) {
+    public InnerHolder(View itemView, ViewPagerInnerAdapterImpl adapter) {
         super(itemView);
         ButterKnife.bind(this,itemView);
 //        this.dataList = dataList;
-        ViewPagerInnerAdapterImpl adapter = new ViewPagerInnerAdapterImpl(context.getSupportFragmentManager());
+//        ViewPagerInnerAdapterImpl adapter = new ViewPagerInnerAdapterImpl(context.getSupportFragmentManager());
         pager.setAdapter(adapter);
         adapter.setDataCount(3);
     }
