@@ -12,7 +12,7 @@ import news.factory.com.inner_pager_fragment.view.InnerPagerFragment;
 public class ViewPagerInnerAdapterImpl extends FragmentPagerAdapter implements ViewPagerInnerAdapter{
     private int countNumber;
 
-    @Inject
+//    @Inject
     public ViewPagerInnerAdapterImpl(FragmentManager fm) {
         super(fm);
     }

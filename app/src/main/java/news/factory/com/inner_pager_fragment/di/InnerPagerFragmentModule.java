@@ -26,13 +26,19 @@ public class InnerPagerFragmentModule {
 
     @PerFragment
     @Provides
-    InnerPagerFragmentPresenter providePresenter(InnerPagerFragmentPresenterImpl presenter){
+    InnerPagerFragmentPresenter provideInnerFragmentPresenter(InnerPagerFragmentPresenterImpl presenter){
         return presenter;
     }
 
+//    @PerFragment
+//    @Provides
+//    ViewPagerInnerAdapterImpl provideInnerAdapterImplementation(FragmentManager fragmentManager){
+//        return new ViewPagerInnerAdapterImpl(fragmentManager);
+//    }
+
     @PerFragment
     @Provides
-    InnerArticlesInteractor provideInteractor(InnerArticlesInteractorImpl interactor, InnerPagerFragment fragment){
+    InnerArticlesInteractor provideInnerInteractor(InnerArticlesInteractorImpl interactor, InnerPagerFragment fragment){
         fragment.getLifecycle().addObserver(interactor);
         return interactor;
     }
@@ -51,7 +57,7 @@ public class InnerPagerFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapter provideAdapter(RecyclerAdapterImpl adapter){
+    RecyclerAdapter provideRecyclerAdapter(RecyclerAdapterImpl adapter){
         return adapter;
     }
 
