@@ -69,7 +69,7 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
     }
 
     private void addArticles(TopNews news,List<RecyclerWrapper> recyclerWrappers){
-        for (int i=0; i<news.getArticles().length; i++){
+        for (int i=0; i<4; i++){
             recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
                     RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         }

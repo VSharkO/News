@@ -3,6 +3,7 @@ package news.factory.com.base.adapters.pager_adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import javax.inject.Inject;
 
