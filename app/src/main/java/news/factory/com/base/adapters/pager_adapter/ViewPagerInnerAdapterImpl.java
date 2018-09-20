@@ -14,6 +14,7 @@ import news.factory.com.utils.Constants;
 public class ViewPagerInnerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerInnerAdapter{
     private int countNumber;
 
+    @Inject
     public ViewPagerInnerAdapterImpl(FragmentManager fm) {
         super(fm);
     }

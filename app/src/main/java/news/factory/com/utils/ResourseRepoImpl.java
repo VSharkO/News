@@ -1,12 +1,14 @@
 package news.factory.com.utils;
 
+
+import android.support.v4.app.FragmentManager;
+
 import javax.inject.Inject;
 
 import news.factory.com.App;
 
 public class ResourseRepoImpl implements ResourceRepo {
     private App appContext;
-
     @Inject
     public ResourseRepoImpl(App app) {
         this.appContext = app;
@@ -21,4 +23,5 @@ public class ResourseRepoImpl implements ResourceRepo {
     public String provideString(int stringID, String data) {
         return appContext.getString(stringID, data);
     }
+
 }

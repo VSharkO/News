@@ -1,6 +1,5 @@
 package news.factory.com.base.adapters.recycler_adapter;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +7,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
-
-import dagger.Lazy;
 import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapterImpl;
 import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.article_header.ArticleHeaderHolder;
 import news.factory.com.base.view_holders.article_image.ArticleImageHolder;
@@ -22,18 +18,16 @@ import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitle
 import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorShareHolder;
 import news.factory.com.base.view_holders.inner_cell_holder.InnerCellHolder;
 import news.factory.com.base.view_holders.inner_view_holder.InnerHolder;
-
+import news.factory.com.utils.PresenterWithFragmentChildManager;
 
 public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RecyclerAdapter{
 
     private List<RecyclerWrapper> dataList = new ArrayList<>();
     private Object presenter;
-    private ViewPagerInnerAdapterImpl adapter;
 
     @Inject
-    public RecyclerAdapterImpl(Object presenter, ViewPagerInnerAdapterImpl adapter) {
+    public RecyclerAdapterImpl(Object presenter) {
         this.presenter = presenter;
-        this.adapter = adapter;
     }
 
     @Override
@@ -74,7 +68,8 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 return new ArticleIndicatorHolder(itemView,dataList);
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_PAGER:
-                return new InnerHolder(itemView,adapter);
+
+                return new InnerHolder(itemView,((PresenterWithFragmentChildManager) presenter).getManager());
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_CELL:
                 return new InnerCellHolder(itemView,dataList);

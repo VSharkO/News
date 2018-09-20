@@ -1,12 +1,10 @@
 package news.factory.com.article_fragment.di;
-import dagger.Lazy;
 import dagger.Module;
 import dagger.Provides;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapter;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapterImpl;
-import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
-import news.factory.com.inner_pager_fragment.presenter.InnerPagerFragmentPresenterImpl;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerFragment;
@@ -14,6 +12,7 @@ import news.factory.com.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.article_fragment.presenter.ArticleFragmentPresenterImpl;
 import news.factory.com.article_fragment.view.ArticleFragment;
 import news.factory.com.article_fragment.view.ArticleFragmentView;
+import news.factory.com.utils.PresenterWithFragmentChildManager;
 
 @Module
 public class ArticleFragmentModule {
@@ -39,23 +38,16 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideRecyclerAdapterImpl(ArticleFragmentPresenter presenter, ViewPagerInnerAdapterImpl adapter){
-        return new RecyclerAdapterImpl(presenter,adapter);
+    RecyclerAdapterImpl provideRecyclerAdapterImpl(ArticleFragmentPresenter presenter,ArticleFragment view){
+        Object presenterWithFragmentChildManager = new PresenterWithFragmentChildManager(presenter,view.getChildFragmentManager());
+        return new RecyclerAdapterImpl(presenterWithFragmentChildManager);
     }
-
-    @PerFragment
-    @Provides
-    ViewPagerInnerAdapterImpl providePagerInnerAdapterImpl(ArticleFragment fragment){
-        return new ViewPagerInnerAdapterImpl(fragment.getChildFragmentManager());
-    }
-
 
     @PerFragment
     @Provides
     RecyclerAdapter provideRecyclerAdapter(RecyclerAdapterImpl adapter){
         return adapter;
     }
-
 }
 
 
