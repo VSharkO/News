@@ -14,6 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="450dp">
 
+        <android.support.v4.view.PagerTabStrip
+            android:id="@+id/pager_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            />
+
     </android.support.v4.view.ViewPager>
 
 </LinearLayout>
