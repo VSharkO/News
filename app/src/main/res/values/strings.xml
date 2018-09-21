@@ -5,4 +5,7 @@
     <string name="shareIcon">shareIcon</string>
     <string name="published">Objavljeno: %s</string>
     <string name="indicator">%s/%s</string>
+    <string name="najpopularnije">Najpopularnije</string>
+    <string name="najcitanije">Najčitanije</string>
+    <string name="najnovije">Najnovije</string>
 </resources>

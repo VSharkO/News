@@ -78,28 +78,28 @@ public class InnerCellHolder extends RecyclerView.ViewHolder{
 
         //godina
         if (yearDif > 0) {
-
-            if (yearDif < 5)
+            if (yearDif%10 < 5 && yearDif%10 > 0 )
                 result = "Prije " + yearDif + " godine";
             else result = "Prije " + yearDif + " godina";
         //mjesec
         } else if (yearDif == 0 && monthDif > 0) {
 
-            if (monthDif >1 && monthDif < 5)
+            if (monthDif%10>1 && monthDif%10 < 5)
                 result = "Prije " + monthDif + " mjeseca";
-            else if(monthDif==1)
+
+            else if(monthDif%10==1)
                 result = "Prije " + monthDif + " mjesec";
             else
                 result = "Prije " + monthDif + " mjeseci";
         //dan
         } else if (yearDif == 0 && monthDif == 0 && dayDif > 0 && hourDif < 24) {
-            if (dayDif == 1)
+            if (dayDif%10 == 1)
                 result = "Prije " + dayDif + " dan";
             else
                 result = "Prije " + dayDif + " dana";
         //sat
         } else if (yearDif == 0 && monthDif == 0 && dayDif == 0) {
-            if (hourDif > 4 && hourDif < 21) {
+            if (hourDif%10 > 4 && hourDif%10 < 21) {
                 result = "Prije " + hourDif + " sati";
             } else {
                 result = "Prije " + hourDif + " sata";

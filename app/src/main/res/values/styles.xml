@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -23,6 +23,17 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="InnerPagerTab">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:maxRows">1</item>
+        <item name="android:indicatorStart">6dp</item>
+        <item name="android:fontFamily">@font/roboto_slab</item>
+        <item name="android:layout_marginStart">8dp</item>
     </style>
 
 </resources>

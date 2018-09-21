@@ -4,5 +4,6 @@
     <dimen name="dp16">16dp</dimen>
     <dimen name="dp18">18dp</dimen>
     <dimen name="dp6">6dp</dimen>
+    <dimen name="dp8">8dp</dimen>
     <dimen name="dp5">5dp</dimen>
 </resources>

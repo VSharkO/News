@@ -15,17 +15,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <android.support.design.widget.TabLayout
+            style="@style/InnerPagerTab"
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/dp16"
-            android:textAlignment="center"
-            android:isScrollContainer="false"
-            android:layout_marginStart="@dimen/dp6"
-            android:layout_marginEnd="@dimen/dp6">
+            app:tabIndicatorColor="@color/red"
+            app:tabIndicatorHeight="3dp"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            >
+            <android.support.design.widget.TabItem
+                android:id="@+id/itemOne"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/najpopularnije"
+                />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/itemTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/najcitanije"/>
+            <android.support.design.widget.TabItem
+
+                android:id="@+id/itemThree"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/najnovije"/>
         </android.support.design.widget.TabLayout>
 
     </android.support.v4.view.ViewPager>
