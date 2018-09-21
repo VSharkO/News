@@ -56,5 +56,4 @@ public class ViewPagerInnerAdapterImpl extends FragmentStatePagerAdapter impleme
                 default: return "";
         }
     }
-
 }

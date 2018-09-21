@@ -1,4 +1,5 @@
 package news.factory.com.base.view_holders.inner_view_holder;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
@@ -7,10 +8,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapterImpl;
-
 public class InnerHolder extends RecyclerView.ViewHolder{
     @BindView(R.id.innerPager)
     ViewPager pager;
+    @BindView(R.id.tabLayout)
+    TabLayout tabLayout;
 
     ViewPagerInnerAdapterImpl adapter;
 
@@ -24,6 +26,6 @@ public class InnerHolder extends RecyclerView.ViewHolder{
 
     public void onBind(int position){
 
-    }
+        }
 
 }
