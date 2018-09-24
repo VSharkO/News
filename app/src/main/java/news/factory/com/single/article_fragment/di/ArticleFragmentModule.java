@@ -8,8 +8,8 @@ import news.factory.com.single.article_fragment.article_interactor.ArticleIntera
 import news.factory.com.scopes.PerFragment;
 import news.factory.com.single.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.single.article_fragment.presenter.ArticleFragmentPresenterImpl;
+import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.single.article_fragment.view.ArticleFragment;
-import news.factory.com.single.article_fragment.view.ArticleFragmentView;
 import news.factory.com.utils.PresenterWithFragmentChildManager;
 
 @Module
@@ -17,7 +17,7 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    ArticleFragmentView provideFragmentView(ArticleFragment fragment){
+    ArticleFragment provideFragmentView(ArticleFragmentImpl fragment){
         return fragment;
     }
 
@@ -29,14 +29,14 @@ public class ArticleFragmentModule {
 
     @PerFragment
     @Provides
-    ArticleInteractor provideInteractor(ArticleInteractorImpl interactor, ArticleFragment fragment){
+    ArticleInteractor provideInteractor(ArticleInteractorImpl interactor, ArticleFragmentImpl fragment){
         fragment.getLifecycle().addObserver(interactor);
         return interactor;
     }
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideRecyclerAdapterImpl(ArticleFragmentPresenter presenter,ArticleFragment view){
+    RecyclerAdapterImpl provideRecyclerAdapterImpl(ArticleFragmentPresenter presenter,ArticleFragmentImpl view){
         Object presenterWithFragmentChildManager = new PresenterWithFragmentChildManager(presenter,view.getChildFragmentManager());
         return new RecyclerAdapterImpl(presenterWithFragmentChildManager);
     }

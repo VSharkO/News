@@ -4,7 +4,7 @@ import java.util.List;
 import javax.inject.Inject;
 import dagger.Lazy;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
-import news.factory.com.single.article_fragment.view.ArticleFragmentView;
+import news.factory.com.single.article_fragment.view.ArticleFragment;
 import news.factory.com.utils.ResourceRepo;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
@@ -25,14 +25,14 @@ import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
 
 public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, NetworkResponseListener{
-    private ArticleFragmentView view;
+    private ArticleFragment view;
     private ArticleInteractor articleInteractor;
     private ResourceRepo resourceRepo;
     private Lazy<RecyclerAdapter> adapter;
     private int index=0;
 
     @Inject
-    public ArticleFragmentPresenterImpl(ArticleFragmentView view, ArticleInteractor interactor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
+    public ArticleFragmentPresenterImpl(ArticleFragment view, ArticleInteractor interactor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
         this.view = view;
         articleInteractor = interactor;
         this.adapter = adapter;

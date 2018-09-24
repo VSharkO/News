@@ -18,7 +18,7 @@ import news.factory.com.utils.NetworkResponseListener;
 import news.factory.com.utils.ResourceRepo;
 import timber.log.Timber;
 
-public class HomeFrontPagePresenterImpl implements HomeFrontPagePresenter,NetworkResponseListener{
+public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPagePresenter,NetworkResponseListener{
 
     private HomeFragmentFrontPage view;
     private HomeFrontPageInteractor articleInteractor;
@@ -27,7 +27,7 @@ public class HomeFrontPagePresenterImpl implements HomeFrontPagePresenter,Networ
     private int index=0;
 
     @Inject
-    public HomeFrontPagePresenterImpl(HomeFragmentFrontPage view, HomeFrontPageInteractor articleInteractor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
+    public HomeFragmentFrontPagePresenterImpl(HomeFragmentFrontPage view, HomeFrontPageInteractor articleInteractor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
         this.view = view;
         this.articleInteractor = articleInteractor;
         this.resourceRepo = resourceRepo;
