@@ -2,8 +2,8 @@ package news.factory.com.di;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
-import news.factory.com.main.di.MainActivityModule;
-import news.factory.com.main.view.MainActivity;
+import news.factory.com.single.main.di.MainActivityModule;
+import news.factory.com.single.main.view.MainActivity;
 import news.factory.com.scopes.PerActivity;
 
 @Module

@@ -2,10 +2,9 @@ package news.factory.com.base.adapters.pager_adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import news.factory.com.article_fragment.view.ArticleFragment;
+import news.factory.com.single.article_fragment.view.ArticleFragment;
 
 public class ViewPagerFragmentAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerFragmentAdapter {
     private int countNumber;

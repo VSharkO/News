@@ -4,7 +4,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
 import news.factory.com.App;
-import news.factory.com.base.view_holders.inner_view_holder.InnerHolder;
+import news.factory.com.base.view_holders.single.inner_view_holder.InnerHolder;
 import news.factory.com.networking.di.NetworkingModule;
 
 @Singleton

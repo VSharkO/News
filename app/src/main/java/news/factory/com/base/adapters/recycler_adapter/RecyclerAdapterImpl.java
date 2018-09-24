@@ -8,16 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.base.view_holders.article_content.ArticleContentHolder;
-import news.factory.com.base.view_holders.article_header.ArticleHeaderHolder;
-import news.factory.com.base.view_holders.article_image.ArticleImageHolder;
-import news.factory.com.base.view_holders.article_indicator.ArticleIndicatorHolder;
-import news.factory.com.base.view_holders.article_published.ArticlePublishedHolder;
-import news.factory.com.base.view_holders.article_title.ArticleTitleHolder;
-import news.factory.com.base.view_holders.article_upper_header.ArticleUpperTitleHolder;
-import news.factory.com.base.view_holders.article_author_shares.ArticleAuthorShareHolder;
-import news.factory.com.base.view_holders.inner_cell_holder.InnerCellHolder;
-import news.factory.com.base.view_holders.inner_view_holder.InnerHolder;
+import news.factory.com.base.view_holders.single.article_content.ArticleContentHolder;
+import news.factory.com.base.view_holders.single.article_header.ArticleHeaderHolder;
+import news.factory.com.base.view_holders.single.article_image.ArticleImageHolder;
+import news.factory.com.base.view_holders.single.article_indicator.ArticleIndicatorHolder;
+import news.factory.com.base.view_holders.single.article_published.ArticlePublishedHolder;
+import news.factory.com.base.view_holders.single.article_title.ArticleTitleHolder;
+import news.factory.com.base.view_holders.single.article_upper_header.ArticleUpperTitleHolder;
+import news.factory.com.base.view_holders.single.article_author_shares.ArticleAuthorShareHolder;
+import news.factory.com.base.view_holders.single.inner_cell_holder.InnerCellHolder;
+import news.factory.com.base.view_holders.single.inner_view_holder.InnerHolder;
 import news.factory.com.utils.PresenterWithFragmentChildManager;
 
 public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RecyclerAdapter{
