@@ -2,7 +2,7 @@ package news.factory.com.single.main.presenter;
 
 import javax.inject.Inject;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapter;
-import news.factory.com.single.main.view.MainActivityView;
+import news.factory.com.single.main.view.SingleMainActivityView;
 import news.factory.com.model.single.News;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.utils.Constants;
@@ -10,14 +10,14 @@ import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;
 import timber.log.Timber;
 
-public class MainActivityPresenterImpl implements MainActivityPresenter,NetworkResponseListener {
+public class SingleMainActivityPresenterImpl implements SingleMainActivityPresenter,NetworkResponseListener {
 
-    private MainActivityView view;
+    private SingleMainActivityView view;
     private ArticleInteractor articleInteractor;
     private ViewPagerFragmentAdapter adapter;
 
     @Inject
-    public MainActivityPresenterImpl(MainActivityView view, ArticleInteractor interactor, ViewPagerFragmentAdapter adapter) {
+    public SingleMainActivityPresenterImpl(SingleMainActivityView view, ArticleInteractor interactor, ViewPagerFragmentAdapter adapter) {
         articleInteractor = interactor;
         this.adapter = adapter;
         this.view = view;

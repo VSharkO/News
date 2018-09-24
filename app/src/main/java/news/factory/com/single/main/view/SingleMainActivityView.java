@@ -1,6 +1,6 @@
 package news.factory.com.single.main.view;
 
-public interface MainActivityView {
+public interface SingleMainActivityView {
 
     void setForwardButtonVisible();
 

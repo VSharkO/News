@@ -2,13 +2,13 @@ package news.factory.com.di;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
-import news.factory.com.single.main.di.MainActivityModule;
-import news.factory.com.single.main.view.MainActivity;
+import news.factory.com.single.main.di.SingleMainActivityModule;
+import news.factory.com.single.main.view.SingleSingleMainActivity;
 import news.factory.com.scopes.PerActivity;
 
 @Module
 public abstract class ActivityModule {
     @PerActivity
-    @ContributesAndroidInjector(modules = MainActivityModule.class)
-    public abstract MainActivity provideMainActivity();
+    @ContributesAndroidInjector(modules = SingleMainActivityModule.class)
+    public abstract SingleSingleMainActivity provideMainActivity();
 }
