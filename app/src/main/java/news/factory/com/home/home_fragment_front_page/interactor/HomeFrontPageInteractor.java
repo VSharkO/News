@@ -4,6 +4,6 @@ import news.factory.com.utils.NetworkResponseListener;
 
 public interface HomeFrontPageInteractor {
 
-    void getProductsFromAPI(NetworkResponseListener listener, String type, String id, String pageNum);
+    void getTopArticles(NetworkResponseListener listener, String type, String id, String pageNum);
 
 }

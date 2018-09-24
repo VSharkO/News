@@ -21,7 +21,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <activity android:name=".home.view.HomeMainActivityImpl"/>
+        <activity android:name=".home.main.view.HomeMainActivityImpl"/>
     </application>
 
 </manifest>

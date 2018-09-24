@@ -41,9 +41,8 @@ public class InnerCellHolder extends RecyclerView.ViewHolder{
     public void onBind(int position){
         InnerCellData data = (InnerCellData) dataList.get(position).getData();
         Articles articles = data.getArticles();
-
         title.setText(articles.getTitle());
-        published.setText(getPastDaysNumber(articles.getPublishedAtHumans())); //logika za ovo
+        published.setText(getPastDaysNumber(articles.getPublishedAtHumans()));
         shares.setText(articles.getShares());
         Glide.with(image.getContext())
                 .load(Constants.NEWS_PICTURE_BASE_URL + articles.getFeaturedImage().getL())

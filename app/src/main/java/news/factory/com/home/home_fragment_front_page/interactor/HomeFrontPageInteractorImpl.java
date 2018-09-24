@@ -19,9 +19,8 @@ public class HomeFrontPageInteractorImpl extends BaseInteractor implements HomeF
     }
 
     @Override
-    public void getProductsFromAPI(NetworkResponseListener listener, String type, String id, String pageNum) {
-
-        service.getNews(type,id,pageNum).
+    public void getTopArticles(NetworkResponseListener listener, String type, String id, String pageNum) {
+        service.getInnerArticles(type,id,pageNum).
                 subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(news -> new InteractorData(news))
