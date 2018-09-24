@@ -31,7 +31,7 @@ public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements V
 //        else if(type.equals(Constants.HOME_TYPE))
 //            return zahome
         else
-            return InnerPagerFragment.newInstance(position);
+            return ArticleFragment.newInstance(position);
     }
 
     @Override

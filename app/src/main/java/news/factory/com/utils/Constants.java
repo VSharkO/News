@@ -20,7 +20,7 @@ public class Constants {
     public static final String IMAGE = "image";
     public static final String FALSE = "false";
     public static final String SINGLE_TYPE = "single";
-    public static final String SINGLE_INNER_HOLDER_TYPE = "single";
+    public static final String SINGLE_INNER_HOLDER_TYPE = "singleInner";
     public static final String HOME_TYPE = "home";
 }
 
