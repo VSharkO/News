@@ -5,8 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
     android:orientation="vertical">
 
     <android.support.v4.view.ViewPager
@@ -21,14 +19,14 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/homeTabLayout"
-        style="@style/InnerPagerTab"
+        style="@style/HomePagerTab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/dp16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tabIndicatorColor="@color/red"
+        app:tabIndicatorColor="@color/white"
         app:tabIndicatorHeight="3dp"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget">
 

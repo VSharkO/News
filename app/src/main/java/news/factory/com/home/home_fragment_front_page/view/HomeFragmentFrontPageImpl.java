@@ -20,6 +20,7 @@ import news.factory.com.base.BaseFragment;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
 import news.factory.com.home.home_fragment_front_page.presenter.HomeFragmentFrontPagePresenter;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
+import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 
@@ -35,8 +36,8 @@ public class HomeFragmentFrontPageImpl extends BaseFragment implements HomeFragm
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
-        data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index+1);
-        ArticleFragmentImpl f = new ArticleFragmentImpl();
+        data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index);
+        InnerPagerFragment f = new InnerPagerFragment();
         f.setArguments(data);
         return f;
     }
@@ -65,5 +66,4 @@ public class HomeFragmentFrontPageImpl extends BaseFragment implements HomeFragm
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(itemDecorator);
     }
-
 }

@@ -71,7 +71,18 @@ public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements V
             return "";
         }
         else if(type.equals(Constants.HOME_TYPE)){
-            return "";
+            switch (position){
+                case 0:
+                    return Constants.MOST_POPULAR_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_POPULAR_TYPE.substring(1);
+                case 1:
+                    return Constants.MOST_READ_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_READ_TYPE.substring(1);
+                case 2:
+                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_NEW_TYPE.substring(1);
+                default: return "";
+            }
         }
         else
             return "";
