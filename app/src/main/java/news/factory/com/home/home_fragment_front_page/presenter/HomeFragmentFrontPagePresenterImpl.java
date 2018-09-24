@@ -82,7 +82,7 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
     }
 
     private void addArticles(TopNews news,List<RecyclerWrapper> recyclerWrappers){
-        for (int i=0; i<4; i++){
+        for (int i=0; i<6; i++){
             recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
                     RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         }

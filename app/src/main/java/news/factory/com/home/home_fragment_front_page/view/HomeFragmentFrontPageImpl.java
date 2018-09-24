@@ -37,7 +37,7 @@ public class HomeFragmentFrontPageImpl extends BaseFragment implements HomeFragm
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
         data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index);
-        InnerPagerFragment f = new InnerPagerFragment();
+        HomeFragmentFrontPageImpl f = new HomeFragmentFrontPageImpl();
         f.setArguments(data);
         return f;
     }
