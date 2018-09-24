@@ -5,7 +5,7 @@ import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapter;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapterImpl;
 import news.factory.com.single.main.presenter.SingleMainActivityPresenter;
 import news.factory.com.single.main.presenter.SingleMainActivityPresenterImpl;
-import news.factory.com.single.main.view.SingleSingleMainActivity;
+import news.factory.com.single.main.view.SingleMainActivity;
 import news.factory.com.single.main.view.SingleMainActivityView;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
 import news.factory.com.networking.interactor.article_interactor.ArticleInteractorImpl;
@@ -16,7 +16,7 @@ public class SingleMainActivityModule {
 
     @PerActivity
     @Provides
-    SingleMainActivityView provideMainView(SingleSingleMainActivity mainView){
+    SingleMainActivityView provideMainView(SingleMainActivity mainView){
         return mainView;
     }
 
@@ -28,14 +28,14 @@ public class SingleMainActivityModule {
 
     @PerActivity
     @Provides
-    ArticleInteractor provideInteractor(ArticleInteractorImpl interactor, SingleSingleMainActivity singleMainActivity){
+    ArticleInteractor provideInteractor(ArticleInteractorImpl interactor, SingleMainActivity singleMainActivity){
         singleMainActivity.getLifecycle().addObserver(interactor);
         return interactor;
     }
 
     @PerActivity
     @Provides
-    ViewPagerFragmentAdapterImpl providePagerAdapterImpl(SingleSingleMainActivity singleMainActivity){
+    ViewPagerFragmentAdapterImpl providePagerAdapterImpl(SingleMainActivity singleMainActivity){
         return new ViewPagerFragmentAdapterImpl(singleMainActivity.getSupportFragmentManager());
     }
 

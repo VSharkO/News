@@ -12,14 +12,15 @@ import butterknife.OnPageChange;
 import news.factory.com.R;
 import news.factory.com.base.BaseActivity;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapterImpl;
-import news.factory.com.single.main.presenter.MainActivityPresenter;
+import news.factory.com.single.main.presenter.SingleMainActivityPresenter;
 
-public class MainActivity extends BaseActivity implements MainActivityView {
+public class SingleMainActivity extends BaseActivity implements SingleMainActivityView {
 
     @Inject
-    MainActivityPresenter presenter;
+    SingleMainActivityPresenter presenter;
     @Inject
     ViewPagerFragmentAdapterImpl adapter;
+
     @BindView(R.id.pager)
     ViewPager viewPager;
     @BindView(R.id.floatingForwardButton)
