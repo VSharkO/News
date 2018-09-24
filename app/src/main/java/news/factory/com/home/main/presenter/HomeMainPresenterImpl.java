@@ -3,40 +3,19 @@ package news.factory.com.home.main.presenter;
 import javax.inject.Inject;
 
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
+import news.factory.com.home.home_fragment_front_page.interactor.HomeFrontPageInteractor;
+import news.factory.com.home.home_fragment_front_page.interactor.HomeFrontPageInteractorImpl;
 import news.factory.com.home.main.view.HomeMainActivity;
-import news.factory.com.model.single.News;
-import news.factory.com.single.article_fragment.article_interactor.ArticleInteractor;
-import news.factory.com.utils.Constants;
-import news.factory.com.utils.InteractorData;
-import news.factory.com.utils.NetworkResponseListener;
-import timber.log.Timber;
-
-public class HomeMainPresenterImpl implements HomeMainPresenter, NetworkResponseListener{
+public class HomeMainPresenterImpl implements HomeMainPresenter{
 
     private HomeMainActivity view;
-    private ArticleInteractor articleInteractor;
+    private HomeFrontPageInteractor articleInteractor;
     private ViewPagerAdapter adapter;
 
     @Inject
-    public HomeMainPresenterImpl(HomeMainActivity view, ArticleInteractor articleInteractor, ViewPagerAdapter adapter) {
+    public HomeMainPresenterImpl(HomeMainActivity view, HomeFrontPageInteractorImpl homeFrontPageInteractor, ViewPagerAdapter adapter) {
         this.view = view;
-        this.articleInteractor = articleInteractor;
+        this.articleInteractor = homeFrontPageInteractor;
         this.adapter = adapter;
-    }
-
-    @Override
-    public void getArticlesFromAPI() {
-        articleInteractor.getProductsFromAPI(this, Constants.ARTICLE_TYPE, Constants.ID_ARTICLE, Constants.PAGE_NUMBER_ARTICLE);
-    }
-
-    @Override
-    public void onSuccess(InteractorData callback) {
-        News data = (News)callback.getData();
-        adapter.setDataCount(Integer.parseInt(data.getPagesNo()));
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        Timber.e(throwable);
     }
 }

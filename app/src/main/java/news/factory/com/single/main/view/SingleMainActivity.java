@@ -20,7 +20,6 @@ public class SingleMainActivity extends BaseActivity implements SingleMainActivi
     SingleMainActivityPresenter presenter;
     @Inject
     ViewPagerAdapterImpl adapter;
-
     @BindView(R.id.pager)
     ViewPager viewPager;
     @BindView(R.id.floatingForwardButton)

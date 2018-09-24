@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import news.factory.com.base.BaseInteractor;
+import news.factory.com.model.single.TopNews;
 import news.factory.com.networking.Service;
 import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;

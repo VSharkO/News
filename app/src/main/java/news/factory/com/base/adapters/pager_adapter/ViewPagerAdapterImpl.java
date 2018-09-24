@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import javax.inject.Inject;
 
+import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.utils.Constants;
@@ -27,8 +28,8 @@ public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements V
             return InnerPagerFragment.newInstance(position);
         else if(type.equals(Constants.SINGLE_TYPE))
             return ArticleFragmentImpl.newInstance(position);
-//        else if(type.equals(Constants.HOME_TYPE))
-//            return zahome
+        else if(type.equals(Constants.HOME_TYPE))
+            return HomeFragmentFrontPageImpl.newInstance(position);
         else
             return ArticleFragmentImpl.newInstance(position);
     }

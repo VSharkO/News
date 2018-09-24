@@ -15,10 +15,6 @@ import news.factory.com.home.home_fragment_front_page.presenter.HomeFragmentFron
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPage;
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
 import news.factory.com.scopes.PerFragment;
-import news.factory.com.single.inner_pager_fragment.inner_pager_interactor.InnerArticlesInteractor;
-import news.factory.com.single.inner_pager_fragment.inner_pager_interactor.InnerArticlesInteractorImpl;
-import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
-import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.utils.Constants;
 
 @Module
@@ -32,7 +28,7 @@ public class HomeFragmentFrontPageModule {
 
     @PerFragment
     @Provides
-    HomeFragmentFrontPagePresenter provideInnerFragmentPresenter(HomeFragmentFrontPagePresenterImpl presenter){
+    HomeFragmentFrontPagePresenter provideHomeFragmentPresenter(HomeFragmentFrontPagePresenterImpl presenter){
         return presenter;
     }
 
@@ -44,20 +40,20 @@ public class HomeFragmentFrontPageModule {
 
     @PerFragment
     @Provides
-    ViewPagerAdapter provideHomePagerAdapter(FragmentManager fragmentManager){
-        return new ViewPagerAdapterImpl(fragmentManager,Constants.HOME_TYPE);
+    ViewPagerAdapter provideHomePagerAdapter(ViewPagerAdapterImpl adapter){
+        return adapter;
     }
 
     @PerFragment
     @Provides
-    HomeFrontPageInteractor provideInnerInteractor(HomeFrontPageInteractorImpl interactor, HomeFragmentFrontPageImpl fragment){
+    HomeFrontPageInteractor provideHomeFragmentInteractor(HomeFrontPageInteractorImpl interactor, HomeFragmentFrontPageImpl fragment){
         fragment.getLifecycle().addObserver(interactor);
         return interactor;
     }
 
     @PerFragment
     @Provides
-    RecyclerAdapterImpl provideInnerRecyclerAdapterImpl(HomeFragmentFrontPagePresenter presenter){
+    RecyclerAdapterImpl provideHomeRecyclerAdapterImpl(HomeFragmentFrontPagePresenter presenter){
         return new RecyclerAdapterImpl(presenter);
     }
 

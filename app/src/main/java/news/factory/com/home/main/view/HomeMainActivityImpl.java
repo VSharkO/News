@@ -10,8 +10,6 @@ import news.factory.com.R;
 import news.factory.com.base.BaseActivity;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
 import news.factory.com.home.main.presenter.HomeMainPresenter;
-import news.factory.com.utils.Constants;
-import timber.log.Timber;
 
 public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivity {
 
@@ -30,6 +28,7 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.home_pager);
         ButterKnife.bind(this);
         pager.setAdapter(adapter);
         adapter.setDataCount(3);

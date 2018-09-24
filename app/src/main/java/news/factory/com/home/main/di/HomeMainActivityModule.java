@@ -4,12 +4,12 @@ import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
+import news.factory.com.home.home_fragment_front_page.interactor.HomeFrontPageInteractor;
+import news.factory.com.home.home_fragment_front_page.interactor.HomeFrontPageInteractorImpl;
 import news.factory.com.home.main.presenter.HomeMainPresenter;
 import news.factory.com.home.main.view.HomeMainActivity;
 import news.factory.com.home.main.view.HomeMainActivityImpl;
 import news.factory.com.home.main.presenter.HomeMainPresenterImpl;
-import news.factory.com.single.article_fragment.article_interactor.ArticleInteractor;
-import news.factory.com.single.article_fragment.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerActivity;
 import news.factory.com.utils.Constants;
 
@@ -30,7 +30,7 @@ public class HomeMainActivityModule {
 
     @PerActivity
     @Provides
-    ArticleInteractor provideInteractor(ArticleInteractorImpl interactor, HomeMainActivityImpl homeMainActivity){
+    HomeFrontPageInteractor provideInteractor(HomeFrontPageInteractorImpl interactor, HomeMainActivityImpl homeMainActivity){
         homeMainActivity.getLifecycle().addObserver(interactor);
         return interactor;
     }
