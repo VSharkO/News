@@ -7,8 +7,8 @@ import news.factory.com.single.main.presenter.SingleMainActivityPresenter;
 import news.factory.com.single.main.presenter.SingleMainActivityPresenterImpl;
 import news.factory.com.single.main.view.SingleMainActivity;
 import news.factory.com.single.main.view.SingleMainActivityView;
-import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
-import news.factory.com.networking.interactor.article_interactor.ArticleInteractorImpl;
+import news.factory.com.single.article_fragment.article_interactor.ArticleInteractor;
+import news.factory.com.single.article_fragment.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerActivity;
 
 @Module

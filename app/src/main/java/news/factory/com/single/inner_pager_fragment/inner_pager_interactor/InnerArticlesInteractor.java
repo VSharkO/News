@@ -1,4 +1,4 @@
-package news.factory.com.networking.interactor.inner_pager_interactor;
+package news.factory.com.single.inner_pager_fragment.inner_pager_interactor;
 
 import news.factory.com.utils.NetworkResponseListener;
 

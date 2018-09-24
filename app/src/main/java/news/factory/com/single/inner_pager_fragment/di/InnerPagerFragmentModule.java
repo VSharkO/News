@@ -10,8 +10,8 @@ import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragment
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragmentView;
-import news.factory.com.networking.interactor.inner_pager_interactor.InnerArticlesInteractor;
-import news.factory.com.networking.interactor.inner_pager_interactor.InnerArticlesInteractorImpl;
+import news.factory.com.single.inner_pager_fragment.inner_pager_interactor.InnerArticlesInteractor;
+import news.factory.com.single.inner_pager_fragment.inner_pager_interactor.InnerArticlesInteractorImpl;
 import news.factory.com.scopes.PerFragment;
 
 @Module

@@ -4,7 +4,7 @@ import javax.inject.Inject;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapter;
 import news.factory.com.home.view.HomeMainActivity;
 import news.factory.com.model.single.News;
-import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
+import news.factory.com.single.article_fragment.article_interactor.ArticleInteractor;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;

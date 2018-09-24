@@ -18,7 +18,7 @@ import news.factory.com.base.view_holders.single.article_upper_header.ArticleUpp
 import news.factory.com.base.view_holders.single.article_author_shares.ArticleAuthorSharesData;
 import news.factory.com.model.single.Content;
 import news.factory.com.model.single.News;
-import news.factory.com.networking.interactor.article_interactor.ArticleInteractor;
+import news.factory.com.single.article_fragment.article_interactor.ArticleInteractor;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.InteractorData;
 import news.factory.com.utils.NetworkResponseListener;
