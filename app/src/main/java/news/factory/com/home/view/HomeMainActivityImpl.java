@@ -24,7 +24,7 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.home_pager);
         ButterKnife.bind(this);
         viewPager.setAdapter(adapter);
         presenter.getArticlesFromAPI();

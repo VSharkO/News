@@ -1,5 +1,4 @@
 package news.factory.com.base.view_holders.single.inner_view_holder;
-import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -28,6 +27,7 @@ public class InnerHolder extends RecyclerView.ViewHolder {
         adapter = new ViewPagerInnerAdapterImpl(fragmentManager);
         pager.setAdapter(adapter);
         adapter.setDataCount(3);
+        tabLayout.setupWithViewPager(pager);
     }
 
     public void onBind(int position) {
