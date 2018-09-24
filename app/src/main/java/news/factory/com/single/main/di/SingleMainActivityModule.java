@@ -1,8 +1,8 @@
 package news.factory.com.single.main.di;
 import dagger.Module;
 import dagger.Provides;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapter;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapterImpl;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
 import news.factory.com.single.main.presenter.SingleMainActivityPresenter;
 import news.factory.com.single.main.presenter.SingleMainActivityPresenterImpl;
 import news.factory.com.single.main.view.SingleMainActivity;
@@ -10,6 +10,7 @@ import news.factory.com.single.main.view.SingleMainActivityView;
 import news.factory.com.single.article_fragment.article_interactor.ArticleInteractor;
 import news.factory.com.single.article_fragment.article_interactor.ArticleInteractorImpl;
 import news.factory.com.scopes.PerActivity;
+import news.factory.com.utils.Constants;
 
 @Module
 public class SingleMainActivityModule {
@@ -35,13 +36,13 @@ public class SingleMainActivityModule {
 
     @PerActivity
     @Provides
-    ViewPagerFragmentAdapterImpl providePagerAdapterImpl(SingleMainActivity singleMainActivity){
-        return new ViewPagerFragmentAdapterImpl(singleMainActivity.getSupportFragmentManager());
+    ViewPagerAdapterImpl providePagerAdapterImpl(SingleMainActivity singleMainActivity){
+        return new ViewPagerAdapterImpl(singleMainActivity.getSupportFragmentManager(), Constants.SINGLE_TYPE);
     }
 
     @PerActivity
     @Provides
-    ViewPagerFragmentAdapter providePagerAdapter(ViewPagerFragmentAdapterImpl adapter){
+    ViewPagerAdapter providePagerAdapter(ViewPagerAdapterImpl adapter){
         return adapter;
     }
 

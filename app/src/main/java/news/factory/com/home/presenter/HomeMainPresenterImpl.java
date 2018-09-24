@@ -1,7 +1,8 @@
 package news.factory.com.home.presenter;
 
 import javax.inject.Inject;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapter;
+
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
 import news.factory.com.home.view.HomeMainActivity;
 import news.factory.com.model.single.News;
 import news.factory.com.single.article_fragment.article_interactor.ArticleInteractor;
@@ -14,10 +15,10 @@ public class HomeMainPresenterImpl implements HomeMainPresenter, NetworkResponse
 
     private HomeMainActivity view;
     private ArticleInteractor articleInteractor;
-    private ViewPagerFragmentAdapter adapter;
+    private ViewPagerAdapter adapter;
 
     @Inject
-    public HomeMainPresenterImpl(HomeMainActivity view, ArticleInteractor articleInteractor, ViewPagerFragmentAdapter adapter) {
+    public HomeMainPresenterImpl(HomeMainActivity view, ArticleInteractor articleInteractor, ViewPagerAdapter adapter) {
         this.view = view;
         this.articleInteractor = articleInteractor;
         this.adapter = adapter;

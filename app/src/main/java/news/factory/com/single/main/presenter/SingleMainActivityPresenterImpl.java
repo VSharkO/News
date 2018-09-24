@@ -1,7 +1,8 @@
 package news.factory.com.single.main.presenter;
 
 import javax.inject.Inject;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapter;
+
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
 import news.factory.com.single.main.view.SingleMainActivityView;
 import news.factory.com.model.single.News;
 import news.factory.com.single.article_fragment.article_interactor.ArticleInteractor;
@@ -14,10 +15,10 @@ public class SingleMainActivityPresenterImpl implements SingleMainActivityPresen
 
     private SingleMainActivityView view;
     private ArticleInteractor articleInteractor;
-    private ViewPagerFragmentAdapter adapter;
+    private ViewPagerAdapter adapter;
 
     @Inject
-    public SingleMainActivityPresenterImpl(SingleMainActivityView view, ArticleInteractor interactor, ViewPagerFragmentAdapter adapter) {
+    public SingleMainActivityPresenterImpl(SingleMainActivityView view, ArticleInteractor interactor, ViewPagerAdapter adapter) {
         articleInteractor = interactor;
         this.adapter = adapter;
         this.view = view;

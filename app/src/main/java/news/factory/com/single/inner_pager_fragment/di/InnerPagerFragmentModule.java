@@ -2,10 +2,10 @@ package news.factory.com.single.inner_pager_fragment.di;
 import android.support.v4.app.FragmentManager;
 import dagger.Module;
 import dagger.Provides;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapter;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapterImpl;
 import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenterImpl;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
@@ -13,6 +13,7 @@ import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragmentView;
 import news.factory.com.single.inner_pager_fragment.inner_pager_interactor.InnerArticlesInteractor;
 import news.factory.com.single.inner_pager_fragment.inner_pager_interactor.InnerArticlesInteractorImpl;
 import news.factory.com.scopes.PerFragment;
+import news.factory.com.utils.Constants;
 
 @Module
 public class InnerPagerFragmentModule {
@@ -31,14 +32,14 @@ public class InnerPagerFragmentModule {
 
     @PerFragment
     @Provides
-    ViewPagerInnerAdapterImpl provideInnerAdapterImplementation(FragmentManager fragmentManager){
-        return new ViewPagerInnerAdapterImpl(fragmentManager);
+    ViewPagerAdapterImpl provideInnerAdapterImplementation(FragmentManager fragmentManager){
+        return new ViewPagerAdapterImpl(fragmentManager, Constants.SINGLE_INNER_HOLDER_TYPE);
     }
 
     @PerFragment
     @Provides
-    ViewPagerInnerAdapter provideInnerAdapter(FragmentManager fragmentManager){
-        return new ViewPagerInnerAdapterImpl(fragmentManager);
+    ViewPagerAdapter provideInnerAdapter(FragmentManager fragmentManager){
+        return new ViewPagerAdapterImpl(fragmentManager,Constants.SINGLE_INNER_HOLDER_TYPE);
     }
 
     @PerFragment

@@ -11,7 +11,7 @@ import butterknife.OnClick;
 import butterknife.OnPageChange;
 import news.factory.com.R;
 import news.factory.com.base.BaseActivity;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapterImpl;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
 import news.factory.com.single.main.presenter.SingleMainActivityPresenter;
 
 public class SingleMainActivity extends BaseActivity implements SingleMainActivityView {
@@ -19,7 +19,7 @@ public class SingleMainActivity extends BaseActivity implements SingleMainActivi
     @Inject
     SingleMainActivityPresenter presenter;
     @Inject
-    ViewPagerFragmentAdapterImpl adapter;
+    ViewPagerAdapterImpl adapter;
 
     @BindView(R.id.pager)
     ViewPager viewPager;

@@ -7,7 +7,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.BaseActivity;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerFragmentAdapterImpl;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
 import news.factory.com.home.presenter.HomeMainPresenter;
 import timber.log.Timber;
 
@@ -16,9 +16,9 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
     @Inject
     HomeMainPresenter presenter;
     @Inject
-    ViewPagerFragmentAdapterImpl adapter;
+    ViewPagerAdapterImpl adapter;
 
-    @BindView(R.id.pager)
+    @BindView(R.id.homePager)
     ViewPager viewPager;
 
     @Override

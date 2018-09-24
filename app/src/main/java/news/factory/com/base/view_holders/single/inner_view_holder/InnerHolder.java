@@ -11,20 +11,21 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerInnerAdapterImpl;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
+import news.factory.com.utils.Constants;
 
 public class InnerHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.innerPager)
     ViewPager pager;
     @BindView(R.id.tabLayout)
     TabLayout tabLayout;
-    ViewPagerInnerAdapterImpl adapter;
+    ViewPagerAdapterImpl adapter;
     private List<RecyclerWrapper> dataList;
 
     public InnerHolder(View itemView, FragmentManager fragmentManager) {
         super(itemView);
         ButterKnife.bind(this, itemView);
-        adapter = new ViewPagerInnerAdapterImpl(fragmentManager);
+        adapter = new ViewPagerAdapterImpl(fragmentManager, Constants.SINGLE_INNER_HOLDER_TYPE);
         pager.setAdapter(adapter);
         adapter.setDataCount(3);
         tabLayout.setupWithViewPager(pager);
