@@ -16,4 +16,7 @@ public interface Service {
     @GET("{type}/{id}")
     Observable<TopNews> getInnerArticles(@Path("type") String type, @Path("id") String id,
                                          @Query(Constants.PAGE) String pageNumber);
+    @GET("{type}")
+    Observable<TopNews> getHomeData(@Path("type") String type);
+
 }

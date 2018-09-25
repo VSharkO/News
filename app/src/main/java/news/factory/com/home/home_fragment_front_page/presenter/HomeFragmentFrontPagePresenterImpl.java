@@ -22,45 +22,24 @@ import timber.log.Timber;
 public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPagePresenter,NetworkResponseListener{
 
     private HomeFragmentFrontPage view;
-    private HomeFrontPageInteractor articleInteractor;
+    private HomeFrontPageInteractor homeFrontPageInteractor;
     private ResourceRepo resourceRepo;
     private Lazy<RecyclerAdapter> adapter;
     private int index=0;
 
     @Inject
-    public HomeFragmentFrontPagePresenterImpl(HomeFragmentFrontPage view, HomeFrontPageInteractor articleInteractor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
+    public HomeFragmentFrontPagePresenterImpl(HomeFragmentFrontPage view, HomeFrontPageInteractor homeFrontPageInteractor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
         this.view = view;
-        this.articleInteractor = articleInteractor;
+        this.homeFrontPageInteractor = homeFrontPageInteractor;
         this.resourceRepo = resourceRepo;
         this.adapter = adapter;
     }
 
-                                            // TEMP
-                                            //  |
-                                            //  |
-                                            //  |
-                                            //  |
-                                            //  v
-
     @Override
     public void setData(int index) {
-        String type;
-        switch (index){
-            case 0:
-                type = Constants.MOST_POPULAR_TYPE;
-                break;
-            case 1:
-                type = Constants.MOST_READ_TYPE;
-                break;
-            case 2:
-                type = Constants.MOST_NEW_TYPE;
-                break;
-
-            default: type = Constants.MOST_POPULAR_TYPE;
-        }
-        articleInteractor.getTopArticles(this,type,Constants.ID_TOP_ARTICLES,Constants.PAGE_NUMBER_TOP_ARTICLES);
+        this.index = index;
+        homeFrontPageInteractor.getHomeData(this,Constants.INDEX);
     }
-
 
     @Override
     public void onSuccess(InteractorData callback) {
@@ -84,11 +63,11 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
     }
 
     private void addArticles(TopNews news,List<RecyclerWrapper> recyclerWrappers){
-        for (int i=0; i<3; i++){
+        //add first
+        for (int i=1; i<news.getArticles().length; i++){
             recyclerWrappers.add(new RecyclerWrapper(new HomeFrontPageItemData(news),
                     RecyclerWrapper.TYPE_HOME_FRONT_ITEM));
         }
-
     }
 
 }

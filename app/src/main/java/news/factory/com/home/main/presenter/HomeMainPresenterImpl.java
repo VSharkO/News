@@ -18,4 +18,5 @@ public class HomeMainPresenterImpl implements HomeMainPresenter{
         this.articleInteractor = homeFrontPageInteractor;
         this.adapter = adapter;
     }
+
 }

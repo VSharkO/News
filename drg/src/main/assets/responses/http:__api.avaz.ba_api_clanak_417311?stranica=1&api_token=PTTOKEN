@@ -1,0 +1,363 @@
+{
+    "id": 417311,
+    "category_id": 13,
+    "category": "BIH",
+    "category_slug": "bih",
+    "category_url": "https://avaz.ba/vijesti/bih",
+    "category_color": "#000b93",
+    "slug": "amerikanci-i-britanci-imat-ce-znatno-veci-broj-svojih-promatraca-na-biralistima",
+    "url": "https://avaz.ba/vijesti/bih/417311/amerikanci-i-britanci-imat-ce-znatno-veci-broj-svojih-promatraca-na-biralistima",
+    "urlm": "https://avaz.ba/vijesti/bih/417311/amerikanci-i-britanci-imat-ce-znatno-veci-broj-svojih-promatraca-na-biralistima",
+    "uppertitle": "",
+    "uppertitle_raw": "",
+    "title": "Amerikanci i Britanci imat će znatno veći broj svojih promatrača na biralištima?",
+    "title_raw": "Amerikanci i Britanci imat će znatno veći broj svojih promatrača na biralištima?",
+    "subtitle": "",
+    "intro": "Već se otrcala ona famozna krilatica da izbore dobiva onaj tko upravlja glasačkim kutijama, ali naš birač očigledno živi u iluziji i opet se nekako ponada da bi ovoga puta to nekako moglo izgledati poštenije",
+    "intro_shorter": "",
+    "intro_short": "",
+    "status": 1,
+    "hits": 0,
+    "shares": 0,
+    "has_video": false,
+    "has_gallery": false,
+    "index_block": 0,
+    "index_block_position": 0,
+    "upcomming": 0,
+    "no_featured_image": false,
+    "published_at": {
+        "date": "2018-09-25 11:18:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/Sarajevo"
+    },
+    "published_at_humans": "25.09.2018 11:18",
+    "updated_at": "25.09.2018 11:19",
+    "template": "article",
+    "featured_image": {
+        "original": "/media/2018/09/25/715200/88.jpg",
+        "slider": "/media/2018/09/25/715200/thumbs/1005x635.jpg",
+        "3xl": "/media/2018/09/25/715200/thumbs/873x400.jpg",
+        "xxl": "/media/2018/09/25/715200/thumbs/495x375.jpg",
+        "xl": "/media/2018/09/25/715200/thumbs/253x225.jpg",
+        "l": "/media/2018/09/25/715200/thumbs/240x225.jpg",
+        "m": "/media/2018/09/25/715200/thumbs/240x204.jpg",
+        "s": "/media/2018/09/25/715200/thumbs/94x94.jpg",
+        "xs": "/media/2018/09/25/715200/thumbs/95x90.jpg",
+        "xxs": "/media/2018/09/25/715200/thumbs/60x52.jpg"
+    },
+    "featured_image_source": "",
+    "featured_image_caption": "",
+    "tags": [
+        {
+            "tag": "Izbori u BiH",
+            "id": 28904
+        },
+        {
+            "tag": "OESS",
+            "id": 17401
+        }
+    ],
+    "article_edition": "preuzeti",
+    "breaking_news": 0,
+    "author": "Autor: Dnevni list",
+    "breadcrumbs": {
+        "category": "BiH",
+        "category_url": "https://avaz.ba/vijesti/bih",
+        "parent_category": "Vijesti",
+        "parent_category_slug": "vijesti",
+        "parent_category_url": "https://avaz.ba/vijesti"
+    },
+    "is_external": false,
+    "published_at_atom": "2018-09-25T11:18:00+02:00",
+    "category_analytics": {
+        "dotmetrics": "3365"
+    },
+    "created_at": {
+        "date": "2018-09-25 10:42:43.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/Sarajevo"
+    },
+    "intro_video": "",
+    "has_mp3": false,
+    "mp3_url": "",
+    "published_at_rss": "Tue, 25 Sep 2018 11:18:00 +0200",
+    "updated_at_atom": "2018-09-25T11:19:51+02:00",
+    "pages_no": 1,
+    "auto_related_articles": [
+        {
+            "id": 411847,
+            "category_id": 13,
+            "category": "PORUKA",
+            "category_slug": "bih",
+            "category_url": "https://avaz.ba/vijesti/bih",
+            "category_color": "#000b93",
+            "slug": "delegacija-eu-u-bih-izbori-su-kljucni-stub-demokratije",
+            "url": "https://avaz.ba/vijesti/bih/411847/delegacija-eu-u-bih-izbori-su-kljucni-stub-demokratije",
+            "urlm": "https://avaz.ba/vijesti/bih/411847/delegacija-eu-u-bih-izbori-su-kljucni-stub-demokratije",
+            "uppertitle": "<span class=\"red-title\"><strong>PORUKA</strong></span> Sutra zvanično počinje izborna kampanja",
+            "uppertitle_raw": "Sutra zvanično počinje izborna kampanja",
+            "title": "Delegacija EU u BiH: Izbori su ključni stub demokratije",
+            "title_raw": "Delegacija EU u BiH: Izbori su ključni stub demokratije",
+            "subtitle": "",
+            "intro": "Delegacija Evropske unije i Ured specijalnog predstavnika EU u Bosni i Hercegovini u današnjoj Izjavi podsjetili su da sutra zvanično počinje kampanja za Opće izbore u BiH 2018. godine, uz ocjenu da su izbori ključni stub demokratije te da će bh. građani u oktobru iskoristiti svoje pravo na političke odabire za budućnost",
+            "intro_shorter": "",
+            "intro_short": "",
+            "status": 1,
+            "hits": 275,
+            "shares": 0,
+            "has_video": false,
+            "has_gallery": false,
+            "index_block": 0,
+            "index_block_position": 0,
+            "upcomming": 0,
+            "no_featured_image": false,
+            "published_at": {
+                "date": "2018-09-06 17:56:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "published_at_humans": "06.09.2018 17:56",
+            "updated_at": "06.09.2018 17:56",
+            "template": "article",
+            "featured_image": {
+                "original": "/media/2018/09/06/698594/5448cc9d-88fc-40d1-83ba-14a9b0765237-delegacija-eu-zgrada.jpg",
+                "slider": "/media/2018/09/06/698594/thumbs/1005x635.jpg",
+                "3xl": "/media/2018/09/06/698594/thumbs/873x400.jpg",
+                "xxl": "/media/2018/09/06/698594/thumbs/495x375.jpg",
+                "xl": "/media/2018/09/06/698594/thumbs/253x225.jpg",
+                "l": "/media/2018/09/06/698594/thumbs/240x225.jpg",
+                "m": "/media/2018/09/06/698594/thumbs/240x204.jpg",
+                "s": "/media/2018/09/06/698594/thumbs/94x94.jpg",
+                "xs": "/media/2018/09/06/698594/thumbs/95x90.jpg",
+                "xxs": "/media/2018/09/06/698594/thumbs/60x52.jpg"
+            },
+            "featured_image_source": "",
+            "featured_image_caption": "Arhiva",
+            "tags": [
+                {
+                    "tag": "Delegacija EU u BiH",
+                    "id": 14338
+                },
+                {
+                    "tag": "Izbori u BiH",
+                    "id": 28904
+                }
+            ],
+            "article_edition": "agencijski",
+            "breaking_news": 0,
+            "author": "Autor: Fena",
+            "breadcrumbs": {
+                "category": "BiH",
+                "category_url": "https://avaz.ba/vijesti/bih",
+                "parent_category": "Vijesti",
+                "parent_category_slug": "vijesti",
+                "parent_category_url": "https://avaz.ba/vijesti"
+            },
+            "is_external": false,
+            "published_at_atom": "2018-09-06T17:56:00+02:00",
+            "category_analytics": {
+                "dotmetrics": "3365"
+            },
+            "created_at": {
+                "date": "2018-09-06 17:38:22.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "intro_video": "",
+            "has_mp3": false,
+            "mp3_url": "",
+            "published_at_rss": "Thu, 06 Sep 2018 17:56:00 +0200",
+            "updated_at_atom": "2018-09-06T17:56:18+02:00",
+            "pages_no": 1
+        },
+        {
+            "id": 403891,
+            "category_id": 13,
+            "category": "SUKOBI",
+            "category_slug": "bih",
+            "category_url": "https://avaz.ba/vijesti/bih",
+            "category_color": "#000b93",
+            "slug": "borenovic-o-izjavama-dodika-svjestan-je-da-gubi-izbore-i-izmislja-budalastine",
+            "url": "https://avaz.ba/vijesti/bih/403891/borenovic-o-izjavama-dodika-svjestan-je-da-gubi-izbore-i-izmislja-budalastine",
+            "urlm": "https://avaz.ba/vijesti/bih/403891/borenovic-o-izjavama-dodika-svjestan-je-da-gubi-izbore-i-izmislja-budalastine",
+            "uppertitle": "<span class=\"red-title\"><strong>SUKOBI</strong></span> Predsjednik PDP-a za Avaz.ba",
+            "uppertitle_raw": "Predsjednik PDP-a za Avaz.ba",
+            "title": "Borenović o izjavama Dodika: Svjestan je da gubi izbore i izmišlja budalaštine",
+            "title_raw": "Borenović o izjavama Dodika: Svjestan je da gubi izbore i izmišlja budalaštine",
+            "subtitle": "",
+            "intro": "Podsjećamo, Milorad Dodik je rekao je da je spreman dramatičan plan opozicije u RS za 6. oktobar, da se ponište izbori u Banjoj Luci.",
+            "intro_shorter": "",
+            "intro_short": "",
+            "status": 1,
+            "hits": 2883,
+            "shares": 49,
+            "has_video": false,
+            "has_gallery": false,
+            "index_block": 0,
+            "index_block_position": 0,
+            "upcomming": 0,
+            "no_featured_image": false,
+            "published_at": {
+                "date": "2018-08-08 17:44:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "published_at_humans": "08.08.2018 17:44",
+            "updated_at": "08.08.2018 17:46",
+            "template": "article",
+            "featured_image": {
+                "original": "/media/2018/08/08/673058/5661afa7-0c04-49a9-8a0f-58a00a0a0a64-borenovic2.jpg",
+                "slider": "/media/2018/08/08/673058/thumbs/1005x635.jpg",
+                "3xl": "/media/2018/08/08/673058/thumbs/873x400.jpg",
+                "xxl": "/media/2018/08/08/673058/thumbs/495x375.jpg",
+                "xl": "/media/2018/08/08/673058/thumbs/253x225.jpg",
+                "l": "/media/2018/08/08/673058/thumbs/240x225.jpg",
+                "m": "/media/2018/08/08/673058/thumbs/240x204.jpg",
+                "s": "/media/2018/08/08/673058/thumbs/94x94.jpg",
+                "xs": "/media/2018/08/08/673058/thumbs/95x90.jpg",
+                "xxs": "/media/2018/08/08/673058/thumbs/60x52.jpg"
+            },
+            "featured_image_source": "",
+            "featured_image_caption": "Branislav Borenović",
+            "tags": [
+                {
+                    "tag": "Branislav Borenović",
+                    "id": 8597
+                },
+                {
+                    "tag": "Milorad Dodik",
+                    "id": 159
+                },
+                {
+                    "tag": "Izbori u BiH",
+                    "id": 28904
+                }
+            ],
+            "article_edition": "autorski",
+            "breaking_news": 0,
+            "author": "Autor: Al. Ti.",
+            "breadcrumbs": {
+                "category": "BiH",
+                "category_url": "https://avaz.ba/vijesti/bih",
+                "parent_category": "Vijesti",
+                "parent_category_slug": "vijesti",
+                "parent_category_url": "https://avaz.ba/vijesti"
+            },
+            "is_external": false,
+            "published_at_atom": "2018-08-08T17:44:00+02:00",
+            "category_analytics": {
+                "dotmetrics": "3365"
+            },
+            "created_at": {
+                "date": "2018-08-08 17:44:16.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "intro_video": "",
+            "has_mp3": false,
+            "mp3_url": "",
+            "published_at_rss": "Wed, 08 Aug 2018 17:44:00 +0200",
+            "updated_at_atom": "2018-08-08T17:46:08+02:00",
+            "pages_no": 1
+        },
+        {
+            "id": 403877,
+            "category_id": 13,
+            "category": "POTVRĐENO",
+            "category_slug": "bih",
+            "category_url": "https://avaz.ba/vijesti/bih",
+            "category_color": "#000b93",
+            "slug": "piric-do-sada-obradeno-75-000-prijava-za-glasanje-izvan-bih",
+            "url": "https://avaz.ba/vijesti/bih/403877/piric-do-sada-obradeno-75-000-prijava-za-glasanje-izvan-bih",
+            "urlm": "https://avaz.ba/vijesti/bih/403877/piric-do-sada-obradeno-75-000-prijava-za-glasanje-izvan-bih",
+            "uppertitle": "<span class=\"red-title\"><strong>POTVRĐENO</strong></span> 8.000 ne ispunjava uvjete za ovjeru",
+            "uppertitle_raw": "8.000 ne ispunjava uvjete za ovjeru",
+            "title": "Pirić: Do sada obrađeno 75.000 prijava za glasanje izvan BiH",
+            "title_raw": "Pirić: Do sada obrađeno 75.000 prijava za glasanje izvan BiH",
+            "subtitle": "",
+            "intro": "Od obrađenih prijava najviše ih je stiglo iz Republike Hrvatske, oko 20.000, iz Srbije oko 12.000 te iz Njemačke blizu 10.000",
+            "intro_shorter": "",
+            "intro_short": "",
+            "status": 1,
+            "hits": 77,
+            "shares": 0,
+            "has_video": false,
+            "has_gallery": false,
+            "index_block": 0,
+            "index_block_position": 0,
+            "upcomming": 0,
+            "no_featured_image": false,
+            "published_at": {
+                "date": "2018-08-08 17:15:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "published_at_humans": "08.08.2018 17:15",
+            "updated_at": "08.08.2018 17:15",
+            "template": "article",
+            "featured_image": {
+                "original": "/media/2018/08/08/673041/cik.jpg",
+                "slider": "/media/2018/08/08/673041/thumbs/1005x635.jpg",
+                "3xl": "/media/2018/08/08/673041/thumbs/873x400.jpg",
+                "xxl": "/media/2018/08/08/673041/thumbs/495x375.jpg",
+                "xl": "/media/2018/08/08/673041/thumbs/253x225.jpg",
+                "l": "/media/2018/08/08/673041/thumbs/240x225.jpg",
+                "m": "/media/2018/08/08/673041/thumbs/240x204.jpg",
+                "s": "/media/2018/08/08/673041/thumbs/94x94.jpg",
+                "xs": "/media/2018/08/08/673041/thumbs/95x90.jpg",
+                "xxs": "/media/2018/08/08/673041/thumbs/60x52.jpg"
+            },
+            "featured_image_source": "",
+            "featured_image_caption": " Fena",
+            "tags": [
+                {
+                    "tag": "CIK BiH",
+                    "id": 5744
+                },
+                {
+                    "tag": "Izbori u BiH",
+                    "id": 28904
+                }
+            ],
+            "article_edition": "agencijski",
+            "breaking_news": 0,
+            "author": "Autor: Fena",
+            "breadcrumbs": {
+                "category": "BiH",
+                "category_url": "https://avaz.ba/vijesti/bih",
+                "parent_category": "Vijesti",
+                "parent_category_slug": "vijesti",
+                "parent_category_url": "https://avaz.ba/vijesti"
+            },
+            "is_external": false,
+            "published_at_atom": "2018-08-08T17:15:00+02:00",
+            "category_analytics": {
+                "dotmetrics": "3365"
+            },
+            "created_at": {
+                "date": "2018-08-08 17:08:21.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "intro_video": "",
+            "has_mp3": false,
+            "mp3_url": "",
+            "published_at_rss": "Wed, 08 Aug 2018 17:15:00 +0200",
+            "updated_at_atom": "2018-08-08T17:15:29+02:00",
+            "pages_no": 1
+        }
+    ],
+    "content": [
+        {
+            "article_id": 417311,
+            "type": "text",
+            "page": 1,
+            "order": 1,
+            "data": "<p><span style=\"background-color: initial;\">Čak se i u obaviještajnim agencijama ”pouzdano” zna da zavađene političke stranke šuruju i da već imaju spremne paralelne biračke popise, imaju viškove glasačkih listića pa čak i spremljene pečatirane kutije napunjene već zaokruženim listićima, piše Dnevni list.&nbsp;</span></p><p>Izbori u BiH su odavno obesmisleni zbog primitivnog Izbornog zakona, sramnih krađa i lažiranja.\r\n</p><p>Već se otrcala ona famozna krilatica da izbore dobiva onaj tko upravlja glasačkim kutijama, ali naš birač očigledno živi u iluziji i opet se nekako ponada da bi ovoga puta to nekako moglo izgledati poštenije. Međutim, ako se po jutru dan poznaje, sve upućuje da nikada surogatnije neće biti kao za 15 dana, 7. listopada. Jer, mi ovih dana svjedočimo otvorenim, vulgarnim prijevarama oko biračkih popisa i glasačkih listića koje su samo blaga uvertira u brižljivo spremanu obmanu.\r\n</p><p><strong>Pojačan nadzor\r\n</strong></p><p>Dok stranački čelnici i kandidati tobože vode izbornu kampanju njhovi ”izborni inženjeri”, daleko od očiju javnosti, pripremaju teren za izbornu pljačku birača ove zemlje. Na svakom koraku i na svim razinama se samo o tome govori. Čak se i u obaviještajnim agencijama ”pouzdano” zna da zavađene političke stranke odavno šuruju i da već navodno imaju spremne paralelne biračke popise, u pričuvu u ladice su sklonili viškove glasačkih listića za intervente potrebe pa čak, po tim teorijama zavjera, imaju i zgotovljene, pečatirane, glasačke kutije napunjene zaokruženim listićima.\r\n</p><p>Da se to u BiH već nije događalo, čovjek bi se zaledio nad ovim glasinama, no svaki ”festival demokracije” u našoj zemlji je obojen baš ovakvim pljačkama birača i kršenjima Izbornog zakona. Ovogodišnji parlamentarni izbori su najozbiljnije dovedeni na rub regularnosti i nije mali broj političkih i intelektualnih krugova i pojedinaca koji smatraju da glasovanje nema smisla i da izbore treba u najmanju ruku odgoditi. Slaba je utjeha što međunarodna zajednica najavljuje masovniji promatrački pohod na biračka mjesta. Dnevni list, naime, doznaje iz pouzdanih izbora kako će preko OESS-a, neuobičajeno veliki broj američkih, britanskih, ali i promatrača iz mnogih drugih zemalja u nedjelju 7. listopada naprosto okupirati prostor oko glasačkih kutija od otvaranja, a poglavito oko 19 sati kada se biračka mjesta zatvaraju i kada i nastaje ta crna rupa u kojoj se događaju šokatne krađe i ”ubacivanja” kutija.\r\n</p><p>Uobičajeno, na izbore će i tisuće članova nevladinih organizacija koji su nemoćni u svojim upozorenjima i dokazima i oni se ovdje tretiraju kao puki bilježnici koje nitko više ozbiljno i ne doživljava. Teško da će ta najezda stranih i domaćih promatrača i agenata spriječiti domaće prefrgane prevarante da ih opet namagrče kao i sve savjesne birače.\r\n</p><p><strong>Neredi\r\n</strong></p><p>Javni prostor strahuje i od mogućih nereda neposredno i tijekom izbora. Kako doznaje Dnevni list strane zapadne agenture i domaći obavještajci svakodnevno prate sumnjiva kretanja i djelovanja, poglavito, ruskih špijuna kako bi se blagovremeno spriječio ”sindrom Crna Gora” kada je pokušan državni udar, a ovih dana se pojavila čak i informacija da se spremala i likvidacija predsjednika te susjedne zemlje Mile Đukanovića.\r\n</p><p>Kako se doznaje, strane agenture je posebno zaintrigirala prijetnja ministra MUP-a RS-a Dragana Lukača oporbenim strankama da policija neće dopustiti ”nasilnu smjenu vlasti”. To je prevedeno kao otvoreno stavljanje policijskog aparata na stranu Milorada Doodika i njegovog SNSD-a da po svaku cijenu ostanu na vlasti. Ovih dana je Središnje izborno povjerenstvo izloženo opravdanom izljevu gnjeva javnoga mnijenja. Istraživačko novinarstvo i pogođeni pojedinci, dok agenti, policija, tužitelji i druge institucije uglavnom šute, iskopavaju brojna lažiranja biračkih popisa, podvale oko glasovanja poštom.\r\n</p><p>Na popisima opet uskrsavaju mrtvi, podmlađuju se stogodišnjaci, djeca naprasno postaju punoljetna. Bez osobnih iskaznica je preko noći ostalo fantasičnih 250 tisuća punoljetnih državljana BiH.\r\n</p><p><strong>Providne kutije\r\n</strong></p><p>Javnost je uznemirena i zabrinuta, Središnje izborno povjerenstvo se ponaša kao da je još na godišnjem odmoru. Nonšalantno poručuju kako nema mjesta tolikoj paranoji i podsjećaju kako su naručili nove providne plastične glasačke kutije i kupili crvene i zelene olovke.\r\n</p><p>Nitko se čak niti nostalgično recimo nije sjetio skenera i video nadzora s kojima bi se nedvojbeno povećala sigurnost i rezultate glasovanja bismo imali odmah po zatvaranju biračkih mjesta. Uvođenje upotrebe prozirnih glasačkih kutija i raznobojnih olovaka imat će određene efekte bez obzira što mnogima zasigurno izgledaju poput dobrog vica. Međutim, glavni krivac za moguće brutalne krađe i pogibljeno narušavanje volje birača i ruganje „festivalu demokracije“ će apsolutno biti Parlament BiH. Jer, državni su, dobro plaćeni parlamentarci zaduženi i odgovorni za unaprjeđivanje, nadogradnju i bilo kakvu doradu izbornog zakona. A, oni u proteklih nekoliko godina nažalost, nisu, pokazali spremnost da uvedu odgovarajuće izmjene i makar tehnički unaprijede izborni proces unatoč brojnim prijedlozima koji su dolazili, što od SIP-a, što od eksperata i nevladinog sektora.\r\n</p><p>Dapače, Parlament BiH čak nije pokazao spremnost ni da razriješi gorući problem s djelom izbornog zakona koji definira izbor Doma naroda Federacije BiH, što već do kraja godine može dovesti do blokade formiranja vlasti i ugroziti opstojnost institucija na državnoj i federalnoj razini. Pa, ne mogu valjda prozirne kutije i korištenje različitih kemijskih olovaka biti jamstvo fer i poštenih izbora. Velike rupe u izbornom sustavu su prije svega proizvedeni od strane krutog političkog aparata u kom svaka od glavnih političkih stranaka pokušava utjecati i nadzirati sustav i da ga što više iskoristi za svoju korist. U tom kontekstu, djelovanje SIP-a je više posljedica, a manje uzrok problema s kojima se suočava izborni process.\r\n</p><p>Olovke i prozirne kutije su samo donacije naivnih ili neodlučnih međunarodnih faktora. Ovdje je ključni problem i to nije tajna, da političke stranke lažiraju popise, podmićuju birače, promatrače, članove biračkih odbora i izbornih povjerenstava. Na taj način stvaraju pretpostavku da tokom glasovanja, a posebno nakon završetka  provode izborne prijevare. Na pojedinim biračkim mjestima pojedine stranke ili saveznici imaju potpunu kontrolu i mogu raditi šta žele. Pa, već se sada s podsmijehom trvdi kako će nove prozirne kutije znatno olakšati posao u transportu onima koji su i do sada sklanjali čitave kutije i mijenjali ih kutijama željenog sadržaja. To će se sve odvijati daleko od očiju Amerikanaca, Britanaca i cijele svite međunarodnih i domaćih uljudnih promatrača. Oni nemaju pojma s kakvim barabama imaju posla. Ovdje to ljudi znaju pa će na izbore zasigurno izaći debeleo manje od 50 posto biračkoga tijela, zaključuje Dnevni list.</p>",
+            "data_raw": "<p><span>Čak se i u obaviještajnim agencijama ”pouzdano” zna da zavađene političke stranke šuruju i da već imaju spremne paralelne biračke popise, imaju viškove glasačkih listića pa čak i spremljene pečatirane kutije napunjene već zaokruženim listićima, piše Dnevni list.&nbsp;</span></p><p>Izbori u BiH su odavno obesmisleni zbog primitivnog Izbornog zakona, sramnih krađa i lažiranja.\r\n</p><p>Već se otrcala ona famozna krilatica da izbore dobiva onaj tko upravlja glasačkim kutijama, ali naš birač očigledno živi u iluziji i opet se nekako ponada da bi ovoga puta to nekako moglo izgledati poštenije. Međutim, ako se po jutru dan poznaje, sve upućuje da nikada surogatnije neće biti kao za 15 dana, 7. listopada. Jer, mi ovih dana svjedočimo otvorenim, vulgarnim prijevarama oko biračkih popisa i glasačkih listića koje su samo blaga uvertira u brižljivo spremanu obmanu.\r\n</p><p><strong>Pojačan nadzor\r\n</strong></p><p>Dok stranački čelnici i kandidati tobože vode izbornu kampanju njhovi ”izborni inženjeri”, daleko od očiju javnosti, pripremaju teren za izbornu pljačku birača ove zemlje. Na svakom koraku i na svim razinama se samo o tome govori. Čak se i u obaviještajnim agencijama ”pouzdano” zna da zavađene političke stranke odavno šuruju i da već navodno imaju spremne paralelne biračke popise, u pričuvu u ladice su sklonili viškove glasačkih listića za intervente potrebe pa čak, po tim teorijama zavjera, imaju i zgotovljene, pečatirane, glasačke kutije napunjene zaokruženim listićima.\r\n</p><p>Da se to u BiH već nije događalo, čovjek bi se zaledio nad ovim glasinama, no svaki ”festival demokracije” u našoj zemlji je obojen baš ovakvim pljačkama birača i kršenjima Izbornog zakona. Ovogodišnji parlamentarni izbori su najozbiljnije dovedeni na rub regularnosti i nije mali broj političkih i intelektualnih krugova i pojedinaca koji smatraju da glasovanje nema smisla i da izbore treba u najmanju ruku odgoditi. Slaba je utjeha što međunarodna zajednica najavljuje masovniji promatrački pohod na biračka mjesta. Dnevni list, naime, doznaje iz pouzdanih izbora kako će preko OESS-a, neuobičajeno veliki broj američkih, britanskih, ali i promatrača iz mnogih drugih zemalja u nedjelju 7. listopada naprosto okupirati prostor oko glasačkih kutija od otvaranja, a poglavito oko 19 sati kada se biračka mjesta zatvaraju i kada i nastaje ta crna rupa u kojoj se događaju šokatne krađe i ”ubacivanja” kutija.\r\n</p><p>Uobičajeno, na izbore će i tisuće članova nevladinih organizacija koji su nemoćni u svojim upozorenjima i dokazima i oni se ovdje tretiraju kao puki bilježnici koje nitko više ozbiljno i ne doživljava. Teško da će ta najezda stranih i domaćih promatrača i agenata spriječiti domaće prefrgane prevarante da ih opet namagrče kao i sve savjesne birače.\r\n</p><p><strong>Neredi\r\n</strong></p><p>Javni prostor strahuje i od mogućih nereda neposredno i tijekom izbora. Kako doznaje Dnevni list strane zapadne agenture i domaći obavještajci svakodnevno prate sumnjiva kretanja i djelovanja, poglavito, ruskih špijuna kako bi se blagovremeno spriječio ”sindrom Crna Gora” kada je pokušan državni udar, a ovih dana se pojavila čak i informacija da se spremala i likvidacija predsjednika te susjedne zemlje Mile Đukanovića.\r\n</p><p>Kako se doznaje, strane agenture je posebno zaintrigirala prijetnja ministra MUP-a RS-a Dragana Lukača oporbenim strankama da policija neće dopustiti ”nasilnu smjenu vlasti”. To je prevedeno kao otvoreno stavljanje policijskog aparata na stranu Milorada Doodika i njegovog SNSD-a da po svaku cijenu ostanu na vlasti. Ovih dana je Središnje izborno povjerenstvo izloženo opravdanom izljevu gnjeva javnoga mnijenja. Istraživačko novinarstvo i pogođeni pojedinci, dok agenti, policija, tužitelji i druge institucije uglavnom šute, iskopavaju brojna lažiranja biračkih popisa, podvale oko glasovanja poštom.\r\n</p><p>Na popisima opet uskrsavaju mrtvi, podmlađuju se stogodišnjaci, djeca naprasno postaju punoljetna. Bez osobnih iskaznica je preko noći ostalo fantasičnih 250 tisuća punoljetnih državljana BiH.\r\n</p><p><strong>Providne kutije\r\n</strong></p><p>Javnost je uznemirena i zabrinuta, Središnje izborno povjerenstvo se ponaša kao da je još na godišnjem odmoru. Nonšalantno poručuju kako nema mjesta tolikoj paranoji i podsjećaju kako su naručili nove providne plastične glasačke kutije i kupili crvene i zelene olovke.\r\n</p><p>Nitko se čak niti nostalgično recimo nije sjetio skenera i video nadzora s kojima bi se nedvojbeno povećala sigurnost i rezultate glasovanja bismo imali odmah po zatvaranju biračkih mjesta. Uvođenje upotrebe prozirnih glasačkih kutija i raznobojnih olovaka imat će određene efekte bez obzira što mnogima zasigurno izgledaju poput dobrog vica. Međutim, glavni krivac za moguće brutalne krađe i pogibljeno narušavanje volje birača i ruganje „festivalu demokracije“ će apsolutno biti Parlament BiH. Jer, državni su, dobro plaćeni parlamentarci zaduženi i odgovorni za unaprjeđivanje, nadogradnju i bilo kakvu doradu izbornog zakona. A, oni u proteklih nekoliko godina nažalost, nisu, pokazali spremnost da uvedu odgovarajuće izmjene i makar tehnički unaprijede izborni proces unatoč brojnim prijedlozima koji su dolazili, što od SIP-a, što od eksperata i nevladinog sektora.\r\n</p><p>Dapače, Parlament BiH čak nije pokazao spremnost ni da razriješi gorući problem s djelom izbornog zakona koji definira izbor Doma naroda Federacije BiH, što već do kraja godine može dovesti do blokade formiranja vlasti i ugroziti opstojnost institucija na državnoj i federalnoj razini. Pa, ne mogu valjda prozirne kutije i korištenje različitih kemijskih olovaka biti jamstvo fer i poštenih izbora. Velike rupe u izbornom sustavu su prije svega proizvedeni od strane krutog političkog aparata u kom svaka od glavnih političkih stranaka pokušava utjecati i nadzirati sustav i da ga što više iskoristi za svoju korist. U tom kontekstu, djelovanje SIP-a je više posljedica, a manje uzrok problema s kojima se suočava izborni process.\r\n</p><p>Olovke i prozirne kutije su samo donacije naivnih ili neodlučnih međunarodnih faktora. Ovdje je ključni problem i to nije tajna, da političke stranke lažiraju popise, podmićuju birače, promatrače, članove biračkih odbora i izbornih povjerenstava. Na taj način stvaraju pretpostavku da tokom glasovanja, a posebno nakon završetka  provode izborne prijevare. Na pojedinim biračkim mjestima pojedine stranke ili saveznici imaju potpunu kontrolu i mogu raditi šta žele. Pa, već se sada s podsmijehom trvdi kako će nove prozirne kutije znatno olakšati posao u transportu onima koji su i do sada sklanjali čitave kutije i mijenjali ih kutijama željenog sadržaja. To će se sve odvijati daleko od očiju Amerikanaca, Britanaca i cijele svite međunarodnih i domaćih uljudnih promatrača. Oni nemaju pojma s kakvim barabama imaju posla. Ovdje to ljudi znaju pa će na izbore zasigurno izaći debeleo manje od 50 posto biračkoga tijela, zaključuje Dnevni list.</p>",
+            "embed_src": "",
+            "width": "col-sm-12",
+            "id": 526251
+        }
+    ]
+}

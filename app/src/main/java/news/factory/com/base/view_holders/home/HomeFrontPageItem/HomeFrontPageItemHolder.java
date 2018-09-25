@@ -20,7 +20,6 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
     RecyclerView recyclerView;
     RecyclerAdapterImpl adapter;
 
-
     private List<RecyclerWrapper> dataList;
 
     public HomeFrontPageItemHolder(View itemView, List<RecyclerWrapper> data) {
@@ -57,10 +56,9 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
     private void addArticles(TopNews news, List<RecyclerWrapper> recyclerWrappers) {
         recyclerWrappers.add(new RecyclerWrapper(new HomeFrontPageTitleData(news.getName()),
                 RecyclerWrapper.TYPE_HOME_FRONT_TITLE));
-        for (int i = 0; i < 4; i++) {
+        for (int i = 1; i < 8; i++) {
             recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
                     RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         }
-
     }
 }

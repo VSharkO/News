@@ -1,0 +1,428 @@
+{
+    "id": 416939,
+    "category_id": 12,
+    "category": "OBUSTAVLJEN SAOBRAĆAJ",
+    "category_slug": "crna-hronika",
+    "category_url": "https://avaz.ba/vijesti/crna-hronika",
+    "category_color": "#000000",
+    "slug": "dvije-osobe-povrijedene-u-teskom-udesu-kod-tuzle",
+    "url": "https://avaz.ba/vijesti/crna-hronika/416939/dvije-osobe-povrijedene-u-teskom-udesu-kod-tuzle",
+    "urlm": "https://avaz.ba/vijesti/crna-hronika/416939/dvije-osobe-povrijedene-u-teskom-udesu-kod-tuzle",
+    "uppertitle": "OBUSTAVLJEN SAOBRAĆAJ Potvrđeno za Avaz.ba",
+    "uppertitle_raw": "Potvrđeno za Avaz.ba",
+    "title": "Dvije osobe povrijeđene u teškom udesu kod Tuzle",
+    "title_raw": "Dvije osobe povrijeđene u teškom udesu kod Tuzle",
+    "subtitle": "",
+    "intro": "Uviđaj na licu mjesta obavljaju pripadnici MUP-a TK, a na ovoj dionici na snazi je obustava saobraćaja",
+    "intro_shorter": "",
+    "intro_short": "",
+    "status": 1,
+    "hits": 23776,
+    "shares": 108,
+    "has_video": false,
+    "has_gallery": false,
+    "index_block": 0,
+    "index_block_position": 0,
+    "upcomming": 0,
+    "no_featured_image": false,
+    "published_at": {
+        "date": "2018-09-24 09:06:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/Sarajevo"
+    },
+    "published_at_humans": "24.09.2018 09:06",
+    "updated_at": "24.09.2018 09:36",
+    "template": "article",
+    "featured_image": {
+        "original": "/media/2018/09/24/714089/0-02-04-af6bf6f746d168cd976fe49afc4fe44d8643d667a8d4f1486de4ee236e7891f3-50491550.jpg",
+        "slider": "/media/2018/09/24/714089/thumbs/1005x635.jpg",
+        "3xl": "/media/2018/09/24/714089/thumbs/873x400.jpg",
+        "xxl": "/media/2018/09/24/714089/thumbs/495x375.jpg",
+        "xl": "/media/2018/09/24/714089/thumbs/253x225.jpg",
+        "l": "/media/2018/09/24/714089/thumbs/240x225.jpg",
+        "m": "/media/2018/09/24/714089/thumbs/240x204.jpg",
+        "s": "/media/2018/09/24/714089/thumbs/94x94.jpg",
+        "xs": "/media/2018/09/24/714089/thumbs/95x90.jpg",
+        "xxs": "/media/2018/09/24/714089/thumbs/60x52.jpg"
+    },
+    "featured_image_source": "",
+    "featured_image_caption": "",
+    "tags": [
+        {
+            "tag": "MUP TK",
+            "id": 613
+        },
+        {
+            "tag": "Izudin Šarić",
+            "id": 16472
+        },
+        {
+            "tag": "Plane",
+            "id": 43787
+        }
+    ],
+    "article_edition": "autorski",
+    "breaking_news": 0,
+    "author": "Autor: Al. Ti.",
+    "breadcrumbs": {
+        "category": "Crna hronika",
+        "category_url": "https://avaz.ba/vijesti/crna-hronika",
+        "parent_category": "Vijesti",
+        "parent_category_slug": "vijesti",
+        "parent_category_url": "https://avaz.ba/vijesti"
+    },
+    "is_external": false,
+    "published_at_atom": "2018-09-24T09:06:00+02:00",
+    "category_analytics": {
+        "dotmetrics": "3366"
+    },
+    "created_at": {
+        "date": "2018-09-24 09:06:12.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/Sarajevo"
+    },
+    "intro_video": "",
+    "has_mp3": true,
+    "mp3_url": "https://avaz.ba/media/audio/2018/09/24/416939.mp3",
+    "published_at_rss": "Mon, 24 Sep 2018 09:06:00 +0200",
+    "updated_at_atom": "2018-09-24T09:36:51+02:00",
+    "pages_no": 1,
+    "auto_related_articles": [
+        {
+            "id": 413711,
+            "category_id": 12,
+            "category": "TUZLA",
+            "category_slug": "crna-hronika",
+            "category_url": "https://avaz.ba/vijesti/crna-hronika",
+            "category_color": "#000000",
+            "slug": "lazna-dojava-o-bombi-ispraznila-kantonalni-sud",
+            "url": "https://avaz.ba/vijesti/crna-hronika/413711/lazna-dojava-o-bombi-ispraznila-kantonalni-sud",
+            "urlm": "https://avaz.ba/vijesti/crna-hronika/413711/lazna-dojava-o-bombi-ispraznila-kantonalni-sud",
+            "uppertitle": "<span class=\"red-title\"><strong>TUZLA</strong></span> Pripadnici MUP-a TK obavili uviđaj",
+            "uppertitle_raw": "Pripadnici MUP-a TK obavili uviđaj",
+            "title": "Lažna dojava o bombi ispraznila Kantonalni sud ",
+            "title_raw": "Lažna dojava o bombi ispraznila Kantonalni sud ",
+            "subtitle": "Nepoznata osoba jučer je u 11.30 sati dojavila da je u Kantonalnom sudu Tuzla postavljena eksplozivna naprava",
+            "intro": "Nepoznata osoba jučer je u 11.30 sati dojavila da je u Kantonalnom sudu Tuzla postavljena eksplozivna naprava",
+            "intro_shorter": "",
+            "intro_short": "",
+            "status": 1,
+            "hits": 847,
+            "shares": 5,
+            "has_video": false,
+            "has_gallery": false,
+            "index_block": 0,
+            "index_block_position": 0,
+            "upcomming": 0,
+            "no_featured_image": false,
+            "published_at": {
+                "date": "2018-09-13 12:05:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "published_at_humans": "13.09.2018 12:05",
+            "updated_at": "13.09.2018 12:06",
+            "template": "article",
+            "featured_image": {
+                "original": "/media/2018/09/13/704269/tuzla-bomba-99.JPG",
+                "slider": "/media/2018/09/13/704269/thumbs/1005x635.jpg",
+                "3xl": "/media/2018/09/13/704269/thumbs/873x400.jpg",
+                "xxl": "/media/2018/09/13/704269/thumbs/495x375.jpg",
+                "xl": "/media/2018/09/13/704269/thumbs/253x225.jpg",
+                "l": "/media/2018/09/13/704269/thumbs/240x225.jpg",
+                "m": "/media/2018/09/13/704269/thumbs/240x204.jpg",
+                "s": "/media/2018/09/13/704269/thumbs/94x94.jpg",
+                "xs": "/media/2018/09/13/704269/thumbs/95x90.jpg",
+                "xxs": "/media/2018/09/13/704269/thumbs/60x52.jpg"
+            },
+            "featured_image_source": "Policija ispred Kantonalnog suda Tuzla (Foto: A. Bajrić)",
+            "featured_image_caption": "",
+            "tags": [
+                {
+                    "tag": "MUP TK",
+                    "id": 613
+                },
+                {
+                    "tag": "Lažna dojava",
+                    "id": 24901
+                },
+                {
+                    "tag": "Tuzla",
+                    "id": 432
+                },
+                {
+                    "tag": "Uviđaj",
+                    "id": 35160
+                }
+            ],
+            "article_edition": "autorski",
+            "breaking_news": 0,
+            "author": "Autor: E. Sk,",
+            "breadcrumbs": {
+                "category": "Crna hronika",
+                "category_url": "https://avaz.ba/vijesti/crna-hronika",
+                "parent_category": "Vijesti",
+                "parent_category_slug": "vijesti",
+                "parent_category_url": "https://avaz.ba/vijesti"
+            },
+            "is_external": false,
+            "published_at_atom": "2018-09-13T12:05:00+02:00",
+            "category_analytics": {
+                "dotmetrics": "3366"
+            },
+            "created_at": {
+                "date": "2018-09-13 09:44:55.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "intro_video": "",
+            "has_mp3": true,
+            "mp3_url": "https://avaz.ba/media/audio/2018/09/13/413711.mp3",
+            "published_at_rss": "Thu, 13 Sep 2018 12:05:00 +0200",
+            "updated_at_atom": "2018-09-13T12:06:25+02:00",
+            "pages_no": 1
+        },
+        {
+            "id": 412970,
+            "category_id": 12,
+            "category": "CRNA HRONIKA",
+            "category_slug": "crna-hronika",
+            "category_url": "https://avaz.ba/vijesti/crna-hronika",
+            "category_color": "#000000",
+            "slug": "gracanica-uz-prijetnju-pistoljem-razbojnik-oteo-150-000-km",
+            "url": "https://avaz.ba/vijesti/crna-hronika/412970/gracanica-uz-prijetnju-pistoljem-razbojnik-oteo-150-000-km",
+            "urlm": "https://avaz.ba/vijesti/crna-hronika/412970/gracanica-uz-prijetnju-pistoljem-razbojnik-oteo-150-000-km",
+            "uppertitle": "Policija traga za lopovom",
+            "uppertitle_raw": "Policija traga za lopovom",
+            "title": "Gračanica: Uz prijetnju pištoljem, razbojnik oteo 150.000 KM",
+            "title_raw": "Gračanica: Uz prijetnju pištoljem, razbojnik oteo 150.000 KM",
+            "subtitle": "",
+            "intro": "Prema informacijama iz Operativnog centra MUP TK-a, danas se u PS Gračanica obratio D.G. (29)",
+            "intro_shorter": "",
+            "intro_short": "",
+            "status": 1,
+            "hits": 11510,
+            "shares": 64,
+            "has_video": false,
+            "has_gallery": false,
+            "index_block": 0,
+            "index_block_position": 0,
+            "upcomming": 0,
+            "no_featured_image": false,
+            "published_at": {
+                "date": "2018-09-10 21:17:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "published_at_humans": "10.09.2018 21:17",
+            "updated_at": "10.09.2018 21:38",
+            "template": "article",
+            "featured_image": {
+                "original": "/media/2018/09/10/702312/razbojnistvo.jpg",
+                "slider": "/media/2018/09/10/702312/thumbs/1005x635.jpg",
+                "3xl": "/media/2018/09/10/702312/thumbs/873x400.jpg",
+                "xxl": "/media/2018/09/10/702312/thumbs/495x375.jpg",
+                "xl": "/media/2018/09/10/702312/thumbs/253x225.jpg",
+                "l": "/media/2018/09/10/702312/thumbs/240x225.jpg",
+                "m": "/media/2018/09/10/702312/thumbs/240x204.jpg",
+                "s": "/media/2018/09/10/702312/thumbs/94x94.jpg",
+                "xs": "/media/2018/09/10/702312/thumbs/95x90.jpg",
+                "xxs": "/media/2018/09/10/702312/thumbs/60x52.jpg"
+            },
+            "featured_image_source": "",
+            "featured_image_caption": "",
+            "tags": [
+                {
+                    "tag": "OKP PU Gračanica",
+                    "id": 42227
+                },
+                {
+                    "tag": "MUP TK",
+                    "id": 613
+                }
+            ],
+            "article_edition": "preuzeti",
+            "breaking_news": 0,
+            "author": "Autor: H.ČALIĆ",
+            "breadcrumbs": {
+                "category": "Crna hronika",
+                "category_url": "https://avaz.ba/vijesti/crna-hronika",
+                "parent_category": "Vijesti",
+                "parent_category_slug": "vijesti",
+                "parent_category_url": "https://avaz.ba/vijesti"
+            },
+            "is_external": false,
+            "published_at_atom": "2018-09-10T21:17:00+02:00",
+            "category_analytics": {
+                "dotmetrics": "3366"
+            },
+            "created_at": {
+                "date": "2018-09-10 21:17:08.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "intro_video": "",
+            "has_mp3": false,
+            "mp3_url": "",
+            "published_at_rss": "Mon, 10 Sep 2018 21:17:00 +0200",
+            "updated_at_atom": "2018-09-10T21:38:01+02:00",
+            "pages_no": 1
+        },
+        {
+            "id": 411419,
+            "category_id": 129,
+            "category": "MUP TK",
+            "category_slug": "tuzlanski-kanton",
+            "category_url": "https://avaz.ba/kantoni/tuzlanski-kanton",
+            "category_color": "#ed1c24",
+            "slug": "uhapsen-pljackas-kladionica",
+            "url": "https://avaz.ba/kantoni/tuzlanski-kanton/411419/uhapsen-pljackas-kladionica",
+            "urlm": "https://avaz.ba/kantoni/tuzlanski-kanton/411419/uhapsen-pljackas-kladionica",
+            "uppertitle": "<span class=\"red-title\"><strong>MUP TK</strong></span> Zbog počinjenja šest krivičnih djela ",
+            "uppertitle_raw": "Zbog počinjenja šest krivičnih djela ",
+            "title": "Uhapšen pljačkaš kladionica",
+            "title_raw": "Uhapšen pljačkaš kladionica",
+            "subtitle": "Pričinjena materijalna šteta u iznosu od oko 2.700 KM",
+            "intro": "Njemu se na teret stavlja krivično djelo razbojništvo",
+            "intro_shorter": "",
+            "intro_short": "",
+            "status": 1,
+            "hits": 1441,
+            "shares": 0,
+            "has_video": false,
+            "has_gallery": false,
+            "index_block": 0,
+            "index_block_position": 0,
+            "upcomming": 0,
+            "no_featured_image": false,
+            "published_at": {
+                "date": "2018-09-05 14:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "published_at_humans": "05.09.2018 14:00",
+            "updated_at": "05.09.2018 14:09",
+            "template": "article",
+            "featured_image": {
+                "original": "/media/2018/09/05/697430/hapsenje-ilustracija.jpg",
+                "slider": "/media/2018/09/05/697430/thumbs/1005x635.jpg",
+                "3xl": "/media/2018/09/05/697430/thumbs/873x400.jpg",
+                "xxl": "/media/2018/09/05/697430/thumbs/495x375.jpg",
+                "xl": "/media/2018/09/05/697430/thumbs/253x225.jpg",
+                "l": "/media/2018/09/05/697430/thumbs/240x225.jpg",
+                "m": "/media/2018/09/05/697430/thumbs/240x204.jpg",
+                "s": "/media/2018/09/05/697430/thumbs/94x94.jpg",
+                "xs": "/media/2018/09/05/697430/thumbs/95x90.jpg",
+                "xxs": "/media/2018/09/05/697430/thumbs/60x52.jpg"
+            },
+            "featured_image_source": "",
+            "featured_image_caption": "Arhiv",
+            "tags": [
+                {
+                    "tag": "MUP TK",
+                    "id": 613
+                },
+                {
+                    "tag": "Hapšenje",
+                    "id": 560
+                },
+                {
+                    "tag": "Pljačka",
+                    "id": 2304
+                },
+                {
+                    "tag": "Kladionice",
+                    "id": 27851
+                }
+            ],
+            "article_edition": "preuzeti",
+            "breaking_news": 0,
+            "author": "Autor: E.Sk.",
+            "breadcrumbs": {
+                "category": "Tuzlanski kanton",
+                "category_url": "https://avaz.ba/kantoni/tuzlanski-kanton",
+                "parent_category": "Kantoni",
+                "parent_category_slug": "kantoni",
+                "parent_category_url": "https://avaz.ba/vijesti/kantoni"
+            },
+            "is_external": false,
+            "published_at_atom": "2018-09-05T14:00:00+02:00",
+            "category_analytics": {
+                "dotmetrics": "3379"
+            },
+            "created_at": {
+                "date": "2018-09-05 14:00:16.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Sarajevo"
+            },
+            "intro_video": "",
+            "has_mp3": false,
+            "mp3_url": "",
+            "published_at_rss": "Wed, 05 Sep 2018 14:00:00 +0200",
+            "updated_at_atom": "2018-09-05T14:09:01+02:00",
+            "pages_no": 1
+        }
+    ],
+    "content": [
+        {
+            "article_id": 416939,
+            "type": "gallery",
+            "page": 1,
+            "order": 0,
+            "data": "gallery-full-screen",
+            "data_raw": "gallery-full-screen",
+            "embed_src": "",
+            "width": "col-sm-12",
+            "id": 525705,
+            "gallery": [
+                {
+                    "original": "/media/2018/09/24/714090/thumbs/h550.jpg",
+                    "width": 1100,
+                    "height": 825,
+                    "full": "/media/2018/09/24/714090/thumbs/800x450.jpg",
+                    "thumb": "/media/2018/09/24/714090/thumbs/135x97.jpg",
+                    "title": "",
+                    "caption": "A. Bajrić"
+                },
+                {
+                    "original": "/media/2018/09/24/714091/thumbs/h550.jpg",
+                    "width": 1100,
+                    "height": 825,
+                    "full": "/media/2018/09/24/714091/thumbs/800x450.jpg",
+                    "thumb": "/media/2018/09/24/714091/thumbs/135x97.jpg",
+                    "title": "",
+                    "caption": "A. Bajrić"
+                },
+                {
+                    "original": "/media/2018/09/24/714092/thumbs/h550.jpg",
+                    "width": 1100,
+                    "height": 825,
+                    "full": "/media/2018/09/24/714092/thumbs/800x450.jpg",
+                    "thumb": "/media/2018/09/24/714092/thumbs/135x97.jpg",
+                    "title": "",
+                    "caption": "A. Bajrić"
+                },
+                {
+                    "original": "/media/2018/09/24/714093/thumbs/h550.jpg",
+                    "width": 1100,
+                    "height": 825,
+                    "full": "/media/2018/09/24/714093/thumbs/800x450.jpg",
+                    "thumb": "/media/2018/09/24/714093/thumbs/135x97.jpg",
+                    "title": "",
+                    "caption": "A. Bajrić"
+                }
+            ]
+        },
+        {
+            "article_id": 416939,
+            "type": "text",
+            "page": 1,
+            "order": 1,
+            "data": "<p><span style=\"background-color: initial;\">Na magistralnom putu M-1.8 Tuzla - Orašje, u mjestu Plane, jutros u 8.15 sati dogodila se saobraćajna nesreća u kojoj su dvije osobe povrijeđene.&nbsp;</span><br></p><p>Kako je za Avaz.ba potvrdio portparol MUP-a TK Izudin Šarić, u nesreći su učestvovala dva teretna vozila.&nbsp;</p><p>Kako saznajemo prilikom sudara dva kamiona jedan je završio na parkingu rabljenih automobila.</p><p>- Dvije osobe su povrijeđene i prevezene na UKC Tuzla, gdje se utvrđuje stepen povreda - kazao je Šarić.\r\n</p><p>Uviđaj na licu mjesta obavljaju pripadnici MUP-a TK, a na ovoj dionici na snazi je obustava saobraćaja.\r\n</p>\r\n<br>",
+            "data_raw": "<p><span>Na magistralnom putu M-1.8 Tuzla - Orašje, u mjestu Plane, jutros u 8.15 sati dogodila se saobraćajna nesreća u kojoj su dvije osobe povrijeđene.&nbsp;</span><br></p><p>Kako je za Avaz.ba potvrdio portparol MUP-a TK Izudin Šarić, u nesreći su učestvovala dva teretna vozila.&nbsp;</p><p>Kako saznajemo prilikom sudara dva kamiona jedan je završio na parkingu rabljenih automobila.</p><p>- Dvije osobe su povrijeđene i prevezene na UKC Tuzla, gdje se utvrđuje stepen povreda - kazao je Šarić.\r\n</p><p>Uviđaj na licu mjesta obavljaju pripadnici MUP-a TK, a na ovoj dionici na snazi je obustava saobraćaja.\r\n</p>\r\n<br>",
+            "embed_src": "",
+            "width": "col-sm-12",
+            "id": 525699
+        }
+    ]
+}
