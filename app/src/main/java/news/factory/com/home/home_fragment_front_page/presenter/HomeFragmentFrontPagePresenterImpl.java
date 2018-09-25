@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import dagger.Lazy;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
+import news.factory.com.base.view_holders.home.HomeFrontPageCellTitle.HomeFrontPageTitleData;
 import news.factory.com.base.view_holders.home.HomeFrontPageItem.HomeFrontPageItemData;
 import news.factory.com.home.home_fragment_front_page.interactor.HomeFrontPageInteractor;
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPage;
@@ -40,6 +41,7 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
                                             //  |
                                             //  |
                                             //  v
+
     @Override
     public void setData(int index) {
         String type;

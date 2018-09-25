@@ -19,8 +19,8 @@ public class ArticleTitleHolder extends RecyclerView.ViewHolder {
 
     public ArticleTitleHolder(View itemView, List<RecyclerWrapper> data) {
         super(itemView);
-        dataList = data;
         ButterKnife.bind(this,itemView);
+        dataList = data;
     }
 
     public void onBind(int position){
