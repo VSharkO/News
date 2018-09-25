@@ -20,7 +20,6 @@ public class InnerHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.tabLayout)
     TabLayout tabLayout;
     ViewPagerAdapterImpl adapter;
-    private List<RecyclerWrapper> dataList;
 
     public InnerHolder(View itemView, FragmentManager fragmentManager) {
         super(itemView);

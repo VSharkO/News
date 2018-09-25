@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.base.view_holders.home.HomeFrontPageData;
 import news.factory.com.base.view_holders.home.HomeFrontPageHolder;
+import news.factory.com.base.view_holders.home.HomeFrontPageItem.HomeFrontPageItemHolder;
 import news.factory.com.base.view_holders.single.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.single.article_header.ArticleHeaderHolder;
 import news.factory.com.base.view_holders.single.article_image.ArticleImageHolder;
@@ -79,6 +79,10 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
             case RecyclerWrapper.TYPE_HOME_FRONT_PAGE:
                 return new HomeFrontPageHolder(itemView,dataList);
 
+            case RecyclerWrapper.TYPE_HOME_FRONT_ITEM:
+                return new HomeFrontPageItemHolder(itemView,dataList);
+
+
             default: return new DummyHolder(new View(parent.getContext()));
         }
 
@@ -145,6 +149,11 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
             case RecyclerWrapper.TYPE_HOME_FRONT_PAGE:
                 HomeFrontPageHolder frontPageHolder = (HomeFrontPageHolder) holder;
                 frontPageHolder.onBind(position);
+                break;
+
+            case RecyclerWrapper.TYPE_HOME_FRONT_ITEM:
+                HomeFrontPageItemHolder frontPageItemHolder = (HomeFrontPageItemHolder) holder;
+                frontPageItemHolder.onBind(position);
                 break;
         }
 

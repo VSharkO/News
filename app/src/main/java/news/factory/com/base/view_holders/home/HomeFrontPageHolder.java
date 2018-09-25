@@ -20,7 +20,13 @@ import news.factory.com.model.single.Articles;
 import news.factory.com.utils.Constants;
 
 public class HomeFrontPageHolder extends RecyclerView.ViewHolder{
+
+
+
     //TEMP
+
+
+
     @BindView(R.id.innerPagerFragmentTitle)
     TextView title;
     @BindView(R.id.innerPagerFragmentpublished)

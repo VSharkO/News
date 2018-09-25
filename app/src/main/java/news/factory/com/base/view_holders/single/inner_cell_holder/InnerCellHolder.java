@@ -19,6 +19,7 @@ import news.factory.com.model.single.Articles;
 import news.factory.com.utils.Constants;
 
 public class InnerCellHolder extends RecyclerView.ViewHolder{
+
     @BindView(R.id.innerPagerFragmentTitle)
     TextView title;
     @BindView(R.id.innerPagerFragmentpublished)

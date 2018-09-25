@@ -15,6 +15,7 @@ public class RecyclerWrapper{
     public static final int TYPE_INNER_ARTICLE_PAGER = R.layout.cell_inner_pager;
     public static final int TYPE_INNER_ARTICLE_CELL = R.layout.inner_cell_layout;
     public static final int TYPE_HOME_FRONT_PAGE = R.layout.home_pager;
+    public static final int TYPE_HOME_FRONT_ITEM = R.layout.cell_home_item;
 
     private Object data;
     private int type;

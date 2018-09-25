@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="1300dp">
+
+    <TextView
+        android:id="@+id/homeCategoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_slab_bold"/>
+    <View
+        android:id="@+id/fakeIndicator"
+        android:layout_height="3dp"
+        android:layout_width="wrap_content"
+        android:layout_alignStart="@+id/homeCategoryTitle"
+        android:layout_alignEnd="@+id/homeCategoryTitle"
+        android:layout_below="@id/homeCategoryTitle"
+        android:background="@color/red"
+        android:layout_marginBottom="@dimen/dp16"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/homeItemsRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="1147dp"
+        android:layout_below="@id/fakeIndicator"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+    
+
+</RelativeLayout>

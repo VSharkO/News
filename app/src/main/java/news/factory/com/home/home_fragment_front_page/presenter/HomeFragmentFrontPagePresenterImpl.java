@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import dagger.Lazy;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
-import news.factory.com.base.view_holders.single.inner_cell_holder.InnerCellData;
+import news.factory.com.base.view_holders.home.HomeFrontPageItem.HomeFrontPageItemData;
 import news.factory.com.home.home_fragment_front_page.interactor.HomeFrontPageInteractor;
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPage;
 import news.factory.com.model.single.TopNews;
@@ -82,9 +82,9 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
     }
 
     private void addArticles(TopNews news,List<RecyclerWrapper> recyclerWrappers){
-        for (int i=0; i<6; i++){
-            recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
-                    RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
+        for (int i=0; i<3; i++){
+            recyclerWrappers.add(new RecyclerWrapper(new HomeFrontPageItemData(news),
+                    RecyclerWrapper.TYPE_HOME_FRONT_ITEM));
         }
 
     }

@@ -3,6 +3,9 @@ package news.factory.com.home.main.view;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,5 +36,9 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
         pager.setAdapter(adapter);
         adapter.setDataCount(3);
         tabLayout.setupWithViewPager(pager);
-    }
+        for (int i=0; i < tabLayout.getTabCount(); i++){
+            TextView textView = (TextView)(((LinearLayout)((LinearLayout)tabLayout.getChildAt(0)).getChildAt(i)).getChildAt(1));
+            textView.setScaleY(-1);
+            }
+        }
 }

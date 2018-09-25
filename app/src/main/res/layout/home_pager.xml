@@ -24,15 +24,20 @@
         style="@style/HomePagerTab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/dp16"
-        app:tabSelectedTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:tabIndicatorColor="@color/white"
-        app:tabIndicatorHeight="1dp"
-        app:tabTextColor="@color/white"
-        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget">
+        app:tabIndicatorHeight="2dp"
+        app:tabSelectedTextColor="@color/white"
+        android:rotationX="180"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabTextColor="@color/white">
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
 
     </android.support.design.widget.TabLayout>
 
