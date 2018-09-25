@@ -33,7 +33,7 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
 
     public void onBind(int position) {
         HomeFrontPageItemData data = (HomeFrontPageItemData) dataList.get(position).getData();
-        adapter.fillData(getSortedItemsForRecycler(data.getNews()));
+        adapter.fillData(getSortedItemsForRecycler(data.getNews()[position]));
     }
 
     public void provideRecyclerViewAdapter() {
@@ -56,7 +56,8 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
     private void addArticles(TopNews news, List<RecyclerWrapper> recyclerWrappers) {
         recyclerWrappers.add(new RecyclerWrapper(new HomeFrontPageTitleData(news.getName()),
                 RecyclerWrapper.TYPE_HOME_FRONT_TITLE));
-        for (int i = 1; i < 8; i++) {
+
+        for (int i = 0; i < news.getArticles().length; i++) {
             recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
                     RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         }

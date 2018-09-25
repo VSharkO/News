@@ -73,6 +73,5 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
             recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
                     RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         }
-
     }
 }
