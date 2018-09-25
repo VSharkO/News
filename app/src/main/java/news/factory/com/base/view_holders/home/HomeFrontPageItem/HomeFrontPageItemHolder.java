@@ -28,7 +28,6 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
         this.adapter = new RecyclerAdapterImpl(null);
         dataList = data;
         provideRecyclerViewAdapter();
-
     }
 
     public void onBind(int position) {
@@ -52,7 +51,7 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
         addArticles(news, recyclerWrappers);
         return recyclerWrappers;
     }
-//TODO
+
     private void addArticles(TopNews news, List<RecyclerWrapper> recyclerWrappers) {
         recyclerWrappers.add(new RecyclerWrapper(new HomeFrontPageTitleData(news.getName()),
                 RecyclerWrapper.TYPE_HOME_FRONT_TITLE));
@@ -61,5 +60,9 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
             recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
                     RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         }
+
+        recyclerWrappers.add(new RecyclerWrapper(RecyclerWrapper.TYPE_HOME_BUTTON));
+
+        //TODO button na dnu
     }
 }

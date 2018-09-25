@@ -17,6 +17,7 @@ public class RecyclerWrapper{
     public static final int TYPE_HOME_FRONT_PAGE = R.layout.home_pager;
     public static final int TYPE_HOME_FRONT_ITEM = R.layout.cell_home_item;
     public static final int TYPE_HOME_FRONT_TITLE = R.layout.home_category_title;
+    public static final int TYPE_HOME_BUTTON = R.layout.home_item_recycler_button;
 
     private Object data;
     private int type;

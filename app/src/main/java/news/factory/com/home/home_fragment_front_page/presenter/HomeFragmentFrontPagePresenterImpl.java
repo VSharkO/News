@@ -2,9 +2,7 @@ package news.factory.com.home.home_fragment_front_page.presenter;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.inject.Inject;
-
 import dagger.Lazy;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;

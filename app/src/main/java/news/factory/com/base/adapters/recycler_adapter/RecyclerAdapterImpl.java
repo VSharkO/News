@@ -12,6 +12,7 @@ import news.factory.com.base.view_holders.home.HomeFrontPageCellTitle.HomeFrontP
 import news.factory.com.base.view_holders.home.HomeFrontPageCellTitle.HomeFrontPageTitleHolder;
 import news.factory.com.base.view_holders.home.HomeFrontPagePager.HomeFrontPageHolder;
 import news.factory.com.base.view_holders.home.HomeFrontPageItem.HomeFrontPageItemHolder;
+import news.factory.com.base.view_holders.home.HomeItemButton.HomeItemButtonHolder;
 import news.factory.com.base.view_holders.single.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.single.article_header.ArticleHeaderHolder;
 import news.factory.com.base.view_holders.single.article_image.ArticleImageHolder;
@@ -85,6 +86,9 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
 
             case RecyclerWrapper.TYPE_HOME_FRONT_TITLE:
                 return new HomeFrontPageTitleHolder(itemView,dataList);
+
+            case RecyclerWrapper.TYPE_HOME_BUTTON:
+                return new HomeItemButtonHolder(itemView);
 
             default: return new DummyHolder(new View(parent.getContext()));
         }
@@ -164,6 +168,12 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 HomeFrontPageTitleHolder frontPageTitleHolder = (HomeFrontPageTitleHolder) holder;
                 frontPageTitleHolder.onBind(position);
                 break;
+
+            case RecyclerWrapper.TYPE_HOME_BUTTON:
+                HomeItemButtonHolder homeItemButtonHolder = (HomeItemButtonHolder) holder;
+                homeItemButtonHolder.onBind(position);
+                break;
+
         }
     }
 
