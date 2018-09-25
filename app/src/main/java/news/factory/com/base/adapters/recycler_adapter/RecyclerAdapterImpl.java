@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.base.view_holders.home.HomeFrontPageHolder;
+import news.factory.com.base.view_holders.home.HomeFrontPageCellTitle.HomeFrontPageTitleData;
+import news.factory.com.base.view_holders.home.HomeFrontPageCellTitle.HomeFrontPageTitleHolder;
+import news.factory.com.base.view_holders.home.HomeFrontPagePager.HomeFrontPageHolder;
 import news.factory.com.base.view_holders.home.HomeFrontPageItem.HomeFrontPageItemHolder;
 import news.factory.com.base.view_holders.single.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.single.article_header.ArticleHeaderHolder;
@@ -70,7 +72,6 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 return new ArticleIndicatorHolder(itemView,dataList);
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_PAGER:
-
                 return new InnerHolder(itemView,((PresenterWithFragmentChildManager) presenter).getManager());
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_CELL:
@@ -82,6 +83,8 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
             case RecyclerWrapper.TYPE_HOME_FRONT_ITEM:
                 return new HomeFrontPageItemHolder(itemView,dataList);
 
+            case RecyclerWrapper.TYPE_HOME_FRONT_TITLE:
+                return new HomeFrontPageTitleHolder(itemView,dataList);
 
             default: return new DummyHolder(new View(parent.getContext()));
         }
@@ -96,6 +99,7 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         switch (holder.getItemViewType()){
+
             case RecyclerWrapper.TYPE_ARTICLE_IMAGE:
                 ArticleImageHolder holderImage = (ArticleImageHolder) holder;
                 holderImage.onBind(position);
@@ -111,7 +115,7 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 holderTitle.onBind(position);
                 break;
 
-            case  RecyclerWrapper.TYPE_ARTICLE_HEADER:
+            case RecyclerWrapper.TYPE_ARTICLE_HEADER:
                 ArticleHeaderHolder holderHeader = (ArticleHeaderHolder) holder;
                 holderHeader.onBind(position);
                 break;
@@ -155,8 +159,12 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 HomeFrontPageItemHolder frontPageItemHolder = (HomeFrontPageItemHolder) holder;
                 frontPageItemHolder.onBind(position);
                 break;
-        }
 
+            case RecyclerWrapper.TYPE_HOME_FRONT_TITLE:
+                HomeFrontPageTitleHolder frontPageTitleHolder = (HomeFrontPageTitleHolder) holder;
+                frontPageTitleHolder.onBind(position);
+                break;
+        }
     }
 
     @Override

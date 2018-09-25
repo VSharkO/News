@@ -1,4 +1,4 @@
-package news.factory.com.base.view_holders.home;
+package news.factory.com.base.view_holders.home.HomeFrontPagePager;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="1300dp">
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/homeCategoryTitle"
@@ -12,6 +11,7 @@
         android:layout_marginTop="16dp"
         android:textSize="20sp"
         android:textColor="@color/black"
+        android:text="ahaaa"
         android:fontFamily="@font/roboto_slab_bold"/>
     <View
         android:id="@+id/fakeIndicator"
@@ -23,14 +23,5 @@
         android:background="@color/red"
         android:layout_marginBottom="@dimen/dp16"
         />
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/homeItemsRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="1147dp"
-        android:layout_below="@id/fakeIndicator"
-        >
-
-    </android.support.v7.widget.RecyclerView>
-    
 
 </RelativeLayout>

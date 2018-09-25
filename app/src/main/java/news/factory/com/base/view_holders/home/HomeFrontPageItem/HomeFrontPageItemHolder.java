@@ -19,7 +19,7 @@ import news.factory.com.utils.CostumeItemDecorator;
 public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.homeCategoryTitle)
     TextView title;
-    @BindView(R.id.homeItemsRecycler)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
     RecyclerAdapterImpl adapter;
 
@@ -57,8 +57,10 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
         addArticles(news, recyclerWrappers);
         return recyclerWrappers;
     }
-
+//TODO
     private void addArticles(TopNews news, List<RecyclerWrapper> recyclerWrappers) {
+        recyclerWrappers.add(new RecyclerWrapper(new HomeFrontPageItemData(news),
+                RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         for (int i = 0; i < 4; i++) {
             recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
                     RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));

@@ -1,19 +1,14 @@
 package news.factory.com.base.view_holders.home.HomeFrontPageItem;
 
-import news.factory.com.model.single.TopNews;
-
 public class HomeFrontPageItemData {
-    private TopNews news;
+    private String title;
 
-    public HomeFrontPageItemData(TopNews news) {
-        this.news = news;
+    public HomeFrontPageItemData(String title) {
+        this.title = title;
     }
 
     public String getTitle() {
-        return news.getName();
+        return title;
     }
 
-    public TopNews getNews() {
-        return news;
-    }
 }

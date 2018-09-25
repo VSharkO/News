@@ -1,4 +1,4 @@
-package news.factory.com.base.view_holders.home;
+package news.factory.com.base.view_holders.home.HomeFrontPagePager;
 
 import news.factory.com.model.single.Articles;
 
