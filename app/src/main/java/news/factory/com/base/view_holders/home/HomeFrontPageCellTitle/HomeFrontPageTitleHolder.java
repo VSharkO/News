@@ -26,8 +26,6 @@ public class HomeFrontPageTitleHolder extends RecyclerView.ViewHolder {
 
     public void onBind(int position) {
         HomeFrontPageTitleData data = (HomeFrontPageTitleData) dataList.get(position).getData();
-
         textView.setText(data.getTitle());
-        //TODO crta boja
     }
 }

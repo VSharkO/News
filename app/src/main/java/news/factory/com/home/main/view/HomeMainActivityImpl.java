@@ -32,7 +32,6 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
         ButterKnife.bind(this);
         pager.setAdapter(adapter);
         presenter.getData();
-//        adapter.setDataCount(10);
         tabLayout.setupWithViewPager(pager);
 
         }

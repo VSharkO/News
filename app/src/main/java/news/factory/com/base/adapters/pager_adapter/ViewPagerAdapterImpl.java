@@ -35,9 +35,12 @@ public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements V
 
         else if(type.equals(Constants.SINGLE_TYPE))
             return ArticleFragmentImpl.newInstance(position);
-
+//TODO
         else if(type.equals(Constants.HOME_TYPE))
-            return HomeFragmentFrontPageImpl.newInstance(position);
+            if(position == 0)
+            return HomeFragmentFrontPageImpl.newInstance();
+            else
+                return ArticleFragmentImpl.newInstance(position);
 
         else
             return ArticleFragmentImpl.newInstance(position);

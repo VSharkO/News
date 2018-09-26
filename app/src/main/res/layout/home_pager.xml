@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <android.support.v4.view.ViewPager
@@ -13,36 +12,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp8"
         android:layout_marginEnd="@dimen/dp8"
-        android:layout_marginTop="@dimen/dp16"
-        app:layout_constraintBottom_toTopOf="@id/homeTabLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        android:layout_above="@id/homeTabLayout">
     </android.support.v4.view.ViewPager>
 
     <android.support.design.widget.TabLayout
-        style="@style/HomePagerTab"
         android:id="@+id/homeTabLayout"
-        android:layout_width="wrap_content"
+        style="@style/HomePagerTab"
+        android:layout_width="match_parent"
+        app:tabMode="scrollable"
         android:layout_height="wrap_content"
         android:rotationX="180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-        <!--app:tabIndicatorColor="@color/white"-->
-        <!--app:tabIndicatorHeight="2dp"-->
-        <!--app:tabSelectedTextColor="@color/white"-->
-        <!--app:tabTextColor="@color/white">-->
-        <!--app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"-->
-
-
-        <!--<android.support.design.widget.TabItem-->
-            <!--android:id="@+id/tabItem"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--/>-->
-
+        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorHeight="2dp"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabTextColor="@color/white">
     </android.support.design.widget.TabLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

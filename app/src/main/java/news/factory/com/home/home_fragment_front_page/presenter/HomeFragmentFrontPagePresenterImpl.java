@@ -22,8 +22,6 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
     private HomeFrontPageInteractor homeFrontPageInteractor;
     private ResourceRepo resourceRepo;
     private Lazy<RecyclerAdapter> adapter;
-    private int index=0;
-
     @Inject
     public HomeFragmentFrontPagePresenterImpl(HomeFragmentFrontPage view, HomeFrontPageInteractor homeFrontPageInteractor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
         this.view = view;
@@ -33,8 +31,7 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
     }
 
     @Override
-    public void setData(int index) {
-        this.index = index;
+    public void setData() {
         homeFrontPageInteractor.getHomeData(this,Constants.INDEX);
     }
 

@@ -33,9 +33,8 @@ public class HomeFragmentFrontPageImpl extends BaseFragment implements HomeFragm
     @Inject
     RecyclerAdapterImpl adapter;
 
-    public static Fragment newInstance(int index) {
+    public static Fragment newInstance() {
         Bundle data = new Bundle();
-        data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index);
         HomeFragmentFrontPageImpl f = new HomeFragmentFrontPageImpl();
         f.setArguments(data);
         return f;
@@ -53,8 +52,7 @@ public class HomeFragmentFrontPageImpl extends BaseFragment implements HomeFragm
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this,view);
         provideRecyclerViewAdapter();
-        int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
-        presenter.setData(index);
+        presenter.setData();
     }
 
     public void provideRecyclerViewAdapter() {

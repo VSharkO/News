@@ -26,5 +26,6 @@ public class HomeMainInteractorImpl extends BaseInteractor implements HomeMainIn
                 .map(news -> new InteractorData(news))
                 .subscribe(getObserver(listener));
     }
-
+    
 }
+
