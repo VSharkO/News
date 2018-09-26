@@ -15,21 +15,26 @@ import news.factory.com.utils.Constants;
 public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapter {
     private int countNumber;
     String type;
+    Object presenter;
 
     @Inject
-    public ViewPagerAdapterImpl(FragmentManager fm, String type) {
+    public ViewPagerAdapterImpl(FragmentManager fm, String type, Object presenter) {
         super(fm);
         this.type = type;
+        this.presenter = presenter;
     }
 
     @Override
     public Fragment getItem(int position) {
         if(type.equals(Constants.SINGLE_INNER_HOLDER_TYPE))
             return InnerPagerFragment.newInstance(position);
+
         else if(type.equals(Constants.SINGLE_TYPE))
             return ArticleFragmentImpl.newInstance(position);
+
         else if(type.equals(Constants.HOME_TYPE))
             return HomeFragmentFrontPageImpl.newInstance(position);
+
         else
             return ArticleFragmentImpl.newInstance(position);
     }
@@ -79,6 +84,27 @@ public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements V
                     return Constants.MOST_READ_TYPE.substring(0,1).toUpperCase()
                             + Constants.MOST_READ_TYPE.substring(1);
                 case 2:
+                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_NEW_TYPE.substring(1);
+                case 3:
+                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_NEW_TYPE.substring(1);
+                case 4:
+                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_NEW_TYPE.substring(1);
+                case 5:
+                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_NEW_TYPE.substring(1);
+                case 6:
+                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_NEW_TYPE.substring(1);
+                case 7:
+                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_NEW_TYPE.substring(1);
+                case 8:
+                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_NEW_TYPE.substring(1);
+                case 9:
                     return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
                             + Constants.MOST_NEW_TYPE.substring(1);
                 default: return "";

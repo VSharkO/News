@@ -40,7 +40,7 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
 
     @Override
     public void onSuccess(InteractorData callback) {
-        TopNews[] data = (TopNews[]) callback.getData();
+        List<TopNews> data = (List<TopNews>)callback.getData();
         adapter.get().fillData(getSortedItemsForRecycler(data));
     }
 
@@ -49,22 +49,20 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
         Timber.e(throwable);
     }
 
-
-
-    private List<RecyclerWrapper> getSortedItemsForRecycler(TopNews[] news) {
+    private List<RecyclerWrapper> getSortedItemsForRecycler(List<TopNews> news) {
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
+        //addFirst
         addArticles(news,recyclerWrappers);
         return recyclerWrappers;
     }
 
-    private void addArticles(TopNews[] news,List<RecyclerWrapper> recyclerWrappers){
-        //add first
-        for (int i=1; i<news.length; i++){
-            recyclerWrappers.add(new RecyclerWrapper(new HomeFrontPageItemData(news),
+
+        private void addArticles(List<TopNews> news,List<RecyclerWrapper> recyclerWrappers){
+        for(int i=1; i<news.size()-1; i++){
+            recyclerWrappers.add(new RecyclerWrapper(new HomeFrontPageItemData(news.subList(1,news.size()-1)),
                     RecyclerWrapper.TYPE_HOME_FRONT_ITEM));
         }
     }
-
 }

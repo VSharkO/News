@@ -32,7 +32,7 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
 
     public void onBind(int position) {
         HomeFrontPageItemData data = (HomeFrontPageItemData) dataList.get(position).getData();
-        adapter.fillData(getSortedItemsForRecycler(data.getNews()[position]));
+        adapter.fillData(getSortedItemsForRecycler(data.getNews().get(position)));
     }
 
     public void provideRecyclerViewAdapter() {
@@ -62,7 +62,5 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
         }
 
         recyclerWrappers.add(new RecyclerWrapper(RecyclerWrapper.TYPE_HOME_BUTTON));
-
-        //TODO button na dnu
     }
 }

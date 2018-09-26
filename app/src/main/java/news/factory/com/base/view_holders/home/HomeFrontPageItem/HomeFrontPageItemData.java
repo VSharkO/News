@@ -1,19 +1,22 @@
 package news.factory.com.base.view_holders.home.HomeFrontPageItem;
 
+import java.util.List;
+
 import news.factory.com.model.single.TopNews;
 
 public class HomeFrontPageItemData {
-    private TopNews[] news;
 
-    public HomeFrontPageItemData(TopNews[] news) {
+    private List<TopNews> news;
+
+    public HomeFrontPageItemData(List<TopNews> news) {
         this.news = news;
     }
 
     public String getTitle(int index) {
-        return news[index].getName();
+        return news.get(index).getName();
     }
 
-    public TopNews[] getNews() {
+    public List<TopNews> getNews() {
         return news;
     }
 }

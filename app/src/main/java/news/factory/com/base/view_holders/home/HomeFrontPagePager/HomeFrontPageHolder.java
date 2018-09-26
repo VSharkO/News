@@ -20,12 +20,6 @@ import news.factory.com.model.single.Articles;
 import news.factory.com.utils.Constants;
 
 public class HomeFrontPageHolder extends RecyclerView.ViewHolder{
-
-
-
-    //TEMP
-
-
     @BindView(R.id.innerPagerFragmentTitle)
     TextView title;
     @BindView(R.id.innerPagerFragmentpublished)
@@ -100,7 +94,7 @@ public class HomeFrontPageHolder extends RecyclerView.ViewHolder{
                 result = "Prije " + dayDif + " dana";
             //sat
         } else if (yearDif == 0 && monthDif == 0 && dayDif == 0) {
-            if (hourDif%10 > 4 && hourDif%10 < 21) {
+            if (hourDif%10 > 4) {
                 result = "Prije " + hourDif + " sati";
             } else {
                 result = "Prije " + hourDif + " sata";

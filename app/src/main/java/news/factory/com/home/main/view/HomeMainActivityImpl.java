@@ -41,4 +41,6 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
             textView.setScaleY(-1);
             }
         }
+
+
 }

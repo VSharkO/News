@@ -36,8 +36,8 @@ public class SingleMainActivityModule {
 
     @PerActivity
     @Provides
-    ViewPagerAdapterImpl providePagerAdapterImpl(SingleMainActivity singleMainActivity){
-        return new ViewPagerAdapterImpl(singleMainActivity.getSupportFragmentManager(), Constants.SINGLE_TYPE);
+    ViewPagerAdapterImpl providePagerAdapterImpl(SingleMainActivity singleMainActivity,SingleMainActivityPresenter presenter){
+        return new ViewPagerAdapterImpl(singleMainActivity.getSupportFragmentManager(), Constants.SINGLE_TYPE,presenter);
     }
 
     @PerActivity
