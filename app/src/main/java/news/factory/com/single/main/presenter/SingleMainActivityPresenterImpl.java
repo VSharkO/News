@@ -2,6 +2,7 @@ package news.factory.com.single.main.presenter;
 
 import javax.inject.Inject;
 
+import dagger.Lazy;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
 import news.factory.com.single.main.view.SingleMainActivityView;
 import news.factory.com.model.single.News;
@@ -15,10 +16,10 @@ public class SingleMainActivityPresenterImpl implements SingleMainActivityPresen
 
     private SingleMainActivityView view;
     private ArticleInteractor articleInteractor;
-    private ViewPagerAdapter adapter;
+    private Lazy<ViewPagerAdapter> adapter;
 
     @Inject
-    public SingleMainActivityPresenterImpl(SingleMainActivityView view, ArticleInteractor interactor, ViewPagerAdapter adapter) {
+    public SingleMainActivityPresenterImpl(SingleMainActivityView view, ArticleInteractor interactor, Lazy<ViewPagerAdapter> adapter) {
         articleInteractor = interactor;
         this.adapter = adapter;
         this.view = view;
@@ -27,7 +28,6 @@ public class SingleMainActivityPresenterImpl implements SingleMainActivityPresen
     @Override
     public void getArticlesFromAPI() {
         articleInteractor.getProductsFromAPI(this,Constants.ARTICLE_TYPE, Constants.ID_ARTICLE, Constants.PAGE_NUMBER_ARTICLE);
-
     }
 
     @Override
@@ -46,7 +46,7 @@ public class SingleMainActivityPresenterImpl implements SingleMainActivityPresen
     @Override
     public void onSuccess(InteractorData callback) {
         News data = (News)callback.getData();
-        adapter.setDataCount(Integer.parseInt(data.getPagesNo()));
+        adapter.get().setDataCount(Integer.parseInt(data.getPagesNo()));
     }
 
     @Override

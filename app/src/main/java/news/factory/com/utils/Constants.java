@@ -23,5 +23,6 @@ public class Constants {
     public static final String SINGLE_INNER_HOLDER_TYPE = "singleInner";
     public static final String HOME_TYPE = "home";
     public static final String INDEX = "index";
+    public static final String MENU_BOTTOM = "menu-bottom";
 }
 

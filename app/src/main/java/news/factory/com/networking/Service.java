@@ -1,8 +1,7 @@
 package news.factory.com.networking;
-
 import java.util.List;
-
 import io.reactivex.Observable;
+import news.factory.com.model.home.BottomMenuData;
 import news.factory.com.model.single.News;
 import news.factory.com.model.single.TopNews;
 import news.factory.com.utils.Constants;
@@ -21,4 +20,6 @@ public interface Service {
     @GET("{type}")
     Observable<List<TopNews>> getHomeData(@Path("type") String type);
 
+    @GET("{type}")
+    Observable<List<BottomMenuData>> getBottomMenuData(@Path("type") String type);
 }

@@ -18,13 +18,10 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
 
     @Inject
     HomeMainPresenter presenter;
-
     @Inject
     ViewPagerAdapterImpl adapter;
-
     @BindView(R.id.homeTabLayout)
     TabLayout tabLayout;
-
     @BindView(R.id.homePager)
     ViewPager pager;
 
@@ -34,7 +31,8 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
         setContentView(R.layout.home_pager);
         ButterKnife.bind(this);
         pager.setAdapter(adapter);
-        adapter.setDataCount(3);
+        presenter.getData();
+//        adapter.setDataCount(10);
         tabLayout.setupWithViewPager(pager);
         for (int i=0; i < tabLayout.getTabCount(); i++){
             TextView textView = (TextView)(((LinearLayout)((LinearLayout)tabLayout.getChildAt(0)).getChildAt(i)).getChildAt(1));
@@ -43,4 +41,8 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
         }
 
 
+    @Override
+    public void setAdapterCount(int size) {
+        adapter.setDataCount(size);
+    }
 }

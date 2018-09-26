@@ -21,6 +21,7 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
     private InnerArticlesInteractor articleInteractor;
     private ResourceRepo resourceRepo;
     private Lazy<RecyclerAdapter> adapter;
+    TopNews data;
 
     @Inject
     public InnerPagerFragmentPresenterImpl(InnerPagerFragmentView view, InnerArticlesInteractor interactor, ResourceRepo resourceRepo, Lazy<RecyclerAdapter> adapter) {
@@ -50,7 +51,7 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
     }
     @Override
     public void onSuccess(InteractorData callback) {
-        TopNews data = (TopNews) callback.getData();
+        data = (TopNews) callback.getData();
         adapter.get().fillData(getSortedItemsForRecycler(data));
     }
 
@@ -70,8 +71,13 @@ public class InnerPagerFragmentPresenterImpl implements InnerPagerFragmentPresen
 
     private void addArticles(TopNews news,List<RecyclerWrapper> recyclerWrappers){
         for (int i=0; i<4; i++){
-            recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
+            recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles().get(i)),
                     RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         }
+    }
+
+    @Override
+    public TopNews getData(){
+        return data;
     }
 }

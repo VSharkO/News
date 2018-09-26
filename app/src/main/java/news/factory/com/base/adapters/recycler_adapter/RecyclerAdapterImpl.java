@@ -23,6 +23,10 @@ import news.factory.com.base.view_holders.single.article_upper_header.ArticleUpp
 import news.factory.com.base.view_holders.single.article_author_shares.ArticleAuthorShareHolder;
 import news.factory.com.base.view_holders.single.inner_cell_holder.InnerCellHolder;
 import news.factory.com.base.view_holders.single.inner_view_holder.InnerHolder;
+import news.factory.com.single.article_fragment.presenter.ArticleFragmentPresenter;
+import news.factory.com.single.article_fragment.presenter.ArticleFragmentPresenterImpl;
+import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
+import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.utils.PresenterWithFragmentChildManager;
 
 public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RecyclerAdapter{

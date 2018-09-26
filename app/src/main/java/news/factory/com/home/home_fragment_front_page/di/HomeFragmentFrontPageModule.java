@@ -14,6 +14,7 @@ import news.factory.com.home.home_fragment_front_page.presenter.HomeFragmentFron
 import news.factory.com.home.home_fragment_front_page.presenter.HomeFragmentFrontPagePresenterImpl;
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPage;
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
+import news.factory.com.home.main.presenter.HomeMainPresenter;
 import news.factory.com.scopes.PerFragment;
 import news.factory.com.utils.Constants;
 
@@ -34,8 +35,8 @@ public class HomeFragmentFrontPageModule {
 
     @PerFragment
     @Provides
-    ViewPagerAdapterImpl provideHomePagerAdapterImpl(FragmentManager fragmentManager){
-        return new ViewPagerAdapterImpl(fragmentManager, Constants.HOME_TYPE);
+    ViewPagerAdapterImpl provideHomePagerAdapterImpl(FragmentManager fragmentManager, HomeMainPresenter presenter){
+        return new ViewPagerAdapterImpl(fragmentManager, Constants.HOME_TYPE, presenter);
     }
 
     @PerFragment

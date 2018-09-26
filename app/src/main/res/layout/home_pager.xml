@@ -32,7 +32,6 @@
         app:tabIndicatorHeight="2dp"
         app:tabSelectedTextColor="@color/white"
         android:rotationX="180"
-        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         app:tabTextColor="@color/white">
         <android.support.design.widget.TabItem
             android:id="@+id/tabItem"

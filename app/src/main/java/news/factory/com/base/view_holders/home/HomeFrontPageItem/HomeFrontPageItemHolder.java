@@ -56,8 +56,8 @@ public class HomeFrontPageItemHolder extends RecyclerView.ViewHolder {
         recyclerWrappers.add(new RecyclerWrapper(new HomeFrontPageTitleData(news.getName()),
                 RecyclerWrapper.TYPE_HOME_FRONT_TITLE));
 
-        for (int i = 0; i < news.getArticles().length; i++) {
-            recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles()[i]),
+        for (int i = 0; i < news.getArticles().size(); i++) {
+            recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles().get(i)),
                     RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         }
 

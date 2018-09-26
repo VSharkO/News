@@ -37,8 +37,8 @@ public class HomeMainActivityModule {
 
     @PerActivity
     @Provides
-    ViewPagerAdapterImpl providePagerAdapterImpl(HomeMainActivityImpl homeMainActivity){
-        return new ViewPagerAdapterImpl(homeMainActivity.getSupportFragmentManager(), Constants.HOME_TYPE);
+    ViewPagerAdapterImpl providePagerAdapterImpl(HomeMainActivityImpl homeMainActivity,HomeMainPresenter presenter){
+        return new ViewPagerAdapterImpl(homeMainActivity.getSupportFragmentManager(), Constants.HOME_TYPE,presenter);
     }
 
     @PerActivity

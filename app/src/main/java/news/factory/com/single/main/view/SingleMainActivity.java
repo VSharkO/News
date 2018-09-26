@@ -9,6 +9,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnPageChange;
+import dagger.Lazy;
 import news.factory.com.R;
 import news.factory.com.base.BaseActivity;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;

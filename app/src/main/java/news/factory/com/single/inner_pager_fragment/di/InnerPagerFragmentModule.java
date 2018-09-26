@@ -32,14 +32,14 @@ public class InnerPagerFragmentModule {
 
     @PerFragment
     @Provides
-    ViewPagerAdapterImpl provideInnerAdapterImplementation(FragmentManager fragmentManager){
-        return new ViewPagerAdapterImpl(fragmentManager, Constants.SINGLE_INNER_HOLDER_TYPE);
+    ViewPagerAdapterImpl provideInnerAdapterImplementation(FragmentManager fragmentManager,InnerPagerFragmentPresenter presenter){
+        return new ViewPagerAdapterImpl(fragmentManager, Constants.SINGLE_INNER_HOLDER_TYPE,presenter);
     }
 
     @PerFragment
     @Provides
-    ViewPagerAdapter provideInnerAdapter(FragmentManager fragmentManager){
-        return new ViewPagerAdapterImpl(fragmentManager,Constants.SINGLE_INNER_HOLDER_TYPE);
+    ViewPagerAdapter provideInnerAdapter(FragmentManager fragmentManager,InnerPagerFragmentPresenter presenter){
+        return new ViewPagerAdapterImpl(fragmentManager,Constants.SINGLE_INNER_HOLDER_TYPE,presenter);
     }
 
     @PerFragment

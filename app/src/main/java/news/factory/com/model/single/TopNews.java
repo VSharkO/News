@@ -1,12 +1,14 @@
 package news.factory.com.model.single;
 
+import java.util.List;
+
 public class TopNews {
 
-    private Articles[] articles;
+    private List<Articles> articles;
 
     private String name;
 
-    public Articles[] getArticles() {
+    public List<Articles> getArticles() {
         return articles;
     }
 

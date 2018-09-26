@@ -3,6 +3,7 @@ import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
+import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
 import news.factory.com.single.main.presenter.SingleMainActivityPresenter;
 import news.factory.com.single.main.presenter.SingleMainActivityPresenterImpl;
 import news.factory.com.single.main.view.SingleMainActivity;
@@ -36,8 +37,8 @@ public class SingleMainActivityModule {
 
     @PerActivity
     @Provides
-    ViewPagerAdapterImpl providePagerAdapterImpl(SingleMainActivity singleMainActivity,SingleMainActivityPresenter presenter){
-        return new ViewPagerAdapterImpl(singleMainActivity.getSupportFragmentManager(), Constants.SINGLE_TYPE,presenter);
+    ViewPagerAdapterImpl providePagerAdapterImpl(SingleMainActivity singleMainActivity){
+        return new ViewPagerAdapterImpl(singleMainActivity.getSupportFragmentManager(), Constants.SINGLE_TYPE,new Object());
     }
 
     @PerActivity

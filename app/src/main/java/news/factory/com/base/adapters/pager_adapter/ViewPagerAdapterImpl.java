@@ -8,7 +8,10 @@ import android.view.ViewGroup;
 import javax.inject.Inject;
 
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
+import news.factory.com.home.main.presenter.HomeMainPresenter;
+import news.factory.com.single.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
+import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.utils.Constants;
 
@@ -76,39 +79,8 @@ public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements V
             return "";
         }
         else if(type.equals(Constants.HOME_TYPE)){
-            switch (position){
-                case 0:
-                    return Constants.MOST_POPULAR_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_POPULAR_TYPE.substring(1);
-                case 1:
-                    return Constants.MOST_READ_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_READ_TYPE.substring(1);
-                case 2:
-                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_NEW_TYPE.substring(1);
-                case 3:
-                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_NEW_TYPE.substring(1);
-                case 4:
-                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_NEW_TYPE.substring(1);
-                case 5:
-                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_NEW_TYPE.substring(1);
-                case 6:
-                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_NEW_TYPE.substring(1);
-                case 7:
-                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_NEW_TYPE.substring(1);
-                case 8:
-                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_NEW_TYPE.substring(1);
-                case 9:
-                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
-                            + Constants.MOST_NEW_TYPE.substring(1);
-                default: return "";
-            }
+            HomeMainPresenter presenter = (HomeMainPresenter)this.presenter;
+            return presenter.getBottomMenuData().get(position).getName();
         }
         else
             return "";
