@@ -14,6 +14,7 @@ import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.utils.Constants;
+import timber.log.Timber;
 
 public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapter {
     private int countNumber;
@@ -80,7 +81,8 @@ public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements V
         }
         else if(type.equals(Constants.HOME_TYPE)){
             HomeMainPresenter presenter = (HomeMainPresenter)this.presenter;
-            return presenter.getBottomMenuData().get(position).getName();
+            return presenter.getBottomMenuData().get(position).getTitle();
+
         }
         else
             return "";

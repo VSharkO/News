@@ -1,10 +1,10 @@
 package news.factory.com.home.main.presenter;
 import java.util.List;
 
-import news.factory.com.model.single.TopNews;
+import news.factory.com.model.home.BottomMenuData;
 
 public interface HomeMainPresenter {
     void getData();
 
-    List<TopNews> getBottomMenuData();
+    List<BottomMenuData> getBottomMenuData();
 }

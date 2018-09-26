@@ -19,8 +19,8 @@ public class HomeMainInteractorImpl extends BaseInteractor implements HomeMainIn
     }
 
     @Override
-    public void getHomeData(NetworkResponseListener listener, String type) {
-        service.getHomeData(type).
+    public void getBottomMenuData(NetworkResponseListener listener, String type) {
+        service.getBottomMenuData(type).
                 subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(news -> new InteractorData(news))

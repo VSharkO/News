@@ -28,7 +28,6 @@ public class HomeFragmentFrontPageImpl extends BaseFragment implements HomeFragm
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-
     @Inject
     HomeFragmentFrontPagePresenter presenter;
     @Inject

@@ -34,15 +34,16 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
         presenter.getData();
 //        adapter.setDataCount(10);
         tabLayout.setupWithViewPager(pager);
-        for (int i=0; i < tabLayout.getTabCount(); i++){
-            TextView textView = (TextView)(((LinearLayout)((LinearLayout)tabLayout.getChildAt(0)).getChildAt(i)).getChildAt(1));
-            textView.setScaleY(-1);
-            }
+
         }
 
 
     @Override
     public void setAdapterCount(int size) {
         adapter.setDataCount(size);
+        for (int i=0; i < tabLayout.getTabCount(); i++){
+            TextView textView = (TextView)(((LinearLayout)((LinearLayout)tabLayout.getChildAt(0)).getChildAt(i)).getChildAt(1));
+            textView.setScaleY(-1);
+        }
     }
 }

@@ -6,6 +6,8 @@ import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
 import news.factory.com.home.home_fragment_front_page.interactor.HomeFrontPageInteractor;
 import news.factory.com.home.home_fragment_front_page.interactor.HomeFrontPageInteractorImpl;
+import news.factory.com.home.main.interactor.HomeMainInteractor;
+import news.factory.com.home.main.interactor.HomeMainInteractorImpl;
 import news.factory.com.home.main.presenter.HomeMainPresenter;
 import news.factory.com.home.main.view.HomeMainActivity;
 import news.factory.com.home.main.view.HomeMainActivityImpl;
@@ -30,7 +32,7 @@ public class HomeMainActivityModule {
 
     @PerActivity
     @Provides
-    HomeFrontPageInteractor provideInteractor(HomeFrontPageInteractorImpl interactor, HomeMainActivityImpl homeMainActivity){
+    HomeMainInteractor provideInteractor(HomeMainInteractorImpl interactor, HomeMainActivityImpl homeMainActivity){
         homeMainActivity.getLifecycle().addObserver(interactor);
         return interactor;
     }

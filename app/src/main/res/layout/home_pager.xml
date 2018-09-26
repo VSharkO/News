@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp8"
         android:layout_marginEnd="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp16"
         app:layout_constraintBottom_toTopOf="@id/homeTabLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,23 +22,26 @@
     </android.support.v4.view.ViewPager>
 
     <android.support.design.widget.TabLayout
-        android:id="@+id/homeTabLayout"
         style="@style/HomePagerTab"
-        android:layout_width="match_parent"
+        android:id="@+id/homeTabLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:rotationX="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:tabIndicatorColor="@color/white"
-        app:tabIndicatorHeight="2dp"
-        app:tabSelectedTextColor="@color/white"
-        android:rotationX="180"
-        app:tabTextColor="@color/white">
-        <android.support.design.widget.TabItem
-            android:id="@+id/tabItem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+        app:layout_constraintStart_toStartOf="parent">
+        <!--app:tabIndicatorColor="@color/white"-->
+        <!--app:tabIndicatorHeight="2dp"-->
+        <!--app:tabSelectedTextColor="@color/white"-->
+        <!--app:tabTextColor="@color/white">-->
+        <!--app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"-->
+
+
+        <!--<android.support.design.widget.TabItem-->
+            <!--android:id="@+id/tabItem"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--/>-->
 
     </android.support.design.widget.TabLayout>
 

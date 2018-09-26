@@ -53,11 +53,9 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
 
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
 
-        //addFirst
         addArticles(news,recyclerWrappers);
         return recyclerWrappers;
     }
-
 
         private void addArticles(List<TopNews> news,List<RecyclerWrapper> recyclerWrappers){
         for(int i=1; i<news.size()-1; i++){
