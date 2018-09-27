@@ -1,5 +1,5 @@
 package news.factory.com.home.home_other_pages_item_fragment;
 
-interface HomeOtherPagesFragmentItemPresenter {
+public interface HomeOtherPagesFragmentItemPresenter {
     void setData(int index);
 }

@@ -1,4 +1,4 @@
-package news.factory.com.home.home_fragment_other_pages.presenter;
+package news.factory.com.home.home_other_pages_holder.presenter;
 
 
 public interface HomeFragmentOtherPagesPresenter {

@@ -7,7 +7,7 @@ import dagger.Lazy;
 import news.factory.com.base.RecyclerWrapper;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
 import news.factory.com.base.view_holders.single.inner_cell_holder.InnerCellData;
-import news.factory.com.home.home_fragment_other_pages.presenter.HomeFragmentOtherPagesPresenter;
+import news.factory.com.home.home_other_pages_holder.presenter.HomeFragmentOtherPagesPresenter;
 import news.factory.com.home.home_other_pages_item_fragment.interactor.HomeFragmentOtherPagesInteractor;
 import news.factory.com.model.single.TopNews;
 import news.factory.com.utils.Constants;

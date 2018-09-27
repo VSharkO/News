@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import javax.inject.Inject;
 
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
-import news.factory.com.home.home_fragment_other_pages.presenter.HomeFragmentOtherPagesPresenter;
-import news.factory.com.home.home_fragment_other_pages.view.HomeFragmentOtherPagesImpl;
+import news.factory.com.home.home_other_pages_holder.view.HomeFragmentOtherPagesImpl;
 import news.factory.com.home.main.presenter.HomeMainPresenter;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;

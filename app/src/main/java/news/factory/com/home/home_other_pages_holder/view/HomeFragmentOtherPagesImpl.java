@@ -1,4 +1,4 @@
-package news.factory.com.home.home_fragment_other_pages.view;
+package news.factory.com.home.home_other_pages_holder.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.BaseFragment;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
-import news.factory.com.home.home_fragment_other_pages.presenter.HomeFragmentOtherPagesPresenter;
+import news.factory.com.home.home_other_pages_holder.presenter.HomeFragmentOtherPagesPresenter;
 import news.factory.com.utils.Constants;
 
 public class HomeFragmentOtherPagesImpl extends BaseFragment{

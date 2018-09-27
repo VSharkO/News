@@ -1,13 +1,13 @@
-package news.factory.com.home.home_fragment_other_pages.di;
+package news.factory.com.home.home_other_pages_holder.di;
 
 import android.support.v4.app.FragmentManager;
 
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
-import news.factory.com.home.home_fragment_other_pages.presenter.HomeFragmentOtherPagesPresenterImpl;
-import news.factory.com.home.home_fragment_other_pages.view.HomeFragmentOtherPagesImpl;
-import news.factory.com.home.home_fragment_other_pages.presenter.HomeFragmentOtherPagesPresenter;
+import news.factory.com.home.home_other_pages_holder.presenter.HomeFragmentOtherPagesPresenterImpl;
+import news.factory.com.home.home_other_pages_holder.view.HomeFragmentOtherPagesImpl;
+import news.factory.com.home.home_other_pages_holder.presenter.HomeFragmentOtherPagesPresenter;
 import news.factory.com.scopes.PerFragment;
 import news.factory.com.utils.Constants;
 
