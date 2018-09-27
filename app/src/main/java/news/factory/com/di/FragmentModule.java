@@ -5,10 +5,10 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import news.factory.com.home.home_fragment_front_page.di.HomeFragmentFrontPageModule;
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
-import news.factory.com.home.home_other_pages_holder.di.HomeFragmentOtherPagesModule;
-import news.factory.com.home.home_other_pages_holder.view.HomeFragmentOtherPagesImpl;
-import news.factory.com.home.home_other_pages_item_fragment.di.HomeOtherPagesItemModule;
-import news.factory.com.home.home_other_pages_item_fragment.view.HomeOtherPagesFragmentItem;
+import news.factory.com.home.home_item_fragment.di.HomeItemModule;
+import news.factory.com.home.home_pages_holder.di.HomePagesHolderModule;
+import news.factory.com.home.home_pages_holder.view.HomePagesFragmentImpl;
+import news.factory.com.home.home_item_fragment.view.HomeFragmentItemImpl;
 import news.factory.com.single.article_fragment.di.ArticleFragmentModule;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.single.inner_pager_fragment.di.InnerPagerFragmentModule;
@@ -31,12 +31,12 @@ public abstract class FragmentModule {
     public abstract HomeFragmentFrontPageImpl provideHomeFrontPageFragment();
 
     @PerFragment
-    @ContributesAndroidInjector(modules = HomeFragmentOtherPagesModule.class)
-    public abstract HomeFragmentOtherPagesImpl provideHomeFragmentOtherPagesImpl();
+    @ContributesAndroidInjector(modules = HomePagesHolderModule.class)
+    public abstract HomePagesFragmentImpl provideHomeFragmentOtherPagesImpl();
 
     @PerFragment
-    @ContributesAndroidInjector(modules = HomeOtherPagesItemModule.class)
-    public abstract HomeOtherPagesFragmentItem provideHomeOtherPagesFragmentItem();
+    @ContributesAndroidInjector(modules = HomeItemModule.class)
+    public abstract HomeFragmentItemImpl provideHomeOtherPagesFragmentItem();
 
 
 }

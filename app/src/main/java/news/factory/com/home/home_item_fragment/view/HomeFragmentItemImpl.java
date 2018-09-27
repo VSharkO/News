@@ -1,4 +1,4 @@
-package news.factory.com.home.home_other_pages_item_fragment.view;
+package news.factory.com.home.home_item_fragment.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,16 +17,16 @@ import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.BaseFragment;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
-import news.factory.com.home.home_other_pages_item_fragment.presenter.HomeOtherPagesFragmentItemPresenterImpl;
+import news.factory.com.home.home_item_fragment.presenter.HomeFragmentItemPresenterImpl;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 
-public class HomeOtherPagesFragmentItem extends BaseFragment {
+public class HomeFragmentItemImpl extends BaseFragment {
 
     @BindView(R.id.recyclerView)
     RecyclerView recycler;
     @Inject
-    HomeOtherPagesFragmentItemPresenterImpl presenter;
+    HomeFragmentItemPresenterImpl presenter;
     @Inject
     RecyclerAdapterImpl adapter;
 
@@ -34,7 +34,7 @@ public class HomeOtherPagesFragmentItem extends BaseFragment {
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
         data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index);
-        HomeOtherPagesFragmentItem f = new HomeOtherPagesFragmentItem();
+        HomeFragmentItemImpl f = new HomeFragmentItemImpl();
         f.setArguments(data);
         return f;
     }

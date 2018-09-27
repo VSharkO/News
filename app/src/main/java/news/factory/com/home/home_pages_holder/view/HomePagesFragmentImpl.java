@@ -1,4 +1,4 @@
-package news.factory.com.home.home_other_pages_holder.view;
+package news.factory.com.home.home_pages_holder.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,24 +15,24 @@ import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.BaseFragment;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
-import news.factory.com.home.home_other_pages_holder.presenter.HomeFragmentOtherPagesPresenter;
+import news.factory.com.home.home_pages_holder.presenter.HomePagesHolderPresenter;
 import news.factory.com.utils.Constants;
 
-public class HomeFragmentOtherPagesImpl extends BaseFragment{
+public class HomePagesFragmentImpl extends BaseFragment{
 
     @BindView(R.id.homeItemPager)
     ViewPager pager;
     @BindView(R.id.tabLayout2)
     TabLayout tab;
     @Inject
-    HomeFragmentOtherPagesPresenter presenter;
+    HomePagesHolderPresenter presenter;
     @Inject
     ViewPagerAdapterImpl adapter;
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
         data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index);
-        HomeFragmentOtherPagesImpl f = new HomeFragmentOtherPagesImpl();
+        HomePagesFragmentImpl f = new HomePagesFragmentImpl();
         f.setArguments(data);
         return f;
     }
@@ -49,7 +49,7 @@ public class HomeFragmentOtherPagesImpl extends BaseFragment{
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this,view);
         int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
-        presenter.setHolderItemNumber(index);
+        presenter.setData(index);
         adapter.setDataCount(2);
         pager.setAdapter(adapter);
         tab.setupWithViewPager(pager);
