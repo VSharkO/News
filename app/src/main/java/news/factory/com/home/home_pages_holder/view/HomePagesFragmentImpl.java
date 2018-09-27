@@ -31,7 +31,7 @@ public class HomePagesFragmentImpl extends BaseFragment{
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
-        data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index);
+        data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index-1);
         HomePagesFragmentImpl f = new HomePagesFragmentImpl();
         f.setArguments(data);
         return f;
@@ -49,7 +49,7 @@ public class HomePagesFragmentImpl extends BaseFragment{
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this,view);
         int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
-        presenter.setData(index);
+        presenter.setIndex(index);
         adapter.setDataCount(2);
         pager.setAdapter(adapter);
         tab.setupWithViewPager(pager);

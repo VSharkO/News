@@ -5,12 +5,11 @@ import android.support.v4.app.FragmentManager;
 import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
-import news.factory.com.home.home_pages_holder.interactor.HomePagesHolderInteractor;
-import news.factory.com.home.home_pages_holder.interactor.HomePagesHolderInteractorImpl;
+import news.factory.com.home.home_item_fragment.interactor.HomePagesHolderInteractor;
+import news.factory.com.home.home_item_fragment.interactor.HomePagesHolderInteractorImpl;
 import news.factory.com.home.home_pages_holder.presenter.HomePagesHolderPresenterImpl;
 import news.factory.com.home.home_pages_holder.presenter.HomePagesHolderPresenter;
 import news.factory.com.home.home_pages_holder.view.HomePagesFragmentImpl;
-import news.factory.com.networking.Service;
 import news.factory.com.scopes.PerFragment;
 import news.factory.com.utils.Constants;
 
@@ -25,8 +24,7 @@ public class HomePagesHolderModule {
 
     @PerFragment
     @Provides
-    HomePagesHolderInteractor provideHomePagesInteractor(HomePagesFragmentImpl fragment,Service service){
-        HomePagesHolderInteractorImpl interactor = new HomePagesHolderInteractorImpl(service);
+    HomePagesHolderInteractor provideHomePagesInteractor(HomePagesFragmentImpl fragment, HomePagesHolderInteractorImpl interactor){
         fragment.getLifecycle().addObserver(interactor);
         return interactor;
     }

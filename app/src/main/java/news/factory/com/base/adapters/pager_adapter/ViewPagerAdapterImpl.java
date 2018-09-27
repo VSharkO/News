@@ -40,7 +40,7 @@ ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapt
             if(position == 0)
                 return HomeFragmentFrontPageImpl.newInstance();
             else
-                return HomePagesFragmentImpl.newInstance(position); //todo
+                return HomePagesFragmentImpl.newInstance(position);
 
         else if(type.equals(Constants.TYPE_HOME_OTHER_ITEMS_TOP)){
 

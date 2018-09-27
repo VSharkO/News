@@ -9,8 +9,8 @@ import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
 import news.factory.com.home.home_item_fragment.presenter.HomeFragmentItemPresenter;
 import news.factory.com.home.home_item_fragment.presenter.HomeFragmentItemPresenterImpl;
 import news.factory.com.home.home_item_fragment.view.HomeFragmentItemImpl;
-import news.factory.com.home.home_pages_holder.interactor.HomePagesHolderInteractor;
-import news.factory.com.home.home_pages_holder.interactor.HomePagesHolderInteractorImpl;
+import news.factory.com.home.home_item_fragment.interactor.HomePagesHolderInteractor;
+import news.factory.com.home.home_item_fragment.interactor.HomePagesHolderInteractorImpl;
 import news.factory.com.home.home_pages_holder.presenter.HomePagesHolderPresenter;
 import news.factory.com.home.home_pages_holder.presenter.HomePagesHolderPresenterImpl;
 import news.factory.com.scopes.PerFragment;
@@ -27,8 +27,8 @@ public class HomeItemModule {
 
     @PerFragment
     @Provides
-    HomePagesHolderInteractor provideHomePagesHolderInteractor(HomePagesHolderInteractorImpl interactor){
-        //todo ubaciti za disspose
+    HomePagesHolderInteractor provideHomePagesHolderInteractor(HomeFragmentItemImpl fragmentItem,HomePagesHolderInteractorImpl interactor){
+        fragmentItem.getLifecycle().addObserver(interactor);
         return interactor;
     }
 
