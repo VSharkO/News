@@ -1,13 +1,10 @@
-package news.factory.com.home.home_fragment_other_pages;
+package news.factory.com.home.home_fragment_other_pages.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +15,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.BaseFragment;
-import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapter;
+import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
+import news.factory.com.home.home_fragment_other_pages.presenter.HomeFragmentOtherPagesPresenter;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.utils.Constants;
 
@@ -28,7 +26,8 @@ public class HomeFragmentOtherPagesImpl extends BaseFragment {
     @Inject
     HomeFragmentOtherPagesPresenter presenter;
     @Inject
-    ViewPagerAdapter adapter;
+    ViewPagerAdapterImpl adapter;
+
 //TODO
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
@@ -49,8 +48,9 @@ public class HomeFragmentOtherPagesImpl extends BaseFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this,view);
-        adapter.setDataCount(presenter.getDataCount());
         int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
-        presenter.setData(index);
+        presenter.setHolderItemNumber(index);
+        adapter.setDataCount(2);
+        pager.setAdapter(adapter);
     }
 }

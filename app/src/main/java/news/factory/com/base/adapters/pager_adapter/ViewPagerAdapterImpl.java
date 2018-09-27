@@ -8,15 +8,14 @@ import android.view.ViewGroup;
 import javax.inject.Inject;
 
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
+import news.factory.com.home.home_fragment_other_pages.view.HomeFragmentOtherPagesImpl;
 import news.factory.com.home.main.presenter.HomeMainPresenter;
-import news.factory.com.single.article_fragment.presenter.ArticleFragmentPresenter;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
-import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.utils.Constants;
-import timber.log.Timber;
 
-public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapter {
+public class
+ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapter {
     private int countNumber;
     String type;
     Object presenter;
@@ -38,11 +37,15 @@ public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements V
 //TODO
         else if(type.equals(Constants.HOME_TYPE))
             if(position == 0)
-            return HomeFragmentFrontPageImpl.newInstance();
+                return HomeFragmentFrontPageImpl.newInstance();
             else
-                return ArticleFragmentImpl.newInstance(position);
+                return HomeFragmentOtherPagesImpl.newInstance(position);
 
-        else
+        else if(type.equals(Constants.TYPE_HOME_OTHER_ITEMS_TOP)){
+             return HomeFragmentOtherPagesImpl.newInstance(position); //TODO
+
+        }
+            else
             return ArticleFragmentImpl.newInstance(position);
     }
 

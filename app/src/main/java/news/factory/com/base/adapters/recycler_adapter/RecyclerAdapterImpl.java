@@ -8,10 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import news.factory.com.base.RecyclerWrapper;
-import news.factory.com.base.view_holders.home.HomeFrontPageCellTitle.HomeFrontPageTitleData;
 import news.factory.com.base.view_holders.home.HomeFrontPageCellTitle.HomeFrontPageTitleHolder;
 import news.factory.com.base.view_holders.home.HomeFrontPagePager.HomeFrontPageHolder;
-import news.factory.com.base.view_holders.home.HomeFrontPageItem.HomeFrontPageItemHolder;
 import news.factory.com.base.view_holders.home.HomeItemButton.HomeItemButtonHolder;
 import news.factory.com.base.view_holders.single.article_content.ArticleContentHolder;
 import news.factory.com.base.view_holders.single.article_header.ArticleHeaderHolder;
@@ -23,10 +21,6 @@ import news.factory.com.base.view_holders.single.article_upper_header.ArticleUpp
 import news.factory.com.base.view_holders.single.article_author_shares.ArticleAuthorShareHolder;
 import news.factory.com.base.view_holders.single.inner_cell_holder.InnerCellHolder;
 import news.factory.com.base.view_holders.single.inner_view_holder.InnerHolder;
-import news.factory.com.single.article_fragment.presenter.ArticleFragmentPresenter;
-import news.factory.com.single.article_fragment.presenter.ArticleFragmentPresenterImpl;
-import news.factory.com.single.inner_pager_fragment.presenter.InnerPagerFragmentPresenter;
-import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.utils.PresenterWithFragmentChildManager;
 
 public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RecyclerAdapter{
@@ -84,9 +78,6 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
 
             case RecyclerWrapper.TYPE_HOME_FRONT_PAGE:
                 return new HomeFrontPageHolder(itemView,dataList);
-
-            case RecyclerWrapper.TYPE_HOME_FRONT_ITEM:
-                return new HomeFrontPageItemHolder(itemView,dataList);
 
             case RecyclerWrapper.TYPE_HOME_FRONT_TITLE:
                 return new HomeFrontPageTitleHolder(itemView,dataList);
@@ -163,11 +154,6 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 frontPageHolder.onBind(position);
                 break;
 
-            case RecyclerWrapper.TYPE_HOME_FRONT_ITEM:
-                HomeFrontPageItemHolder frontPageItemHolder = (HomeFrontPageItemHolder) holder;
-                frontPageItemHolder.onBind(position);
-                break;
-
             case RecyclerWrapper.TYPE_HOME_FRONT_TITLE:
                 HomeFrontPageTitleHolder frontPageTitleHolder = (HomeFrontPageTitleHolder) holder;
                 frontPageTitleHolder.onBind(position);
@@ -177,7 +163,6 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 HomeItemButtonHolder homeItemButtonHolder = (HomeItemButtonHolder) holder;
                 homeItemButtonHolder.onBind(position);
                 break;
-
         }
     }
 

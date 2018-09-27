@@ -22,4 +22,8 @@ public interface Service {
 
     @GET("{type}")
     Observable<List<BottomMenuData>> getBottomMenuData(@Path("type") String type);
+
+    @GET("{type}/{id}")
+    Observable<List<BottomMenuData>> getHomeItemData(@Path("type") String type, @Path("id") String index,
+                                                     @Query(Constants.PAGE) String pageNumber);
 }
