@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import news.factory.com.R;
 import news.factory.com.base.BaseFragment;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
-import news.factory.com.home.home_other_pages_holder.presenter.HomeFragmentOtherPagesPresenter;
+import news.factory.com.home.home_other_pages_item_fragment.presenter.HomeOtherPagesFragmentItemPresenterImpl;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 
@@ -26,7 +26,7 @@ public class HomeOtherPagesFragmentItem extends BaseFragment {
     @BindView(R.id.recyclerView)
     RecyclerView recycler;
     @Inject
-    HomeFragmentOtherPagesPresenter presenter;
+    HomeOtherPagesFragmentItemPresenterImpl presenter;
     @Inject
     RecyclerAdapterImpl adapter;
 
@@ -52,6 +52,7 @@ public class HomeOtherPagesFragmentItem extends BaseFragment {
         ButterKnife.bind(this,view);
         int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
         presenter.setData(index);
+        provideRecyclerViewAdapter();
     }
 
     public void provideRecyclerViewAdapter() {

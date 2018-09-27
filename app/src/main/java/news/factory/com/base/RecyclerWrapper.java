@@ -19,7 +19,6 @@ public class RecyclerWrapper{
     public static final int TYPE_HOME_BUTTON = R.layout.home_item_recycler_button;
     public static final int TYPE_HOME_OTHER_PAGES = R.layout.home_other_pages;
 
-
     private Object data;
     private int type;
 

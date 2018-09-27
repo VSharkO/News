@@ -20,7 +20,7 @@ import news.factory.com.utils.Constants;
 
 public class HomeFragmentOtherPagesImpl extends BaseFragment{
 
-    @BindView(R.id.innerPager)
+    @BindView(R.id.homeItemPager)
     ViewPager pager;
     @BindView(R.id.tabLayout2)
     TabLayout tab;

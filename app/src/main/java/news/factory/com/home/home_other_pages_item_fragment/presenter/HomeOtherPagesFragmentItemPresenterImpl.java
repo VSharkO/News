@@ -1,4 +1,4 @@
-package news.factory.com.home.home_other_pages_item_fragment;
+package news.factory.com.home.home_other_pages_item_fragment.presenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,17 +17,15 @@ import timber.log.Timber;
 
 public class HomeOtherPagesFragmentItemPresenterImpl implements HomeOtherPagesFragmentItemPresenter,NetworkResponseListener {
 
-    HomeFragmentOtherPagesInteractor interactor;
-    @Inject
-    HomeFragmentOtherPagesPresenter parentPesenter;
+    private HomeFragmentOtherPagesInteractor interactor;
+    private HomeFragmentOtherPagesPresenter parentPesenter;
     private Lazy<RecyclerAdapter> adapter;
-    TopNews data;
+    private TopNews data;
 
     @Inject
-    public HomeOtherPagesFragmentItemPresenterImpl(HomeFragmentOtherPagesInteractor interactor, HomeFragmentOtherPagesPresenter parentPesenter, TopNews data, Lazy<RecyclerAdapter> adapter) {
+    public HomeOtherPagesFragmentItemPresenterImpl(HomeFragmentOtherPagesInteractor interactor, HomeFragmentOtherPagesPresenter parentPesenter, Lazy<RecyclerAdapter> adapter) {
         this.interactor = interactor;
         this.parentPesenter = parentPesenter;
-        this.data = data;
         this.adapter = adapter;
     }
 
@@ -42,7 +40,7 @@ public class HomeOtherPagesFragmentItemPresenterImpl implements HomeOtherPagesFr
                 type = Constants.MOST_READ_TYPE;
                 break;
             default:
-                type = Constants.MOST_POPULAR_TYPE;
+                type = Constants.MOST_NEW_TYPE;
         }
         interactor.getHomeOtherPagesData(this,type, parentPesenter.getHolderItemNumber());
     }
@@ -59,9 +57,7 @@ public class HomeOtherPagesFragmentItemPresenterImpl implements HomeOtherPagesFr
     }
 
     private List<RecyclerWrapper> getSortedItemsForRecycler(TopNews news) {
-
         List<RecyclerWrapper> recyclerWrappers = new ArrayList<>();
-
         addArticles(news,recyclerWrappers);
         return recyclerWrappers;
     }
@@ -69,7 +65,7 @@ public class HomeOtherPagesFragmentItemPresenterImpl implements HomeOtherPagesFr
     private void addArticles(TopNews news,List<RecyclerWrapper> recyclerWrappers){
         for (int i=0; i<news.getArticles().size(); i++){
             recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles().get(i)),
-                    RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
+                    RecyclerWrapper.TYPE_HOME_OTHER_PAGES));
         }
     }
 }

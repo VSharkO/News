@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
 import news.factory.com.home.home_other_pages_holder.view.HomeFragmentOtherPagesImpl;
+import news.factory.com.home.home_other_pages_item_fragment.view.HomeOtherPagesFragmentItem;
 import news.factory.com.home.main.presenter.HomeMainPresenter;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
@@ -40,9 +41,10 @@ ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapt
                 return HomeFragmentFrontPageImpl.newInstance();
             else
                 return HomeFragmentOtherPagesImpl.newInstance(position);
+
         else if(type.equals(Constants.TYPE_HOME_OTHER_ITEMS_TOP)){
 
-             return ArticleFragmentImpl.newInstance(position); //TODO
+             return HomeOtherPagesFragmentItem.newInstance(position); //TODO
         }
         else
             return null;

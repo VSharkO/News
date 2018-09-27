@@ -2,18 +2,20 @@ package news.factory.com.home.home_other_pages_item_fragment.di;
 
 import android.support.v4.app.FragmentManager;
 
+import dagger.Module;
 import dagger.Provides;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapter;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
 import news.factory.com.home.home_other_pages_holder.presenter.HomeFragmentOtherPagesPresenter;
 import news.factory.com.home.home_other_pages_holder.presenter.HomeFragmentOtherPagesPresenterImpl;
 import news.factory.com.home.home_other_pages_item_fragment.view.HomeOtherPagesFragmentItem;
-import news.factory.com.home.home_other_pages_item_fragment.HomeOtherPagesFragmentItemPresenter;
-import news.factory.com.home.home_other_pages_item_fragment.HomeOtherPagesFragmentItemPresenterImpl;
+import news.factory.com.home.home_other_pages_item_fragment.presenter.HomeOtherPagesFragmentItemPresenter;
+import news.factory.com.home.home_other_pages_item_fragment.presenter.HomeOtherPagesFragmentItemPresenterImpl;
 import news.factory.com.home.home_other_pages_item_fragment.interactor.HomeFragmentOtherPagesInteractor;
 import news.factory.com.home.home_other_pages_item_fragment.interactor.HomeFragmentOtherPagesInteractorImpl;
 import news.factory.com.scopes.PerFragment;
 
+@Module
 public class HomeOtherPagesItemModule {
 
     @PerFragment

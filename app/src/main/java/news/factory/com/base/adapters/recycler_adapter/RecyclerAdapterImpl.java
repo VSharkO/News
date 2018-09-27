@@ -85,6 +85,9 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
             case RecyclerWrapper.TYPE_HOME_BUTTON:
                 return new HomeItemButtonHolder(itemView);
 
+            case RecyclerWrapper.TYPE_HOME_OTHER_PAGES:
+                return new InnerCellHolder(itemView,dataList);
+
             default: return new DummyHolder(new View(parent.getContext()));
         }
 
@@ -162,6 +165,11 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
             case RecyclerWrapper.TYPE_HOME_BUTTON:
                 HomeItemButtonHolder homeItemButtonHolder = (HomeItemButtonHolder) holder;
                 homeItemButtonHolder.onBind(position);
+                break;
+
+            case RecyclerWrapper.TYPE_HOME_OTHER_PAGES:
+                InnerCellHolder homeInnerCell = (InnerCellHolder) holder;
+                homeInnerCell.onBind(position);
                 break;
         }
     }

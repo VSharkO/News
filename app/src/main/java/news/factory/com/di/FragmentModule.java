@@ -7,6 +7,8 @@ import news.factory.com.home.home_fragment_front_page.di.HomeFragmentFrontPageMo
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
 import news.factory.com.home.home_other_pages_holder.di.HomeFragmentOtherPagesModule;
 import news.factory.com.home.home_other_pages_holder.view.HomeFragmentOtherPagesImpl;
+import news.factory.com.home.home_other_pages_item_fragment.di.HomeOtherPagesItemModule;
+import news.factory.com.home.home_other_pages_item_fragment.view.HomeOtherPagesFragmentItem;
 import news.factory.com.single.article_fragment.di.ArticleFragmentModule;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.single.inner_pager_fragment.di.InnerPagerFragmentModule;
@@ -31,5 +33,10 @@ public abstract class FragmentModule {
     @PerFragment
     @ContributesAndroidInjector(modules = HomeFragmentOtherPagesModule.class)
     public abstract HomeFragmentOtherPagesImpl provideHomeFragmentOtherPagesImpl();
+
+    @PerFragment
+    @ContributesAndroidInjector(modules = HomeOtherPagesItemModule.class)
+    public abstract HomeOtherPagesFragmentItem provideHomeOtherPagesFragmentItem();
+
 
 }
