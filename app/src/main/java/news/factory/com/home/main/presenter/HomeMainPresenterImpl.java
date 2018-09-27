@@ -32,6 +32,7 @@ public class HomeMainPresenterImpl implements HomeMainPresenter, NetworkResponse
     public void onSuccess(InteractorData dataReceive) {
         this.data = (List<BottomMenuData>) dataReceive.getData();
         view.setAdapterCount(data.size());
+        view.setNavigationViewItems((List<BottomMenuData>)dataReceive.getData());
     }
 
     @Override

@@ -18,7 +18,6 @@ import news.factory.com.R;
 import news.factory.com.base.BaseFragment;
 import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
 import news.factory.com.home.home_item_fragment.presenter.HomeFragmentItemPresenterImpl;
-import news.factory.com.home.home_pages_holder.presenter.HomePagesHolderPresenter;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 
@@ -29,10 +28,7 @@ public class HomeFragmentItemImpl extends BaseFragment {
     @Inject
     HomeFragmentItemPresenterImpl presenter;
     @Inject
-    HomePagesHolderPresenter perentPresenter;
-    @Inject
     RecyclerAdapterImpl adapter;
-
 
     public static Fragment newInstance(int index) {
         Bundle data = new Bundle();
@@ -54,7 +50,7 @@ public class HomeFragmentItemImpl extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this,view);
         int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
-        presenter.setData(index, perentPresenter.getData());
+        presenter.setData(index,1); //todo
         provideRecyclerViewAdapter();
     }
 

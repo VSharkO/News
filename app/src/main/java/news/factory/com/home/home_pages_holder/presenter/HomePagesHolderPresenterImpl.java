@@ -4,7 +4,6 @@ import javax.inject.Inject;
 
 public class HomePagesHolderPresenterImpl implements HomePagesHolderPresenter {
 
-
     int index;
 
     @Inject
@@ -18,7 +17,7 @@ public class HomePagesHolderPresenterImpl implements HomePagesHolderPresenter {
     }
 
     @Override
-    public int getData(){
+    public int getIndex() {
         return index;
     }
 }
