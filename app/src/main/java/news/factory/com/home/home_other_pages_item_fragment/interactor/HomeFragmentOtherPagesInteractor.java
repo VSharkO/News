@@ -1,4 +1,4 @@
-package news.factory.com.home.home_fragment_other_pages.interactor;
+package news.factory.com.home.home_other_pages_item_fragment.interactor;
 
 import news.factory.com.utils.NetworkResponseListener;
 

@@ -61,8 +61,7 @@ public class HomeFragmentFrontPagePresenterImpl implements HomeFragmentFrontPage
                     RecyclerWrapper.TYPE_HOME_FRONT_TITLE));
 
             for (int j = 0; j < news.get(i).getArticles().size(); j++) {
-                recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.get(i).getArticles().get(j)),
-                        RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
+                recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.get(i).getArticles().get(j)), RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
             }
 
             recyclerWrappers.add(new RecyclerWrapper(RecyclerWrapper.TYPE_HOME_BUTTON));

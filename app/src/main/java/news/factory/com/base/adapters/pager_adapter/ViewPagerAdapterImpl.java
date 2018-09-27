@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import javax.inject.Inject;
 
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
+import news.factory.com.home.home_fragment_other_pages.presenter.HomeFragmentOtherPagesPresenter;
 import news.factory.com.home.home_fragment_other_pages.view.HomeFragmentOtherPagesImpl;
 import news.factory.com.home.main.presenter.HomeMainPresenter;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
@@ -34,19 +35,18 @@ ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapt
 
         else if(type.equals(Constants.SINGLE_TYPE))
             return ArticleFragmentImpl.newInstance(position);
-//TODO
+
         else if(type.equals(Constants.HOME_TYPE))
             if(position == 0)
                 return HomeFragmentFrontPageImpl.newInstance();
             else
                 return HomeFragmentOtherPagesImpl.newInstance(position);
-
         else if(type.equals(Constants.TYPE_HOME_OTHER_ITEMS_TOP)){
-             return HomeFragmentOtherPagesImpl.newInstance(position); //TODO
 
+             return ArticleFragmentImpl.newInstance(position); //TODO
         }
-            else
-            return ArticleFragmentImpl.newInstance(position);
+        else
+            return null;
     }
 
     @Override
@@ -90,8 +90,24 @@ ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapt
             return presenter.getBottomMenuData().get(position).getTitle();
 
         }
+        else if(type.equals(Constants.TYPE_HOME_OTHER_ITEMS_TOP)){
+
+            switch (position){
+                case 0:
+                    return Constants.MOST_NEW_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_NEW_TYPE.substring(1);
+                case 1:
+                    return Constants.MOST_READ_TYPE.substring(0,1).toUpperCase()
+                            + Constants.MOST_READ_TYPE.substring(1);
+                default: return "";
+            }
+        }
+
         else
             return "";
     }
+
+
+
 
 }
