@@ -65,7 +65,7 @@ public class HomeOtherPagesFragmentItemPresenterImpl implements HomeOtherPagesFr
     private void addArticles(TopNews news,List<RecyclerWrapper> recyclerWrappers){
         for (int i=0; i<news.getArticles().size(); i++){
             recyclerWrappers.add(new RecyclerWrapper(new InnerCellData(news.getArticles().get(i)),
-                    RecyclerWrapper.TYPE_HOME_OTHER_PAGES));
+                    RecyclerWrapper.TYPE_INNER_ARTICLE_CELL));
         }
     }
 }

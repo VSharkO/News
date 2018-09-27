@@ -44,7 +44,7 @@ ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapt
 
         else if(type.equals(Constants.TYPE_HOME_OTHER_ITEMS_TOP)){
 
-             return HomeOtherPagesFragmentItem.newInstance(position); //TODO
+             return HomeOtherPagesFragmentItem.newInstance(position);
         }
         else
             return null;
