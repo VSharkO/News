@@ -55,7 +55,6 @@ public class HomeFragmentItemImpl extends BaseFragment implements HomeFragmentIt
         ButterKnife.bind(this,view);
         parentIndex = getArguments().getInt(Constants.FRAGMENT_PUT_PARENT_INDEX);
         index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
-        Timber.e("DADADA" + String.valueOf(index) + " "+ String.valueOf(parentIndex));
         presenter.setData(index,parentIndex);
         provideRecyclerViewAdapter();
     }

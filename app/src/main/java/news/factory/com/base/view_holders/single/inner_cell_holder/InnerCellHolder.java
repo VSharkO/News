@@ -118,8 +118,10 @@ public class InnerCellHolder extends RecyclerView.ViewHolder{
         if(presenter instanceof HomeFragmentFrontPagePresenterImpl){
             HomeFragmentFrontPagePresenter presenterItem = (HomeFragmentFrontPagePresenterImpl)presenter;
             presenterItem.changeActivityOnItemClick(data.articles.getId());
-        }else if(presenter instanceof HomeFragmentItemPresenterImpl){}
-        HomeFragmentItemPresenter presenterItem = (HomeFragmentItemPresenterImpl)presenter;
-        presenterItem.changeActivityOnItemClick(data.articles.getId());
+        }
+        else if(presenter instanceof HomeFragmentItemPresenterImpl){
+            HomeFragmentItemPresenter presenterItem = (HomeFragmentItemPresenterImpl)presenter;
+            presenterItem.changeActivityOnItemClick(data.articles.getId());
+        }
     }
 }
