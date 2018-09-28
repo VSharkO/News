@@ -73,5 +73,5 @@ public class HomeFragmentItemImpl extends BaseFragment implements HomeFragmentIt
             Intent intent = new Intent(this.getActivity(), SingleMainActivity.class);
             intent.putExtra(getString(R.string.itemId),id);
             startActivity(intent);
-            }
+    }
 }

@@ -67,7 +67,6 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
     @Override
     public void setNavigationViewItems(List<BottomMenuData> data){
         Menu menu = navigationView.getMenu();
-        SubMenu menuGroup = menu.addSubMenu(R.string.appTitle);
         for (BottomMenuData menuItem:data) {
             menu.add(menuItem.getTitle());
         }
