@@ -67,6 +67,7 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
     @Override
     public void setNavigationViewItems(List<BottomMenuData> data){
         Menu menu = navigationView.getMenu();
+
         for (BottomMenuData menuItem:data) {
             menu.add(menuItem.getTitle());
         }
@@ -78,7 +79,7 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int position=items.indexOf(item);
-        pager.setCurrentItem(position-1);
+        pager.setCurrentItem(position);
         drawer.closeDrawers();
         return true;
     }
