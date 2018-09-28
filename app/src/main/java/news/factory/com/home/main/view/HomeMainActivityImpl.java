@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -40,7 +39,6 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
 
     final List<MenuItem> items=new ArrayList<>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +48,7 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
         pager.setAdapter(adapter);
         presenter.getData();
         tabLayout.setupWithViewPager(pager);
-        }
+    }
 
     private void setNavigationViewListener() {
         navigationView.setNavigationItemSelectedListener(this);
@@ -69,15 +67,13 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
     @Override
     public void setNavigationViewItems(List<BottomMenuData> data){
         Menu menu = navigationView.getMenu();
-        SubMenu menuGroup = menu.addSubMenu("Dnevni Avaz");
+        SubMenu menuGroup = menu.addSubMenu(R.string.appTitle);
         for (BottomMenuData menuItem:data) {
             menu.add(menuItem.getTitle());
         }
         for(int i=0; i<menu.size(); i++){
             items.add(menu.getItem(i));
         }
-
-
     }
 
     @Override

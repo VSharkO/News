@@ -19,7 +19,7 @@ public class HomePagesHolderModule {
     @PerFragment
     @Provides
     ViewPagerAdapterImpl provideHomeItemAdapterImplementation(FragmentManager fragmentManager, HomePagesHolderPresenter presenter){
-        return new ViewPagerAdapterImpl(fragmentManager, Constants.TYPE_HOME_OTHER_ITEMS_TOP,presenter);
+        return new ViewPagerAdapterImpl(fragmentManager, Constants.TYPE_HOME_ITEMS,presenter);
     }
 
     @PerFragment

@@ -3,27 +3,23 @@ package news.factory.com.base.adapters.pager_adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.util.Log;
 import android.view.ViewGroup;
-
 import javax.inject.Inject;
-
 import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
-import news.factory.com.home.home_pages_holder.presenter.HomePagesHolderPresenter;
 import news.factory.com.home.home_pages_holder.view.HomePagesFragmentImpl;
 import news.factory.com.home.home_item_fragment.view.HomeFragmentItemImpl;
 import news.factory.com.home.main.presenter.HomeMainPresenter;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
 import news.factory.com.utils.Constants;
-import timber.log.Timber;
 
-public class
-ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapter {
+public class ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapter {
     private int countNumber;
     private String type;
     private Object presenter;
     private int parentIndex;
+    private String itemId;
+
     @Inject
     public ViewPagerAdapterImpl(FragmentManager fm, String type, Object presenter) {
         super(fm);
@@ -37,23 +33,19 @@ ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapt
             return InnerPagerFragment.newInstance(position);
 
         else if(type.equals(Constants.SINGLE_TYPE))
-            return ArticleFragmentImpl.newInstance(position);
+            return ArticleFragmentImpl.newInstance(position,itemId);
 
-        else if(type.equals(Constants.HOME_TYPE))
+        else if(type.equals(Constants.HOME_TYPE_FRONT_PAGE))
             if(position == 0)
                 return HomeFragmentFrontPageImpl.newInstance();
             else {
                 return HomePagesFragmentImpl.newInstance(position);
             }
-        else if(type.equals(Constants.TYPE_HOME_OTHER_ITEMS_TOP)){
-             return HomeFragmentItemImpl.newInstance(position);
+        else if(type.equals(Constants.TYPE_HOME_ITEMS)){
+             return HomeFragmentItemImpl.newInstance(position,parentIndex);
         }
         else
             return null;
-    }
-
-    public void setPerentIndex(int index){
-        this.parentIndex = index;
     }
 
     @Override
@@ -64,7 +56,6 @@ ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapt
     @Override
     public void setPrimaryItem(ViewGroup container, int position, Object object) {
         super.setPrimaryItem(container, position, object);
-
     }
 
     @Override
@@ -89,15 +80,11 @@ ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapt
                 default: return "";
             }
         }
-        else if(type.equals(Constants.SINGLE_TYPE)){
-            return "";
-        }
-        else if(type.equals(Constants.HOME_TYPE)){
+        else if(type.equals(Constants.HOME_TYPE_FRONT_PAGE)){
             HomeMainPresenter presenter = (HomeMainPresenter)this.presenter;
             return presenter.getBottomMenuData().get(position).getTitle();
-
         }
-        else if(type.equals(Constants.TYPE_HOME_OTHER_ITEMS_TOP)){
+        else if(type.equals(Constants.TYPE_HOME_ITEMS)){
 
             switch (position){
                 case 0:
@@ -109,8 +96,16 @@ ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapt
                 default: return "";
             }
         }
-
         else
             return "";
+    }
+
+    @Override
+    public void setParentIndex(int parentIndex){
+        this.parentIndex = parentIndex;
+    }
+
+    public void setItemId(String id) {
+        itemId = id;
     }
 }

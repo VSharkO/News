@@ -11,7 +11,11 @@ public class Articles {
     private String publishedAtHumans;
     private String shares;
     private String category;
+    private String id;
 
+    public String getId() {
+        return id;
+    }
     public FeaturedImage getFeaturedImage() {
         return featuredImage;
     }

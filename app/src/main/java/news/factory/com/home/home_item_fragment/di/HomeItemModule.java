@@ -11,6 +11,7 @@ import news.factory.com.home.home_item_fragment.presenter.HomeFragmentItemPresen
 import news.factory.com.home.home_item_fragment.view.HomeFragmentItemImpl;
 import news.factory.com.home.home_item_fragment.interactor.HomePagesHolderInteractor;
 import news.factory.com.home.home_item_fragment.interactor.HomePagesHolderInteractorImpl;
+import news.factory.com.home.home_item_fragment.view.HomeFragmentItemView;
 import news.factory.com.home.home_pages_holder.presenter.HomePagesHolderPresenter;
 import news.factory.com.home.home_pages_holder.presenter.HomePagesHolderPresenterImpl;
 import news.factory.com.scopes.PerFragment;
@@ -42,6 +43,12 @@ public class HomeItemModule {
     @Provides
     RecyclerAdapterImpl provideInnerRecyclerAdapterImpl(HomeFragmentItemPresenter presenter){
         return new RecyclerAdapterImpl(presenter);
+    }
+
+    @PerFragment
+    @Provides
+    HomeFragmentItemView provideView(HomeFragmentItemImpl fragment){
+        return fragment;
     }
 
     @PerFragment

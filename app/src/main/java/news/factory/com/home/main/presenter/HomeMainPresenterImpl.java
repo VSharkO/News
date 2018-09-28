@@ -1,6 +1,5 @@
 package news.factory.com.home.main.presenter;
 import java.util.List;
-
 import javax.inject.Inject;
 import news.factory.com.home.main.interactor.HomeMainInteractor;
 import news.factory.com.home.main.view.HomeMainActivity;

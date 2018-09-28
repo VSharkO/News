@@ -36,7 +36,7 @@ public class HomeFragmentFrontPageModule {
     @PerFragment
     @Provides
     ViewPagerAdapterImpl provideHomePagerAdapterImpl(FragmentManager fragmentManager, HomeMainPresenter presenter){
-        return new ViewPagerAdapterImpl(fragmentManager, Constants.HOME_TYPE, presenter);
+        return new ViewPagerAdapterImpl(fragmentManager, Constants.HOME_TYPE_FRONT_PAGE, presenter);
     }
 
     @PerFragment

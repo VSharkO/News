@@ -29,9 +29,10 @@ public class ArticleFragmentImpl extends BaseFragment implements ArticleFragment
     @Inject
     RecyclerAdapterImpl adapter;
 
-    public static Fragment newInstance(int index) {
+    public static Fragment newInstance(int index, String itemId) {
         Bundle data = new Bundle();
         data.putInt(Constants.FRAGMENT_PUT_DATA_CONSTANT, index+1);
+        data.putString(Constants.ITEM_ID,itemId);
         ArticleFragmentImpl f = new ArticleFragmentImpl();
         f.setArguments(data);
         return f;
@@ -50,7 +51,8 @@ public class ArticleFragmentImpl extends BaseFragment implements ArticleFragment
         ButterKnife.bind(this,view);
         provideRecyclerViewAdapter();
         int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
-        presenter.setData(index);
+        String id = getArguments().getString(Constants.ITEM_ID);
+        presenter.setData(index,id);
     }
 
     public void provideRecyclerViewAdapter() {

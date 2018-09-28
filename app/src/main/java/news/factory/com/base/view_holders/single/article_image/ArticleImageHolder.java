@@ -40,7 +40,7 @@ public class ArticleImageHolder extends RecyclerView.ViewHolder{
     public void onClick(View v) {
         if (presenter instanceof ArticleFragmentPresenter) {
             ArticleFragmentPresenter presenterTemp = (ArticleFragmentPresenter) presenter;
-            presenterTemp.setData(presenterTemp.getIndex());
+//            presenterTemp.setData(presenterTemp.getIndex());
         }
     }
 }

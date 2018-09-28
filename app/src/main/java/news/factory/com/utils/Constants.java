@@ -21,9 +21,11 @@ public class Constants {
     public static final String FALSE = "false";
     public static final String SINGLE_TYPE = "single";
     public static final String SINGLE_INNER_HOLDER_TYPE = "singleInner";
-    public static final String HOME_TYPE = "home";
+    public static final String HOME_TYPE_FRONT_PAGE = "home";
     public static final String INDEX = "index";
     public static final String MENU_BOTTOM = "menu-bottom";
-    public static final String TYPE_HOME_OTHER_ITEMS_TOP = "homeOtherItemsTop";
+    public static final String TYPE_HOME_ITEMS = "homeOtherItemsTop";
+    public static final String FRAGMENT_PUT_PARENT_INDEX = "parentIndex";
+    public static final String ITEM_ID = "itemid";
 }
 

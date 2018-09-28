@@ -18,9 +18,6 @@ public class HomePagesHolderInteractorImpl extends BaseInteractor implements Hom
 
     @Override
     public void getHomeOtherPagesData(NetworkResponseListener listener, int index, int index2) {
-
-        //todo flatmap
-
         switch (index){
             case 0:
                 service.getHomeItemData(Constants.MOST_NEW_TYPE,String.valueOf(index2),Constants.PAGE_NUMBER_ARTICLE)

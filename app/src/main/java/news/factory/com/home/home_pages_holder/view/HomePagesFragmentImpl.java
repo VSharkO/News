@@ -50,8 +50,8 @@ public class HomePagesFragmentImpl extends BaseFragment{
         ButterKnife.bind(this,view);
         int index = getArguments().getInt(Constants.FRAGMENT_PUT_DATA_CONSTANT);
         presenter.setIndex(index);
-        adapter.setPerentIndex(index);
         adapter.setDataCount(2);
+        adapter.setParentIndex(index);
         pager.setAdapter(adapter);
         tab.setupWithViewPager(pager);
     }

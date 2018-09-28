@@ -74,7 +74,7 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 return new InnerHolder(itemView,((PresenterWithFragmentChildManager) presenter).getManager());
 
             case RecyclerWrapper.TYPE_INNER_ARTICLE_CELL:
-                return new InnerCellHolder(itemView,dataList);
+                return new InnerCellHolder(itemView,dataList,presenter);
 
             case RecyclerWrapper.TYPE_HOME_FRONT_PAGE:
                 return new HomeFrontPageHolder(itemView,dataList);
@@ -86,7 +86,7 @@ public class RecyclerAdapterImpl extends RecyclerView.Adapter<RecyclerView.ViewH
                 return new HomeItemButtonHolder(itemView);
 
             case RecyclerWrapper.TYPE_HOME_OTHER_PAGES:
-                return new InnerCellHolder(itemView,dataList);
+                return new InnerCellHolder(itemView,dataList,presenter);
 
             default: return new DummyHolder(new View(parent.getContext()));
         }

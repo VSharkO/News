@@ -1,5 +1,6 @@
 package news.factory.com.single.main.view;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,7 @@ public class SingleMainActivity extends BaseActivity implements SingleMainActivi
     ImageButton forwardButton;
     @BindView(R.id.floatingBackwardButton)
     ImageButton backwardButton;
+    String itemId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,9 @@ public class SingleMainActivity extends BaseActivity implements SingleMainActivi
         viewPager.setAdapter(adapter);
         presenter.getArticlesFromAPI();
         presenter.setSwipeButtons(viewPager.getCurrentItem(), adapter.getCount());
+        Intent intent = getIntent();
+        itemId = intent.getStringExtra(getString(R.string.itemId));
+        adapter.setItemId(itemId);
     }
 
     @OnPageChange(R.id.pager)

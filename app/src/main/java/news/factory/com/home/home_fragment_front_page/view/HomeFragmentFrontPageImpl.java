@@ -1,5 +1,6 @@
 package news.factory.com.home.home_fragment_front_page.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import news.factory.com.base.adapters.recycler_adapter.RecyclerAdapterImpl;
 import news.factory.com.home.home_fragment_front_page.presenter.HomeFragmentFrontPagePresenter;
 import news.factory.com.single.article_fragment.view.ArticleFragmentImpl;
 import news.factory.com.single.inner_pager_fragment.view.InnerPagerFragment;
+import news.factory.com.single.main.view.SingleMainActivity;
 import news.factory.com.utils.Constants;
 import news.factory.com.utils.CostumeItemDecorator;
 
@@ -63,4 +65,13 @@ public class HomeFragmentFrontPageImpl extends BaseFragment implements HomeFragm
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(itemDecorator);
     }
+
+    @Override
+    public void changeToSingleActivity(String itemId) {
+        Intent intent = new Intent(this.getActivity(), SingleMainActivity.class);
+        intent.putExtra(getString(R.string.itemId),itemId);
+        startActivity(intent);
+    }
+
+
 }

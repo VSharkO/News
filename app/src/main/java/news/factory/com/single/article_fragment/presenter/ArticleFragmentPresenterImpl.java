@@ -39,11 +39,7 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
         this.resourceRepo = resourceRepo;
     }
 
-    @Override
-    public void setData(int index) {
-        articleInteractor.getProductsFromAPI(this,Constants.ARTICLE_TYPE,Constants.ID_ARTICLE,String.valueOf(index));
-        this.index = index;
-    }
+
     @Override
     public void onSuccess(InteractorData callback) {
         News data = (News)callback.getData();
@@ -145,6 +141,12 @@ public class ArticleFragmentPresenterImpl implements ArticleFragmentPresenter, N
 
     private void addInnerHolder(List<RecyclerWrapper> recyclerWrappers){
         recyclerWrappers.add(new RecyclerWrapper(RecyclerWrapper.TYPE_INNER_ARTICLE_PAGER));
+    }
+
+    @Override
+    public void setData(int index, String id) {
+        articleInteractor.getProductsFromAPI(this,Constants.ARTICLE_TYPE,id,String.valueOf(index));
+        this.index = index;
     }
 
     @Override

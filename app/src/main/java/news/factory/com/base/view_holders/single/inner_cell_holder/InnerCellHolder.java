@@ -1,5 +1,4 @@
 package news.factory.com.base.view_holders.single.inner_cell_holder;
-
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,10 +12,16 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
+import news.factory.com.home.home_fragment_front_page.presenter.HomeFragmentFrontPagePresenterImpl;
+import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPage;
+import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
+import news.factory.com.home.home_item_fragment.presenter.HomeFragmentItemPresenter;
 import news.factory.com.model.single.Articles;
 import news.factory.com.utils.Constants;
+import timber.log.Timber;
 
 public class InnerCellHolder extends RecyclerView.ViewHolder{
 
@@ -30,17 +35,21 @@ public class InnerCellHolder extends RecyclerView.ViewHolder{
     ImageView image;
     @BindView(R.id.categoryInnerText)
     TextView category;
+    int position;
+    private Object presenter;
 
     private List<RecyclerWrapper> dataList;
 
-    public InnerCellHolder(View itemView, List<RecyclerWrapper> dataList) {
+    public InnerCellHolder(View itemView, List<RecyclerWrapper> dataList,Object presenterObject) {
         super(itemView);
         ButterKnife.bind(this,itemView);
+        this.presenter = presenterObject;
         this.dataList = dataList;
     }
 
     public void onBind(int position){
         InnerCellData data = (InnerCellData) dataList.get(position).getData();
+        this.position = position;
         Articles articles = data.getArticles();
         title.setText(articles.getTitle());
         published.setText(getPastDaysNumber(articles.getPublishedAtHumans()));
@@ -101,5 +110,15 @@ public class InnerCellHolder extends RecyclerView.ViewHolder{
             }
         }
         return result;
+    }
+
+    @OnClick
+    public void onClickItem(){
+        InnerCellData data = (InnerCellData) dataList.get(position).getData();
+        if(presenter instanceof HomeFragmentFrontPagePresenterImpl){
+            HomeFragmentFrontPagePresenterImpl presenterItem = (HomeFragmentFrontPagePresenterImpl)presenter;
+            presenterItem.changeActivityOnItemClick(data.articles.getId());
+        }
+        Timber.e("dada"+presenter.getClass().getName());
     }
 }

@@ -9,4 +9,7 @@
     <string name="najcitanije">Najčitanije</string>
     <string name="najnovije">Najnovije</string>
     <string name="svi_clanci">SVI ČLANCI</string>
+    <string name="appTitle">Dnevni Avaz</string>
+    <string name="itemId">intentExtraItemId</string>
+    <string name="itemidstring">itemIdString</string>
 </resources>
