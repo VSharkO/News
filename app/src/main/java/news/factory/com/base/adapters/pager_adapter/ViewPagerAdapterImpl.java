@@ -21,9 +21,9 @@ import timber.log.Timber;
 public class
 ViewPagerAdapterImpl extends FragmentStatePagerAdapter implements ViewPagerAdapter {
     private int countNumber;
-    String type;
-    Object presenter;
-    int parentIndex;
+    private String type;
+    private Object presenter;
+    private int parentIndex;
     @Inject
     public ViewPagerAdapterImpl(FragmentManager fm, String type, Object presenter) {
         super(fm);

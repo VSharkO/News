@@ -5,11 +5,14 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import butterknife.BindView;
@@ -19,7 +22,6 @@ import news.factory.com.base.BaseActivity;
 import news.factory.com.base.adapters.pager_adapter.ViewPagerAdapterImpl;
 import news.factory.com.home.main.presenter.HomeMainPresenter;
 import news.factory.com.model.home.BottomMenuData;
-import timber.log.Timber;
 
 public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivity,NavigationView.OnNavigationItemSelectedListener{
 
@@ -33,6 +35,10 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
     ViewPager pager;
     @BindView(R.id.nav_view)
     NavigationView navigationView;
+    @BindView(R.id.drower)
+    DrawerLayout drawer;
+
+    final List<MenuItem> items=new ArrayList<>();
 
 
     @Override
@@ -62,19 +68,23 @@ public class HomeMainActivityImpl extends BaseActivity implements HomeMainActivi
 
     @Override
     public void setNavigationViewItems(List<BottomMenuData> data){
-//        Menu menu = navigationView.getMenu();
-//        SubMenu menuGroup = menu.addSubMenu("Dnevni Avaz");
-//        for (BottomMenuData menuItem:data) {
-//            menu.add(menuItem.getTitle());
-//        }
+        Menu menu = navigationView.getMenu();
+        SubMenu menuGroup = menu.addSubMenu("Dnevni Avaz");
+        for (BottomMenuData menuItem:data) {
+            menu.add(menuItem.getTitle());
+        }
+        for(int i=0; i<menu.size(); i++){
+            items.add(menu.getItem(i));
+        }
+
+
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.item1){
-
-        }
-        Timber.e("dadada");
+        int position=items.indexOf(item);
+        pager.setCurrentItem(position-1);
+        drawer.closeDrawers();
         return true;
     }
 }
