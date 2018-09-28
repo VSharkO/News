@@ -15,10 +15,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import news.factory.com.R;
 import news.factory.com.base.RecyclerWrapper;
+import news.factory.com.home.home_fragment_front_page.presenter.HomeFragmentFrontPagePresenter;
 import news.factory.com.home.home_fragment_front_page.presenter.HomeFragmentFrontPagePresenterImpl;
-import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPage;
-import news.factory.com.home.home_fragment_front_page.view.HomeFragmentFrontPageImpl;
 import news.factory.com.home.home_item_fragment.presenter.HomeFragmentItemPresenter;
+import news.factory.com.home.home_item_fragment.presenter.HomeFragmentItemPresenterImpl;
 import news.factory.com.model.single.Articles;
 import news.factory.com.utils.Constants;
 import timber.log.Timber;
@@ -116,9 +116,10 @@ public class InnerCellHolder extends RecyclerView.ViewHolder{
     public void onClickItem(){
         InnerCellData data = (InnerCellData) dataList.get(position).getData();
         if(presenter instanceof HomeFragmentFrontPagePresenterImpl){
-            HomeFragmentFrontPagePresenterImpl presenterItem = (HomeFragmentFrontPagePresenterImpl)presenter;
+            HomeFragmentFrontPagePresenter presenterItem = (HomeFragmentFrontPagePresenterImpl)presenter;
             presenterItem.changeActivityOnItemClick(data.articles.getId());
-        }
-        Timber.e("dada"+presenter.getClass().getName());
+        }else if(presenter instanceof HomeFragmentItemPresenterImpl){}
+        HomeFragmentItemPresenter presenterItem = (HomeFragmentItemPresenterImpl)presenter;
+        presenterItem.changeActivityOnItemClick(data.articles.getId());
     }
 }

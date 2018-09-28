@@ -31,7 +31,6 @@ public class HomeFragmentItemImpl extends BaseFragment implements HomeFragmentIt
     HomeFragmentItemPresenter presenter;
     @Inject
     RecyclerAdapterImpl adapter;
-
     int index,parentIndex;
 
     public static Fragment newInstance(int index, int parentIndex) {
@@ -69,4 +68,11 @@ public class HomeFragmentItemImpl extends BaseFragment implements HomeFragmentIt
         recycler.setAdapter(adapter);
         recycler.addItemDecoration(itemDecorator);
     }
+
+    @Override
+    public void changeToSingleActivity(String id) {
+            Intent intent = new Intent(this.getActivity(), SingleMainActivity.class);
+            intent.putExtra(getString(R.string.itemId),id);
+            startActivity(intent);
+            }
 }

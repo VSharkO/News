@@ -1,7 +1,5 @@
 package news.factory.com.home.home_fragment_front_page.presenter;
 
-import android.content.Intent;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;

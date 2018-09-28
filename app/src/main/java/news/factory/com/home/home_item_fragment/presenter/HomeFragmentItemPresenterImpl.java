@@ -59,4 +59,9 @@ public class HomeFragmentItemPresenterImpl implements HomeFragmentItemPresenter,
         Timber.e(throwable);
     }
 
+
+    @Override
+    public void changeActivityOnItemClick(String itemId){
+        view.changeToSingleActivity(itemId);
+    }
 }
